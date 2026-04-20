@@ -1,0 +1,81 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import DocuSketchHomepage from "../../components/integrations/DocuSketchHomepage";
+import DocuSketchFAQ from "../../components/integrations/DocuSketchFAQ.astro";
+import DocuSketchCTA from "../../components/integrations/DocuSketchCTA.astro";
+
+const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Automated Restoration Dispatch for DocuSketch",
+    serviceType: "AI Receptionist & Automation",
+    provider: {
+        "@type": "SoftwareApplication",
+        name: "Restoration AI",
+    },
+    description:
+        "Automated 24/7 call answering, lead qualification, and emergency crew dispatch directly integrated into DocuSketch for restoration contractors.",
+    areaServed: "Worldwide",
+};
+
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "Does Restoration AI integrate directly with DocuSketch?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Restoration AI works alongside your DocuSketch workflow by capturing and organizing job information before your team arrives on-site. This ensures your documentation process starts with accurate and complete information instead of relying on guesswork or missing details.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Do I have to change how my team uses DocuSketch?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Your team continues using DocuSketch exactly as they do today. Restoration AI improves what happens before the job reaches them by making sure intake is handled properly and the right information is captured from the beginning.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Will this slow down our intake calls?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Restoration AI follows your intake process and only captures what matters. Calls remain efficient while still collecting the information your team needs to avoid confusion during documentation.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What does this actually improve if I already use DocuSketch?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "DocuSketch works best when your team has a clear understanding of the job before they begin documenting. Restoration AI ensures your crews are not starting with missing details or unclear scope, which leads to better documentation and fewer mistakes.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can it handle after-hours calls and high call volume?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Restoration AI operates 24 hours a day so no call goes unanswered and no job is missed, even during nights or storm events when demand is highest.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is this built specifically for restoration companies?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Restoration AI is designed specifically for restoration workflows and ensures your team gets the structured, relevant information needed to perform and document jobs correctly.",
+            },
+        },
+    ],
+};
+---
+
+<MainLayout jsonLd={[serviceJsonLd, faqJsonLd]}>
+    <DocuSketchHomepage client:load />
+    <DocuSketchFAQ />
+    <DocuSketchCTA />
+</MainLayout>

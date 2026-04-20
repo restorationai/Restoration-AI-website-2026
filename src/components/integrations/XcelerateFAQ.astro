@@ -1,0 +1,95 @@
+---
+// XcelerateFAQ.astro
+const faqs = [
+    {
+        question: "Does Restoration AI integrate directly with Xcelerate?",
+        answer: "Restoration AI is designed to work seamlessly with your Xcelerate workflow by capturing calls, structuring job details, and delivering organized information that fits your process. The goal is to ensure every job starts with complete and accurate data so your team can take action immediately without fixing intake issues first.",
+    },
+    {
+        question: "Do I have to change how my team uses Xcelerate?",
+        answer: "No. Your team continues using Xcelerate exactly the way they already do today. Restoration AI does not replace your system or force a new process. It improves what happens before the job reaches your system so your team receives cleaner, more consistent information without changing how they work.",
+    },
+    {
+        question: "Will this slow down our intake calls?",
+        answer: "No. Restoration AI is configured around your intake process and only asks the questions that matter. Calls remain smooth and efficient while still capturing the information your team needs. The goal is to improve quality without creating friction.",
+    },
+    {
+        question: "What does this actually improve if I already use Xcelerate?",
+        answer: "Xcelerate works best when jobs start with complete information. In many cases, intake is inconsistent, which leads to missing details and extra work later. Restoration AI ensures every job starts clean and structured so your team can move faster without fixing or chasing information.",
+    },
+    {
+        question: "Can it handle after-hours calls and high call volume?",
+        answer: "Yes. Restoration AI operates 24 hours a day, including nights, weekends, and storm events. Every call is answered immediately, preventing missed opportunities and allowing your business to capture more jobs during peak demand.",
+    },
+    {
+        question: "Is this built specifically for restoration companies?",
+        answer: "Yes. Restoration AI is built specifically for restoration workflows and understands the urgency, job types, and intake requirements unique to restoration businesses.",
+    },
+    {
+        question: "How quickly can we get set up?",
+        answer: "Most companies can get started quickly because there is no need to rebuild workflows or replace systems. Restoration AI is configured around how your business already operates, allowing you to begin capturing better jobs without a long onboarding process.",
+    },
+];
+---
+
+<section class="relative z-10 py-24 bg-white overflow-hidden">
+    {/* Faint grid background */}
+    <div
+        class="absolute inset-0 z-0 opacity-[0.15] pointer-events-none"
+        style={{
+            backgroundImage:
+                "linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            maskImage:
+                "radial-gradient(ellipse at center, white 20%, transparent 80%)",
+            WebkitMaskImage:
+                "radial-gradient(ellipse at center, white 20%, transparent 80%)",
+        }}
+    >
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
+        <div class="text-center mb-16">
+            <h2
+                class="text-[36px] md:text-[44px] font-extrabold text-[#0B1528] tracking-tight leading-tight"
+            >
+                Frequently Asked Questions<br />About Xcelerate Integration
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {
+                faqs.map((faq) => (
+                    <details class="group bg-white border border-slate-100 rounded-[20px] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-200 cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between font-bold text-[18px] text-slate-900 list-none">
+                            <span class="pr-6">{faq.question}</span>
+                            <span class="transition group-open:rotate-45 text-slate-300 text-3xl font-light shrink-0">
+                                +
+                            </span>
+                        </summary>
+                        <div class="pt-4 text-slate-500 font-medium leading-relaxed text-[16px]">
+                            {faq.answer}
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Smooth animation for details expanding */
+    details > div {
+        animation: slideDown 0.3s ease-out;
+    }
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

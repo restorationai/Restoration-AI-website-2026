@@ -1,0 +1,81 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import DashHomepage from "../../components/integrations/DashHomepage";
+import DashFAQ from "../../components/integrations/DashFAQ.astro";
+import DashCTA from "../../components/integrations/DashCTA.astro";
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Automated Restoration Dispatch for DASH",
+  serviceType: "AI Receptionist & Automation",
+  provider: {
+    "@type": "SoftwareApplication",
+    name: "Restoration AI",
+  },
+  description:
+    "Automated 24/7 call answering, lead qualification, and emergency crew dispatch directly integrated into DASH for restoration contractors.",
+  areaServed: "Worldwide",
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Does Restoration AI integrate directly with DASH?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Restoration AI is designed to work seamlessly alongside your DASH workflow by capturing calls, structuring the job details, and delivering everything your team needs in a clean, organized format. The goal is not to change how your system works, but to make sure every job enters DASH with complete and accurate information so your team can act immediately without fixing intake issues first.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I have to change how my team uses DASH?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Your team continues using DASH exactly the way they already do today. Restoration AI does not replace your system or force a new process. Instead, it improves what happens before the job reaches DASH by making sure every call is handled properly and every job starts with the right information.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can Restoration AI handle after-hours calls and high call volume?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Restoration AI operates 24 hours a day, including nights, weekends, and storm events. Every call is answered immediately, which means no missed opportunities and no reliance on voicemail or delayed responses during high-demand periods.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does this actually improve if I already use DASH?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "DASH works best when jobs are created with complete and accurate information. In many cases, intake is rushed or inconsistent, which leads to missing details and time spent fixing jobs later. Restoration AI ensures every job starts clean and complete so your team can move faster without unnecessary back and forth.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Will this make our intake calls longer or slow things down?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Restoration AI follows your exact intake process and only asks what matters. You control what information is collected, and the system captures it efficiently without dragging out the conversation. The goal is to keep calls fast and smooth while still making sure nothing important is missed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Restoration AI built specifically for restoration companies?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Restoration AI is designed specifically for restoration workflows. It understands the urgency, job types, and intake requirements of restoration businesses so your team receives structured, relevant information that is actually useful from the start.",
+      },
+    },
+  ],
+};
+---
+
+<MainLayout jsonLd={[serviceJsonLd, faqJsonLd]}>
+  <DashHomepage client:load />
+  <DashFAQ />
+  <DashCTA />
+</MainLayout>

@@ -1,0 +1,81 @@
+---
+// AlbiwareFAQ.astro
+const faqs = [
+  {
+    question: "How does Restoration AI integrate with Albiware?",
+    answer: "Restoration AI captures the key job details during each call and organizes them into your Albiware workflow in real time. Instead of relying on manual intake or delayed follow up, your team gets a structured job they can act on immediately without extra office work."
+  },
+  {
+    question: "Does my team have to change how they use Albiware?",
+    answer: "No. Your team keeps using Albiware exactly the way they already do. Restoration AI simply makes sure every call gets answered and the right information is captured before it reaches your workflow, so your team starts with better information instead of more work."
+  },
+  {
+    question: "Can Restoration AI handle after hours calls and emergency jobs?",
+    answer: "Yes. Restoration AI operates around the clock, including nights, weekends, and storm events. That means urgent jobs can be answered, qualified, and documented immediately instead of sitting in voicemail while the homeowner calls someone else."
+  },
+  {
+    question: "What information gets captured during the call?",
+    answer: "Restoration AI captures the essential details your team needs to move fast, including customer information, property details, damage context, urgency, and structured job notes so your team receives a clear and organized handoff."
+  },
+  {
+    question: "Will this help reduce missed jobs from unanswered calls?",
+    answer: "Yes. One of the biggest reasons restoration companies lose work is slow response time. When every call is answered instantly and documented properly, more opportunities actually make it into your workflow instead of disappearing before your team ever sees them."
+  },
+  {
+    question: "Is Restoration AI built specifically for restoration companies?",
+    answer: "Yes. Restoration AI is designed specifically for restoration businesses. It understands restoration terminology, urgency, and intake flow so the handoff into your workflow feels natural and operationally useful."
+  }
+];
+---
+
+<section class="relative z-10 py-24 bg-white overflow-hidden">
+  {/* Faint grid background */}
+  <div 
+    class="absolute inset-0 z-0 opacity-[0.15] pointer-events-none"
+    style={{
+      backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)',
+      backgroundSize: '40px 40px',
+      maskImage: 'radial-gradient(ellipse at center, white 20%, transparent 80%)',
+      WebkitMaskImage: 'radial-gradient(ellipse at center, white 20%, transparent 80%)'
+    }}
+  ></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16">
+      <h2 class="text-[36px] md:text-[44px] font-extrabold text-[#0B1528] tracking-tight leading-tight">
+        Frequently Asked Questions<br />About Albiware Integration
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {faqs.map((faq) => (
+        <details class="group bg-white border border-slate-100 rounded-[20px] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-200 cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between font-bold text-[18px] text-slate-900 list-none">
+            <span class="pr-6">{faq.question}</span>
+            <span class="transition group-open:rotate-45 text-slate-300 text-3xl font-light shrink-0">+</span>
+          </summary>
+          <div class="pt-4 text-slate-500 font-medium leading-relaxed text-[16px]">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Smooth animation for details expanding */
+  details > div {
+    animation: slideDown 0.3s ease-out;
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

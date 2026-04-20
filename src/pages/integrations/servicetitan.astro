@@ -1,0 +1,81 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ServiceTitanHomepage from "../../components/integrations/ServiceTitanHomepage";
+import ServiceTitanFAQ from "../../components/integrations/ServiceTitanFAQ.astro";
+import ServiceTitanCTA from "../../components/integrations/ServiceTitanCTA.astro";
+
+const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Automated Restoration Dispatch for ServiceTitan",
+    serviceType: "AI Receptionist & Automation",
+    provider: {
+        "@type": "SoftwareApplication",
+        name: "Restoration AI",
+    },
+    description:
+        "Automated 24/7 call answering, lead qualification, and emergency crew dispatch directly integrated into ServiceTitan for restoration contractors.",
+    areaServed: "Worldwide",
+};
+
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "Does Restoration AI integrate directly with ServiceTitan?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Restoration AI is designed to work alongside your ServiceTitan workflow by capturing calls and structuring job details before they enter your system. This ensures every job starts with clean and complete information.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Do I have to change how my team uses ServiceTitan?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Your team continues using ServiceTitan exactly as they do today. Restoration AI improves what happens before the job reaches your system without changing your workflow.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Will this slow down our intake calls?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Restoration AI follows your intake process and only captures what matters. Calls stay efficient while still gathering the details your team needs.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What does this improve if I already use ServiceTitan?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "ServiceTitan works best when jobs are created with complete information. Restoration AI ensures your team is not dealing with missing details or unclear scope, which reduces internal friction and speeds up operations.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can it handle after-hours calls and high call volume?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Restoration AI operates 24 hours a day so no call goes unanswered and no job is missed, even during nights or peak demand.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is this built specifically for restoration companies?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Restoration AI is designed specifically for restoration workflows and ensures your team receives structured, relevant job information every time.",
+            },
+        },
+    ],
+};
+---
+
+<MainLayout jsonLd={[serviceJsonLd, faqJsonLd]}>
+    <ServiceTitanHomepage client:load />
+    <ServiceTitanFAQ />
+    <ServiceTitanCTA />
+</MainLayout>

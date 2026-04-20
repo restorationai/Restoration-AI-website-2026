@@ -1,0 +1,92 @@
+---
+// DocuSketchFAQ.astro
+const faqs = [
+    {
+        question: "Does Restoration AI integrate directly with DocuSketch?",
+        answer: "Restoration AI works alongside your DocuSketch workflow by capturing and organizing job information before your team arrives on-site. This ensures your documentation process starts with accurate and complete information instead of relying on guesswork or missing details.",
+    },
+    {
+        question: "Do I have to change how my team uses DocuSketch?",
+        answer: "No. Your team continues using DocuSketch exactly as they do today. Restoration AI improves what happens before the job reaches them by making sure intake is handled properly and the right information is captured from the beginning.",
+    },
+    {
+        question: "Will this slow down our intake calls?",
+        answer: "No. Restoration AI follows your intake process and only captures what matters. Calls remain efficient while still collecting the information your team needs to avoid confusion during documentation.",
+    },
+    {
+        question:
+            "What does this actually improve if I already use DocuSketch?",
+        answer: "DocuSketch works best when your team has a clear understanding of the job before they begin documenting. Restoration AI ensures your crews are not starting with missing details or unclear scope, which leads to better documentation and fewer mistakes.",
+    },
+    {
+        question: "Can it handle after-hours calls and high call volume?",
+        answer: "Yes. Restoration AI operates 24 hours a day so no call goes unanswered and no job is missed, even during nights or storm events when demand is highest.",
+    },
+    {
+        question: "Is this built specifically for restoration companies?",
+        answer: "Yes. Restoration AI is designed specifically for restoration workflows and ensures your team gets the structured, relevant information needed to perform and document jobs correctly.",
+    },
+];
+---
+
+<section class="relative z-10 py-24 bg-white overflow-hidden">
+    {/* Faint grid background */}
+    <div
+        class="absolute inset-0 z-0 opacity-[0.15] pointer-events-none"
+        style={{
+            backgroundImage:
+                "linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            maskImage:
+                "radial-gradient(ellipse at center, white 20%, transparent 80%)",
+            WebkitMaskImage:
+                "radial-gradient(ellipse at center, white 20%, transparent 80%)",
+        }}
+    >
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
+        <div class="text-center mb-16">
+            <h2
+                class="text-[36px] md:text-[44px] font-extrabold text-[#0B1528] tracking-tight leading-tight"
+            >
+                Frequently Asked Questions<br />About DocuSketch Integration
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {
+                faqs.map((faq) => (
+                    <details class="group bg-white border border-slate-100 rounded-[20px] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-200 cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between font-bold text-[18px] text-slate-900 list-none">
+                            <span class="pr-6">{faq.question}</span>
+                            <span class="transition group-open:rotate-45 text-slate-300 text-3xl font-light shrink-0">
+                                +
+                            </span>
+                        </summary>
+                        <div class="pt-4 text-slate-500 font-medium leading-relaxed text-[16px]">
+                            {faq.answer}
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Smooth animation for details expanding */
+    details > div {
+        animation: slideDown 0.3s ease-out;
+    }
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
