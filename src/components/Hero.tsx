@@ -222,20 +222,23 @@ export default function Hero() {
             className="flex flex-col items-center gap-6 pt-4"
           >
             {/* BUTTONS — significantly bigger and more prominent like Outrank */}
-            <div className="flex flex-col sm:flex-row gap-5">
+            <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
               <a
                 href="#demo"
-                className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-2.5"
+                className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-2.5 w-full sm:w-[280px]"
               >
                 Book A Strategy Call
               </a>
-              <a
-                href="/signup"
-                className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[16px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-2xl shadow-blue-900/20 flex items-center justify-center gap-2"
-              >
-                Get Started for Free
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+              <div className="flex flex-col items-center w-full sm:w-[280px]">
+                <a
+                  href="/signup"
+                  className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[16px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-2xl shadow-blue-900/20 flex items-center justify-center gap-2 w-full"
+                >
+                  Get Started for Free
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <p className="text-xs text-slate-500 mt-2 text-center">Set up in 15 minutes, no credit card required</p>
+              </div>
             </div>
 
           </motion.div>

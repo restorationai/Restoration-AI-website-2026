@@ -38,16 +38,19 @@ const FeatureItem = ({ icon, title, desc }: { icon: React.ReactNode, title: stri
 
 {/* Reusable Buttons container */}
 const ActionButtons = () => (
-  <div className="flex flex-col sm:flex-row gap-4 pt-4">
-    <a
-      href="/signup"
-      className="inline-flex justify-center items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white rounded-lg text-[15px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all"
-    >
-      Get Started Today
-    </a>
+  <div className="flex flex-col sm:flex-row gap-4 pt-4 items-center sm:items-start">
+    <div className="flex flex-col items-center sm:items-start w-full sm:w-[240px]">
+      <a
+        href="/signup"
+        className="inline-flex justify-center items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white rounded-lg text-[15px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all w-full"
+      >
+        Get Started Today
+      </a>
+      <p className="text-[11px] text-slate-500 mt-2 text-center sm:text-left">Set up in 15 minutes, no credit card required</p>
+    </div>
     <a
       href="#demo"
-      className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border-2 border-slate-200 rounded-lg text-[15px] font-bold hover:bg-slate-50 transition-colors shadow-sm"
+      className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border-2 border-slate-200 rounded-lg text-[15px] font-bold hover:bg-slate-50 transition-colors shadow-sm w-full sm:w-[240px]"
     >
       Book a Strategy Call
     </a>
@@ -69,10 +72,10 @@ export default function FeaturesShowcase() {
           </h2>
         </div>
 
-        {/* SECTION 1: AI PHONE AGENT (REVERSED: Text Right, Image Left) */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-10 max-w-6xl mx-auto">
+        {/* SECTION 1: AI PHONE AGENT (STANDARD: Text Left, Image Right) */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 max-w-6xl mx-auto">
           {/* Text Content */}
-          <div className="flex-1 space-y-8 lg:pl-12">
+          <div className="flex-1 space-y-8 lg:pl-16 lg:pr-4">
             <div className="space-y-5">
               <span className="inline-block px-3 py-1 bg-blue-700/10 text-blue-700 text-[11px] uppercase font-bold tracking-widest rounded-md">
                 AI PHONE AGENT
@@ -112,68 +115,12 @@ export default function FeaturesShowcase() {
           </div>
 
           {/* Animation Content */}
-          <div className="flex-1 w-full flex justify-center lg:justify-start">
+          <div className="flex-1 w-full flex justify-center lg:justify-center lg:pr-16">
             <PhoneAnimation />
           </div>
         </div>
 
-        <hr className="border-slate-100 max-w-6xl mx-auto" />
 
-        {/* SECTION 2: RESTORATION CRM (STANDARD: Text Left, Image Right) */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 max-w-6xl mx-auto">
-          {/* Text Content */}
-          <div className="flex-1 space-y-8 lg:pr-12">
-            <div className="space-y-5">
-              <span className="inline-block px-3 py-1 bg-blue-700/10 text-blue-700 text-[11px] uppercase font-bold tracking-widest rounded-md">
-                RESTORATION CRM
-              </span>
-              <h2 className="text-4xl lg:text-[40px] font-bold text-slate-900 leading-[1.1] tracking-tight">
-                All Your Jobs in One<br />Place
-              </h2>
-              <p className="text-[16px] xl:text-[17px] font-semibold text-blue-700 max-w-lg leading-relaxed">
-                Track calls, jobs, and messages easily.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <FeatureItem 
-                icon={<Search size={18} className="text-blue-700" />}
-                title="Easy Job Tracking"
-                desc="See jobs start to finish."
-              />
-              <FeatureItem 
-                icon={<FolderOpen size={18} className="text-blue-700" />}
-                title="Notes in One Place"
-                desc="Photos, notes, and job info."
-              />
-              <FeatureItem 
-                icon={<History size={18} className="text-blue-700" />}
-                title="Every Call Logged"
-                desc="Never forget a detail."
-              />
-              <FeatureItem 
-                icon={<TrendingUp size={18} className="text-blue-700" />}
-                title="Simple Pipelines"
-                desc="Lead → Inspection → Paid."
-              />
-            </div>
-
-            <ActionButtons />
-          </div>
-
-          {/* Placeholder Image/Animation */}
-          <div className="flex-1 w-full flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[450px] scale-[1.05] lg:scale-[1.15] origin-center">
-              <div className="w-full aspect-[16/10] border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 flex flex-col items-center justify-center relative shadow-sm">
-                <div className="text-slate-400 font-bold tracking-widest uppercase text-sm">
-                  Dashboard Animation
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr className="border-slate-100 max-w-6xl mx-auto" />
 
         {/* SECTION 3: REVIEW TOOL (REVERSED: Text Right, Image Left) */}
         <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-10 max-w-6xl mx-auto">

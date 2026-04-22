@@ -90,38 +90,28 @@ export default function DashHomepage() {
         </div>
       </section>
 
-      {/* PAIN SECTION -> Added as a Split Section (Text Left, Image Right) */}
-      <section className="relative z-10 py-32 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-24">
-
-        {/* Left Text */}
-        <div className="flex-1 space-y-7 lg:max-w-[540px]">
-          <h2 className="text-[40px] lg:text-[48px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-            Dash Is Only as Good as the Information Going Into It
-          </h2>
-          <p className="text-[17px] text-slate-500 leading-[1.6] font-medium">
+      {/* PAIN SECTION */}
+      <section className="relative z-10 pt-24 pb-12 px-6 max-w-[800px] mx-auto text-center space-y-7">
+        <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+          Dash Is Only as Good as the Information Going Into It
+        </h2>
+        <div className="space-y-8 flex flex-col items-center">
+          <p className="text-[17px] text-slate-500 leading-[1.6] font-medium max-w-3xl">
             DASH works best when every job starts with the right information. But in reality, intake is often rushed or inconsistent, leaving gaps your team has to fix later. Restoration AI follows your exact intake process, asking only what matters and nothing that slows things down, so every job enters your system clean, complete, and ready to move forward.
           </p>
-        </div>
-
-        {/* Right Premium Placeholder */}
-        <div className="flex-1 w-full flex justify-center lg:justify-end">
-          <div className="w-full max-w-[440px] aspect-square rounded-[44px] border border-blue-400/30 bg-white/60 backdrop-blur-sm shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center justify-center relative p-8">
-            <div className="w-[52px] h-[52px] bg-blue-50 rounded-[18px] flex items-center justify-center mb-5">
-              <Database size={24} className="text-blue-400 stroke-[2.5]" />
-            </div>
-            <h4 className="text-[11px] font-bold tracking-[0.15em] text-blue-400 uppercase">
-              VISUAL COMING SOON
-            </h4>
-            <p className="text-[13px] text-slate-400 mt-2.5 text-center max-w-[200px] font-medium leading-[1.6]">
-              Premium visual animation being prepared here.
-            </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-5 pt-2">
+            <button className="px-10 py-4 lg:py-5 bg-white text-slate-900 rounded-full font-bold text-[18px] border-[1.5px] border-slate-200 shadow-[0_0_20px_rgba(0,0,0,0.04)] flex items-center justify-center hover:bg-slate-50 transition hover:scale-[1.02] transform">
+              Book a Strategy Call
+            </button>
+            <button className="group px-10 py-4 lg:py-5 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full font-bold text-[18px] shadow-[0_0_25px_rgba(28,91,255,0.35)] hover:from-blue-700 hover:to-blue-900 transition hover:scale-[1.02] transform flex items-center gap-2 justify-center">
+              Start for Free <ChevronRight size={20} className="text-white group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
-
       </section>
 
       {/* SECTION 4: YOUR INTAKE, FULLY AUTOMATED */}
-      <section className="relative z-10 pt-24 pb-20 px-6 max-w-[800px] mx-auto text-center space-y-7">
+      <section className="relative z-10 pt-8 pb-24 px-6 max-w-[800px] mx-auto text-center space-y-7">
         <h2 className="text-[40px] lg:text-[48px] font-extrabold text-slate-900 tracking-tight">
           Your Intake, Fully Automated
         </h2>
@@ -130,100 +120,36 @@ export default function DashHomepage() {
         </p>
       </section>
 
-      {/* SECTION 5: TIMELINE */}
-      <section className="relative z-10 pb-16 px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="relative">
-          {/* Central Line */}
-          <div className="absolute left-[50%] top-0 bottom-0 w-px bg-blue-200 -translate-x-[50%] hidden md:block z-0"></div>
+                  {/* SECTION 5: TIMELINE */}
+            <section className="relative z-10 pb-16 px-6 lg:px-12 max-w-7xl mx-auto">
+                <div className="relative">
+                    {/* Central Line */}
+                    <div className="absolute left-[50%] top-0 bottom-0 w-px bg-blue-200 -translate-x-[50%] hidden md:block z-0"></div>
 
-          {/* STEP 1 */}
-          <div className="flex flex-col md:flex-row items-stretch justify-between relative mb-24 z-10 gap-8 md:gap-0">
-            {/* Node */}
-            <div className="absolute left-[50%] top-[50%] w-[64px] h-[64px] rounded-full bg-[#061124] flex items-center justify-center -translate-x-[50%] -translate-y-[50%] border-[10px] border-white shadow-sm z-20 hidden md:flex">
-              <Phone size={28} className="text-blue-400" />
-            </div>
-
-            {/* Left Card */}
-            <div className="w-full md:w-[48%] md:pr-5">
-              <div className="bg-white p-14 lg:p-16 rounded-[32px] border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] h-full flex flex-col justify-center">
-                <h3 className="text-[28px] font-bold text-slate-900 leading-[1.2] mb-5">Every Call Answered and Handled the Right Way</h3>
-                <p className="text-[18px] text-slate-500 leading-relaxed font-medium">The moment the phone rings, Restoration AI answers instantly and handles the conversation the way a real restoration office would. It understands job urgency, damage type, and the context behind the call so nothing important is missed. Every caller is handled consistently, professionally, and with the level of detail your team expects, without relying on whoever happens to pick up the phone.</p>
-              </div>
-            </div>
-
-            {/* Right Placeholder */}
-            <div className="w-full md:w-[48%] md:pl-5">
-              <div className="w-full h-full min-h-[300px] rounded-[32px] border border-blue-400/30 bg-blue-50/40 shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center justify-center p-8 relative overflow-hidden">
-                <img src="/website-photos/step1.png" alt="Step 1" className="w-full h-full object-cover absolute inset-0 rounded-[32px] opacity-0 transition-opacity duration-300" onLoad={(e) => (e.target as HTMLImageElement).classList.remove('opacity-0')} />
-                <div className="relative z-10 flex flex-col items-center mix-blend-overlay opacity-50">
-                  <Zap size={24} className="text-blue-400 mb-4 stroke-[2]" />
-                  <h4 className="text-[11px] font-bold tracking-[0.15em] text-blue-400 uppercase">VISUAL MOCKUP</h4>
-                  <p className="text-[12px] text-slate-400 mt-2 font-medium">Step 1 integration visual coming soon.</p>
+                    {/* Cards */}
+                    <div className="flex flex-col gap-10 md:gap-14 relative z-10 w-full py-8">
+                        {/* STEP 1 */}
+                        <div className="bg-white p-10 lg:p-14 rounded-[32px] border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center text-center mx-auto max-w-4xl w-full relative z-10">
+                            <h3 className="text-[28px] lg:text-[32px] font-bold text-slate-900 leading-[1.2] mb-4">Every Call Answered and Handled the Right Way</h3>
+                            <p className="text-[17px] lg:text-[18px] text-slate-500 leading-relaxed font-medium">The moment the phone rings, Restoration AI answers instantly and handles the conversation the way a real restoration office would. It understands job urgency, damage type, and the context behind the call so nothing important is missed. Every caller is handled consistently, professionally, and with the level of detail your team expects, without relying on whoever happens to pick up the phone.</p>
+                        </div>
+                        
+                        {/* STEP 2 */}
+                        <div className="bg-white p-10 lg:p-14 rounded-[32px] border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center text-center mx-auto max-w-4xl w-full relative z-10">
+                            <h3 className="text-[28px] lg:text-[32px] font-bold text-slate-900 leading-[1.2] mb-4">Everything Captured While the Call Is Still Happening</h3>
+                            <p className="text-[17px] lg:text-[18px] text-slate-500 leading-relaxed font-medium">While the call is happening, every detail is captured and structured in real time based on your intake process. Customer information, job details, and key context are organized immediately so your team is not chasing missing pieces later. There is no back and forth, no manual note taking, and no need to revisit the call. Everything is already clean, complete, and ready to go.</p>
+                        </div>
+                        
+                        {/* STEP 3 */}
+                        <div className="bg-white p-10 lg:p-14 rounded-[32px] border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center text-center mx-auto max-w-4xl w-full relative z-10">
+                            <h3 className="text-[28px] lg:text-[32px] font-bold text-slate-900 leading-[1.2] mb-4">Logged Into DASH Exactly How Your Team Already Works</h3>
+                            <p className="text-[17px] lg:text-[18px] text-slate-500 leading-relaxed font-medium">By the time the call ends, everything is already structured in a way that fits your existing DASH workflow. Your team is not learning a new system or adapting to a new process. They are simply working with better information from the start. The only change is that jobs are cleaner, more complete, and easier to act on without extra administrative work.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
+            </section>
 
-          {/* STEP 2 */}
-          <div className="flex flex-col md:flex-row items-stretch justify-between relative mb-24 z-10 gap-8 md:gap-0">
-            {/* Node */}
-            <div className="absolute left-[50%] top-[50%] w-[64px] h-[64px] rounded-full bg-[#061124] flex items-center justify-center -translate-x-[50%] -translate-y-[50%] border-[10px] border-white shadow-sm z-20 hidden md:flex">
-              <Database size={28} className="text-blue-400" />
-            </div>
-
-            {/* Left Placeholder */}
-            <div className="w-full md:w-[48%] md:pr-5 order-last md:order-first">
-              <div className="w-full h-full min-h-[300px] rounded-[32px] border border-blue-400/30 bg-blue-50/40 shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center justify-center p-8 relative overflow-hidden">
-                <img src="/website-photos/step2.png" alt="Step 2" className="w-full h-full object-cover absolute inset-0 rounded-[32px] opacity-0 transition-opacity duration-300" onLoad={(e) => (e.target as HTMLImageElement).classList.remove('opacity-0')} />
-                <div className="relative z-10 flex flex-col items-center mix-blend-overlay opacity-50">
-                  <Zap size={24} className="text-blue-400 mb-4 stroke-[2]" />
-                  <h4 className="text-[11px] font-bold tracking-[0.15em] text-blue-400 uppercase">VISUAL MOCKUP</h4>
-                  <p className="text-[12px] text-slate-400 mt-2 font-medium">Step 2 integration visual coming soon.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Card */}
-            <div className="w-full md:w-[48%] md:pl-5">
-              <div className="bg-white p-14 lg:p-16 rounded-[32px] border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] h-full flex flex-col justify-center">
-                <h3 className="text-[28px] font-bold text-slate-900 leading-[1.2] mb-5">Everything Captured While the Call Is Still Happening</h3>
-                <p className="text-[18px] text-slate-500 leading-relaxed font-medium">While the call is happening, every detail is captured and structured in real time based on your intake process. Customer information, job details, and key context are organized immediately so your team is not chasing missing pieces later. There is no back and forth, no manual note taking, and no need to revisit the call. Everything is already clean, complete, and ready to go.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* STEP 3 */}
-          <div className="flex flex-col md:flex-row items-stretch justify-between relative z-10 gap-8 md:gap-0">
-            {/* Node */}
-            <div className="absolute left-[50%] top-[50%] w-[64px] h-[64px] rounded-full bg-[#061124] flex items-center justify-center -translate-x-[50%] -translate-y-[50%] border-[10px] border-white shadow-sm z-20 hidden md:flex text-white">
-              <CheckCircle2 size={30} strokeWidth={2.5} />
-            </div>
-
-            {/* Left Card */}
-            <div className="w-full md:w-[48%] md:pr-5">
-              <div className="bg-white p-14 lg:p-16 rounded-[32px] border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] h-full flex flex-col justify-center">
-                <h3 className="text-[28px] font-bold text-slate-900 leading-[1.2] mb-5">Logged Into DASH Exactly How Your Team Already Works</h3>
-                <p className="text-[18px] text-slate-500 leading-relaxed font-medium">By the time the call ends, everything is already structured in a way that fits your existing DASH workflow. Your team is not learning a new system or adapting to a new process. They are simply working with better information from the start. The only change is that jobs are cleaner, more complete, and easier to act on without extra administrative work.</p>
-              </div>
-            </div>
-
-            {/* Right Placeholder */}
-            <div className="w-full md:w-[48%] md:pl-5">
-              <div className="w-full h-full min-h-[300px] rounded-[32px] border border-blue-400/30 bg-blue-50/40 shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col items-center justify-center p-8 relative overflow-hidden">
-                <img src="/website-photos/step3.png" alt="Step 3" className="w-full h-full object-cover absolute inset-0 rounded-[32px] opacity-0 transition-opacity duration-300" onLoad={(e) => (e.target as HTMLImageElement).classList.remove('opacity-0')} />
-                <div className="relative z-10 flex flex-col items-center mix-blend-overlay opacity-50">
-                  <Zap size={24} className="text-blue-400 mb-4 stroke-[2]" />
-                  <h4 className="text-[11px] font-bold tracking-[0.15em] text-blue-400 uppercase">VISUAL MOCKUP</h4>
-                  <p className="text-[12px] text-slate-400 mt-2 font-medium">Step 3 integration visual coming soon.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 6: POWERFUL FEATURES ARROWS */}
+            {/* SECTION 6: POWERFUL FEATURES ARROWS */}
       <section className="relative z-10 max-w-5xl mx-auto flex justify-center items-center gap-10 lg:gap-16 pt-8 pb-10">
         <ArrowDown size={36} className="text-slate-400/80 stroke-[1.5]" />
         <h2 className="text-[38px] lg:text-[44px] font-extrabold text-[#111827] tracking-tight">Powerful Features</h2>

@@ -29,20 +29,23 @@ export default function PremiumFeatures() {
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
               Book a call to see how this fits into your business or sign up today completely free
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start">
               <a 
                 href="#demo" 
-                className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow"
+                className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px]"
               >
                 Book a Strategy Call
               </a>
-              <a 
-                href="/signup" 
-                className="inline-flex justify-center items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl text-[14px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
-              >
-                Start for Free
-                <ArrowRight size={16} strokeWidth={2.5} />
-              </a>
+              <div className="flex flex-col items-center w-full sm:w-[240px]">
+                <a 
+                  href="/signup" 
+                  className="inline-flex justify-center items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl text-[14px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5 w-full"
+                >
+                  Start for Free
+                  <ArrowRight size={16} strokeWidth={2.5} />
+                </a>
+                <p className="text-[11px] text-slate-500 mt-2 text-center">Set up in 15 minutes, no credit card required</p>
+              </div>
             </div>
           </div>
 
@@ -255,9 +258,9 @@ export default function PremiumFeatures() {
 
                {/* Text Content */}
                <div className="relative z-10 flex-1 flex flex-col">
-                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Emergency Call Intelligence</h3>
+                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Pre & Post-Job Follow-Ups</h3>
                  <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                   Handle high stress calls the right way with an AI trained on real emergency scenarios and thousands of past interactions. It can recognize panic, respond calmly, and adjust its tone based on the situation so every caller feels understood and taken care of.
+                   Stay ahead of every job with automated pre and post-job follow-ups. Before arrival, it gathers key details like gate codes, pets, and special instructions so your team shows up fully prepared. After the job, it follows up to request reviews, helping you generate more five-star ratings without extra effort.
                  </p>
                </div>
              </div>
