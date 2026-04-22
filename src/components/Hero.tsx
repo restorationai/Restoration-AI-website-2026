@@ -1,0 +1,271 @@
+"use client";
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Bot, PhoneCall, Star, Layout, Briefcase, CheckCircle2, TrendingUp, ShieldAlert } from 'lucide-react';
+import BrowserVideo from './BrowserVideo';
+import LogoMarquee from './LogoMarquee';
+
+{/* Floating badge cards — mix of small text badges and larger image cards like Outrank */}
+const badges = [
+  // LEFT SIDE - mathematically anchored off the absolute center pushing leftward
+  {
+    id: 1,
+    type: 'custom_pill' as const,
+    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Restoration Calls<br/>Handled Right</span>,
+    icon: <PhoneCall className="text-blue-700" size={18} />,
+    pos: "top-[150px] right-[50%] mr-[340px] xl:mr-[420px]",
+    rotate: "12deg",
+    width: "w-[220px]"
+  },
+  {
+    id: 2,
+    type: 'custom' as const,
+    label: (
+      <div className="flex flex-col items-center gap-0.5">
+        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">$26M+</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">in Secured Jobs</span>
+      </div>
+    ),
+    icon: <TrendingUp className="text-blue-700" size={18} />,
+    pos: "top-[350px] right-[50%] mr-[390px] xl:mr-[460px]",
+    rotate: "0deg",
+    width: "w-[160px]"
+  },
+  {
+    id: 3,
+    type: 'custom_pill' as const,
+    label: (
+      <div className="flex items-center gap-2">
+        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">24/7</span>
+        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest leading-tight text-left">Dispatch</span>
+      </div>
+    ),
+    icon: <Bot className="text-blue-700" size={18} />,
+    pos: "top-[600px] right-[50%] mr-[320px] xl:mr-[390px]",
+    rotate: "-12deg",
+    width: "w-[220px]"
+  },
+  // RIGHT SIDE - mathematically anchored off the absolute center pushing rightward
+  {
+    id: 4,
+    type: 'custom_pill' as const,
+    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Proven in<br/>Real Emergencies</span>,
+    icon: <ShieldAlert className="text-blue-700" size={18} />,
+    pos: "top-[150px] left-[50%] ml-[340px] xl:ml-[420px]",
+    rotate: "-12deg",
+    width: "w-[220px]"
+  },
+  {
+    id: 5,
+    type: 'custom' as const,
+    label: "Used by Top Restoration Teams",
+    icon: <CheckCircle2 className="text-blue-700" size={18} />,
+    pos: "top-[350px] left-[50%] ml-[390px] xl:ml-[460px]",
+    rotate: "0deg",
+    width: "w-[160px]"
+  },
+  {
+    id: 6,
+    type: 'custom_pill' as const,
+    label: (
+      <div className="flex items-center gap-1.5">
+        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">0</span>
+        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest leading-tight text-left">Missed<br/>Calls</span>
+      </div>
+    ),
+    icon: <PhoneCall className="text-[#0ea5e9]" size={18} />,
+    pos: "top-[600px] left-[50%] ml-[320px] xl:ml-[390px]",
+    rotate: "12deg",
+    width: "w-[220px]"
+  },
+];
+
+export default function Hero() {
+  return (
+    <section className="relative pt-[290px] pb-[110px] overflow-hidden flex flex-col items-center">
+      {/* EXPERT GRID BACKGROUND — massive squares fading smoothly on left, right, and bottom */}
+      <div
+        className="absolute inset-0 pointer-events-none -z-10"
+        style={{
+          backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)',
+          backgroundSize: '100px 100px',
+          backgroundPosition: 'center top',
+          maskImage: 'radial-gradient(ellipse at 50% 30%, black 10%, rgba(0,0,0,0.5) 60%, transparent 95%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at 50% 30%, black 10%, rgba(0,0,0,0.5) 60%, transparent 95%)',
+          opacity: 0.65
+        }}
+      />
+
+      {/* EDGE GLOWS — subtle blue glows hugging the sides */}
+      <div className="absolute top-[5%] left-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 -translate-x-1/2" />
+      <div className="absolute top-[5%] right-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 translate-x-1/2" />
+      <div className="absolute top-[270px] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none -z-10" />
+
+      {/* TOP SOCIAL PROOF */}
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="absolute top-[125px] left-1/2 -translate-x-1/2 z-30"
+      >
+        <div className="flex items-center gap-2.5">
+          <div className="flex -space-x-2 bg-white/20 p-1 rounded-full backdrop-blur-sm border border-slate-200/50">
+            {[
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b6653d829c73b24abf7d.png",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0764.webp",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359a7dcb4cff0b96d01.png",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b8651140d.jpg",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce839.webp"
+            ].map((src, i) => (
+              <div
+                key={i}
+                className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm"
+              >
+                <img src={src} alt={`Company Logo ${i + 1}`} className="w-full h-full object-contain" />
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
+            ))}
+          </div>
+          <span className="text-[14px] text-slate-600 font-semibold ml-1 whitespace-nowrap">
+            Trusted by <span className="font-bold text-slate-800 tracking-tight">Restoration Companies</span> Nationwide
+          </span>
+        </div>
+      </motion.div>
+
+      {/* FLOATING CARDS — positioned relative to the full-width section */}
+      {badges.map((badge) => (
+        <motion.div
+          key={badge.id}
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 + badge.id * 0.1 }}
+          className={`absolute ${badge.pos} hidden lg:block z-10 ${badge.width}`}
+          style={{ rotate: badge.rotate }}
+        >
+          {badge.type === 'custom' ? (
+            <div className="bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40 p-4 flex flex-col items-center justify-center gap-3 relative overflow-hidden h-[115px] w-full">
+              {/* Soft Lighting / Glow */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/70 blur-2xl pointer-events-none rounded-full" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#0ea5e9]/5 blur-2xl pointer-events-none rounded-full" />
+              
+              <div className="relative z-10 flex flex-col items-center gap-2.5 w-full">
+                <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shadow-sm border border-blue-100/50 shrink-0">
+                  {badge.icon}
+                </div>
+                <div className="text-[12px] font-bold text-slate-700 text-center leading-snug max-w-[130px]">
+                  {badge.label}
+                </div>
+              </div>
+            </div>
+          ) : badge.type === 'custom_pill' ? (
+            <div className="bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40 px-4 py-2 flex flex-row items-center gap-2.5 relative overflow-hidden h-[65px] w-full">
+              {/* Soft Lighting / Glow */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/70 blur-xl pointer-events-none rounded-full" />
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-blue-700/5 blur-xl pointer-events-none rounded-full" />
+              
+              <div className="relative z-10 w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shadow-sm border border-blue-200/50 shrink-0">
+                {badge.icon}
+              </div>
+              <div className="relative z-10 flex items-center h-full">
+                {badge.label}
+              </div>
+            </div>
+          ) : badge.type === 'image' ? (
+            <div className="bg-white border border-slate-200/70 rounded-xl shadow-lg shadow-slate-200/40 overflow-hidden">
+              <img src={badge.image} alt="" className="w-full h-auto" />
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40">
+              <div className="w-6 h-6 rounded-md bg-slate-50 flex items-center justify-center flex-shrink-0">
+                {badge.icon}
+              </div>
+              <span className="text-[13px] font-semibold text-slate-700 whitespace-nowrap">{badge.label}</span>
+            </div>
+          )}
+        </motion.div>
+      ))}
+
+      <div className="container-pill relative">
+        {/* HERO CONTENT */}
+        <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative"
+          >
+            Never Miss a Call
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              Never Lose a Job
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[600px] mx-auto px-4"
+          >
+            24/7 AI receptionist built for restoration. Answers every call, qualifies every lead, dispatches crews in minutes.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col items-center gap-6 pt-4"
+          >
+            {/* BUTTONS — significantly bigger and more prominent like Outrank */}
+            <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
+              <a
+                href="#demo"
+                className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-2.5 w-full sm:w-[280px]"
+              >
+                Book A Strategy Call
+              </a>
+              <div className="flex flex-col items-center w-full sm:w-[280px]">
+                <a
+                  href="/signup"
+                  className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[16px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-2xl shadow-blue-900/20 flex items-center justify-center gap-2 w-full"
+                >
+                  Get Started for Free
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <p className="text-xs text-slate-500 mt-2 text-center">Set up in 15 minutes, no credit card required</p>
+              </div>
+            </div>
+
+          </motion.div>
+        </div>
+
+        {/* TRUSTED LOGOS */}
+        <div className="mt-24 mb-8">
+          <div className="flex flex-col items-center">
+            <p className="text-center text-[16px] md:text-[20px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-[-10px] z-10 relative">
+              Trusted by Top Franchises
+            </p>
+          </div>
+          <LogoMarquee />
+        </div>
+
+        {/* BROWSER VIDEO */}
+        <motion.div
+           initial={{ opacity: 0, scale: 0.95 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ delay: 0.5, duration: 0.8 }}
+           className="relative max-w-5xl mx-auto w-full z-10 mt-16"
+        >
+          {/* Prominent Video Background Glow */}
+          <div className="absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
+          <BrowserVideo />
+        </motion.div>
+      </div>
+    </section>
+  );
+}

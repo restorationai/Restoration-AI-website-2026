@@ -1,0 +1,81 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import EncircleHomepage from "../../components/integrations/EncircleHomepage";
+import EncircleFAQ from "../../components/integrations/EncircleFAQ.astro";
+import EncircleCTA from "../../components/integrations/EncircleCTA.astro";
+
+const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Automated Restoration Dispatch for Encircle",
+    serviceType: "AI Receptionist & Automation",
+    provider: {
+        "@type": "SoftwareApplication",
+        name: "Restoration AI",
+    },
+    description:
+        "Automated 24/7 call answering, lead qualification, and emergency crew dispatch directly integrated into Encircle for restoration contractors.",
+    areaServed: "Worldwide",
+};
+
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "Does Restoration AI integrate directly with Encircle?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Restoration AI is designed to work seamlessly with your Encircle workflow by capturing calls, structuring job details, and delivering organized information that fits your process. The goal is to ensure every job starts with complete and accurate data so your team can take action immediately without fixing intake issues first.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Do I have to change how my team uses Encircle?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Your team continues using Encircle exactly the way they already do today. Restoration AI does not replace your system or force a new process. It improves what happens before the job reaches your system so your team receives cleaner, more consistent information without changing how they work.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Will this slow down our intake calls?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Restoration AI is configured around your intake process and only asks the questions that matter. Calls remain smooth and efficient while still capturing the information your team needs. The goal is to improve quality without creating friction.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What does this actually improve if I already use Encircle?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Encircle works best when jobs start with complete information. In many cases, intake is inconsistent, which leads to missing details and extra work later. Restoration AI ensures every job starts clean and structured so your team can move faster without fixing or chasing information.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can it handle after-hours calls and high call volume?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Restoration AI operates 24 hours a day, including nights, weekends, and storm events. Every call is answered immediately, preventing missed opportunities and allowing your business to capture more jobs during peak demand.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is this built specifically for restoration companies?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Restoration AI is built specifically for restoration workflows and understands the urgency, job types, and intake requirements unique to restoration businesses.",
+            },
+        },
+    ],
+};
+---
+
+<MainLayout jsonLd={[serviceJsonLd, faqJsonLd]}>
+    <EncircleHomepage client:load />
+    <EncircleFAQ />
+    <EncircleCTA />
+</MainLayout>

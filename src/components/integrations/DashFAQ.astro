@@ -1,0 +1,81 @@
+---
+// DashFAQ.astro
+const faqs = [
+  {
+    question: "Does Restoration AI integrate directly with DASH?",
+    answer: "Restoration AI is designed to work seamlessly alongside your DASH workflow by capturing calls, structuring the job details, and delivering everything your team needs in a clean, organized format. The goal is not to change how your system works, but to make sure every job enters DASH with complete and accurate information so your team can act immediately without fixing intake issues first."
+  },
+  {
+    question: "Do I have to change how my team uses DASH?",
+    answer: "No. Your team continues using DASH exactly the way they already do today. Restoration AI does not replace your system or force a new process. Instead, it improves what happens before the job reaches DASH by making sure every call is handled properly and every job starts with the right information."
+  },
+  {
+    question: "Will this make our intake calls longer or slow things down?",
+    answer: "No. Restoration AI follows your exact intake process and only asks what matters. You control what information is collected, and the system captures it efficiently without dragging out the conversation. The goal is to keep calls fast and smooth while still making sure nothing important is missed."
+  },
+  {
+    question: "What does this actually improve if I already use DASH?",
+    answer: "DASH works best when jobs are created with complete and accurate information. In many cases, intake is rushed or inconsistent, which leads to missing details and time spent fixing jobs later. Restoration AI ensures every job starts clean and complete so your team can move faster without unnecessary back and forth."
+  },
+  {
+    question: "Can Restoration AI handle after-hours calls and high call volume?",
+    answer: "Yes. Restoration AI operates 24 hours a day, including nights, weekends, and storm events. Every call is answered immediately, which means no missed opportunities and no reliance on voicemail or delayed responses during high-demand periods."
+  },
+  {
+    question: "Is Restoration AI built specifically for restoration companies?",
+    answer: "Yes. Restoration AI is designed specifically for restoration workflows. It understands the urgency, job types, and intake requirements of restoration businesses so your team receives structured, relevant information that is actually useful from the start."
+  },
+];
+---
+
+<section class="relative z-10 py-24 bg-white overflow-hidden">
+  {/* Faint grid background */}
+  <div 
+    class="absolute inset-0 z-0 opacity-[0.15] pointer-events-none"
+    style={{
+      backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)',
+      backgroundSize: '40px 40px',
+      maskImage: 'radial-gradient(ellipse at center, white 20%, transparent 80%)',
+      WebkitMaskImage: 'radial-gradient(ellipse at center, white 20%, transparent 80%)'
+    }}
+  ></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16">
+      <h2 class="text-[36px] md:text-[44px] font-extrabold text-[#0B1528] tracking-tight leading-tight">
+        Frequently Asked Questions<br />About DASH Integration
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {faqs.map((faq) => (
+        <details class="group bg-white border border-slate-100 rounded-[20px] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-200 cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between font-bold text-[18px] text-slate-900 list-none">
+            <span class="pr-6">{faq.question}</span>
+            <span class="transition group-open:rotate-45 text-slate-300 text-3xl font-light shrink-0">+</span>
+          </summary>
+          <div class="pt-4 text-slate-500 font-medium leading-relaxed text-[16px]">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Smooth animation for details expanding */
+  details > div {
+    animation: slideDown 0.3s ease-out;
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

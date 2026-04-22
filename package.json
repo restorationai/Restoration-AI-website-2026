@@ -1,0 +1,28 @@
+{
+  "name": "restoration-ai-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^5.0.3",
+    "@astrojs/sitemap": "^3.2.1",
+    "@portabletext/to-html": "^2.0.13",
+    "@sanity/astro": "^3.2.0",
+    "@sanity/client": "^7.14.1",
+    "@sanity/image-url": "^1.1.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "astro": "^5.1.5",
+    "framer-motion": "^12.4.7",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^3.65.1",
+    "styled-components": "^6.1.13",
+    "tailwindcss": "^4.0.0"
+  }
+}

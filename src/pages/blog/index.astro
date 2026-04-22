@@ -1,0 +1,71 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { sanityClient, POSTS_QUERY, type Post } from '../../sanity/client';
+
+const posts = await sanityClient.fetch<Post[]>(POSTS_QUERY);
+
+const blogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Restoration AI Blog',
+  description:
+    'AEO-optimized technical articles on restoration workflows, AI dispatching, and emergency crew deployment.',
+  url: 'https://restorationai.io/blog',
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.seoTitle ?? p.title,
+    description: p.seoDescription,
+    datePublished: p.publishedAt,
+    url: `https://restorationai.io/blog/${p.slug.current}`,
+  })),
+};
+---
+
+<MainLayout
+  title="Blog | Restoration AI"
+  description="Technical guides on AI dispatch, IICRC water loss categories, and automated restoration workflows."
+  jsonLd={blogJsonLd}
+>
+  <section class="py-32 bg-white">
+    <div class="container-pill">
+      <div class="max-w-3xl mb-16">
+        <p class="text-sm font-semibold text-[#0ea5e9] uppercase tracking-[0.2em] mb-4">Blog</p>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+          Restoration workflows, decoded.
+        </h1>
+        <p class="text-lg text-slate-500">
+          Deep dives on AI dispatch logic, IICRC categories, and how restoration contractors run 24/7 emergency ops.
+        </p>
+      </div>
+
+      {posts.length === 0 ? (
+        <p class="text-slate-400">No posts yet. Add one in the <a href="/studio" class="text-[#0ea5e9] underline">Sanity Studio</a>.</p>
+      ) : (
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <a
+              href={`/blog/${post.slug.current}`}
+              class="group block p-6 bg-white border border-slate-200 rounded-2xl hover:border-[#0ea5e9] transition-colors"
+            >
+              <h2 class="text-xl font-semibold text-slate-900 mb-2 group-hover:text-[#0ea5e9]">
+                {post.title}
+              </h2>
+              {post.seoDescription && (
+                <p class="text-sm text-slate-500 mb-4 line-clamp-3">{post.seoDescription}</p>
+              )}
+              {post.publishedAt && (
+                <p class="text-xs text-slate-400">
+                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </p>
+              )}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</MainLayout>

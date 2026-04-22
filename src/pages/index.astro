@@ -1,0 +1,77 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero';
+import StatsBanner from '../components/StatsBanner';
+import CallRecordings from '../components/CallRecordings';
+import BuiltForRestoration from '../components/BuiltForRestoration';
+import Pricing from '../components/Pricing';
+import FeaturesShowcase from '../components/FeaturesShowcase';
+import PremiumFeatures from '../components/PremiumFeatures';
+import HowItWorks from '../components/HowItWorks';
+import Integrations from '../components/Integrations';
+import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
+import FinalCTA from '../components/FinalCTA';
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Restoration AI - Automated Receptionist & Dispatch',
+  serviceType: 'AI Receptionist & Automation',
+  provider: {
+    '@type': 'SoftwareApplication',
+    name: 'Restoration AI',
+  },
+  description:
+    'AI receptionist and automated dispatch software tailored specifically for the restoration industry. Never miss a call. Never lose a job.',
+  areaServed: 'Worldwide',
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I keep my current phone number?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, you have two simple options. You can instantly generate a new local or toll-free number within our dashboard, or you can simply forward your existing business number directly to our AI routing system. There is no downtime.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does it integrate with Xactimate / JobNimbus?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. Restoration AI features native integrations via standard webhooks that sync seamlessly with Xactimate, JobNimbus, Albiware, and Workiz. New Estimates trigger direct entry into your CRM as soon as the call finishes.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does it handle Spanish-speaking callers?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The AI receptionist speaks in over 42 different languages with native fluency. It instantly detects the caller\'s spoken language and autonomously pivots to converse natively, without any prompt needed from the caller.',
+      },
+    },
+  ],
+};
+---
+
+<MainLayout jsonLd={[serviceJsonLd, faqJsonLd]}>
+  <Hero client:load />
+  <StatsBanner client:load />
+  <div class="relative w-full bg-[#fafbfe] overflow-x-clip">
+    <Integrations client:load />
+    <BuiltForRestoration client:load />
+    <CallRecordings client:load />
+    <HowItWorks client:load />
+    <FeaturesShowcase client:load />
+    <PremiumFeatures client:load />
+    <Testimonials client:load />
+    <FAQ client:load />
+    <Pricing client:load />
+    <FinalCTA client:load />
+  </div>
+</MainLayout>
