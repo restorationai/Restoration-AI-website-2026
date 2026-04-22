@@ -9,7 +9,8 @@ const mockRecordings = [
     badge: "EMERGENCY NIGHT DISPATCH",
     title: "Water Damage Mainline Pipe Burst",
     duration: "0:01",
-    progressClass: "w-[15%]"
+    progressClass: "w-[15%]",
+    audioSrc: "/recordings/ServeProSacremento.mp3"
   },
   {
     company: "DRY1OUT",
@@ -17,7 +18,8 @@ const mockRecordings = [
     badge: "PRE-QUALIFIED COMMERCIAL LEAD",
     title: "Heavy Mold Remediation Quote",
     duration: "0:02",
-    progressClass: "w-[20%]"
+    progressClass: "w-[20%]",
+    audioSrc: "/recordings/Dry1out.mp3"
   },
   {
     company: "SERVPRO",
@@ -25,7 +27,8 @@ const mockRecordings = [
     badge: "URGENT RESIDENTIAL INQUIRY",
     title: "Post-Fire Structural Cleanup",
     duration: "6:12",
-    progressClass: "w-[80%]"
+    progressClass: "w-[80%]",
+    audioSrc: "/recordings/ServeProTeamRay.mp3"
   },
   {
     company: "AMERICLEAN",
@@ -33,7 +36,8 @@ const mockRecordings = [
     badge: "OFFICE COMPLEX INTAKE",
     title: "Category 3 Flood Loss",
     duration: "7:05",
-    progressClass: "w-[65%]"
+    progressClass: "w-[65%]",
+    audioSrc: "/recordings/americlean.mp3"
   }
 ];
 
@@ -125,24 +129,8 @@ export default function CallRecordings() {
                     <div className="border-t-[2px] border-dotted border-slate-300 w-full mb-5" />
 
                   {/* Interactive Audio Player Graphic */}
-                  <div className="flex items-center gap-4 mb-2 w-full cursor-not-allowed opacity-90 group transition-all">
-                    
-                    {/* Play Button */}
-                    <div className="w-10 h-10 flex-shrink-0 bg-[#0B152A] rounded-xl flex items-center justify-center shadow-sm transform group-hover:scale-[1.05] transition-transform">
-                      <svg className="w-4 h-4 text-white ml-0.5 fill-white" viewBox="0 0 24 24">
-                        <path d="M5 3l14 9-14 9V3z"/>
-                      </svg>
-                    </div>
-                    
-                    {/* Track Bar */}
-                    <div className="flex-1 flex items-center gap-3">
-                      <span className="text-[10px] font-mono text-slate-400 font-medium tracking-wide">0:00</span>
-                      <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden relative">
-                        <div className={`absolute top-0 left-0 bottom-0 bg-blue-500 rounded-full ${rec.progressClass}`}></div>
-                      </div>
-                      <span className="text-[10px] font-mono text-slate-400 font-medium tracking-wide">{rec.duration}</span>
-                    </div>
-
+                  <div className="w-full flex items-center justify-center">
+                    <audio controls src={rec.audioSrc} preload="metadata" className="w-full h-10 outline-none" />
                   </div>
                   </div>
 
