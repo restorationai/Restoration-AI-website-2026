@@ -1,4 +1,5 @@
 ---
+import BookACall from "../../components/BookACall";
 import MainLayout from "../../layouts/MainLayout.astro";
 import ServiceTitanHomepage from "../../components/integrations/ServiceTitanHomepage";
 import ServiceTitanFAQ from "../../components/integrations/ServiceTitanFAQ.astro";
@@ -78,4 +79,5 @@ const faqJsonLd = {
     <ServiceTitanHomepage client:load />
     <ServiceTitanFAQ />
     <ServiceTitanCTA />
+    <BookACall client:load />
 </MainLayout>

@@ -10,7 +10,7 @@ export default function HowItWorks() {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 lg:px-8 max-w-[1500px] relative z-10 w-full">
+      <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10 w-full">
         
         {/* TOP ROW: Split Layout */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-12 mb-10 lg:mb-12">
@@ -22,8 +22,8 @@ export default function HowItWorks() {
               HOW TO GET STARTED
             </span>
             <h2 className="text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-              From Setup to Booked Jobs <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">in 5 Minutes</span>
+              From Setup to Booked Jobs{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">in 5 Minutes</span>
             </h2>
           </div>
 
@@ -34,7 +34,7 @@ export default function HowItWorks() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start">
               <a 
-                href="#demo" 
+                href="/#calendar-section" 
                 className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px]"
               >
                 Book a Strategy Call

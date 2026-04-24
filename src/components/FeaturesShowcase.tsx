@@ -49,7 +49,7 @@ const ActionButtons = () => (
       <p className="text-[11px] text-slate-500 mt-2 text-center sm:text-left">Set up in 15 minutes, no credit card required</p>
     </div>
     <a
-      href="#demo"
+      href="/#calendar-section"
       className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border-2 border-slate-200 rounded-lg text-[15px] font-bold hover:bg-slate-50 transition-colors shadow-sm w-full sm:w-[240px]"
     >
       Book a Strategy Call
@@ -63,12 +63,12 @@ export default function FeaturesShowcase() {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       
-      <div className="container mx-auto px-6 lg:px-12 space-y-10 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 max-w-6xl space-y-10 relative z-10 w-full">
 
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto relative -top-6 flex flex-col items-center shrink-0">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-            Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 drop-shadow-sm">Complete Business</span> Setup
+            Everything That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">Captures More Jobs</span> Without More Work
           </h2>
         </div>
 

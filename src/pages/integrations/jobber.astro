@@ -1,8 +1,10 @@
 ---
+import BookACall from "../../components/BookACall";
 import MainLayout from "../../layouts/MainLayout.astro";
 import JobberHomepage from "../../components/integrations/JobberHomepage";
 ---
 
 <MainLayout>
     <JobberHomepage client:load />
+    <BookACall client:load />
 </MainLayout>

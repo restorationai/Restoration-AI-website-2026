@@ -98,25 +98,25 @@ export default function JobNimbusHomepage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 justify-items-center">
 
                         <div className="flex flex-col items-center text-center space-y-1">
-                            <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">2 AM</h3>
+                            <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">2 AM</h3>
                             <p className="text-white font-bold text-[16px] tracking-wide mt-1">Peak Call Time</p>
                             <p className="text-slate-400 text-[14px] mt-2 font-medium max-w-[200px]">Most emergency calls happen outside business hours</p>
                         </div>
 
                         <div className="flex flex-col items-center text-center space-y-1">
-                            <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">5 min</h3>
+                            <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">5 min</h3>
                             <p className="text-white font-bold text-[16px] tracking-wide mt-1">Response Window</p>
                             <p className="text-slate-400 text-[14px] mt-2 font-medium max-w-[200px]">Time before the homeowner calls someone else</p>
                         </div>
 
                         <div className="flex flex-col items-center text-center space-y-1">
-                            <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">Zero</h3>
+                            <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">Zero</h3>
                             <p className="text-white font-bold text-[16px] tracking-wide mt-1">Manual Entry</p>
                             <p className="text-slate-400 text-[14px] mt-2 font-medium max-w-[200px]">No typing or intake work for your office</p>
                         </div>
 
                         <div className="flex flex-col items-center text-center space-y-1">
-                            <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">Easy</h3>
+                            <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">Easy</h3>
                             <p className="text-white font-bold text-[16px] tracking-wide mt-1">Setup Process</p>
                             <p className="text-slate-400 text-[14px] mt-2 font-medium max-w-[200px]">Live quickly with no disruption</p>
                         </div>
@@ -180,9 +180,9 @@ export default function JobNimbusHomepage() {
                             <h3 className="text-[28px] lg:text-[32px] font-bold text-slate-900 leading-[1.2] mb-4">Your Team Moves Faster</h3>
                             <p className="text-[17px] lg:text-[18px] text-slate-500 leading-relaxed font-medium">Your team gets what they need immediately so they can respond faster and win more jobs.</p>
                         </div>
-                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
             {/* SECTION 6: POWERFUL FEATURES ARROWS */}
             <section className="relative z-10 max-w-5xl mx-auto flex justify-center items-center gap-10 lg:gap-16 pt-8 pb-10">
@@ -197,7 +197,7 @@ export default function JobNimbusHomepage() {
 
                     {/* Feature 1 */}
                     <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-                        <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
                             <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
                         </div>
                         <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Built for Restoration Calls</h3>
@@ -206,7 +206,7 @@ export default function JobNimbusHomepage() {
 
                     {/* Feature 2 */}
                     <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-                        <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
                             <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
                         </div>
                         <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Cleaner Job Intake</h3>
@@ -215,7 +215,7 @@ export default function JobNimbusHomepage() {
 
                     {/* Feature 3 */}
                     <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-                        <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
                             <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
                         </div>
                         <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Works Alongside JobNimbus</h3>
@@ -224,7 +224,7 @@ export default function JobNimbusHomepage() {
 
                     {/* Feature 4 */}
                     <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-                        <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
                             <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
                         </div>
                         <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Faster Team Handoffs</h3>
@@ -233,7 +233,7 @@ export default function JobNimbusHomepage() {
 
                     {/* Feature 5 */}
                     <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-                        <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
                             <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
                         </div>
                         <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Better Lead Qualification</h3>
@@ -242,7 +242,7 @@ export default function JobNimbusHomepage() {
 
                     {/* Feature 6 */}
                     <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-                        <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
                             <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
                         </div>
                         <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Consistent Every Time</h3>

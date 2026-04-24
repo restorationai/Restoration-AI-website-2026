@@ -1,4 +1,5 @@
 ---
+import BookACall from "../../components/BookACall";
 import MainLayout from "../../layouts/MainLayout.astro";
 import EncircleHomepage from "../../components/integrations/EncircleHomepage";
 import EncircleFAQ from "../../components/integrations/EncircleFAQ.astro";
@@ -78,4 +79,5 @@ const faqJsonLd = {
     <EncircleHomepage client:load />
     <EncircleFAQ />
     <EncircleCTA />
+    <BookACall client:load />
 </MainLayout>

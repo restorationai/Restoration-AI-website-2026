@@ -8,7 +8,7 @@ export default function PremiumFeatures() {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 lg:px-8 max-w-[1500px] relative z-10 w-full">
+      <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10 w-full">
         
         {/* TOP ROW: Split Layout */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-12 mb-10 lg:mb-12">
@@ -20,18 +20,18 @@ export default function PremiumFeatures() {
               POWERFUL FEATURES
             </span>
             <h2 className="text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-              The Features That Set <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">Restoration AI</span> Apart
+              Everything That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">Captures More Jobs</span> Without More Work
             </h2>
           </div>
 
           {/* Right Column */}
-          <div className="flex-1 w-full lg:max-w-md xl:max-w-lg lg:pb-2">
+          <div className="flex-1 w-full lg:max-w-md xl:max-w-lg lg:translate-y-3">
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
-              Book a call to see how this fits into your business or sign up today completely free
+              More jobs, less chaos, and a system that runs everything for you behind the scenes.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start">
               <a 
-                href="#demo" 
+                href="/#calendar-section" 
                 className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px]"
               >
                 Book a Strategy Call
@@ -76,9 +76,9 @@ export default function PremiumFeatures() {
 
               {/* Text Content */}
               <div className="relative z-10 flex-1 flex flex-col">
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">LSA Rapid Disqualification</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-normal">Protect Your Budget From the Wrong Calls</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Stop wasting thousands on bad LSA leads that were never going to turn into jobs. Your AI hangs up before you get charged, then calls them back.
+                  If you are already running paid ads, not every call should cost you money. Restoration AI qualifies calls early so you avoid wasted spend while still giving real jobs a chance to move forward.
                 </p>
               </div>
             </div>
@@ -106,9 +106,9 @@ export default function PremiumFeatures() {
 
               {/* Text Content */}
               <div className="relative z-10 flex-1 flex flex-col">
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Instant Work Authorization</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-normal">Lock In Jobs Before You Even Arrive</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Secure the job before you even arrive by sending a digital work authorization during the call. Homeowners can sign digitally right away.
+                  Get the job moving before your team ever steps on site. Restoration AI sends a quick digital work authorization so homeowners can sign instantly, locking in the job early so it does not go to another company and saving time by letting your team show up ready to start work.
                 </p>
               </div>
             </div>
@@ -147,9 +147,9 @@ export default function PremiumFeatures() {
 
               {/* Text Content */}
               <div className="relative z-10 flex-1 flex flex-col">
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Automated Dispatch System</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-normal">Dispatch Jobs Without the Back and Forth</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Dispatch jobs instantly based on your exact team setup and priorities. We set everything up to match your workflow so nothing changes.
+                  Get every job moving right away without the usual delays or miscommunication. Restoration AI handles everything instantly and sends each job to the right technician based on how your team is set up, so they get the right information fast and can get moving without the extra back and forth.
                 </p>
               </div>
             </div>
@@ -182,9 +182,9 @@ export default function PremiumFeatures() {
 
                {/* Text Content */}
                <div className="relative z-10 flex-1 flex flex-col">
-                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Smart Technician Routing</h3>
+                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-normal">Send the Right Tech to Every Job</h3>
                  <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                   Send the closest technician every time without guessing or manual coordination. Your AI tracks where your team is so no one is driving across county.
+                   Make sure every job goes to the technician who is already in the best position to take it. Restoration AI helps your team avoid wasted driving, stay in their zones, and handle more jobs each day without the extra back and forth.
                  </p>
                </div>
              </div>
@@ -221,9 +221,9 @@ export default function PremiumFeatures() {
 
                {/* Text Content */}
                <div className="relative z-10 flex-1 flex flex-col">
-                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Real Time Photo Logging</h3>
+                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-normal">Walk Into Every Job Fully Prepared</h3>
                  <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                   Get real job site context before you even arrive by sending homeowners a simple link during the call to upload photos instantly. Your team can see the damage, prepare properly, and walk into every job already knowing exactly what to expect.
+                   Walk into every job already knowing what to expect. Restoration AI gets homeowners to send photos ahead of time and collects everything for your team, so they can prepare properly, bring what they need, and get started right away without wasting time on site.
                  </p>
                </div>
              </div>
@@ -258,9 +258,9 @@ export default function PremiumFeatures() {
 
                {/* Text Content */}
                <div className="relative z-10 flex-1 flex flex-col">
-                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-nowrap">Pre & Post-Job Follow-Ups</h3>
+                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight flex items-center whitespace-normal">Pre & Post-Job Follow-Ups</h3>
                  <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                   Stay ahead of every job with automated pre and post-job follow-ups. Before arrival, it gathers key details like gate codes, pets, and special instructions so your team shows up fully prepared. After the job, it follows up to request reviews, helping you generate more five-star ratings without extra effort.
+                   Keep every job running smoothly from start to finish without extra work. Restoration AI handles follow-ups before and after the job so you stay organized, improve the customer experience, and actively reach out after to get more customers to complete 5-star reviews.
                  </p>
                </div>
              </div>

@@ -1,8 +1,10 @@
 ---
+import BookACall from "../../components/BookACall";
 import MainLayout from "../../layouts/MainLayout.astro";
 import JobNimbusHomepage from "../../components/integrations/JobNimbusHomepage";
 ---
 
 <MainLayout>
     <JobNimbusHomepage client:load />
+    <BookACall client:load />
 </MainLayout>

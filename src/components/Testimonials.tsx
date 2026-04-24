@@ -31,15 +31,6 @@ const testimonialsData = [
     type: 'image',
     url: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e5665838381eafa8a80ce4.png"
   },
-  { 
-    type: 'video',
-    name: "Garret",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e4050ac56ad27908bbe780.mov"
-  },
-  {
-    type: 'image',
-    url: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/68b4b1bd93b6084c59912b6e.png"
-  },
   {
     type: 'video',
     name: "Todd",
@@ -48,11 +39,6 @@ const testimonialsData = [
   {
     type: 'image',
     url: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/68b4b1ccde84f462d40bc8c0.png"
-  },
-  {
-    type: 'video',
-    name: "Mario",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e4050a38381eafa868c6c0.mov"
   },
   { 
     type: 'video',
@@ -75,13 +61,12 @@ const testimonialsData = [
   },
   {
     type: 'video',
-    name: "Scott",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e4050a8696a78b8df913e6.mov"
-  },
-  {
-    type: 'video',
     name: "Matt",
     videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3ee2850b9a3263ae89cbf.mov"
+  },
+  {
+    type: 'image',
+    url: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/68b4ad56ba67b30978c43917.png"
   },
   {
     type: 'image',
@@ -161,17 +146,17 @@ export default function Testimonials() {
   const W = WIDE_URLS;
   const N = testimonialsData.filter(t => t.type === 'image' && !WIDE_URLS.includes(t.url as string)).map(t => t.url);
 
-  // We have perfectly: 10 Videos, 6 Normal Images, 2 Wide Images!
+  // Output count: 7 Videos, 5 Normal Images, 2 Wide Images (or however many remain)
 
   return (
     <section id="testimonials" className="py-20 md:py-24 relative">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[1200px] h-[1000px] bg-blue-500/20 rounded-full blur-[140px] -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-screen"></div>
-      <div className="container mx-auto px-4 relative z-10 w-full">
+      <div className="container mx-auto px-4 max-w-6xl relative z-10 w-full">
         
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
-            Contractors who <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 drop-shadow-sm">stopped the bleeding.</span>
+            Contractors Who <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">Stopped The Bleeding.</span>
           </h2>
         </div>
 
@@ -180,22 +165,19 @@ export default function Testimonials() {
         <div className="hidden lg:block max-w-[1080px] mx-auto w-full font-sans">
           
           <div className="columns-3 gap-5">
-            <VideoCard data={V[0]} />
-            <ImageCard url={N[0] as string} />
-            <VideoCard data={V[1]} />
-            <VideoCard data={V[2]} />
-            <ImageCard url={N[1] as string} />
-            <VideoCard data={V[3]} />
-            <ImageCard url={N[2] as string} />
-            <VideoCard data={V[4]} />
-            <VideoCard data={V[5]} />
-            <ImageCard url={N[3] as string} />
-            <VideoCard data={V[6]} />
-            <ImageCard url={N[4] as string} />
-            <VideoCard data={V[7]} />
-            <VideoCard data={V[8]} />
-            <ImageCard url={N[5] as string} />
-            <VideoCard data={V[9]} />
+            {V[0] && <VideoCard data={V[0]} />}
+            {N[0] && <ImageCard url={N[0] as string} />}
+            {V[1] && <VideoCard data={V[1]} />}
+            {V[2] && <VideoCard data={V[2]} />}
+            {N[1] && <ImageCard url={N[1] as string} />}
+            {V[3] && <VideoCard data={V[3]} />}
+            {N[2] && <ImageCard url={N[2] as string} />}
+            {V[4] && <VideoCard data={V[4]} />}
+            {V[5] && <VideoCard data={V[5]} />}
+            {N[3] && <ImageCard url={N[3] as string} />}
+            {V[6] && <VideoCard data={V[6]} />}
+            {N[4] && <ImageCard url={N[4] as string} />}
+            {N[5] && <ImageCard url={N[5] as string} />}
           </div>
 
           <div className="flex gap-5 w-full mt-0">

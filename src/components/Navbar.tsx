@@ -28,13 +28,12 @@ export default function Navbar() {
       >
         <div className="px-8 lg:px-12 flex justify-between items-center">
           {/* LOGO */}
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-bold text-xl shadow-sm group-hover:scale-105 transition-transform border border-blue-400/20">
-              R
-            </div>
-            <span className="text-slate-900 font-bold text-lg tracking-tight hidden lg:block">
-              Restoration<span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">AI</span>
-            </span>
+          <a href="/" className="flex items-center group -ml-2 lg:-ml-4 -mt-2.5">
+            <img 
+              src="/website-photos/new-logo.png" 
+              alt="Restoration AI Logo" 
+              className="h-8 md:h-9 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
           </a>
 
           {/* DESKTOP LINKS */}
@@ -70,7 +69,7 @@ export default function Navbar() {
           {/* RIGHT SIDE: Two CTAs like Outrank */}
           <div className="flex items-center gap-4">
             <a
-              href="/book"
+              href="/#calendar-section"
               className="hidden lg:inline-flex items-center justify-center text-[14px] font-bold text-slate-700 bg-white border-2 border-slate-100 px-6 py-2.5 rounded-full hover:bg-slate-50 hover:border-slate-200 transition-all shadow-sm"
             >
               Book A Strategy Call

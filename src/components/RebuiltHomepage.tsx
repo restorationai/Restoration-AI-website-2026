@@ -24,7 +24,7 @@ export default function RebuiltHomepage() {
           <h1 className="text-5xl lg:text-[60px] font-extrabold leading-[1.1] tracking-tight text-slate-900">
             Your System<br />
             Stays the Same<br />
-            <span className="text-[#0ea5e9]">Now Every Call<br />
+            <span className="text-[#3dd0ff]">Now Every Call<br />
               Gets Answered</span>
           </h1>
 
@@ -33,9 +33,9 @@ export default function RebuiltHomepage() {
           </p>
 
           <div className="flex flex-wrap items-center gap-5 pt-4">
-            <button className="px-10 py-4 lg:py-5 bg-[#1C5BFF] text-white rounded-full font-bold text-[18px] shadow-[0_0_25px_rgba(28,91,255,0.35)] hover:bg-blue-600 transition hover:scale-[1.02] transform">
+            <a href="/#calendar-section" className="inline-flex justify-center items-center px-10 py-4 lg:py-5 bg-[#3dd0ff] text-white rounded-full font-bold text-[18px] shadow-[0_0_25px_rgba(28,91,255,0.35)] hover:bg-blue-600 transition hover:scale-[1.02] transform">
               Book a Call
-            </button>
+            </a>
             <button className="px-10 py-4 lg:py-5 bg-white text-slate-900 rounded-full font-bold text-[18px] border-[1.5px] border-slate-200 shadow-[0_0_20px_rgba(0,0,0,0.04)] flex items-center gap-2 hover:bg-slate-50 transition hover:scale-[1.02] transform">
               See How It Works <ChevronRight size={20} className="text-slate-500" />
             </button>
@@ -67,25 +67,25 @@ export default function RebuiltHomepage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
             <div className="flex flex-col space-y-1">
-              <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">2 AM</h3>
+              <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">2 AM</h3>
               <p className="text-white font-bold text-[16px] tracking-wide mt-1">Peak Call Time</p>
               <p className="text-slate-400 text-[13px] font-medium mt-1">Highest water damage volume.</p>
             </div>
 
             <div className="flex flex-col space-y-1">
-              <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">5 min</h3>
+              <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">5 min</h3>
               <p className="text-white font-bold text-[16px] tracking-wide mt-1">Window to Act</p>
               <p className="text-slate-400 text-[13px] font-medium mt-1">First to answer wins the job.</p>
             </div>
 
             <div className="flex flex-col space-y-1">
-              <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">Zero</h3>
+              <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">Zero</h3>
               <p className="text-white font-bold text-[16px] tracking-wide mt-1">Manual Entry</p>
               <p className="text-slate-400 text-[13px] font-medium mt-1">Direct Albiware job creation.</p>
             </div>
 
             <div className="flex flex-col space-y-1">
-              <h3 className="text-[#3b82f6] text-[32px] font-bold leading-tight">Easy</h3>
+              <h3 className="text-[#3dd0ff] text-[32px] font-bold leading-tight">Easy</h3>
               <p className="text-white font-bold text-[16px] tracking-wide mt-1">Setup Process</p>
               <p className="text-slate-400 text-[13px] font-medium mt-1">Ready in days, not months.</p>
             </div>
@@ -240,7 +240,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 1 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Automated Job Creation</h3>
@@ -249,7 +249,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 2 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Instant SMS Confirmations</h3>
@@ -258,7 +258,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 3 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Smart Dispatch Alerts</h3>
@@ -267,7 +267,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 4 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">24/7 Availability</h3>
@@ -276,7 +276,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 5 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Precision Address Validation</h3>
@@ -285,7 +285,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 6 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Real-time Photo Logging</h3>
@@ -294,7 +294,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 7 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Zero Manual Entry</h3>
@@ -303,7 +303,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 8 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Digital Authorization</h3>
@@ -312,7 +312,7 @@ export default function RebuiltHomepage() {
 
           {/* Card 9 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-blue-400/30 shadow-[0_0_25px_rgba(59,130,246,0.15)]">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Lead Quality Filtering</h3>

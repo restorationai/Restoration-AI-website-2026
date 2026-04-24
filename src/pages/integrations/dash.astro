@@ -1,4 +1,5 @@
 ---
+import BookACall from "../../components/BookACall";
 import MainLayout from "../../layouts/MainLayout.astro";
 import DashHomepage from "../../components/integrations/DashHomepage";
 import DashFAQ from "../../components/integrations/DashFAQ.astro";
@@ -78,4 +79,5 @@ const faqJsonLd = {
   <DashHomepage client:load />
   <DashFAQ />
   <DashCTA />
+    <BookACall client:load />
 </MainLayout>

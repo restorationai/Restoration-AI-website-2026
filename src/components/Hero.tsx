@@ -8,76 +8,82 @@ import LogoMarquee from './LogoMarquee';
 
 {/* Floating badge cards — mix of small text badges and larger image cards like Outrank */}
 const badges = [
-  // LEFT SIDE - mathematically anchored off the absolute center pushing leftward
+  // LEFT SIDE
   {
+    // TOP LEFT (Square, tilted left, close to center)
     id: 1,
-    type: 'custom_pill' as const,
-    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Restoration Calls<br/>Handled Right</span>,
-    icon: <PhoneCall className="text-blue-700" size={18} />,
-    pos: "top-[150px] right-[50%] mr-[340px] xl:mr-[420px]",
-    rotate: "12deg",
-    width: "w-[220px]"
+    type: 'custom' as const,
+    label: "Restoration Calls Handled Right",
+    icon: <PhoneCall className="text-blue-700" size={20} />,
+    pos: "top-[160px] right-[50%] mr-[220px] lg:mr-[280px] xl:mr-[340px]",
+    rotate: "-12deg",
+    width: "w-[140px]"
   },
   {
+    // MID LEFT (Pill, tilted right, further out)
     id: 2,
-    type: 'custom' as const,
+    type: 'custom_pill' as const,
     label: (
-      <div className="flex flex-col items-center gap-0.5">
-        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">$26M+</span>
+      <div className="flex flex-col items-start justify-center">
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">$26M+</span>
         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">in Secured Jobs</span>
       </div>
     ),
     icon: <TrendingUp className="text-blue-700" size={18} />,
-    pos: "top-[350px] right-[50%] mr-[390px] xl:mr-[460px]",
-    rotate: "0deg",
-    width: "w-[160px]"
+    pos: "top-[360px] right-[50%] mr-[300px] lg:mr-[380px] xl:mr-[440px]",
+    rotate: "12deg",
+    width: "w-[190px]"
   },
   {
+    // BOTTOM LEFT (Square, tilted left, close to center)
     id: 3,
-    type: 'custom_pill' as const,
+    type: 'custom' as const,
     label: (
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col items-center gap-0.5">
         <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">24/7</span>
-        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest leading-tight text-left">Dispatch</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Dispatch</span>
       </div>
     ),
-    icon: <Bot className="text-blue-700" size={18} />,
-    pos: "top-[600px] right-[50%] mr-[320px] xl:mr-[390px]",
+    icon: <Bot className="text-blue-700" size={20} />,
+    pos: "top-[560px] right-[50%] mr-[240px] lg:mr-[300px] xl:mr-[360px]",
     rotate: "-12deg",
-    width: "w-[220px]"
+    width: "w-[140px]"
   },
-  // RIGHT SIDE - mathematically anchored off the absolute center pushing rightward
+  // RIGHT SIDE
   {
+    // TOP RIGHT (Pill, tilted left, close to center)
     id: 4,
     type: 'custom_pill' as const,
     label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Proven in<br/>Real Emergencies</span>,
     icon: <ShieldAlert className="text-blue-700" size={18} />,
-    pos: "top-[150px] left-[50%] ml-[340px] xl:ml-[420px]",
+    pos: "top-[180px] left-[50%] ml-[220px] lg:ml-[280px] xl:ml-[340px]",
     rotate: "-12deg",
-    width: "w-[220px]"
+    width: "w-[200px]"
   },
   {
+    // MID RIGHT (Square, tilted right, further out)
     id: 5,
     type: 'custom' as const,
     label: "Used by Top Restoration Teams",
-    icon: <CheckCircle2 className="text-blue-700" size={18} />,
-    pos: "top-[350px] left-[50%] ml-[390px] xl:ml-[460px]",
-    rotate: "0deg",
-    width: "w-[160px]"
+    icon: <CheckCircle2 className="text-blue-700" size={20} />,
+    pos: "top-[360px] left-[50%] ml-[300px] lg:ml-[380px] xl:ml-[440px]",
+    rotate: "12deg",
+    width: "w-[140px]"
   },
   {
+    // BOTTOM RIGHT (Pill, tilted right, close to center)
     id: 6,
     type: 'custom_pill' as const,
     label: (
-      <div className="flex items-center gap-1.5">
-        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">0</span>
-        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest leading-tight text-left">Missed<br/>Calls</span>
+      <div className="flex flex-col items-start justify-center">
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">0</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Missed Calls</span>
       </div>
     ),
-    icon: <PhoneCall className="text-[#0ea5e9]" size={18} />,
-    pos: "top-[600px] left-[50%] ml-[320px] xl:ml-[390px]",
+    icon: <PhoneCall className="text-[#3dd0ff]" size={18} />,
+    pos: "top-[560px] left-[50%] ml-[240px] lg:ml-[300px] xl:ml-[360px]",
     rotate: "12deg",
-    width: "w-[220px]"
+    width: "w-[170px]"
   },
 ];
 
@@ -151,7 +157,7 @@ export default function Hero() {
             <div className="bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40 p-4 flex flex-col items-center justify-center gap-3 relative overflow-hidden h-[115px] w-full">
               {/* Soft Lighting / Glow */}
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/70 blur-2xl pointer-events-none rounded-full" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#0ea5e9]/5 blur-2xl pointer-events-none rounded-full" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#3dd0ff]/5 blur-2xl pointer-events-none rounded-full" />
               
               <div className="relative z-10 flex flex-col items-center gap-2.5 w-full">
                 <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shadow-sm border border-blue-100/50 shrink-0">
@@ -224,7 +230,7 @@ export default function Hero() {
             {/* BUTTONS — significantly bigger and more prominent like Outrank */}
             <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
               <a
-                href="#demo"
+                href="/#calendar-section"
                 className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-2.5 w-full sm:w-[280px]"
               >
                 Book A Strategy Call

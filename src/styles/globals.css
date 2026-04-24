@@ -2,9 +2,21 @@
 
 @theme {
   /* LIGHT MODE (DEFAULT) */
+  --color-blue-50: #e5fafe;
+  --color-blue-100: #b3effd;
+  --color-blue-200: #80e4fb;
+  --color-blue-300: #4dd8fa;
+  --color-blue-400: #3dd0ff;
+  --color-blue-500: #3dd0ff;
+  --color-blue-600: #26bdef;
+  --color-blue-700: #10a2d9;
+  --color-blue-800: #0084b6;
+  --color-blue-900: #006b99;
+  --color-blue-950: #00567f;
+
   --color-brand-dark: #020617;
-  --color-brand-accent: #0ea5e9;
-  --color-brand-neon: #00e1ff;
+  --color-brand-accent: #3dd0ff;
+  --color-brand-neon: #3dd0ff;
   --color-brand-purple: #7c3aed; /* Outrank purple */
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f8fafc;
@@ -22,7 +34,7 @@
 
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 60s linear infinite;
   --animate-wave: wave 1.2s ease-in-out infinite;
 
   @keyframes float {
@@ -31,7 +43,7 @@
   }
   @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-100%); }
   }
   @keyframes wave {
     0%, 100% { height: 10%; }

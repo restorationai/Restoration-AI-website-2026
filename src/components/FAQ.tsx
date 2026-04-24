@@ -62,7 +62,7 @@ export default function FAQ() {
     <section className="py-24 relative">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-      <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
+      <div className="container mx-auto px-6 lg:px-12 max-w-6xl w-full">
         
         <div className="text-center max-w-4xl mx-auto mb-16 flex flex-col items-center">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">

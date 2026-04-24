@@ -7,7 +7,7 @@ const mockRecordings = [
     company: "SERVPRO",
     logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e42a162c135a8c8334ab39.png",
     badge: "EMERGENCY NIGHT DISPATCH",
-    title: "Water Damage Mainline Pipe Burst",
+    title: "Basement mold remediation assessment.",
     duration: "0:01",
     progressClass: "w-[15%]",
     audioSrc: "/recordings/ServeProSacremento.mp3"
@@ -16,7 +16,7 @@ const mockRecordings = [
     company: "DRY1OUT",
     logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e42a5b2c135a8c8334b582.png", 
     badge: "PRE-QUALIFIED COMMERCIAL LEAD",
-    title: "Heavy Mold Remediation Quote",
+    title: "Dishwasher supply line flood.",
     duration: "0:02",
     progressClass: "w-[20%]",
     audioSrc: "/recordings/Dry1out.mp3"
@@ -25,7 +25,7 @@ const mockRecordings = [
     company: "SERVPRO",
     logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e42a162c135a8c8334ab39.png",
     badge: "URGENT RESIDENTIAL INQUIRY",
-    title: "Post-Fire Structural Cleanup",
+    title: "Tenant-reported mold inspection.",
     duration: "6:12",
     progressClass: "w-[80%]",
     audioSrc: "/recordings/ServeProTeamRay.mp3"
@@ -34,7 +34,7 @@ const mockRecordings = [
     company: "AMERICLEAN",
     logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e42a178696a78b8dffaf10.png", 
     badge: "OFFICE COMPLEX INTAKE",
-    title: "Category 3 Flood Loss",
+    title: "Residential apartment flood extraction.",
     duration: "7:05",
     progressClass: "w-[65%]",
     audioSrc: "/recordings/americlean.mp3"
@@ -51,7 +51,7 @@ export default function CallRecordings() {
       <div className="absolute top-[20%] left-0 w-[500px] h-[800px] bg-blue-500/5 blur-[160px] pointer-events-none z-0 -translate-x-1/2" />
       <div className="absolute top-[20%] right-0 w-[500px] h-[800px] bg-blue-500/5 blur-[160px] pointer-events-none z-0 translate-x-1/2" />
       
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
         
         {/* Section Header */}
         <div className="text-center max-w-5xl mx-auto mb-16 md:mb-20 flex flex-col items-center">
@@ -66,7 +66,7 @@ export default function CallRecordings() {
 
             <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1] relative z-10">
               Hear Real Recordings <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 drop-shadow-sm">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">
                 In Real Life Scenarios
               </span>
             </h2>
@@ -106,18 +106,15 @@ export default function CallRecordings() {
                 <div className="p-5 md:p-6 flex-1 flex flex-col bg-white">
                   
                   {/* Meta Labels (Rigid Height for Perfect Horizontal Alignment) */}
-                  <div className="flex justify-between items-start h-[44px] gap-2 mb-2">
+                  <div className="flex justify-between items-start min-h-[28px] gap-2 mb-2">
                     <span className="text-[10px] font-bold text-slate-400 tracking-wide flex items-center gap-1.5 shrink-0 pt-0.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></span>
                       {rec.company}
                     </span>
-                    <span className="text-[8px] font-bold text-purple-600 bg-purple-50 tracking-wider px-2 py-1 rounded border border-purple-100/50 text-right leading-[1.3] max-w-[65%]">
-                      {rec.badge}
-                    </span>
                   </div>
 
-                  {/* Scenario Title Container (Fixed Height) */}
-                  <div className="h-[76px] flex flex-col justify-start">
+                  {/* Scenario Title Container (Flexible Height) */}
+                  <div className="min-h-[76px] flex flex-col justify-start mb-2">
                     <h3 className="text-[19px] lg:text-[21px] xl:text-[22px] leading-[1.25] font-bold text-slate-900 font-outfit tracking-tight">
                       {rec.title}
                     </h3>

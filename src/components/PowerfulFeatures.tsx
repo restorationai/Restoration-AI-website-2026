@@ -19,7 +19,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 1 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Automated Job Creation</h3>
@@ -28,7 +28,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 2 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Instant SMS Confirmations</h3>
@@ -37,7 +37,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 3 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Smart Dispatch Alerts</h3>
@@ -46,7 +46,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 4 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">24/7 Availability</h3>
@@ -55,7 +55,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 5 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Precision Validation</h3>
@@ -64,7 +64,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 6 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Real-time Photo Logging</h3>
@@ -73,7 +73,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 7 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Zero Manual Entry</h3>
@@ -82,7 +82,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 8 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Digital Authorization</h3>
@@ -91,7 +91,7 @@ export default function PowerfulFeatures() {
 
           {/* Card 9 */}
           <div className="bg-white p-8 lg:p-9 rounded-[32px] border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            <div className="w-[42px] h-[42px] rounded-full bg-[#1C5BFF] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#3dd0ff] flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
               <CheckCircle2 size={20} className="text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-[21px] font-bold text-slate-900 mb-2.5 leading-tight">Lead Quality Filtering</h3>

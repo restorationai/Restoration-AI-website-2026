@@ -19,10 +19,10 @@ export default function Integrations() {
     <section className="py-24 font-sans relative">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 w-full max-w-[1800px]">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 w-full max-w-6xl">
         <div className="text-center w-full max-w-[1400px] mx-auto mb-16">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
-            Keep Your System. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 drop-shadow-sm">Capture More Jobs.</span>
+            Keep Your System. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">Capture More Jobs.</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium px-4 max-w-4xl mx-auto mt-4">
             We plug into your system so everything works the same with no changes or learning curve. The only thing you'll notice is more calls answered and more high ticket jobs booked.
@@ -31,16 +31,16 @@ export default function Integrations() {
 
         <div className="flex flex-col items-center justify-center gap-10 md:gap-14 w-full mx-auto">
           {/* Row 1: Large Logos */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 xl:gap-14 w-full px-4">
+          <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-8 lg:gap-10 w-full px-4">
             {partners.slice(0, 6).map((p, i) => (
-              <div key={`row1-${i}`} className="flex flex-col items-center gap-2 group">
+              <div key={`row1-${i}`} className="flex flex-col items-center gap-2 group shrink min-w-0">
                 <img 
                   src={p.url} 
                   alt={p.name || 'Integration Partner'} 
-                  className={`${p.large ? 'h-14 md:h-24' : p.medium ? 'h-12 md:h-16' : 'h-8 md:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
+                  className={`${p.large ? 'h-12 md:h-16 lg:h-20' : p.medium ? 'h-10 md:h-14 lg:h-16' : 'h-8 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
                 />
                 {p.name && (
-                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                     {p.name}
                   </span>
                 )}
@@ -49,22 +49,22 @@ export default function Integrations() {
           </div>
 
           {/* Row 2: Smaller Logos + MORE */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 xl:gap-14 w-full px-4">
+          <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-8 lg:gap-10 w-full px-4 mt-4">
             {partners.slice(6).map((p, i) => (
-              <div key={`row2-${i}`} className="flex flex-col items-center gap-2 group">
+              <div key={`row2-${i}`} className="flex flex-col items-center gap-2 group shrink min-w-0">
                 <img 
                   src={p.url} 
                   alt={p.name || 'Integration Partner'} 
-                  className={`${p.large ? 'h-14 md:h-24' : p.medium ? 'h-12 md:h-16' : 'h-8 md:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
+                  className={`${p.large ? 'h-12 md:h-16 lg:h-20' : p.medium ? 'h-10 md:h-14 lg:h-16' : 'h-8 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
                 />
                 {p.name && (
-                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                     {p.name}
                   </span>
                 )}
               </div>
             ))}
-            <div className="text-slate-400 font-bold text-sm tracking-widest opacity-80 pl-4 relative top-[-10px]">+ MORE</div>
+            <div className="text-slate-400 font-bold text-sm tracking-widest opacity-80 pl-2 shrink-0 whitespace-nowrap relative top-[-6px]">+ MORE</div>
           </div>
         </div>
       </div>

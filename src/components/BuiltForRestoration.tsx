@@ -23,7 +23,7 @@ const BlueCheckIcon = () => (
     <path d="M8 12.5L10.5 15L16 9" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     <defs>
       <linearGradient id="blueGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#3b82f6" />
+        <stop stopColor="#3dd0ff" />
         <stop offset="1" stopColor="#1e40af" />
       </linearGradient>
       <linearGradient id="blueGradLight" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
@@ -67,12 +67,12 @@ export default function BuiltForRestoration() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent pointer-events-none"></div>
       <div className="absolute top-1/2 left-1/2 w-[1000px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-multiply"></div>
 
-      <div className="container mx-auto px-4 lg:px-8 max-w-[1300px] relative z-10 w-full flex flex-col justify-center">
+      <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10 w-full flex flex-col justify-center">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-8 md:mb-10 flex flex-col items-center shrink-0">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
-            Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-700 drop-shadow-sm">Restoration</span>
+            Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">Restoration</span>
           </h2>
           <p className="text-[14px] md:text-[16px] text-slate-500 leading-relaxed font-medium max-w-3xl">
             Most answering services and AI tools weren’t built for real restoration calls. Restoration AI was intimately designed for real-world emergency situations where speed, accuracy, and control matter most.
@@ -134,12 +134,7 @@ export default function BuiltForRestoration() {
               
               {/* Premium Title */}
               <h3 className="text-[24px] md:text-[30px] font-extrabold text-white mb-6 tracking-tight text-center relative z-10 flex flex-wrap items-center justify-center gap-3 pb-5 border-b border-white/10">
-                 <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.6)]">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                 </div>
-                 Restoration AI
+                 <img src="/website-photos/new-logo.png" alt="Restoration AI" className="h-16 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
               </h3>
               
               {/* 2x4 Chip Grid */}

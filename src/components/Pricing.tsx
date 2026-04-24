@@ -68,10 +68,10 @@ const pricingTiers = [
 
 export default function Pricing() {
   return (
-    <section className="py-24 relative" id="pricing">
+    <section className="pt-24 pb-0 relative" id="pricing">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-      <div className="max-w-[1300px] mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
@@ -171,14 +171,6 @@ export default function Pricing() {
               )}
             </div>
           ))}
-        </div>
-
-        {/* Footer Talk About It */}
-        <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <span className="text-slate-500 font-medium tracking-wide">Want to talk about it?</span>
-          <a href="#" className="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-slate-800 transition-colors">
-            Book a call <ArrowRight size={16} />
-          </a>
         </div>
 
       </div>
