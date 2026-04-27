@@ -12,56 +12,55 @@ const CheckCircle = () => (
 
 const pricingTiers = [
   {
-    name: "AI Leak Proof System",
-    sub: "Capture Every Lead. Wake Up for Emergencies.",
-    desc: "Designed for owner-operators who need to stop missing calls but prefer to manage their crews manually",
+    name: "Leakproof",
+    sub: "Start answering every call.",
+    desc: "Best for: Companies that want every call answered and every lead captured.",
     price: "$297",
     priceSuffix: "/mo",
-    micro: "$0.45/MIN CALL + $0.04/SMS SEGMENT",
+    micro: "$0.45/min · $0.04/SMS",
     bullets: [
-      "24/7 AI Receptionist (Never miss a call)",
-      "Instant Lead Capture (Books directly to calendar)",
-      "\"Wake Up\" Protocol (Calls you 3x for emergencies)",
-      "Manual Dispatch Mode (You call your own crew)",
-      "1 Transfer Line (Routes to Owner)"
+      "AI receptionist — 24/7 call answering",
+      "Lead qualification",
+      "Call logs and transcripts",
+      "Dashboard and analytics"
     ],
-    buttonText: "Sign Up Today",
+    buttonText: "Book a Demo",
     isPopular: false
   },
   {
-    name: "Rapid Response System",
-    sub: "Automate Your Operations. Sleep While We Dispatch.",
-    desc: "The industry standard for restoration companies running ads and managing a team.",
+    name: "Rapid Response",
+    sub: "Answer, qualify, dispatch, and book — automatically.",
+    desc: "Best for: Companies ready to automate their entire front office.",
     price: "$597",
     priceSuffix: "/mo",
-    micro: "$0.20/MIN CALL + $0.02/SMS SEGMENT",
+    micro: "$0.20/min · $0.02/SMS",
     bullets: [
-      "Everything in Leak Proof System",
-      "Autonomous Dispatching (AI calls your crew roster)",
-      "Smart LSA Disqualifier (Saves Ad Spend)",
-      "Multi-User Routing (3 Lines + 6 Team Contacts)",
-      "Proprietary Dispatch Logic (Priority Ranking)",
-      "50% Discount on Usage Rates"
+      "Everything in Leakproof, plus:",
+      "Rapid Disqualification (recover wasted ad spend)",
+      "Smart Route Booking",
+      "Dispatch system",
+      "Work authorizations",
+      "Visual intake",
+      "Team management"
     ],
-    buttonText: "Sign Up Today",
+    buttonText: "Book a Demo",
     isPopular: true
   },
   {
-    name: "Enterprise / Custom",
-    sub: "Tailored Logic for Complex Organizations.",
-    desc: "For companies that need specific routing rules based on structure type, territory, or complex internal workflows.",
+    name: "Enterprise / Multi-Location",
+    sub: "Custom solutions for large operations.",
+    desc: "",
     price: "Talk to Us",
     priceSuffix: "",
-    micro: "VOLUME DISCOUNTS AVAILABLE",
+    micro: "",
     bullets: [
-      "Everything in Rapid Response",
-      "Custom Logic Branches (e.g., Structure-Type Routing)",
-      "Dedicated Server Resources",
-      "API Access & Webhooks",
-      "White-Glove Onboarding",
-      "Back-Office Automation (Invoicing/Estimates)"
+      "Everything in Rapid Response, plus:",
+      "Multi-location support",
+      "Custom integrations",
+      "Dedicated onboarding",
+      "Volume pricing"
     ],
-    buttonText: "Contact Us",
+    buttonText: "Contact Sales",
     isPopular: false
   }
 ];
@@ -76,10 +75,10 @@ export default function Pricing() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
-            Pricing
+            Simple Pricing.
           </h2>
-          <p className="text-lg text-slate-600 font-medium">
-            Scalable systems designed for high-volume restoration companies.
+          <p className="text-xl text-slate-600 font-medium">
+            Pays for Itself with One Job.
           </p>
         </div>
 
@@ -99,15 +98,17 @@ export default function Pricing() {
                     <div className="mb-8">
                       <h3 className="text-2xl font-bold text-slate-900 font-outfit mb-2">{tier.name}</h3>
                       <p className="text-blue-600 font-semibold mb-3 leading-snug">{tier.sub}</p>
-                      <p className="text-slate-600 text-[14px] leading-relaxed min-h-[60px]">{tier.desc}</p>
+                      {tier.desc && <p className="text-slate-600 text-[14px] leading-relaxed min-h-[40px]">{tier.desc}</p>}
                       
                       <div className="mt-8 mb-2 flex items-baseline gap-1">
                         <span className="text-5xl xl:text-6xl font-bold text-slate-900 tracking-tight">{tier.price}</span>
                         {tier.priceSuffix && <span className="text-slate-500 font-medium">{tier.priceSuffix}</span>}
                       </div>
-                      <div className="text-[10px] text-blue-600 font-bold tracking-wider uppercase">
-                        {tier.micro}
-                      </div>
+                      {tier.micro && (
+                        <div className="text-[10px] text-blue-600 font-bold tracking-wider uppercase">
+                          {tier.micro}
+                        </div>
+                      )}
                     </div>
 
                     <div className="border-t border-slate-100 w-full mb-6" />
@@ -137,15 +138,17 @@ export default function Pricing() {
                     <div className="mb-8">
                       <h3 className="text-2xl font-bold text-slate-900 font-outfit mb-2">{tier.name}</h3>
                       <p className="text-blue-600 font-semibold mb-3 leading-snug">{tier.sub}</p>
-                      <p className="text-slate-600 text-[14px] leading-relaxed min-h-[60px]">{tier.desc}</p>
+                      {tier.desc && <p className="text-slate-600 text-[14px] leading-relaxed min-h-[40px]">{tier.desc}</p>}
                       
                       <div className="mt-8 mb-2 flex items-baseline gap-1">
                         <span className="text-5xl xl:text-6xl font-bold text-slate-900 tracking-tight">{tier.price}</span>
                         {tier.priceSuffix && <span className="text-slate-500 font-medium">{tier.priceSuffix}</span>}
                       </div>
-                      <div className="text-[10px] text-blue-600 font-bold tracking-wider uppercase">
-                        {tier.micro}
-                      </div>
+                      {tier.micro && (
+                        <div className="text-[10px] text-blue-600 font-bold tracking-wider uppercase">
+                          {tier.micro}
+                        </div>
+                      )}
                     </div>
 
                     <div className="border-t border-slate-100 w-full mb-6" />
@@ -171,6 +174,10 @@ export default function Pricing() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center text-slate-500 font-medium text-[15px]">
+          No contracts. No setup fees. Live in 48 hours. Cancel anytime.
         </div>
 
       </div>

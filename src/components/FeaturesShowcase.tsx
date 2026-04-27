@@ -1,213 +1,369 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   PhoneCall, 
   ClipboardList, 
   BellRing, 
   FileText, 
-  Search, 
-  FolderOpen, 
   History, 
   TrendingUp,
   Send,
   ArrowUpCircle,
   Settings,
   Zap,
-  UserPlus,
-  CheckCircle2
+  CheckCircle2,
+  ShieldAlert,
+  MapPin,
+  Camera,
+  FileSignature,
+  Users,
+  LayoutDashboard,
+  DollarSign,
+  AlertOctagon,
+  Navigation,
+  Image as ImageIcon,
+  Smartphone,
+  CheckSquare,
+  BarChart3,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 import PhoneAnimation from './PhoneAnimation';
 import ReviewRankingAnimation from './ReviewRankingAnimation';
-import ChatWidgetAnimation from './ChatWidgetAnimation';
 
 {/* Reusable Icon Component for the feature lists */}
 const FeatureItem = ({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) => (
-  <div className="flex items-start gap-4">
-    <div className="mt-1 w-10 h-10 rounded-full bg-blue-700/10 flex items-center justify-center flex-shrink-0">
+  <div className="flex items-start gap-5 group">
+    <div className="mt-1 w-12 h-12 rounded-2xl bg-white shadow-sm shadow-blue-900/5 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-blue-500/20 transition-all duration-300">
       {icon}
     </div>
-    <div className="space-y-0.5">
-      <h4 className="text-[18px] font-bold text-slate-900 tracking-tight">{title}</h4>
-      <p className="text-[15px] text-slate-500 font-medium">{desc}</p>
+    <div className="space-y-1">
+      <h4 className="text-[17px] font-bold text-slate-900 tracking-tight">{title}</h4>
+      <p className="text-[14px] text-slate-500 font-medium leading-relaxed">{desc}</p>
     </div>
   </div>
 );
 
 {/* Reusable Buttons container */}
 const ActionButtons = () => (
-  <div className="flex flex-col sm:flex-row gap-4 pt-4 items-center sm:items-start">
-    <div className="flex flex-col items-center sm:items-start w-full sm:w-[240px]">
+  <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full relative z-20">
+    <div className="flex flex-col items-center w-full sm:w-[260px]">
       <a
         href="/signup"
-        className="inline-flex justify-center items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white rounded-lg text-[15px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all w-full"
+        className="inline-flex justify-center items-center px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg shadow-blue-900/25 text-white rounded-xl text-[16px] font-bold hover:from-blue-500 hover:to-blue-700 hover:scale-[1.02] transition-all w-full"
       >
         Get Started Today
       </a>
-      <p className="text-[11px] text-slate-500 mt-2 text-center sm:text-left">Set up in 15 minutes, no credit card required</p>
+      <p className="text-[12px] text-slate-500 mt-3 text-center font-medium">Set up in 5 minutes, no credit card required</p>
     </div>
-    <a
-      href="/#calendar-section"
-      className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border-2 border-slate-200 rounded-lg text-[15px] font-bold hover:bg-slate-50 transition-colors shadow-sm w-full sm:w-[240px]"
-    >
-      Book a Strategy Call
-    </a>
+    <div className="flex flex-col items-center w-full sm:w-[260px] self-start">
+      <a
+        href="/#calendar-section"
+        className="inline-flex justify-center items-center px-6 py-4 bg-white text-slate-800 border-2 border-slate-200 rounded-xl text-[16px] font-bold hover:bg-slate-50 hover:border-slate-300 hover:scale-[1.02] transition-all shadow-sm w-full"
+      >
+        Book a Strategy Call
+      </a>
+    </div>
   </div>
 );
 
+{/* Reusable Video Element */}
+const FeatureVideo = ({ src }: { src: string }) => (
+  <div className="relative w-full max-w-[380px] mx-auto flex justify-center items-center">
+    <video
+      src={src}
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-auto mix-blend-multiply"
+    />
+  </div>
+);
+
+const featuresData = [
+  {
+    id: 'ai-phone',
+    label: 'AI PHONE AGENT',
+    title: 'Answers Calls. Gets Jobs Moving.',
+    desc: 'Your AI answers fast, gets job details, and pushes your team into action.',
+    items: [
+      { icon: <PhoneCall size={20} className="text-blue-500" />, title: 'Never Miss a Call', desc: 'Your AI answers every call in seconds.' },
+      { icon: <ClipboardList size={20} className="text-blue-500" />, title: 'Collects Job Details', desc: 'Name, address, loss type, and urgency.' },
+      { icon: <BellRing size={20} className="text-blue-500" />, title: 'Wakes Up Techs', desc: 'Calls techs until someone confirms.' },
+      { icon: <FileText size={20} className="text-blue-500" />, title: 'Clear Summaries', desc: 'Clean job notes for your team.' }
+    ],
+    mediaType: 'component',
+    mediaComponent: <PhoneAnimation />
+  },
+  {
+    id: 'rapid-disqualification',
+    label: 'RAPID DISQUALIFICATION',
+    title: 'Stop Paying for Bad Leads. Get Your Money Back.',
+    desc: 'Running LSA ads or using lead brokers? The AI identifies low-quality and spam leads within seconds and ends the call.',
+    items: [
+      { icon: <ShieldAlert size={20} className="text-blue-500" />, title: 'Identify Bad Leads', desc: 'Catches out-of-area or old damage immediately.' },
+      { icon: <DollarSign size={20} className="text-blue-500" />, title: 'Save Ad Spend', desc: 'Document proof to dispute LSA or broker charges.' },
+      { icon: <AlertOctagon size={20} className="text-blue-500" />, title: 'Automatic Tagging', desc: 'Logs disqualified calls with reasons in the dashboard.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-rapid-disqualification.mp4'
+  },
+  {
+    id: 'smart-route',
+    label: 'SMART ROUTE BOOKING',
+    title: 'Book Jobs on the Route, Not Across Town.',
+    desc: 'AI checks your technicians\' existing appointments and books new jobs near where they already are. Tighter routes. More jobs per day.',
+    items: [
+      { icon: <MapPin size={20} className="text-blue-500" />, title: 'Optimize Travel', desc: 'Books jobs based on closest available technician.' },
+      { icon: <Navigation size={20} className="text-blue-500" />, title: 'Fits Existing Routes', desc: 'Checks current appointments to reduce windshield time.' },
+      { icon: <TrendingUp size={20} className="text-blue-500" />, title: 'More Jobs per Day', desc: 'Tighter routes mean you can squeeze in more work.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-smart-route-booking.mp4'
+  },
+  {
+    id: 'visual-intake',
+    label: 'VISUAL INTAKE',
+    title: 'See the Damage Before You Roll a Truck.',
+    desc: 'During or after the call, the AI sends the customer a link to upload photos of the damage. You see what you\'re dealing with before your tech leaves.',
+    items: [
+      { icon: <Smartphone size={20} className="text-blue-500" />, title: 'Pre-Arrival Context', desc: 'Send an SMS link for customers to upload photos.' },
+      { icon: <Camera size={20} className="text-blue-500" />, title: 'Easy Uploads', desc: 'No app required, works right in their mobile browser.' },
+      { icon: <ImageIcon size={20} className="text-blue-500" />, title: 'Instant Sync', desc: 'Photos are attached to the job record instantly.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-visual-intake.mp4'
+  },
+  {
+    id: 'dispatch',
+    label: 'DISPATCH SYSTEM',
+    title: 'Jobs Dispatched Instantly. No Phone Tag.',
+    desc: 'When a job is booked, the right tech is notified immediately based on location, availability, and skill set.',
+    items: [
+      { icon: <BellRing size={20} className="text-blue-500" />, title: 'Instant Notifications', desc: 'Techs get push alerts the moment a job is booked.' },
+      { icon: <ClipboardList size={20} className="text-blue-500" />, title: 'Everything Included', desc: 'Customer details, location, and photos in one place.' },
+      { icon: <CheckCircle2 size={20} className="text-blue-500" />, title: 'Easy Acceptance', desc: 'Techs can accept or decline jobs with a single tap.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-automated-dispatch.mp4'
+  },
+  {
+    id: 'work-auth',
+    label: 'WORK AUTHORIZATIONS',
+    title: 'Authorization Signed Before Your Tech Arrives.',
+    desc: 'The AI sends work authorizations to the customer automatically. By the time your tech pulls up, the paperwork is already done.',
+    items: [
+      { icon: <Send size={20} className="text-blue-500" />, title: 'Automated Sending', desc: 'Paperwork is texted/emailed automatically.' },
+      { icon: <FileSignature size={20} className="text-blue-500" />, title: 'Digital Signatures', desc: 'Customers sign securely on their own device.' },
+      { icon: <CheckSquare size={20} className="text-blue-500" />, title: 'Ready to Work', desc: 'Techs arrive with authorization already completed.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-work-authorizations.mp4'
+  },
+  {
+    id: 'team-management',
+    label: 'TEAM MANAGEMENT',
+    title: 'Your Whole Crew. One Dashboard.',
+    desc: 'Manage tech availability, service areas, schedules, and skill sets. The AI uses this data to dispatch and route intelligently.',
+    items: [
+      { icon: <Users size={20} className="text-blue-500" />, title: 'Live Availability', desc: 'See who\'s working, who\'s off, and where they are.' },
+      { icon: <Settings size={20} className="text-blue-500" />, title: 'Skill-Based Routing', desc: 'Assign jobs based on Water, Fire, or Mold certifications.' },
+      { icon: <Zap size={20} className="text-blue-500" />, title: 'Automatic Adjustments', desc: 'AI instantly reroutes if a tech calls in sick.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-team-management.mp4'
+  },
+  {
+    id: 'dashboard',
+    label: 'DASHBOARD',
+    title: 'Every Call. Every Lead. Every Dollar.',
+    desc: 'Full call transcripts, recordings, lead status, booking history, and performance metrics. Know exactly what\'s happening at all times.',
+    items: [
+      { icon: <LayoutDashboard size={20} className="text-blue-500" />, title: 'Full Visibility', desc: 'Track calls, bookings, disqualifications, and revenue.' },
+      { icon: <History size={20} className="text-blue-500" />, title: 'Transcripts & Audio', desc: 'Read or listen to every interaction the AI has.' },
+      { icon: <BarChart3 size={20} className="text-blue-500" />, title: 'Performance Metrics', desc: 'Know exactly how your phones are performing 24/7.' }
+    ],
+    mediaType: 'video',
+    mediaSrc: '/videos/feature-dashboard-logs.mp4'
+  },
+  {
+    id: 'review-tool',
+    label: 'REVIEW TOOL',
+    title: 'Turn Finished Jobs Into 5-Star Reviews',
+    desc: 'Your AI asks past customers for reviews automatically.',
+    items: [
+      { icon: <Send size={20} className="text-blue-500" />, title: 'Auto Review Requests', desc: 'Sends texts and emails for you.' },
+      { icon: <ArrowUpCircle size={20} className="text-blue-500" />, title: 'Boost Your Ranking', desc: 'More reviews means more calls.' },
+      { icon: <Settings size={20} className="text-blue-500" />, title: 'Works by Itself', desc: 'Zero time needed from your team.' }
+    ],
+    mediaType: 'component',
+    mediaComponent: <ReviewRankingAnimation />
+  }
+];
+
 export default function FeaturesShowcase() {
+  const [activeTab, setActiveTab] = useState(0);
+  const [startIndex, setStartIndex] = useState(0);
+  
+  const activeFeature = featuresData[activeTab];
+  const VISIBLE_TABS = 5;
+
+  const handleNext = () => {
+    if (startIndex < featuresData.length - VISIBLE_TABS) {
+      setStartIndex(prev => Math.min(prev + VISIBLE_TABS, featuresData.length - VISIBLE_TABS));
+    }
+  };
+
+  const handlePrev = () => {
+    if (startIndex > 0) {
+      setStartIndex(prev => Math.max(prev - VISIBLE_TABS, 0));
+    }
+  };
+
   return (
-    <section className="relative min-h-screen py-10">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <section className="relative min-h-screen py-20 bg-[#fafafa] overflow-hidden font-sans">
       
-      <div className="container mx-auto px-6 lg:px-12 max-w-6xl space-y-10 relative z-10 w-full">
+      {/* Dynamic Background Pattern to make it less plain */}
+      <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+      <div className="container mx-auto px-6 lg:px-8 max-w-[1400px] relative z-10 w-full">
 
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto relative -top-6 flex flex-col items-center shrink-0">
-          <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-            Everything That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">Captures More Jobs</span> Without More Work
+        <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
+          <h2 className="text-[40px] md:text-[50px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.05]">
+            Built for the Realities of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb] drop-shadow-sm">Restoration</span>
           </h2>
         </div>
 
-        {/* SECTION 1: AI PHONE AGENT (STANDARD: Text Left, Image Right) */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 max-w-6xl mx-auto">
-          {/* Text Content */}
-          <div className="flex-1 space-y-8 lg:pl-16 lg:pr-4">
-            <div className="space-y-5">
-              <span className="inline-block px-3 py-1 bg-blue-700/10 text-blue-700 text-[11px] uppercase font-bold tracking-widest rounded-md">
-                AI PHONE AGENT
-              </span>
-              <h2 className="text-4xl lg:text-[40px] font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Answers Calls. Gets Jobs<br />Moving.
-              </h2>
-              <p className="text-[16px] xl:text-[17px] font-semibold text-blue-700 max-w-lg leading-relaxed">
-                Your AI answers fast, gets job details, and pushes your team into action.
-              </p>
+        {/* Dynamic Interactive Layout */}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start mt-8">
+          
+          {/* Left Column: Interactive Tabs with Pagination */}
+          <div className="w-full lg:w-[28%] flex flex-col gap-4 relative">
+            
+            {/* Scroll Up Button */}
+            <div className="h-14 mb-2">
+              <button 
+                onClick={handlePrev}
+                disabled={startIndex === 0}
+                className={`w-full h-full flex justify-center items-center rounded-[1.25rem] transition-all duration-300 ${
+                  startIndex === 0 
+                    ? 'opacity-30 cursor-not-allowed bg-slate-50 text-slate-400 border-[2.5px] border-transparent' 
+                    : 'border-[2.5px] border-[#38bdf8] bg-white/40 text-[#0ea5e9] hover:bg-[#e0f2fe] shadow-sm cursor-pointer'
+                }`}
+              >
+                <ChevronUp size={24} strokeWidth={2.5} />
+              </button>
             </div>
 
-            <div className="space-y-6">
-              <FeatureItem 
-                icon={<PhoneCall size={18} className="text-blue-700" />}
-                title="Never Miss a Call"
-                desc="Your AI answers every call in seconds."
-              />
-              <FeatureItem 
-                icon={<ClipboardList size={18} className="text-blue-700" />}
-                title="Collects Job Details"
-                desc="Name, address, loss type, and urgency."
-              />
-              <FeatureItem 
-                icon={<BellRing size={18} className="text-blue-700" />}
-                title="Wakes Up Techs"
-                desc="Calls techs until someone confirms."
-              />
-              <FeatureItem 
-                icon={<FileText size={18} className="text-blue-700" />}
-                title="Clear Summaries"
-                desc="Clean job notes for your team."
-              />
+            <div className="flex flex-col gap-3">
+              <AnimatePresence mode="popLayout">
+                {featuresData.slice(startIndex, startIndex + VISIBLE_TABS).map((feature, idx) => {
+                  const actualIndex = startIndex + idx;
+                  const isActive = activeTab === actualIndex;
+                  return (
+                    <motion.button
+                      layout
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      key={feature.id}
+                      onClick={() => setActiveTab(actualIndex)}
+                      className={`w-full text-left px-7 py-5 rounded-[1.25rem] transition-all duration-300 outline-none
+                        ${isActive 
+                          ? 'border-[2.5px] border-[#38bdf8] bg-white/40 shadow-sm' 
+                          : 'border-[2.5px] border-transparent hover:bg-slate-200/30'
+                        }`}
+                    >
+                      <span className={`block text-[14px] uppercase font-bold tracking-[0.15em] transition-colors ${
+                        isActive ? 'text-[#0ea5e9]' : 'text-slate-500'
+                      }`}>
+                        {feature.label}
+                      </span>
+                    </motion.button>
+                  );
+                })}
+              </AnimatePresence>
             </div>
 
-            <ActionButtons />
+            {/* Scroll Down Button */}
+            <div className="h-14 mt-2">
+              <button 
+                onClick={handleNext}
+                disabled={startIndex >= featuresData.length - VISIBLE_TABS}
+                className={`w-full h-full flex justify-center items-center rounded-[1.25rem] transition-all duration-300 ${
+                  startIndex >= featuresData.length - VISIBLE_TABS 
+                    ? 'opacity-30 cursor-not-allowed bg-slate-50 text-slate-400 border-[2.5px] border-transparent' 
+                    : 'border-[2.5px] border-[#38bdf8] bg-white/40 text-[#0ea5e9] hover:bg-[#e0f2fe] shadow-sm cursor-pointer'
+                }`}
+              >
+                <ChevronDown size={24} strokeWidth={2.5} />
+              </button>
+            </div>
           </div>
 
-          {/* Animation Content */}
-          <div className="flex-1 w-full flex justify-center lg:justify-center lg:pr-16">
-            <PhoneAnimation />
+          {/* Right Column: Dynamic Media and Content */}
+          <div className="w-full lg:w-[72%]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="flex flex-col w-full"
+              >
+                {/* Headline & Description (Now seamlessly floating) */}
+                <div className="mb-10 text-center lg:text-left">
+                  <h3 className="text-3xl lg:text-[42px] font-extrabold text-[#0f172a] mb-5 tracking-tight">
+                    {activeFeature.title}
+                  </h3>
+                  <p className="text-[18px] lg:text-[20px] text-[#0ea5e9] font-semibold max-w-4xl leading-relaxed mx-auto lg:mx-0">
+                    {activeFeature.desc}
+                  </p>
+                </div>
+                
+                {/* 2-Column Layout: Media (Left) & Bullets (Right) */}
+                <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start pt-6 border-t border-slate-200/60">
+                  
+                  {/* Media Container - Removed rigid white box, letting it breathe */}
+                  <div className="w-full lg:w-[45%] flex justify-center items-center min-h-[350px]">
+                    {activeFeature.mediaType === 'component' ? (
+                      activeFeature.mediaComponent
+                    ) : (
+                      <FeatureVideo src={activeFeature.mediaSrc!} />
+                    )}
+                  </div>
+
+                  {/* Bullet Points Container */}
+                  <div className="w-full lg:w-[55%] flex flex-col gap-8 pt-4">
+                    {activeFeature.items.map((item, idx) => (
+                      <FeatureItem 
+                        key={idx} 
+                        icon={item.icon} 
+                        title={item.title} 
+                        desc={item.desc} 
+                      />
+                    ))}
+                  </div>
+
+                </div>
+
+              </motion.div>
+            </AnimatePresence>
           </div>
+
         </div>
 
-
-
-        {/* SECTION 3: REVIEW TOOL (REVERSED: Text Right, Image Left) */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-10 max-w-6xl mx-auto">
-          {/* Text Content */}
-          <div className="flex-1 space-y-8 lg:pl-12">
-            <div className="space-y-5">
-              <span className="inline-block px-3 py-1 bg-blue-700/10 text-blue-700 text-[11px] uppercase font-bold tracking-widest rounded-md">
-                REVIEW TOOL
-              </span>
-              <h2 className="text-4xl lg:text-[40px] font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Turn Finished Jobs Into<br />5-Star Reviews
-              </h2>
-              <p className="text-[16px] xl:text-[17px] font-semibold text-blue-700 max-w-lg leading-relaxed">
-                Your AI asks past customers for reviews automatically.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <FeatureItem 
-                icon={<Send size={18} className="text-blue-700" />}
-                title="Auto Review Requests"
-                desc="Sends texts and emails for you."
-              />
-              <FeatureItem 
-                icon={<ArrowUpCircle size={18} className="text-blue-700" />}
-                title="Boost Your Ranking"
-                desc="More reviews means more calls."
-              />
-              <FeatureItem 
-                icon={<Settings size={18} className="text-blue-700" />}
-                title="Works by Itself"
-                desc="Zero time needed from your team."
-              />
-            </div>
-
-            <ActionButtons />
-          </div>
-
-          {/* Animation Content */}
-          <div className="flex-1 w-full flex justify-center lg:justify-start">
-            <ReviewRankingAnimation />
-          </div>
-        </div>
-
-        <hr className="border-slate-100 max-w-6xl mx-auto" />
-
-        {/* SECTION 4: CHAT WIDGET (STANDARD: Text Left, Image Right) */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 max-w-6xl mx-auto">
-          {/* Text Content */}
-          <div className="flex-1 space-y-8 lg:pr-12">
-            <div className="space-y-5">
-              <span className="inline-block px-3 py-1 bg-blue-700/10 text-blue-700 text-[11px] uppercase font-bold tracking-widest rounded-md">
-                CHAT WIDGET
-              </span>
-              <h2 className="text-4xl lg:text-[40px] font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Capture Website Leads
-              </h2>
-              <p className="text-[16px] xl:text-[17px] font-semibold text-blue-700 max-w-lg leading-relaxed">
-                Answers questions and collects info 24/7.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <FeatureItem 
-                icon={<Zap size={18} className="text-blue-700" />}
-                title="Fast Answers"
-                desc="Helps customers so they don't bounce."
-              />
-              <FeatureItem 
-                icon={<UserPlus size={18} className="text-blue-700" />}
-                title="Grabs Lead Info"
-                desc="Gets name, phone, and job details."
-              />
-              <FeatureItem 
-                icon={<CheckCircle2 size={18} className="text-blue-700" />}
-                title="Sends Leads to CRM"
-                desc="New contacts show up instantly."
-              />
-            </div>
-
-            <ActionButtons />
-          </div>
-
-          {/* Animation Content */}
-          <div className="flex-1 w-full flex justify-center lg:justify-end">
-            <ChatWidgetAnimation />
-          </div>
+        {/* Global Action Buttons */}
+        <div className="mt-24 flex justify-center max-w-4xl mx-auto border-t border-slate-200/60 pt-16">
+          <ActionButtons />
         </div>
 
       </div>

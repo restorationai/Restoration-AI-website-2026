@@ -243,7 +243,7 @@ export default function Hero() {
                   Get Started for Free
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
-                <p className="text-xs text-slate-500 mt-2 text-center">Set up in 15 minutes, no credit card required</p>
+                <p className="text-xs text-slate-500 mt-2 text-center">Set up in 5 minutes, no credit card required</p>
               </div>
             </div>
 
@@ -251,10 +251,10 @@ export default function Hero() {
         </div>
 
         {/* TRUSTED LOGOS */}
-        <div className="mt-24 mb-8">
+        <div className="mt-12 mb-2">
           <div className="flex flex-col items-center">
             <p className="text-center text-[16px] md:text-[20px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-[-10px] z-10 relative">
-              Trusted by Top Franchises
+              Trusted by Restoration Contractors Nationwide
             </p>
           </div>
           <LogoMarquee />
@@ -265,7 +265,7 @@ export default function Hero() {
            initial={{ opacity: 0, scale: 0.95 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ delay: 0.5, duration: 0.8 }}
-           className="relative max-w-5xl mx-auto w-full z-10 mt-16"
+           className="relative max-w-5xl mx-auto w-full z-10 mt-4"
         >
           {/* Prominent Video Background Glow */}
           <div className="absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />

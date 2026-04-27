@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.8",
     "@astrojs/react": "^5.0.3",
     "@astrojs/sitemap": "^3.2.1",
     "@portabletext/to-html": "^2.0.13",
@@ -23,6 +24,7 @@
     "react-dom": "^19.0.0",
     "sanity": "^3.65.1",
     "styled-components": "^6.1.13",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.9.3"
   }
 }

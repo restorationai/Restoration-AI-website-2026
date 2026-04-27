@@ -22,7 +22,7 @@ export default function FinalCTA() {
               Get Started Free
               <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </a>
-            <p className="text-xs text-slate-500 mt-2 text-center">Set up in 15 minutes, no credit card required</p>
+            <p className="text-xs text-slate-500 mt-2 text-center">Set up in 5 minutes, no credit card required</p>
           </div>
         </div>
       </div>

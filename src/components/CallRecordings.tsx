@@ -65,7 +65,7 @@ export default function CallRecordings() {
             </div>
 
             <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1] relative z-10">
-              Hear Real Recordings <br />
+              Don't Take Our Word For It. Listen. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">
                 In Real Life Scenarios
               </span>

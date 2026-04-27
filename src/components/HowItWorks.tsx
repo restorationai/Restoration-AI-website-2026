@@ -47,7 +47,7 @@ export default function HowItWorks() {
                   Start for Free
                   <ArrowRight size={16} strokeWidth={2.5} />
                 </a>
-                <p className="text-[11px] text-slate-500 mt-2 text-center">Set up in 15 minutes, no credit card required</p>
+                <p className="text-[11px] text-slate-500 mt-2 text-center">Set up in 5 minutes, no credit card required</p>
               </div>
             </div>
           </div>
