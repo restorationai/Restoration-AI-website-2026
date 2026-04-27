@@ -22,7 +22,7 @@ export default function HowItWorks() {
               HOW TO GET STARTED
             </span>
             <h2 className="text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-              From Setup to Booked Jobs{' '}
+              How to Never Miss a Job Again{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">in 5 Minutes</span>
             </h2>
           </div>
@@ -30,7 +30,7 @@ export default function HowItWorks() {
           {/* Right Column */}
           <div className="flex-1 w-full lg:max-w-md xl:max-w-lg lg:pb-2">
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
-              No complex coding or training periods. You're a few clicks away from a watertight business. Book a call or start free today.
+              Forward your calls. Your AI goes live. That's it.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start">
               <a 
@@ -84,7 +84,7 @@ export default function HowItWorks() {
                 <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">1</div>
                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Book a Call or<br/>Sign Up Free Today</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Book a quick call to see exactly how it works, ask questions, and test the AI agent live. Or sign up free and jump straight in to see it real time.
+                  Book a quick demo or sign up and go live in minutes.
                 </p>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function HowItWorks() {
                <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">2</div>
                 <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">We Set Everything Up<br/>for You in Minutes</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Your dedicated rep walks you through a 5-minute onboarding and handles the setup. Your integrations are dialed in fast to run exactly how you operate.
+                  Your dedicated rep connects your phone line and configures your AI in one short onboarding call.
                 </p>
               </div>
             </div>
@@ -152,9 +152,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">3</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Turn Every Incoming Call<br/>into Real Revenue</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Start Capturing<br/>Every Call</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Go live and start capturing every high-value call that would've slipped through. Your AI answers, qualifies, and books jobs 24/7 like an expert.
+                  Your AI answers, qualifies, books, and dispatches — 24/7 from day one.
                 </p>
               </div>
             </div>

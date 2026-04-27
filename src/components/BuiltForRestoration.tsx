@@ -49,7 +49,7 @@ export default function BuiltForRestoration() {
         <div className="text-center max-w-4xl mx-auto mb-20 flex flex-col items-center shrink-0">
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
             Not a Generic Answering Service.<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 drop-shadow-sm">Built for Restoration.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 drop-shadow-sm">We're Built for Restoration.</span>
           </h2>
           <div className="text-[18px] md:text-[22px] text-slate-600 leading-snug font-medium max-w-3xl">
             An AI receptionist that understands your industry—every job type, every urgency level, every intake question.
