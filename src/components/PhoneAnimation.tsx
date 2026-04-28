@@ -37,10 +37,10 @@ const PhoneAnimation = () => {
         This securely resets all the CSS animations. 
         We also handle viewport scaling here to make it much bigger.
       */}
-      <div key={playKey} className={`relative flex justify-center scale-95 sm:scale-100 lg:scale-[1.15] origin-center ${shouldPlay ? 'play-animation' : ''}`}>
+      <div key={playKey} className={`relative flex justify-center scale-75 sm:scale-85 lg:scale-90 origin-center ${shouldPlay ? 'play-animation' : ''}`}>
         
         {/* Phone Body */}
-        <div className="relative w-64 h-[500px] bg-slate-900 rounded-[3rem] border-4 border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden transform transition hover:scale-105 duration-500">
+        <div className="relative w-64 h-[460px] lg:h-[480px] bg-slate-900 rounded-[3rem] border-4 border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden transform transition hover:scale-105 duration-500">
           <div className="absolute top-0 inset-x-0 h-6 w-32 mx-auto bg-slate-800 rounded-b-xl z-30"></div>
           
           {/* 1. Incoming Screen (Layer that fades out) */}

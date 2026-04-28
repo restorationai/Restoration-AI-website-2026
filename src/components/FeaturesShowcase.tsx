@@ -28,7 +28,8 @@ import {
   CheckSquare,
   BarChart3,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  ChevronRight
 } from 'lucide-react';
 
 import PhoneAnimation from './PhoneAnimation';
@@ -72,7 +73,7 @@ const ActionButtons = () => (
 
 {/* Reusable Video Element */}
 const FeatureVideo = ({ src }: { src: string }) => (
-  <div className="relative w-full max-w-[380px] mx-auto flex justify-center items-center">
+  <div className="relative w-full max-w-[280px] lg:max-w-[320px] mx-auto flex justify-center items-center">
     <video
       src={src}
       autoPlay
@@ -87,14 +88,14 @@ const FeatureVideo = ({ src }: { src: string }) => (
 const featuresData = [
   {
     id: 'ai-phone',
-    label: 'AI PHONE AGENT',
-    title: 'Answers Calls. Gets Jobs Moving.',
-    desc: 'Your AI answers fast, gets job details, and pushes your team into action.',
+    label: '24/7 AI RECEPTIONIST & DISPATCH',
+    title: 'Answers Calls. Dispatches Techs. Instantly.',
+    desc: 'Your AI answers fast, gets job details, and immediately notifies your team to spring into action.',
     items: [
       { icon: <PhoneCall size={20} className="text-blue-500" />, title: 'Never Miss a Call', desc: 'Your AI answers every call in seconds.' },
       { icon: <ClipboardList size={20} className="text-blue-500" />, title: 'Collects Job Details', desc: 'Name, address, loss type, and urgency.' },
-      { icon: <BellRing size={20} className="text-blue-500" />, title: 'Wakes Up Techs', desc: 'Calls techs until someone confirms.' },
-      { icon: <FileText size={20} className="text-blue-500" />, title: 'Clear Summaries', desc: 'Clean job notes for your team.' }
+      { icon: <BellRing size={20} className="text-blue-500" />, title: 'Instant Notifications', desc: 'Techs get push alerts the moment a job is booked.' },
+      { icon: <CheckCircle2 size={20} className="text-blue-500" />, title: 'Easy Acceptance', desc: 'Techs can accept or decline jobs with a single tap.' }
     ],
     mediaType: 'component',
     mediaComponent: <PhoneAnimation />
@@ -138,19 +139,7 @@ const featuresData = [
     mediaType: 'video',
     mediaSrc: '/videos/feature-visual-intake.mp4'
   },
-  {
-    id: 'dispatch',
-    label: 'DISPATCH SYSTEM',
-    title: 'Jobs Dispatched Instantly. No Phone Tag.',
-    desc: 'When a job is booked, the right tech is notified immediately based on location, availability, and skill set.',
-    items: [
-      { icon: <BellRing size={20} className="text-blue-500" />, title: 'Instant Notifications', desc: 'Techs get push alerts the moment a job is booked.' },
-      { icon: <ClipboardList size={20} className="text-blue-500" />, title: 'Everything Included', desc: 'Customer details, location, and photos in one place.' },
-      { icon: <CheckCircle2 size={20} className="text-blue-500" />, title: 'Easy Acceptance', desc: 'Techs can accept or decline jobs with a single tap.' }
-    ],
-    mediaType: 'video',
-    mediaSrc: '/videos/feature-automated-dispatch.mp4'
-  },
+
   {
     id: 'work-auth',
     label: 'WORK AUTHORIZATIONS',
@@ -225,7 +214,7 @@ export default function FeaturesShowcase() {
   };
 
   return (
-    <section className="relative min-h-screen py-20 bg-[#fafafa] overflow-hidden font-sans">
+    <section className="relative py-12 lg:py-16 bg-[#fafafa] overflow-hidden font-sans">
       
       {/* Dynamic Background Pattern to make it less plain */}
       <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
@@ -235,8 +224,8 @@ export default function FeaturesShowcase() {
       <div className="container mx-auto px-6 lg:px-8 max-w-[1400px] relative z-10 w-full">
 
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
-          <h2 className="text-[40px] md:text-[50px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.05]">
+        <div className="text-center max-w-5xl mx-auto mb-8 lg:mb-10">
+          <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-black text-[#0f172a] tracking-tight leading-[1.05] lg:whitespace-nowrap">
             Built for the Realities of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb] drop-shadow-sm">Restoration</span>
           </h2>
         </div>
@@ -275,17 +264,25 @@ export default function FeaturesShowcase() {
                       exit={{ opacity: 0, scale: 0.95 }}
                       key={feature.id}
                       onClick={() => setActiveTab(actualIndex)}
-                      className={`w-full text-left px-7 py-5 rounded-[1.25rem] transition-all duration-300 outline-none
+                      className={`w-full text-left px-7 py-5 rounded-[1.25rem] transition-all duration-300 outline-none group
                         ${isActive 
-                          ? 'border-[2.5px] border-[#38bdf8] bg-white/40 shadow-sm' 
-                          : 'border-[2.5px] border-transparent hover:bg-slate-200/30'
+                          ? 'border-[2.5px] border-[#38bdf8] bg-white/60 shadow-md scale-[1.02]' 
+                          : 'border-[2.5px] border-transparent hover:bg-white/80 hover:shadow-sm hover:scale-[1.02] hover:border-slate-200'
                         }`}
                     >
-                      <span className={`block text-[14px] uppercase font-bold tracking-[0.15em] transition-colors ${
-                        isActive ? 'text-[#0ea5e9]' : 'text-slate-500'
-                      }`}>
-                        {feature.label}
-                      </span>
+                      <div className="flex items-center justify-between w-full">
+                        <span className={`block text-[13px] lg:text-[14px] uppercase font-bold tracking-[0.15em] transition-colors ${
+                          isActive ? 'text-[#0ea5e9]' : 'text-slate-500 group-hover:text-slate-700'
+                        }`}>
+                          {feature.label}
+                        </span>
+                        {!isActive && (
+                          <ChevronRight size={18} className="text-[#0ea5e9] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                        )}
+                        {isActive && (
+                          <div className="w-2 h-2 rounded-full bg-[#0ea5e9] shadow-[0_0_8px_rgba(14,165,233,0.6)]"></div>
+                        )}
+                      </div>
                     </motion.button>
                   );
                 })}
@@ -324,16 +321,16 @@ export default function FeaturesShowcase() {
                   <h3 className="text-3xl lg:text-[42px] font-extrabold text-[#0f172a] mb-5 tracking-tight">
                     {activeFeature.title}
                   </h3>
-                  <p className="text-[18px] lg:text-[20px] text-[#0ea5e9] font-semibold max-w-4xl leading-relaxed mx-auto lg:mx-0">
+                  <p className="text-[18px] lg:text-[20px] text-slate-600 font-medium max-w-4xl leading-relaxed mx-auto lg:mx-0">
                     {activeFeature.desc}
                   </p>
                 </div>
                 
                 {/* 2-Column Layout: Media (Left) & Bullets (Right) */}
-                <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start pt-6 border-t border-slate-200/60">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start pt-2">
                   
                   {/* Media Container - Removed rigid white box, letting it breathe */}
-                  <div className="w-full lg:w-[45%] flex justify-center items-center min-h-[350px]">
+                  <div className="w-full lg:w-[45%] flex justify-center items-center min-h-[240px] lg:min-h-[280px]">
                     {activeFeature.mediaType === 'component' ? (
                       activeFeature.mediaComponent
                     ) : (
@@ -362,7 +359,7 @@ export default function FeaturesShowcase() {
         </div>
 
         {/* Global Action Buttons */}
-        <div className="mt-24 flex justify-center max-w-4xl mx-auto border-t border-slate-200/60 pt-16">
+        <div className="mt-8 lg:mt-12 flex justify-center max-w-4xl mx-auto">
           <ActionButtons />
         </div>
 

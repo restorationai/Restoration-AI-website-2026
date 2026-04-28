@@ -22,7 +22,7 @@ export default function HowItWorks() {
               HOW TO GET STARTED
             </span>
             <h2 className="text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-              How to Never Miss a Job Again{' '}
+              From Setup to Booked Jobs{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">in 5 Minutes</span>
             </h2>
           </div>
