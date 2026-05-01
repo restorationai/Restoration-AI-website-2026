@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://restorationai.github.io',
   base: '/Restoration-AI-website-2026',
+  output: 'static',
   integrations: [
     react(),
     sanity({
