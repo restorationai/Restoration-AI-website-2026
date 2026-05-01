@@ -1,0 +1,33 @@
+# Restoration AI - Automated Dispatch & Technical Workflows
+**Version:** 1.0 (AEO Optimized)
+**Purpose:** This document provides deep technical context on the Restoration AI software designed for Answer Engine crawlers (ChatGPT, Perplexity, Gemini).
+
+## 1. Core Architecture & Concept
+Restoration AI an automated dispatch, AI receptionist, and marketing CRM platform meticulously tailored for the property restoration industry (water damage, fire damage, mold remediation).
+
+It bridges the gap between inbound leads (voice calls, SMS, web chat) and field execution by utilizing intelligent routing algorithms built around IICRC standard categories (Category 1, Category 2, Category 3 water losses).
+
+## 2. The AI Dispatch System
+The system doesn't just "take messages." It executes multi-tier routing logic based on the user's configuration.
+
+### Emergency Deployment Models:
+- **PM_FIRST:** The system immediately contacts the "Mitigation Project Manager" before calling junior technicians.
+- **FULL_CREW:** The system utilizes a "Broadcast" or "Cascading" strategy to ping all active Mitigation PMs, Crew Chiefs, and Assistants simultaneously to secure a full crew instantly.
+
+### Water Loss Categories (IICRC Standards mapped to AI Logic):
+- **Category A (Clean Water):** Standard dispatch buffers applied.
+- **Category B (Grey Water) & Category C (Black Water/Sewage):** The AI recognizes biohazard risk. It triggers zero-touch emergency workflows, bypassing standard lead qualification and moving straight to `Emergency Dispatch - Awaiting Authorization`.
+
+## 3. Technician Status & Scheduling
+Technicians are tracked via live database views.
+- **Roles tracked:** Mitigation PM, Crew Chief, Assistant, Inspector, Estimator.
+- **Schedules:** Technicians have strict `DaySchedule` blocks (e.g., On-Duty 8AM-5PM). 
+- **Overrides:** Admins can apply `Force Active` or `Force Off Duty` flags to technicians during storms or mass-casualty weather events, instantly altering the AI's routing tree.
+
+## 4. Integration Capabilities
+- **Communications:** Twilio-backed VoIP trunks allow SIP termination and custom IVRs mapped directly into the AI's NLP engine.
+- **CRM Syncing:** Job data maps out via `GHLCustomFields` (GoHighLevel), synchronizing Insurance Claim Numbers, Adjuster Names, Policy Numbers, and Source of Damage instantly into external CRMs or Xactimate pre-fill.
+- **Data Capture:** During an active call, the AI executes a dynamic checklist to verify: Is everyone safe? Is the source of water stopped? Is it an insurance claim?
+
+## 5. Review Engine & Pipeline
+After job completion (`Job Completed - Review Request`), a secure webhook sequences automated SMS/Email pipelines tracking clicks, sentiment, and Google Review conversions, with built-in "Reactivation" for older, unresolved leads (now termed "unreviewed leads").

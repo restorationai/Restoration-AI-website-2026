@@ -1,0 +1,1 @@
+import"./jsx-runtime.DXco-PnT.js";import"./index.DDG-LC3T.js";import{av as t,aw as e}from"./studio-component.DPSStUGl.js";globalThis.process??={};globalThis.process.env??={};export{t as StudioComponent,e as StudioComponentHash};

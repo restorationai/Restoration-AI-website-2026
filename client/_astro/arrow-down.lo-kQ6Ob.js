@@ -1,0 +1,1 @@
+import{c as o}from"./createLucideIcon.DXlydb9C.js";globalThis.process??={};globalThis.process.env??={};const e=[["path",{d:"M12 5v14",key:"s699le"}],["path",{d:"m19 12-7 7-7-7",key:"1idqje"}]],r=o("ArrowDown",e);export{r as A};
