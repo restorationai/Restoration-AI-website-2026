@@ -32,23 +32,14 @@ export default function BookACall() {
               </p>
             </div>
 
-            {/* Calendar Container (Wide Square Version) */}
-            <div className="w-full max-w-6xl mx-auto">
-              <div className="relative bg-white rounded-2xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-200 min-h-[800px]">
-                {/* Subtle glowing blue border overlay */}
-                <div className="absolute inset-0 border-2 border-blue-400/30 rounded-2xl pointer-events-none shadow-[0_0_30px_rgba(59,130,246,0.15)_inset]"></div>
-                
-                <div className="w-full h-full bg-transparent flex flex-col relative z-10" id="calendar-container">
-                  
-                  <iframe 
-                    src="https://link.restorationai.io/widget/booking/nxDQ6IYn3QIIvrXS6Ib0" 
-                    style={{ width: '100%', height: '800px', border: 'none', overflow: 'hidden' }} 
-                    scrolling="no" 
-                    id="amzzk8cUTFJTWf00mnGo_1765575687034"
-                  ></iframe>
-
-                </div>
-              </div>
+            {/* Calendar Container */}
+            <div className="w-full max-w-6xl mx-auto flex flex-col relative z-10" id="calendar-container">
+              <iframe 
+                src="https://link.restorationai.io/widget/booking/nxDQ6IYn3QIIvrXS6Ib0" 
+                style={{ width: '100%', height: '800px', border: 'none', overflow: 'hidden' }} 
+                scrolling="no" 
+                id="amzzk8cUTFJTWf00mnGo_1765575687034"
+              ></iframe>
             </div>
           </div>
         </section>
