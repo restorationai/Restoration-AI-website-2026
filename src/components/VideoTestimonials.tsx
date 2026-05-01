@@ -16,16 +16,16 @@ const testimonialsData = [
     videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e4050a8696a78b8df913e6.mov"
   },
   { 
-    id: 2, 
-    quote: '"Super smooth, super easy to work with... The AI receptionist answers every call 24/7"', 
-    name: "Matt",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3ee2850b9a3263ae89cbf.mov"
-  },
-  { 
     id: 3, 
     quote: '"... And what\'s been really nice is it sends out a work authorization over the phone… So the job is locked in before we even roll out…"', 
     name: "Todd",
     videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3f17ec56ad27908b82177.mov"
+  },
+  { 
+    id: 2, 
+    quote: '"Super smooth, super easy to work with... The AI receptionist answers every call 24/7"', 
+    name: "Matt",
+    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3ee2850b9a3263ae89cbf.mov"
   },
   {
     id: 9,
@@ -36,8 +36,9 @@ const testimonialsData = [
   { 
     id: 4, 
     quote: '"... Its the best decision i’ve ever made...The AI answers every single call the way I want it to every time…"', 
-    name: "John",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3f0368696a78b8df4fd26.mp4"
+    name: "Mike",
+    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69f42e36a6108a48585c8b9d.mp4",
+    fit: "contain"
   },
   { 
     id: 5, 
@@ -178,7 +179,7 @@ export default function VideoTestimonials() {
                       <video 
                         src={t.videoUrl} 
                         poster={t.thumbnailUrl}
-                        className="w-full h-full object-cover" 
+                        className={`w-full h-full ${t.fit === 'contain' ? 'object-contain' : 'object-cover'}`} 
                         controls 
                         controlsList="nofullscreen nodownload noremoteplayback"
                         disablePictureInPicture

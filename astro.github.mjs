@@ -1,22 +1,12 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sanity from '@sanity/astro';
 import sitemap from '@astrojs/sitemap';
-import cloudflare from '@astrojs/cloudflare';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://restorationai.io',
-  output: 'static',
-  adapter: cloudflare({
-    imageService: 'cloudflare',
-    platformProxy: {
-      enabled: true
-    }
-  }),
+  site: 'https://restorationai.github.io',
+  base: '/Restoration-AI-website-2026',
   integrations: [
     react(),
     sanity({
@@ -28,7 +18,6 @@ export default defineConfig({
     }),
     sitemap(),
   ],
-
   vite: {
     plugins: [tailwindcss()],
   },

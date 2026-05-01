@@ -138,7 +138,7 @@ export default function Hero() {
             ))}
           </div>
           <span className="text-[14px] text-slate-600 font-semibold ml-1 whitespace-nowrap">
-            Trusted by <span className="font-bold text-slate-800 tracking-tight">Restoration Companies</span> Nationwide
+            Trusted by <span className="font-bold tracking-tight">Restoration Companies</span> Nationwide
           </span>
         </div>
       </motion.div>

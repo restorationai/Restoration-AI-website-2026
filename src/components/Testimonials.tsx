@@ -6,8 +6,9 @@ import { Star, Play, Pause } from 'lucide-react';
 const testimonialsData = [
   { 
     type: 'video',
-    name: "John",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3f0368696a78b8df4fd26.mp4"
+    name: "Mike",
+    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69f42e36a6108a48585c8b9d.mp4",
+    fit: "contain"
   },
   {
     type: 'image',
@@ -33,8 +34,8 @@ const testimonialsData = [
   },
   {
     type: 'video',
-    name: "Todd",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3f17ec56ad27908b82177.mov"
+    name: "Matt",
+    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3ee2850b9a3263ae89cbf.mov"
   },
   {
     type: 'image',
@@ -61,8 +62,8 @@ const testimonialsData = [
   },
   {
     type: 'video',
-    name: "Matt",
-    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3ee2850b9a3263ae89cbf.mov"
+    name: "Todd",
+    videoUrl: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e3f17ec56ad27908b82177.mov"
   },
   {
     type: 'image',
@@ -102,7 +103,7 @@ const VideoCard = ({ data }: { data: any }) => {
         ref={videoRef}
         src={data.videoUrl} 
         poster={data.thumbnailUrl}
-        className="w-full aspect-[9/16] object-cover bg-black" 
+        className={`w-full aspect-[9/16] bg-black ${data.fit === 'contain' ? 'object-contain' : 'object-cover'}`} 
         controls={false}
         playsInline
         loop

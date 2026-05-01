@@ -34,6 +34,8 @@ import {
 
 import PhoneAnimation from './PhoneAnimation';
 import ReviewRankingAnimation from './ReviewRankingAnimation';
+import WorkAuthAnimation from './WorkAuthAnimation';
+import VisualIntakeAnimation from './VisualIntakeAnimation';
 
 {/* Reusable Icon Component for the feature lists */}
 const FeatureItem = ({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) => (
@@ -136,8 +138,8 @@ const featuresData = [
       { icon: <Camera size={20} className="text-blue-500" />, title: 'Easy Uploads', desc: 'No app required, works right in their mobile browser.' },
       { icon: <ImageIcon size={20} className="text-blue-500" />, title: 'Instant Sync', desc: 'Photos are attached to the job record instantly.' }
     ],
-    mediaType: 'video',
-    mediaSrc: '/videos/feature-visual-intake.mp4'
+    mediaType: 'component',
+    mediaComponent: <VisualIntakeAnimation />
   },
 
   {
@@ -150,8 +152,8 @@ const featuresData = [
       { icon: <FileSignature size={20} className="text-blue-500" />, title: 'Digital Signatures', desc: 'Customers sign securely on their own device.' },
       { icon: <CheckSquare size={20} className="text-blue-500" />, title: 'Ready to Work', desc: 'Techs arrive with authorization already completed.' }
     ],
-    mediaType: 'video',
-    mediaSrc: '/videos/feature-work-authorizations.mp4'
+    mediaType: 'component',
+    mediaComponent: <WorkAuthAnimation />
   },
   {
     id: 'team-management',
