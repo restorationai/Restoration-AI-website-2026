@@ -27,6 +27,9 @@ export default function LogoMarquee() {
             <motion.img 
               src={company.logo} 
               alt={company.name}
+              width={200}
+              height={100}
+              loading="lazy"
               className={`${company.name === 'Restoration 1' ? 'h-32 md:h-48' : 'h-16 md:h-24'} w-auto object-contain transition-all duration-300 transform hover:scale-110`}
             />
           </div>
@@ -43,6 +46,9 @@ export default function LogoMarquee() {
             <motion.img 
               src={company.logo} 
               alt={company.name}
+              width={200}
+              height={100}
+              loading="lazy"
               className={`${company.name === 'Restoration 1' ? 'h-32 md:h-48' : 'h-16 md:h-24'} w-auto object-contain transition-all duration-300 transform hover:scale-110`}
             />
           </div>

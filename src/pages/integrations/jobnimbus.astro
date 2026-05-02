@@ -2,9 +2,46 @@
 import BookACall from "../../components/BookACall";
 import MainLayout from "../../layouts/MainLayout.astro";
 import JobNimbusHomepage from "../../components/integrations/JobNimbusHomepage";
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Automated Restoration Dispatch for JobNimbus",
+  serviceType: "AI Receptionist & Automation",
+  provider: {
+    "@type": "SoftwareApplication",
+    name: "Restoration AI",
+  },
+  description:
+    "Automated 24/7 call answering, lead qualification, and emergency crew dispatch directly integrated into JobNimbus for restoration contractors.",
+  areaServed: "Worldwide",
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Does Restoration AI integrate directly with JobNimbus?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Restoration AI is designed to work seamlessly alongside your JobNimbus workflow by capturing calls, structuring the job details, and delivering everything your team needs in a clean, organized format. The goal is not to change how your system works, but to make sure every job enters JobNimbus with complete and accurate information so your team can act immediately without fixing intake issues first.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I have to change how my team uses JobNimbus?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Your team continues using JobNimbus exactly the way they already do today. Restoration AI does not replace your system or force a new process. Instead, it improves what happens before the job reaches JobNimbus by making sure every call is handled properly and every job starts with the right information.",
+      },
+    }
+  ],
+};
 ---
 
-<MainLayout>
+<MainLayout title="Automated Restoration Dispatch for JobNimbus | Restoration AI" description="Automated 24/7 call answering, lead qualification, and emergency crew dispatch directly integrated into JobNimbus for restoration contractors." jsonLd={[serviceJsonLd, faqJsonLd]}>
     <JobNimbusHomepage client:load />
     <BookACall client:load />
 </MainLayout>

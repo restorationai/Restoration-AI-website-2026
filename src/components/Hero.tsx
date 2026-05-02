@@ -207,8 +207,11 @@ export default function Hero() {
           >
             Never Miss a Call
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              Never Lose a Job
+            <span className="relative inline-block">
+              <span className="invisible">Never Lose a Job</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent" aria-hidden="true">
+                Never Lose a Job
+              </span>
             </span>
           </motion.h1>
 
