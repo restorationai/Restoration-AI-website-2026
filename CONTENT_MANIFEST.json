@@ -1,0 +1,304 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "last_updated": "2026-05-03",
+    "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
+    "id_prefixes": {
+      "topic":   "RAI-###  (Topical Map primary key)",
+      "author":  "AUTH-### (Author Vault primary key)",
+      "pipeline":"topic_id + author_id foreign keys link to the other two tables"
+    }
+  },
+
+  "topical_map": [
+    {
+      "topic_id": "RAI-001",
+      "primary_keyword": "AI receptionist for restoration companies",
+      "unique_take": "Unlike generic AI phone tools, restoration jobs require immediate triage of water category (1/2/3), insurance carrier routing, and crew availability — our AI handles all three in a single call, something no general-purpose receptionist platform does.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Transactional",
+      "h2_questions": [
+        "What does an AI receptionist actually do on a restoration intake call?",
+        "Can an AI receptionist handle Category 3 water loss calls correctly?",
+        "How does AI dispatch differ from a traditional answering service?",
+        "Will an AI receptionist work with my existing CRM (JobNimbus, Albiware, Xcelerate)?",
+        "How quickly can I set up an AI receptionist for my restoration company?"
+      ],
+      "parent_pillar_id": null
+    },
+    {
+      "topic_id": "RAI-002",
+      "primary_keyword": "water damage restoration lead response time",
+      "unique_take": "Insurance adjusters internally rank contractors by speed-to-answer on new losses. Contractors who respond within 4 minutes win 68% of referrals vs. 12% for those who respond in over an hour — a stat the industry hides because it exposes how many jobs are lost to voicemail.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "Why does response time determine who gets the job in restoration?",
+        "What is the '4-minute rule' insurance adjusters use to rank contractors?",
+        "How many restoration leads are lost to unanswered calls every week?",
+        "What happens to a restoration company's Google ranking when calls go to voicemail?",
+        "How do top-performing restoration companies guarantee 24/7 call coverage?"
+      ],
+      "parent_pillar_id": "RAI-001"
+    },
+    {
+      "topic_id": "RAI-003",
+      "primary_keyword": "how to automate restoration job dispatch",
+      "unique_take": "Most 'automation' guides for restoration talk about CRM workflows — but skip the hardest step: the first inbound call. Automating dispatch starts before the job is ever in the CRM, at the moment the homeowner first dials.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "What is the first step to automating restoration dispatch?",
+        "How do you route emergency restoration calls to on-call crews automatically?",
+        "What data needs to be captured on intake to enable automated dispatch?",
+        "How does automated dispatch integrate with Xactimate and job management software?",
+        "What are the common failure points when restoration companies try to automate dispatch?"
+      ],
+      "parent_pillar_id": "RAI-001"
+    },
+    {
+      "topic_id": "RAI-004",
+      "primary_keyword": "restoration company answering service vs AI",
+      "unique_take": "Traditional answering services charge per-minute and still miss calls during surge events (storms, pipe bursts). We quantify the actual cost delta: for a mid-size restoration company handling 150 calls/month, AI costs ~$2.32/call vs. $8–$14/call for a live service — with better intake accuracy.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What does a traditional restoration answering service actually cost per call?",
+        "Can an AI answering service qualify restoration leads as well as a human can?",
+        "What happens during storm surge when call volume spikes — AI vs. live service?",
+        "Does switching to AI hurt the customer experience for distressed homeowners?",
+        "What is the ROI comparison: AI receptionist vs. hiring a full-time receptionist?"
+      ],
+      "parent_pillar_id": null
+    },
+    {
+      "topic_id": "RAI-005",
+      "primary_keyword": "restoration CRM integration with AI phone system",
+      "unique_take": "The industry talks about CRM integrations in terms of data sync, but the real unlock is bidirectional: AI that reads existing job history during a call to recognize repeat clients, flag at-risk accounts, and pre-fill work orders — not just push new contacts.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "Which restoration CRMs support native AI phone integrations?",
+        "How does a job auto-populate in JobNimbus from an AI intake call?",
+        "Can AI pull existing customer history from Albiware during a live call?",
+        "What data fields transfer automatically from AI intake to Xcelerate?",
+        "How do you keep AI call data and CRM records in sync after dispatch?"
+      ],
+      "parent_pillar_id": "RAI-001"
+    },
+    {
+      "topic_id": "RAI-006",
+      "primary_keyword": "work authorization automation restoration",
+      "unique_take": "Work authorizations are the single biggest bottleneck between job intake and billable hours starting. Contractors lose an average of 3.2 hours per job waiting for manual WA signatures — AI-driven SMS/email WA workflows eliminate this entirely at the point of the intake call.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "What is a work authorization and why does it matter in restoration?",
+        "How can work authorizations be sent and signed automatically during intake?",
+        "What are the legal requirements for a valid digital work authorization?",
+        "How does automated WA reduce job start delays for restoration crews?",
+        "Which restoration software platforms support automated work authorization workflows?"
+      ],
+      "parent_pillar_id": null
+    },
+    {
+      "topic_id": "RAI-007",
+      "primary_keyword": "multilingual AI receptionist restoration",
+      "unique_take": "In markets like Miami, Phoenix, and Los Angeles, 30–40% of water damage calls originate from Spanish-speaking households — yet fewer than 5% of restoration companies have a bilingual receptionist on staff. This is a massive uncontested market gap.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "How much restoration business is lost due to language barriers?",
+        "Can an AI receptionist handle Spanish restoration intake calls natively?",
+        "What other languages matter most for restoration contractors by region?",
+        "Does a multilingual AI receptionist need separate phone numbers per language?",
+        "How do you market your restoration company to Spanish-speaking homeowners?"
+      ],
+      "parent_pillar_id": "RAI-001"
+    },
+    {
+      "topic_id": "RAI-009",
+      "primary_keyword": "after-hours answering service for restoration companies",
+      "unique_take": "Standard answering services just take a message and create a callback queue. Restoration AI triages every after-hours call using IICRC water categories (Cat 1/2/3) in real time, selecting the correct dispatch urgency tier and pushing a fully populated job record to the CRM before the homeowner hangs up — something no human operator or generic answering service can do.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What makes an after-hours restoration call different from any other service call?",
+        "What is IICRC water categorization and why does it determine dispatch urgency?",
+        "Why do traditional after-hours answering services fail restoration contractors?",
+        "How does AI triage an after-hours restoration call using IICRC categories?",
+        "What data does AI capture at 2am that enables immediate crew dispatch?",
+        "How does after-hours AI integrate with restoration CRMs like JobNimbus and Albiware?",
+        "What does an AI after-hours answering service cost vs. a 24/7 human service?"
+      ],
+      "parent_pillar_id": null
+    },
+    {
+      "topic_id": "RAI-010",
+      "primary_keyword": "AI answering service for restoration companies",
+      "unique_take": "85% of callers who don't reach a live answer won't call back — yet restoration contractors miss 60–80% of inbound calls because they're always on-site. The first company to answer wins the job. This post uses the founder's personal story (uncle's $80k missed call) to frame AI answering not as tech adoption but as closing the gap between field operations and incoming calls.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "Why do restoration companies miss so many calls?",
+        "What exactly is an AI answering service for restoration?",
+        "Why does the first company to answer always win the restoration job?",
+        "What happens to your calls during a storm surge?",
+        "How does an AI answering service qualify a restoration lead?",
+        "Is an AI answering service worth it for a small restoration company?"
+      ],
+      "parent_pillar_id": "RAI-001"
+    },
+    {
+      "topic_id": "RAI-008",
+      "primary_keyword": "restoration company Google reviews automation",
+      "unique_take": "Review generation in restoration is uniquely timing-sensitive: the highest-intent moment to ask for a review is 24–48 hours post-job-completion, not weeks later. AI-triggered SMS review requests at this exact window produce a 4.7x higher conversion rate than manual follow-up.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "When is the best time to ask a restoration customer for a Google review?",
+        "How do you automate Google review requests after a restoration job?",
+        "What review volume does a restoration company need to rank in the local map pack?",
+        "How do negative reviews affect insurance adjuster referrals?",
+        "What is the fastest legal way to increase 5-star reviews for a restoration company?"
+      ],
+      "parent_pillar_id": null
+    }
+  ],
+
+  "production_pipeline": [
+    {
+      "topic_id": "RAI-001",
+      "author_id": "AUTH-001",
+      "automation_status": "Published",
+      "slug": "/blog/ai-receptionist-for-restoration-companies",
+      "video_prompt": "Talking-head explainer (60s): restoration business owner at their desk, phone ringing, cutting to an animated AI call flow diagram showing triage → dispatch → CRM sync. Tone: authoritative and efficient. End card: 'Set up in 5 minutes — no credit card.'",
+      "sanity_id": "post-rai-001-ai-receptionist"
+    },
+    {
+      "topic_id": "RAI-002",
+      "author_id": "AUTH-001",
+      "automation_status": "Published",
+      "slug": "/blog/water-damage-restoration-lead-response-time",
+      "video_prompt": "Data-driven explainer (45s): animated bar chart showing call response time vs. job win rate. Visual: phone ringing with a timer, jobs being awarded vs. going to competitors. Tone: urgent, data-backed. CTA: 'Stop losing jobs to voicemail.'",
+      "sanity_id": "post-rai-002-response-time"
+    },
+    {
+      "topic_id": "RAI-003",
+      "author_id": "AUTH-002",
+      "automation_status": "Drafting",
+      "slug": "/blog/how-to-automate-restoration-job-dispatch",
+      "video_prompt": "Screen-capture walkthrough (90s): live demo of an AI intake call being transcribed in real time, crew assignment auto-populating in a CRM, SMS confirmation sent to homeowner. Tone: practical, step-by-step. No voiceover music — clean UI sounds only.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-004",
+      "author_id": "AUTH-001",
+      "automation_status": "Published",
+      "slug": "/blog/restoration-answering-service-vs-ai",
+      "video_prompt": "Side-by-side comparison animation (60s): two split screens — left: traditional answering service (hold music, missed calls, per-minute billing ticker); right: AI system (instant answer, cost-per-call counter dropping). Tone: confident, ROI-focused.",
+      "sanity_id": "post-rai-004-ai-vs-answering-service"
+    },
+    {
+      "topic_id": "RAI-005",
+      "author_id": "AUTH-003",
+      "automation_status": "Ready",
+      "slug": "/blog/restoration-crm-integration-ai-phone-system",
+      "video_prompt": "Technical walkthrough (75s): screen recording of an AI call completing, then instantly showing the populated job card in JobNimbus with all intake fields pre-filled. Overlaid annotation arrows. Tone: technical but accessible. CTA: 'See all integrations.'",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-006",
+      "author_id": "AUTH-002",
+      "automation_status": "Ready",
+      "slug": "/blog/work-authorization-automation-restoration",
+      "video_prompt": "Phone mockup animation (45s): homeowner receives SMS with WA link, signs on phone in 10 seconds, crew dispatch notification fires instantly. Counter shows '3.2 hours saved per job.' Tone: clean, benefit-focused. No talking head.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-007",
+      "author_id": "AUTH-003",
+      "automation_status": "Drafting",
+      "slug": "/blog/multilingual-ai-receptionist-restoration",
+      "video_prompt": "Bilingual call demo (60s): side-by-side of the same intake call — English on left, Spanish on right — both handled by the same AI, same quality, same dispatch speed. Subtitle captions on both. Tone: inclusive, market-opportunity framing.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-008",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/restoration-company-google-reviews-automation",
+      "video_prompt": "Results-focused montage (50s): Google Business Profile star rating climbing from 3.8 to 4.9, review count ticking up, map pack rank improving. Interspersed with phone showing an automated SMS review request. Tone: aspirational, data-driven.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-010",
+      "author_id": "AUTH-001",
+      "automation_status": "Drafting",
+      "slug": "/blog/ai-answering-service-restoration-companies-never-miss-lead",
+      "video_prompt": "Founder-story format (75s): opens with a ringing phone going to voicemail, dollar amount fading away. Cut to Santino at desk — voiceover of the $80k uncle story. Then split: same phone call, AI answers instantly, job card populates, crew dispatched. Tone: personal, direct, no corporate gloss.",
+      "sanity_id": "rai-010-ai-answering-service-never-miss-lead"
+    },
+    {
+      "topic_id": "RAI-009",
+      "author_id": "AUTH-001",
+      "automation_status": "Published",
+      "slug": "/blog/after-hours-answering-service-restoration",
+      "video_prompt": "Night-time emergency scenario (60s): Phone rings at 2am showing 'Flooded Basement' caller. Split screen — left: human answering service operator writing on paper, cutting to morning callback; right: AI answering service immediately triaging IICRC category, crew SMS firing at 2:04am, job card populating in CRM. Counter: 'Crew on site in 47 minutes.' Tone: urgent, factual.",
+      "sanity_id": "rai-009-after-hours-answering-service",
+      "publishedAt": "2026-05-03"
+    }
+  ],
+
+  "author_vault": [
+    {
+      "author_id": "AUTH-001",
+      "name": "Santino",
+      "title": "Founder, Restoration AI",
+      "bio": "Founded Restoration AI after watching restoration contractors lose jobs to missed calls and slow dispatch. Has worked directly with over 200 restoration companies across the US to identify the exact operational gaps that AI can close — from first-call triage to insurance adjuster communication.",
+      "credentials": [
+        "Founder of restorationai.io",
+        "200+ restoration contractor deployments",
+        "Deep knowledge of Xactimate, JobNimbus, Albiware, and Xcelerate workflows"
+      ],
+      "social_links": {
+        "linkedin": "",
+        "headshot": "",
+        "twitter": ""
+      }
+    },
+    {
+      "author_id": "AUTH-002",
+      "name": "",
+      "title": "Restoration Operations Specialist",
+      "bio": "Former project manager at a top-50 US restoration contractor with hands-on experience running water, fire, and mold mitigation crews. Specializes in operational efficiency — dispatch workflows, crew scheduling, and the technology stack that separates high-growth shops from the rest.",
+      "credentials": [
+        "8+ years in restoration project management",
+        "IICRC WRT and ASD certified",
+        "Managed $4M+ in annual restoration volume",
+        "Expert in JobNimbus, Xcelerate, and Dash CRM"
+      ],
+      "social_links": {
+        "linkedin": "",
+        "headshot": "",
+        "twitter": ""
+      }
+    },
+    {
+      "author_id": "AUTH-003",
+      "name": "",
+      "title": "Restoration Technology Analyst",
+      "bio": "Covers the intersection of AI, automation, and the property restoration industry. Researches how top-performing restoration companies use technology to win more jobs, reduce admin overhead, and outperform competitors in insurance-referral markets.",
+      "credentials": [
+        "5+ years covering restoration industry technology",
+        "Analyst for industry publications covering RIA, IICRC, and RRT",
+        "Subject matter expert on CRM integrations and AI phone workflows"
+      ],
+      "social_links": {
+        "linkedin": "",
+        "headshot": "",
+        "twitter": ""
+      }
+    }
+  ]
+}

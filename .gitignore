@@ -15,7 +15,16 @@ pnpm-debug.log*
 
 # environment variables
 .env
+.env.local
 .env.production
+
+# Claude Code local settings (contains API tokens — never commit)
+.claude/settings.local.json
+
+# Deployment payloads and temp files
+batch1.json
+push_payload.json
+tmp_inspect.html
 
 # macOS-specific files
 .DS_Store
