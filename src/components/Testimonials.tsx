@@ -156,6 +156,10 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 max-w-6xl relative z-10 w-full">
         
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+            Testimonials
+          </span>
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
             Restoration Owners Who <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">Stopped the Bleeding.</span>
           </h2>

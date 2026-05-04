@@ -24,6 +24,10 @@ export default function BookACall() {
           
           <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                Book a Call
+              </span>
               <h2 className="text-[38px] md:text-[50px] lg:text-[60px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
                 Want To Book A Time To Talk?
               </h2>
