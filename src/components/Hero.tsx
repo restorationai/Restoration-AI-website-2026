@@ -96,7 +96,32 @@ export default function Hero() {
       <div className="absolute top-[5%] right-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 translate-x-1/2" />
       <div className="absolute top-[270px] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none -z-10" />
 
-
+      {/* TOP SOCIAL PROOF */}
+      <div className="absolute top-[125px] left-1/2 -translate-x-1/2 z-30">
+        <div className="flex items-center gap-2.5">
+          <div className="flex -space-x-2 bg-white/20 p-1 rounded-full backdrop-blur-sm border border-slate-200/50">
+            {[
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b6653d829c73b24abf7d.png",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0764.webp",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359a7dcb4cff0b96d01.png",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b8651140d.jpg",
+              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce839.webp"
+            ].map((src, i) => (
+              <div key={i} className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm">
+                <img src={src} alt={`Company Logo ${i + 1}`} className="w-full h-full object-contain" />
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
+            ))}
+          </div>
+          <span className="text-[14px] text-slate-600 font-semibold ml-1 whitespace-nowrap">
+            Trusted by <span className="font-bold tracking-tight">Restoration Companies</span> Nationwide
+          </span>
+        </div>
+      </div>
 
       {/* FLOATING CARDS */}
       {badges.map((badge) => (
@@ -135,7 +160,7 @@ export default function Hero() {
 
       <div className="container-pill relative">
         <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
-          <h1 className="text-[48px] md:text-[84px] font-extrabold tracking-tight text-slate-900 leading-[1.05] relative">
+          <h1 className="text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
             Never Miss a Call
             <br />
             <span className="relative inline-block">
@@ -173,16 +198,11 @@ export default function Hero() {
         </div>
 
         {/* TRUSTED LOGOS */}
-        <div className="mt-16 mb-2 flex flex-col items-center gap-6">
-          <div className="flex items-center gap-2.5 z-10 relative">
-            <div className="flex items-center gap-0.5">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
-              ))}
-            </div>
-            <span className="text-[14px] text-slate-600 font-semibold ml-1 whitespace-nowrap">
-              Trusted by <span className="font-bold tracking-tight">Restoration Companies</span> Nationwide
-            </span>
+        <div className="mt-12 mb-2">
+          <div className="flex flex-col items-center">
+            <p className="text-center text-[16px] md:text-[20px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-[-10px] z-10 relative">
+              Trusted by Restoration Contractors Nationwide
+            </p>
           </div>
           <LogoMarquee />
         </div>
