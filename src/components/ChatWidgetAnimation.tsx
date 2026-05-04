@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { MessageCircleMore } from 'lucide-react';
 
 const ChatWidgetAnimation = () => {
     const [shouldPlay, setShouldPlay] = useState(false);
@@ -54,7 +55,7 @@ const ChatWidgetAnimation = () => {
 
                         {/* 1. The Chat Bubble (Stays visible until clicked) */}
                         <div className="chat-bubble absolute bottom-4 right-4 w-12 h-12 bg-blue-600 rounded-full shadow-xl flex items-center justify-center text-white z-20">
-                            <i className="fa-solid fa-comment-dots text-xl"></i>
+                            <MessageCircleMore size={20} />
                         </div>
 
                         {/* 2. The Chat Window (Opens after bubble disappears) */}

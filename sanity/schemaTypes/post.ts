@@ -38,6 +38,20 @@ export const post = {
       description: 'Embed URL for the authentic, manual Loom demonstration.',
     },
     {
+      name: 'mainImage',
+      title: 'Hero Image',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          description: 'Describe the image for screen readers and SEO.',
+        },
+      ],
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
@@ -46,7 +60,27 @@ export const post = {
       name: 'body',
       title: 'Body Text',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        { type: 'block' },
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Describe the image for screen readers and SEO.',
+            },
+            {
+              name: 'caption',
+              title: 'Caption',
+              type: 'string',
+              description: 'Optional caption shown below the image.',
+            },
+          ],
+        },
+      ],
     },
   ],
 }

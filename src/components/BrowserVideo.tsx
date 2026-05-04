@@ -26,7 +26,7 @@ export default function BrowserVideo() {
       {/* Video Content Area */}
       <div className="w-full bg-slate-900 flex items-center justify-center relative overflow-hidden">
         
-        <video 
+        <video
           ref={videoRef}
           className="w-full h-auto object-contain block"
           src="/homepage-demo.mp4"
@@ -34,6 +34,7 @@ export default function BrowserVideo() {
           muted
           loop
           playsInline
+          preload="metadata"
           controls={isInteracted}
         />
 

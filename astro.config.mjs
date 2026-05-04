@@ -50,5 +50,8 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      external: ['retell-client-js-sdk', 'livekit-client'],
+    },
   },
 });

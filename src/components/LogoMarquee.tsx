@@ -10,7 +10,7 @@ const companies = [
   { name: "Servpro", logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0764.webp" },
   { name: "Restoration 1", logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69eac0c96588a29ac2cf92fd.png" },
   { name: "DryMedic", logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b55e4cde4bbc2adc5d8b.png" },
-  { name: "Dry1Out", logo: "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b602fa2dde974256d75c.png" },
+  { name: "Dry1Out", logo: "/logos/dry1out.jpg" },
 ];
 
 export default function LogoMarquee() {

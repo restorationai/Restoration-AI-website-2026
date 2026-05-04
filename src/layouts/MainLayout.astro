@@ -7,6 +7,7 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  ogImage?: string;
   jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
@@ -14,6 +15,7 @@ const {
   title = "Restoration AI | AI Receptionist & Automated Dispatch for Restoration Contractors",
   description = "AI receptionist, automated dispatch, and marketing CRM tailored specifically for the restoration industry. Never miss a call. Never lose a job.",
   canonical,
+  ogImage,
   jsonLd,
 } = Astro.props;
 
@@ -87,27 +89,32 @@ const pageJsonLdArray = jsonLd
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Restoration AI" />
-    <meta property="og:image" content={`${siteUrl}/og-default.png`} />
+    <meta property="og:image" content={ogImage ?? `${siteUrl}/og-default.png`} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteUrl}/og-default.png`} />
+    <meta name="twitter:image" content={ogImage ?? `${siteUrl}/og-default.png`} />
 
     <!-- AEO signals -->
     <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (async, non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      />
+    </noscript>
 
     <!-- Forced Light Mode Logic -->
     <script is:inline>

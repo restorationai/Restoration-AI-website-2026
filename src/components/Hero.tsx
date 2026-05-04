@@ -1,16 +1,12 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Bot, PhoneCall, Star, Layout, Briefcase, CheckCircle2, TrendingUp, ShieldAlert } from 'lucide-react';
+import { Bot, PhoneCall, Star, CheckCircle2, TrendingUp, ShieldAlert } from 'lucide-react';
 import BrowserVideo from './BrowserVideo';
 import LogoMarquee from './LogoMarquee';
 
-{/* Floating badge cards — mix of small text badges and larger image cards like Outrank */}
 const badges = [
-  // LEFT SIDE
   {
-    // TOP LEFT (Square, tilted left, close to center)
     id: 1,
     type: 'custom' as const,
     label: "Restoration Calls Handled Right",
@@ -20,7 +16,6 @@ const badges = [
     width: "w-[140px]"
   },
   {
-    // MID LEFT (Pill, tilted right, further out)
     id: 2,
     type: 'custom_pill' as const,
     label: (
@@ -35,7 +30,6 @@ const badges = [
     width: "w-[190px]"
   },
   {
-    // BOTTOM LEFT (Square, tilted left, close to center)
     id: 3,
     type: 'custom' as const,
     label: (
@@ -49,9 +43,7 @@ const badges = [
     rotate: "-12deg",
     width: "w-[140px]"
   },
-  // RIGHT SIDE
   {
-    // TOP RIGHT (Pill, tilted left, close to center)
     id: 4,
     type: 'custom_pill' as const,
     label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Proven in<br/>Real Emergencies</span>,
@@ -61,7 +53,6 @@ const badges = [
     width: "w-[200px]"
   },
   {
-    // MID RIGHT (Square, tilted right, further out)
     id: 5,
     type: 'custom' as const,
     label: "Used by Top Restoration Teams",
@@ -71,7 +62,6 @@ const badges = [
     width: "w-[140px]"
   },
   {
-    // BOTTOM RIGHT (Pill, tilted right, close to center)
     id: 6,
     type: 'custom_pill' as const,
     label: (
@@ -90,7 +80,6 @@ const badges = [
 export default function Hero() {
   return (
     <section className="relative pt-[290px] pb-[110px] overflow-hidden flex flex-col items-center">
-      {/* EXPERT GRID BACKGROUND — massive squares fading smoothly on left, right, and bottom */}
       <div
         className="absolute inset-0 pointer-events-none -z-10"
         style={{
@@ -103,18 +92,12 @@ export default function Hero() {
         }}
       />
 
-      {/* EDGE GLOWS — subtle blue glows hugging the sides */}
       <div className="absolute top-[5%] left-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 -translate-x-1/2" />
       <div className="absolute top-[5%] right-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 translate-x-1/2" />
       <div className="absolute top-[270px] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       {/* TOP SOCIAL PROOF */}
-      <motion.div 
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="absolute top-[125px] left-1/2 -translate-x-1/2 z-30"
-      >
+      <div className="absolute top-[125px] left-1/2 -translate-x-1/2 z-30">
         <div className="flex items-center gap-2.5">
           <div className="flex -space-x-2 bg-white/20 p-1 rounded-full backdrop-blur-sm border border-slate-200/50">
             {[
@@ -124,10 +107,7 @@ export default function Hero() {
               "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b8651140d.jpg",
               "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce839.webp"
             ].map((src, i) => (
-              <div
-                key={i}
-                className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm"
-              >
+              <div key={i} className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm">
                 <img src={src} alt={`Company Logo ${i + 1}`} className="w-full h-full object-contain" />
               </div>
             ))}
@@ -141,24 +121,19 @@ export default function Hero() {
             Trusted by <span className="font-bold tracking-tight">Restoration Companies</span> Nationwide
           </span>
         </div>
-      </motion.div>
+      </div>
 
-      {/* FLOATING CARDS — positioned relative to the full-width section */}
+      {/* FLOATING CARDS */}
       {badges.map((badge) => (
-        <motion.div
+        <div
           key={badge.id}
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 + badge.id * 0.1 }}
           className={`absolute ${badge.pos} hidden lg:block z-10 ${badge.width}`}
           style={{ rotate: badge.rotate }}
         >
           {badge.type === 'custom' ? (
             <div className="bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40 p-4 flex flex-col items-center justify-center gap-3 relative overflow-hidden h-[115px] w-full">
-              {/* Soft Lighting / Glow */}
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/70 blur-2xl pointer-events-none rounded-full" />
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#3dd0ff]/5 blur-2xl pointer-events-none rounded-full" />
-              
               <div className="relative z-10 flex flex-col items-center gap-2.5 w-full">
                 <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shadow-sm border border-blue-100/50 shrink-0">
                   {badge.icon}
@@ -168,12 +143,10 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-          ) : badge.type === 'custom_pill' ? (
+          ) : (
             <div className="bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40 px-4 py-2 flex flex-row items-center gap-2.5 relative overflow-hidden h-[65px] w-full">
-              {/* Soft Lighting / Glow */}
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/70 blur-xl pointer-events-none rounded-full" />
               <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-blue-700/5 blur-xl pointer-events-none rounded-full" />
-              
               <div className="relative z-10 w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shadow-sm border border-blue-200/50 shrink-0">
                 {badge.icon}
               </div>
@@ -181,30 +154,13 @@ export default function Hero() {
                 {badge.label}
               </div>
             </div>
-          ) : badge.type === 'image' ? (
-            <div className="bg-white border border-slate-200/70 rounded-xl shadow-lg shadow-slate-200/40 overflow-hidden">
-              <img src={badge.image} alt="" className="w-full h-auto" />
-            </div>
-          ) : (
-            <div className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200/60 rounded-xl shadow-lg shadow-slate-200/40">
-              <div className="w-6 h-6 rounded-md bg-slate-50 flex items-center justify-center flex-shrink-0">
-                {badge.icon}
-              </div>
-              <span className="text-[13px] font-semibold text-slate-700 whitespace-nowrap">{badge.label}</span>
-            </div>
           )}
-        </motion.div>
+        </div>
       ))}
 
       <div className="container-pill relative">
-        {/* HERO CONTENT */}
         <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative"
-          >
+          <h1 className="text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
             Never Miss a Call
             <br />
             <span className="relative inline-block">
@@ -213,24 +169,13 @@ export default function Hero() {
                 Never Lose a Job
               </span>
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[600px] mx-auto px-4"
-          >
+          <p className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[600px] mx-auto px-4">
             24/7 AI receptionist built for restoration. Answers every call, qualifies every lead, dispatches crews in minutes.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col items-center gap-6 pt-4"
-          >
-            {/* BUTTONS — significantly bigger and more prominent like Outrank */}
+          <div className="flex flex-col items-center gap-6 pt-4">
             <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
               <a
                 href="/#calendar-section"
@@ -249,8 +194,7 @@ export default function Hero() {
                 <p className="text-xs text-slate-500 mt-2 text-center">Set up in 5 minutes, no credit card required</p>
               </div>
             </div>
-
-          </motion.div>
+          </div>
         </div>
 
         {/* TRUSTED LOGOS */}
@@ -264,16 +208,10 @@ export default function Hero() {
         </div>
 
         {/* BROWSER VIDEO */}
-        <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ delay: 0.5, duration: 0.8 }}
-           className="relative max-w-5xl mx-auto w-full z-10 mt-4"
-        >
-          {/* Prominent Video Background Glow */}
+        <div className="relative max-w-5xl mx-auto w-full z-10 mt-4">
           <div className="absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
           <BrowserVideo />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,27 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Search, Image } from 'lucide-react';
+
+const StarFull = () => (
+  <svg viewBox="0 0 24 24" className="w-[9px] h-[9px] fill-current" aria-hidden="true">
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+  </svg>
+);
+const StarHalf = () => (
+  <svg viewBox="0 0 24 24" className="w-[9px] h-[9px] fill-current" aria-hidden="true">
+    <path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27V2l2.81 6.62L22 9.24z"/>
+  </svg>
+);
+const StarEmpty = () => (
+  <svg viewBox="0 0 24 24" className="w-[9px] h-[9px]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+  </svg>
+);
+const HouseFlood = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    <path d="M3 18c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1zm5 0c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1zm5 0c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1z" opacity=".5"/>
+  </svg>
+);
 
 const ReviewRankingAnimation = () => {
     // Uses Intersection Observer to auto-play when in view
@@ -92,7 +115,7 @@ const ReviewRankingAnimation = () => {
                             <span className="text-lg font-bold text-blue-500">G</span>
                             <div className="flex-1 h-7 bg-slate-50 rounded-full border border-slate-200 flex items-center px-3">
                                 <span className="text-[10px] text-slate-500 font-medium">water damage restoration near me</span>
-                                <i className="fa-solid fa-magnifying-glass text-blue-500 ml-auto text-xs"></i>
+                                <Search size={12} className="text-blue-500 ml-auto" />
                             </div>
                         </div>
 
@@ -108,13 +131,13 @@ const ReviewRankingAnimation = () => {
                                         <div className="flex items-center gap-1 mt-1">
                                             <span className="text-[10px] text-orange-400 font-bold leading-none">4.8</span>
                                             <div className="flex text-[9px] text-orange-400 leading-none">
-                                                <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star-half-stroke"></i>
+                                                <StarFull /><StarFull /><StarFull /><StarFull /><StarHalf />
                                             </div>
                                             <span className="text-[10px] text-slate-500 leading-none">(156)</span>
                                         </div>
                                     </div>
                                     <div className="w-8 h-8 bg-slate-100 rounded-md flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-image text-slate-300"></i>
+                                        <Image size={14} className="text-slate-300" />
                                     </div>
                                 </div>
 
@@ -125,13 +148,13 @@ const ReviewRankingAnimation = () => {
                                         <div className="flex items-center gap-1 mt-1">
                                             <span className="text-[10px] text-orange-400 font-bold leading-none">4.6</span>
                                             <div className="flex text-[9px] text-orange-400 leading-none">
-                                                <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star-half-stroke"></i>
+                                                <StarFull /><StarFull /><StarFull /><StarFull /><StarHalf />
                                             </div>
                                             <span className="text-[10px] text-slate-500 leading-none">(92)</span>
                                         </div>
                                     </div>
                                     <div className="w-8 h-8 bg-slate-100 rounded-md flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-image text-slate-300"></i>
+                                        <Image size={14} className="text-slate-300" />
                                     </div>
                                 </div>
 
@@ -145,15 +168,15 @@ const ReviewRankingAnimation = () => {
                                         <div className="flex items-center gap-1 mt-1.5 stars-container">
                                             <span className="text-[10px] text-orange-400 font-bold leading-none">{rating.toFixed(1)}</span>
                                             <div className="flex text-[9px] text-orange-400 gap-[1px] leading-none">
-                                                <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i>
-                                                {showFullStars ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i>}
+                                                <StarFull /><StarFull /><StarFull /><StarFull />
+                                                {showFullStars ? <StarFull /> : <StarEmpty />}
                                             </div>
                                             <span className="text-[10px] text-slate-500 leading-none">({reviewCount})</span>
                                         </div>
                                         <div className="text-[9px] font-medium text-slate-400 mt-1 leading-none">Water damage restoration service</div>
                                     </div>
                                     <div className="w-8 h-8 bg-brand-accent/10 rounded flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-house-flood-water text-brand-accent text-sm"></i>
+                                        <HouseFlood />
                                     </div>
                                     {/* The Yellow Glow Border */}
                                     <div className="glow-border absolute inset-0 border-2 border-yellow-400 rounded-lg shadow-[0_0_15px_rgba(250,204,21,0.5)] pointer-events-none opacity-0"></div>

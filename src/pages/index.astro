@@ -6,12 +6,14 @@ import CallRecordings from '../components/CallRecordings';
 import BuiltForRestoration from '../components/BuiltForRestoration';
 import Pricing from '../components/Pricing';
 import FeaturesShowcase from '../components/FeaturesShowcase';
-import PremiumFeatures from '../components/PremiumFeatures';
+// import PremiumFeatures from '../components/PremiumFeatures';
 import HowItWorks from '../components/HowItWorks';
 import Integrations from '../components/Integrations';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import BookACall from '../components/BookACall';
+import ComparisonTable from '../components/ComparisonTable';
+import TryItYourself from '../components/TryItYourself';
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -61,17 +63,19 @@ const faqJsonLd = {
 
 <MainLayout jsonLd={[serviceJsonLd, faqJsonLd]}>
   <Hero client:load />
-  <StatsBanner client:load />
+  <StatsBanner client:idle />
   <div class="relative w-full bg-[#fafbfe] overflow-x-clip">
-    <BuiltForRestoration client:load />
-    <CallRecordings client:load />
-    <HowItWorks client:load />
-    <FeaturesShowcase client:load />
-    <PremiumFeatures client:load />
-    <Testimonials client:load />
-    <Integrations client:load />
-    <FAQ client:load />
-    <Pricing client:load />
-    <BookACall client:load />
+    <BuiltForRestoration client:visible />
+    <CallRecordings client:visible />
+    <TryItYourself client:visible />
+    <HowItWorks client:visible />
+    <FeaturesShowcase client:visible />
+    {/* <PremiumFeatures client:visible /> */}
+    <ComparisonTable client:visible />
+    <Testimonials client:visible />
+    <Integrations client:visible />
+    <FAQ client:visible />
+    <Pricing client:visible />
+    <BookACall client:visible />
   </div>
 </MainLayout>

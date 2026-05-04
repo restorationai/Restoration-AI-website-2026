@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { User, Phone, Check } from 'lucide-react';
 
 const PhoneAnimation = () => {
   const [shouldPlay, setShouldPlay] = useState(false);
@@ -37,7 +38,7 @@ const PhoneAnimation = () => {
         This securely resets all the CSS animations. 
         We also handle viewport scaling here to make it much bigger.
       */}
-      <div key={playKey} className={`relative flex justify-center scale-75 sm:scale-85 lg:scale-90 origin-center ${shouldPlay ? 'play-animation' : ''}`}>
+      <div key={playKey} className={`relative flex justify-center scale-[0.56] sm:scale-[0.60] lg:scale-[0.65] origin-top ${shouldPlay ? 'play-animation' : ''}`}>
         
         {/* Phone Body */}
         <div className="relative w-64 h-[460px] lg:h-[480px] bg-slate-900 rounded-[3rem] border-4 border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden transform transition hover:scale-105 duration-500">
@@ -47,7 +48,7 @@ const PhoneAnimation = () => {
           <div className="incoming-screen absolute inset-0 z-20 bg-slate-950 flex flex-col pt-16 pb-8 px-6 pointer-events-none">
             <div className="flex flex-col items-center mb-auto">
               <div className="w-24 h-24 rounded-full bg-slate-800 flex items-center justify-center mb-4 border border-slate-700">
-                <i className="fa-solid fa-user text-4xl text-slate-500"></i>
+                <User size={36} className="text-slate-500" />
               </div>
               <h3 className="text-2xl text-white font-light">Homeowner</h3>
               <p className="text-slate-400 text-sm mt-1">Incoming Call...</p>
@@ -60,7 +61,7 @@ const PhoneAnimation = () => {
                  </div>
                  {/* The element that slides across */}
                  <div className="answer-slider w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-10 block">
-                    <i className="fa-solid fa-phone text-white text-sm"></i>
+                    <Phone size={16} className="text-white" />
                  </div>
               </div>
             </div>
@@ -106,7 +107,7 @@ const PhoneAnimation = () => {
             {/* Confirmation Toast */}
             <div className="active-element-4 bg-green-500/20 border border-green-500 p-2.5 rounded-xl flex items-center gap-3 opacity-0 shadow-lg backdrop-blur-md mb-12">
               <div className="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center text-black shrink-0 relative overflow-hidden">
-                <i className="fa-solid fa-check text-xs relative z-10"></i>
+                <Check size={12} className="relative z-10" />
               </div>
               <div>
                 <div className="text-white text-[10px] font-bold leading-tight">Tech Notified</div>
