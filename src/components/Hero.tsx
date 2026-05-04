@@ -199,6 +199,11 @@ export default function Hero() {
 
         {/* TRUSTED LOGOS */}
         <div className="mt-12 mb-2">
+          <div className="flex flex-col items-center">
+            <p className="text-center text-[16px] md:text-[20px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-[-10px] z-10 relative">
+              Trusted by Restoration Contractors Nationwide
+            </p>
+          </div>
           <LogoMarquee />
         </div>
 
