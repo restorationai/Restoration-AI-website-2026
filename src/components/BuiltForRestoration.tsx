@@ -67,12 +67,6 @@ export default function BuiltForRestoration() {
           ))}
         </div>
 
-        <div className="text-center w-full mt-4">
-          <div className="text-[12px] md:text-[14px] text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed uppercase tracking-wider">
-            Your AI asks the right intake questions—water source, affected areas, timeline, insurance status—so your team shows up prepared, not guessing.
-          </div>
-        </div>
-
       </div>
     </section>
   );
