@@ -247,10 +247,6 @@ export default function FeaturesShowcase() {
 
         {/* Header */}
         <div className="text-center max-w-5xl mx-auto mb-8 lg:mb-10">
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
-            Powerful Features
-          </span>
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-black text-[#0f172a] tracking-tight leading-[1.05] lg:whitespace-nowrap">
             Built for the Realities of{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb]">Restoration</span>

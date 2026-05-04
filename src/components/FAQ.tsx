@@ -65,10 +65,6 @@ export default function FAQ() {
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl w-full">
         
         <div className="text-center max-w-4xl mx-auto mb-16 flex flex-col items-center">
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
-            FAQ
-          </span>
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
             Frequently Asked Questions
           </h2>
