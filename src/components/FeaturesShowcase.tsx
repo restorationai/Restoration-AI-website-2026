@@ -54,7 +54,7 @@ const ActionButtons = () => (
   <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full">
     <div className="flex flex-col items-center w-full sm:w-[260px]">
       <a
-        href="/signup"
+        href="https://app.restorationai.io/#/signup"
         className="inline-flex justify-center items-center px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg shadow-blue-900/25 text-white rounded-xl text-[16px] font-bold hover:from-blue-500 hover:to-blue-700 hover:scale-[1.02] transition-all w-full"
       >
         Get Started Today
@@ -248,8 +248,8 @@ export default function FeaturesShowcase() {
         {/* Header */}
         <div className="text-center max-w-5xl mx-auto mb-8 lg:mb-10">
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-black text-[#0f172a] tracking-tight leading-[1.05] lg:whitespace-nowrap">
-            Built for the Realities of{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb]">Restoration</span>
+            Capture More Jobs Without{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb]">More Work</span>
           </h2>
         </div>
 
@@ -264,7 +264,9 @@ export default function FeaturesShowcase() {
                 <motion.button
                   key={feat.id}
                   onClick={() => setActive(i)}
-                  className={`relative w-full text-left flex items-center gap-3 px-5 py-[13px] rounded-2xl transition-colors outline-none mb-1 ${
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`relative w-full text-left flex items-center gap-3 px-5 py-[13px] rounded-2xl transition-colors outline-none mb-1 origin-left ${
                     isActive ? 'bg-white shadow-sm border border-slate-200/80' : 'hover:bg-white/70'
                   }`}
                 >
@@ -282,10 +284,10 @@ export default function FeaturesShowcase() {
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <p className={`text-[13px] font-bold leading-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
+                    <p className={`text-[14px] font-bold leading-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
                       {feat.shortLabel}
                     </p>
-                    <p className="text-[11px] text-slate-400 mt-0.5 leading-tight">{feat.navTagline}</p>
+                    <p className="text-[12px] text-slate-400 mt-0.5 leading-tight">{feat.navTagline}</p>
                   </div>
 
                   <motion.div

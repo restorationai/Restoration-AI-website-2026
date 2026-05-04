@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(npm run *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(node scripts/*)"
     ]
+  },
+  "mcpServers": {
+    "sanity": {
+      "command": "npx",
+      "args": ["-y", "@sanity/mcp-server@latest"],
+      "env": {
+        "SANITY_PROJECT_ID": "sloj5um4",
+        "SANITY_DATASET": "production",
+        "SANITY_API_TOKEN": "skJapGaaSpweVQ5hYzHRpaR0UGhHWF6R9RguAxBzlls9nuj3BS0mU8On1sdgdcIziUbV42yqRtWEvLePxa5iUcu6XUFpa4l6hhaubKdGpiCROC6mG5iVMWQIO12NtrrjqEQL3vCKY7RDKmCfk0DJfmGyRYrET1494361IUAXZeixd4TtuDD2"
+      }
+    }
   }
 }

@@ -90,7 +90,7 @@ export default function UsVsThem() {
             </ul>
 
             <div className="mt-12">
-               <a href="/signup" className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white py-4 rounded-2xl font-bold hover:from-blue-700 hover:to-blue-900 transition-all group-hover:gap-4">
+               <a href="https://app.restorationai.io/#/signup" className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white py-4 rounded-2xl font-bold hover:from-blue-700 hover:to-blue-900 transition-all group-hover:gap-4">
                  Switch to Restoration AI <ArrowRight size={20} />
                </a>
             </div>

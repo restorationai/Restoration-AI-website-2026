@@ -12,12 +12,11 @@ const columns = [
 const rows = [
   { feature: '24/7/365 coverage',                       values: [false, true,  true,  true]  },
   { feature: 'Understands restoration',                 values: [true,  false, false, true]  },
-  { feature: 'Qualifies leads in real time',            values: [true,  false, false, true]  },
+  { feature: 'Qualifies leads & filters bad ones in real time', values: [true,  false, false, true]  },
   { feature: 'Handles multiple calls at once',          values: [false, false, true,  true]  },
   { feature: 'Dispatches techs automatically',          values: [false, false, false, true]  },
-  { feature: "Books on your tech's existing route",     values: [false, false, false, true]  },
-  { feature: 'Sends work authorizations',               values: [false, false, false, true]  },
-  { feature: 'Filters bad leads, saves ad spend',       values: [false, false, false, true]  },
+  { feature: "Books on your tech's existing route",     values: [true,  false, false, true]  },
+  { feature: 'Sends work authorizations',               values: [true,  false, false, true]  },
   { feature: 'Consistent quality on every call',        values: [false, false, false, true]  },
   { feature: 'No sick days, turnover, or training',     values: [false, false, true,  true]  },
   { feature: 'Under $600/month',                        values: [false, true,  true,  true]  },
@@ -43,10 +42,10 @@ export default function ComparisonTable() {
       <div className="container-pill">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <p className="text-sm font-semibold text-[#3dd0ff] uppercase tracking-[0.2em] mb-3">Why Restoration AI</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-            Other tools weren't<br className="hidden sm:block" /> built for this.
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <p className="text-sm font-semibold text-[#3dd0ff] uppercase tracking-[0.2em] mb-3">Compare</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+            Generic answering services costs you jobs.
           </h2>
         </div>
 
@@ -99,17 +98,10 @@ export default function ComparisonTable() {
         </div>
 
         {/* Closing line + CTA */}
-        <div className="max-w-4xl mx-auto mt-10 flex flex-col sm:flex-row items-center justify-between gap-8">
-          {/* Left: supporting text */}
-          <p className="text-slate-500 text-lg leading-relaxed sm:max-w-sm">
-            Same coverage as an answering service, same quality as your best employee,{' '}
-            <span className="font-semibold text-slate-800">a fraction of the cost of either.</span>
-          </p>
-
-          {/* Right: CTA */}
-          <div className="flex flex-col items-center sm:items-end gap-2 shrink-0">
+        <div className="max-w-4xl mx-auto mt-10 flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center gap-2">
             <a
-              href="/signup"
+              href="https://app.restorationai.io/#/signup"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[15px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-lg shadow-blue-900/20 whitespace-nowrap"
             >
               Get Started for Free
