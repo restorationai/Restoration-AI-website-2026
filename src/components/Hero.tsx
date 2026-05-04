@@ -175,19 +175,6 @@ export default function Hero() {
         {/* TRUSTED LOGOS */}
         <div className="mt-16 mb-2 flex flex-col items-center gap-6">
           <div className="flex items-center gap-2.5 z-10 relative">
-            <div className="flex -space-x-2 bg-white/20 p-1 rounded-full backdrop-blur-sm border border-slate-200/50">
-              {[
-                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b6653d829c73b24abf7d.png",
-                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0764.webp",
-                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359a7dcb4cff0b96d01.png",
-                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b8651140d.jpg",
-                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce839.webp"
-              ].map((src, i) => (
-                <div key={i} className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm">
-                  <img src={src} alt={`Company Logo ${i + 1}`} className="w-full h-full object-contain" />
-                </div>
-              ))}
-            </div>
             <div className="flex items-center gap-0.5">
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
