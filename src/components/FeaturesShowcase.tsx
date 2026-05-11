@@ -28,6 +28,7 @@ import {
   History,
   ChevronRight,
   Star,
+  ArrowRight,
 } from 'lucide-react';
 
 import PhoneAnimation from './PhoneAnimation';
@@ -55,9 +56,10 @@ const ActionButtons = () => (
     <div className="flex flex-col items-center w-full sm:w-[260px]">
       <a
         href="https://app.restorationai.io/#/signup"
-        className="inline-flex justify-center items-center px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg shadow-blue-900/25 text-white rounded-xl text-[16px] font-bold hover:from-blue-500 hover:to-blue-700 hover:scale-[1.02] transition-all w-full"
+        className="inline-flex justify-center items-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg shadow-blue-900/25 text-white rounded-xl text-[16px] font-bold hover:from-blue-500 hover:to-blue-700 hover:scale-[1.02] transition-all w-full"
       >
-        Get Started Today
+        Get Started For Free
+        <ArrowRight size={18} strokeWidth={2.5} />
       </a>
       <p className="text-[12px] text-slate-500 mt-3 text-center font-medium">Set up in 5 minutes, no credit card required</p>
     </div>
@@ -257,7 +259,9 @@ export default function FeaturesShowcase() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start mt-8">
 
           {/* Left nav */}
-          <div className="w-full lg:w-[26%] flex flex-col shrink-0">
+          <div 
+            className="w-full lg:w-[26%] flex flex-row overflow-x-auto lg:flex-col shrink-0 pb-4 lg:pb-0 gap-3 lg:gap-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
             {featuresData.map((feat, i) => {
               const isActive = i === active;
               return (
@@ -266,15 +270,15 @@ export default function FeaturesShowcase() {
                   onClick={() => setActive(i)}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`relative w-full text-left flex items-center gap-3 px-5 py-[13px] rounded-2xl transition-colors outline-none mb-1 origin-left ${
-                    isActive ? 'bg-white shadow-sm border border-slate-200/80' : 'hover:bg-white/70'
+                  className={`relative w-[85%] sm:w-[320px] lg:w-full shrink-0 text-left flex items-center gap-3 px-5 py-3 lg:py-[13px] rounded-2xl transition-colors outline-none mb-0 lg:mb-1 origin-left snap-start ${
+                    isActive ? 'bg-white shadow-sm border border-slate-200/80' : 'bg-slate-50/80 lg:bg-transparent hover:bg-white/70 border border-transparent'
                   }`}
                 >
                   {/* Sliding active bar */}
                   {isActive && (
                     <motion.div
                       layoutId="activeBar"
-                      className="absolute left-0 top-[10%] bottom-[10%] w-[3px] bg-blue-600 rounded-r-full"
+                      className="absolute left-0 lg:top-[10%] bottom-0 lg:bottom-[10%] w-full lg:w-[3px] h-[3px] lg:h-auto bg-blue-600 rounded-b-2xl lg:rounded-b-none lg:rounded-r-full"
                       transition={{ type: 'spring', stiffness: 500, damping: 35 }}
                     />
                   )}

@@ -17,7 +17,7 @@ export default function HowItWorks() {
           
           {/* Left Column */}
           <div className="flex-1 max-w-3xl flex flex-col items-center lg:items-start text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
+            <span className="hidden lg:inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
               HOW TO GET STARTED
             </span>
@@ -32,7 +32,7 @@ export default function HowItWorks() {
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
               Forward your calls. Your AI goes live. That's it.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full">
+            <div className="hidden lg:flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full">
               <a 
                 href="/#calendar-section" 
                 className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px]"
@@ -160,6 +160,24 @@ export default function HowItWorks() {
             </div>
           </div>
 
+        </div>
+
+        {/* MOBILE CTAs */}
+        <div className="flex flex-col gap-3 items-center justify-center w-full lg:hidden mt-8">
+          <a 
+            href="https://app.restorationai.io/#/signup" 
+            className="inline-flex justify-center items-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl text-[16px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5 w-full max-w-[320px]"
+          >
+            Start for Free
+            <ArrowRight size={16} strokeWidth={2.5} />
+          </a>
+          <a 
+            href="/#calendar-section" 
+            className="inline-flex justify-center items-center px-6 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl text-[16px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full max-w-[320px]"
+          >
+            Book a Strategy Call
+          </a>
+          <p className="text-[12px] text-slate-500 mt-1 text-center font-medium">Set up in 5 minutes, no credit card required</p>
         </div>
 
       </div>
