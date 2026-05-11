@@ -32,17 +32,17 @@ export default function HowItWorks() {
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
               Forward your calls. Your AI goes live. That's it.
             </p>
-            <div className="hidden lg:flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full">
+            <div className="hidden lg:flex flex-col sm:flex-row gap-3 items-start justify-center lg:justify-start w-full">
               <a 
                 href="/#calendar-section" 
-                className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px]"
+                className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px] h-[46px]"
               >
                 Book a Strategy Call
               </a>
               <div className="flex flex-col items-center w-full sm:w-[240px]">
                 <a 
                   href="https://app.restorationai.io/#/signup" 
-                  className="inline-flex justify-center items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl text-[14px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5 w-full"
+                  className="inline-flex justify-center items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl text-[14px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5 w-full h-[46px]"
                 >
                   Start for Free
                   <ArrowRight size={16} strokeWidth={2.5} />
