@@ -4,7 +4,7 @@ export default function BookACall() {
     useEffect(() => {
         // Dynamically load the GHL form embed script
         const script = document.createElement("script");
-        script.src = "https://link.restorationai.io/js/form_embed.js";
+        script.src = "https://api.leadconnectorhq.com/js/form_embed.js";
         script.type = "text/javascript";
         script.async = true;
         document.body.appendChild(script);
@@ -35,10 +35,10 @@ export default function BookACall() {
             {/* Calendar Container */}
             <div className="w-full max-w-6xl mx-auto flex flex-col relative z-10" id="calendar-container">
               <iframe 
-                src="https://link.restorationai.io/widget/booking/BOuvQbEVWGytVmoDxqrJ" 
+                src="https://api.leadconnectorhq.com/widget/booking/BOuvQbEVWGytVmoDxqrJ" 
                 style={{ width: '100%', height: '800px', border: 'none', overflow: 'hidden' }} 
                 scrolling="no" 
-                id="amzzk8cUTFJTWf00mnGo_1765575687034"
+                id="BOuvQbEVWGytVmoDxqrJ_1765575687034"
               ></iframe>
             </div>
           </div>
