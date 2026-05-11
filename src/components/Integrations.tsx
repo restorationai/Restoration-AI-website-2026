@@ -31,13 +31,13 @@ export default function Integrations() {
 
         <div className="flex flex-col items-center justify-center gap-10 md:gap-14 w-full mx-auto">
           {/* Row 1: Large Logos */}
-          <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-8 lg:gap-10 w-full px-4">
-            {partners.slice(0, 6).map((p, i) => (
-              <div key={`row1-${i}`} className="flex flex-col items-center gap-2 group shrink min-w-0">
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full px-2 sm:px-4">
+            {partners.slice(0, 5).map((p, i) => (
+              <div key={`row1-${i}`} className="flex flex-col items-center gap-2 group">
                 <img 
                   src={p.url} 
                   alt={p.name || 'Integration Partner'} 
-                  className={`${p.large ? 'h-12 md:h-16 lg:h-20' : p.medium ? 'h-10 md:h-14 lg:h-16' : 'h-8 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
+                  className={`${p.large ? 'h-14 sm:h-16 md:h-16 lg:h-20' : p.medium ? 'h-12 sm:h-14 md:h-14 lg:h-16' : 'h-10 sm:h-10 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
                 />
                 {p.name && (
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -49,13 +49,13 @@ export default function Integrations() {
           </div>
 
           {/* Row 2: Smaller Logos + MORE */}
-          <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-8 lg:gap-10 w-full px-4 mt-4">
-            {partners.slice(6).map((p, i) => (
-              <div key={`row2-${i}`} className="flex flex-col items-center gap-2 group shrink min-w-0">
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full px-2 sm:px-4 mt-6 md:mt-4">
+            {partners.slice(5).map((p, i) => (
+              <div key={`row2-${i}`} className="flex flex-col items-center gap-2 group">
                 <img 
                   src={p.url} 
                   alt={p.name || 'Integration Partner'} 
-                  className={`${p.large ? 'h-12 md:h-16 lg:h-20' : p.medium ? 'h-10 md:h-14 lg:h-16' : 'h-8 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
+                  className={`${p.large ? 'h-14 sm:h-16 md:h-16 lg:h-20' : p.medium ? 'h-12 sm:h-14 md:h-14 lg:h-16' : 'h-10 sm:h-10 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
                 />
                 {p.name && (
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">

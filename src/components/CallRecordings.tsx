@@ -160,14 +160,14 @@ export default function CallRecordings() {
 
         {/* Section Header */}
         <div className="text-center max-w-5xl mx-auto mb-16 md:mb-20 flex flex-col items-center">
-          <div className="relative inline-block px-10 md:px-24">
+          <div className="relative inline-block px-4 sm:px-10 md:px-24">
             <div className="absolute left-0 md:left-2 lg:-left-2 bottom-4 md:bottom-2 transform hidden md:block">
               <svg className="w-10 h-10 md:w-16 md:h-16 text-blue-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5l14 14m0 0V9m0 10H9" />
               </svg>
             </div>
-            <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1] relative z-10">
-              Don't Take Our Word For It. Listen. <br />
+            <h2 className="text-[30px] sm:text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1] relative z-10">
+              Don't Take Our Word For It. Listen. <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-sm">
                 In Real Life Scenarios
               </span>

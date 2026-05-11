@@ -13,26 +13,26 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10 w-full">
         
         {/* TOP ROW: Split Layout */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-12 mb-10 lg:mb-12">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-6 lg:gap-12 mb-10 lg:mb-12">
           
           {/* Left Column */}
-          <div className="flex-1 max-w-3xl">
+          <div className="flex-1 max-w-3xl flex flex-col items-center lg:items-start text-center lg:text-left">
             <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
               HOW TO GET STARTED
             </span>
-            <h2 className="text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
+            <h2 className="text-[32px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
               From Setup to Booked Jobs{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">in 5 Minutes</span>
             </h2>
           </div>
 
           {/* Right Column */}
-          <div className="flex-1 w-full lg:max-w-md xl:max-w-lg lg:pb-2">
+          <div className="flex-1 w-full lg:max-w-md xl:max-w-lg lg:pb-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
               Forward your calls. Your AI goes live. That's it.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start">
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full">
               <a 
                 href="/#calendar-section" 
                 className="inline-flex justify-center items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl text-[14px] font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow w-full sm:w-[240px]"

@@ -79,7 +79,7 @@ const badges = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-[290px] pb-[110px] overflow-hidden flex flex-col items-center">
+    <section className="relative pt-[160px] md:pt-[290px] pb-[60px] md:pb-[110px] overflow-x-clip md:overflow-hidden flex flex-col items-center">
       <div
         className="absolute inset-0 pointer-events-none -z-10"
         style={{
@@ -92,32 +92,34 @@ export default function Hero() {
         }}
       />
 
-      <div className="absolute top-[5%] left-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 -translate-x-1/2" />
-      <div className="absolute top-[5%] right-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 translate-x-1/2" />
-      <div className="absolute top-[270px] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none -z-10" />
+      <div className="hidden md:block absolute top-[5%] left-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 -translate-x-1/2" />
+      <div className="hidden md:block absolute top-[5%] right-0 w-[500px] h-[900px] bg-blue-500/15 blur-[160px] pointer-events-none -z-10 translate-x-1/2" />
+      <div className="hidden md:block absolute top-[270px] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       {/* TOP SOCIAL PROOF */}
-      <div className="absolute top-[125px] left-1/2 -translate-x-1/2 z-30">
-        <div className="flex items-center gap-2.5">
-          <div className="flex -space-x-2 bg-white/20 p-1 rounded-full backdrop-blur-sm border border-slate-200/50">
-            {[
-              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b6653d829c73b24abf7d.png",
-              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0764.webp",
-              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359a7dcb4cff0b96d01.png",
-              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b8651140d.jpg",
-              "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce839.webp"
-            ].map((src, i) => (
-              <div key={i} className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm">
-                <img src={src} alt={`Company Logo ${i + 1}`} className="w-full h-full object-contain" />
-              </div>
-            ))}
+      <div className="absolute top-[100px] md:top-[125px] left-1/2 -translate-x-1/2 z-30 w-[95%] md:w-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            <div className="flex -space-x-2 bg-white/20 p-1 rounded-full backdrop-blur-sm border border-slate-200/50">
+              {[
+                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b6653d829c73b24abf7d.png",
+                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0764.webp",
+                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359a7dcb4cff0b96d01.png",
+                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b8651140d.jpg",
+                "https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce839.webp"
+              ].map((src, i) => (
+                <div key={i} className="w-7 h-7 rounded-full border-2 border-white bg-white flex items-center justify-center p-0.5 shadow-sm">
+                  <img src={src} alt={`Company Logo ${i + 1}`} className="w-full h-full object-contain" />
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-0.5">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
+              ))}
+            </div>
           </div>
-          <div className="flex items-center gap-0.5">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
-            ))}
-          </div>
-          <span className="text-[14px] text-slate-600 font-semibold ml-1 whitespace-nowrap">
+          <span className="text-[13px] sm:text-[14px] text-slate-600 font-semibold text-center whitespace-normal sm:whitespace-nowrap leading-tight">
             Trusted by <span className="font-bold tracking-tight">Restoration Companies</span> Nationwide
           </span>
         </div>
@@ -158,9 +160,9 @@ export default function Hero() {
         </div>
       ))}
 
-      <div className="container-pill relative">
+      <div className="container-pill w-full relative">
         <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
-          <h1 className="text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
+          <h1 className="text-[42px] sm:text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
             Never Miss a Call
             <br />
             <span className="relative inline-block">
@@ -209,7 +211,7 @@ export default function Hero() {
 
         {/* BROWSER VIDEO */}
         <div className="relative max-w-5xl mx-auto w-full z-10 mt-4">
-          <div className="absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
+          <div className="hidden md:block absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
           <BrowserVideo />
         </div>
       </div>
