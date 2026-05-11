@@ -248,11 +248,14 @@ export default function FeaturesShowcase() {
       <div className="container mx-auto px-6 lg:px-8 max-w-[1400px] relative z-10 w-full">
 
         {/* Header */}
-        <div className="text-center max-w-5xl mx-auto mb-8 lg:mb-10">
+        <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-10">
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-black text-[#0f172a] tracking-tight leading-[1.05] lg:whitespace-nowrap">
             Capture More Jobs Without{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb]">More Work</span>
           </h2>
+          <div className="lg:hidden mt-4 text-slate-500 text-[13px] font-medium flex items-center justify-center gap-1.5 opacity-80">
+            Swipe to explore features <ArrowRight size={14} className="animate-pulse" />
+          </div>
         </div>
 
         {/* Main layout */}
@@ -270,7 +273,7 @@ export default function FeaturesShowcase() {
                   onClick={() => setActive(i)}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`relative w-[85%] sm:w-[320px] lg:w-full shrink-0 text-left flex items-center gap-3 px-5 py-3 lg:py-[13px] rounded-2xl transition-colors outline-none mb-0 lg:mb-1 origin-left snap-start ${
+                  className={`relative w-[75vw] sm:w-[320px] lg:w-full shrink-0 text-left flex items-center gap-3 px-5 py-3 lg:py-[13px] rounded-2xl transition-colors outline-none mb-0 lg:mb-1 origin-left snap-start ${
                     isActive ? 'bg-white shadow-sm border border-slate-200/80' : 'bg-slate-50/80 lg:bg-transparent hover:bg-white/70 border border-transparent'
                   }`}
                 >
