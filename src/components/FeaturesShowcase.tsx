@@ -40,9 +40,9 @@ import VisualIntakeAnimation from './VisualIntakeAnimation';
 const FeatureItem = ({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) => (
   <motion.div
     variants={{ hidden: { opacity: 0, x: 14 }, visible: { opacity: 1, x: 0, transition: { duration: 0.28, ease: 'easeOut' } } }}
-    className="flex items-start gap-5 group"
+    className="flex items-start gap-4 lg:gap-5 group"
   >
-    <div className="mt-1 w-12 h-12 rounded-2xl bg-white shadow-sm shadow-blue-900/5 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-blue-500/20 transition-all duration-300">
+    <div className="mt-1 w-11 h-11 lg:w-12 lg:h-12 rounded-2xl bg-white shadow-sm shadow-blue-900/5 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-blue-500/20 transition-all duration-300">
       {icon}
     </div>
     <div className="space-y-1">
@@ -239,7 +239,7 @@ export default function FeaturesShowcase() {
   const f = featuresData[active];
 
   return (
-    <section className="relative py-12 lg:py-16 bg-[#fafafa] overflow-hidden font-sans">
+    <section className="relative py-8 lg:py-16 bg-[#fafafa] overflow-hidden font-sans">
 
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 0)', backgroundSize: '32px 32px' }} />
@@ -249,7 +249,7 @@ export default function FeaturesShowcase() {
       <div className="container mx-auto px-6 lg:px-8 max-w-[1400px] relative z-10 w-full">
 
         {/* Header */}
-        <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-10">
+        <div className="text-center max-w-5xl mx-auto mb-4 lg:mb-10">
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-black text-[#0f172a] tracking-tight leading-[1.05] lg:whitespace-nowrap">
             Capture More Jobs Without{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb]">More Work</span>
@@ -257,11 +257,11 @@ export default function FeaturesShowcase() {
         </div>
 
         {/* Main layout */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start mt-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-14 items-start mt-0 lg:mt-8">
 
           {/* Mobile Nav - Single Feature with Arrows */}
-          <div className="flex lg:hidden flex-col w-full mb-6">
-            <div className="text-center text-slate-400 text-[12px] font-bold mb-3 uppercase tracking-wider flex items-center justify-center gap-2">
+          <div className="flex lg:hidden flex-col w-full mb-3">
+            <div className="text-center text-slate-400 text-[12px] font-bold mb-1.5 uppercase tracking-wider flex items-center justify-center gap-2">
               <span className="h-[1px] w-8 bg-slate-200"></span>
               Tap arrows to explore
               <span className="h-[1px] w-8 bg-slate-200"></span>
@@ -309,7 +309,7 @@ export default function FeaturesShowcase() {
             </div>
             
             {/* Pagination dots */}
-            <div className="flex justify-center gap-1.5 mt-5">
+            <div className="flex justify-center gap-1.5 mt-3">
               {featuresData.map((_, idx) => (
                 <div 
                   key={idx} 
@@ -376,20 +376,20 @@ export default function FeaturesShowcase() {
                 className="flex flex-col w-full"
               >
                 {/* Title + description */}
-                <div className="mb-10 text-center lg:text-left">
-                  <h3 className="text-3xl lg:text-[42px] font-extrabold text-[#0f172a] mb-5 tracking-tight">
+                <div className="mb-6 lg:mb-10 text-center lg:text-left">
+                  <h3 className="text-3xl lg:text-[42px] font-extrabold text-[#0f172a] mb-3 lg:mb-5 tracking-tight">
                     {f.title}
                   </h3>
-                  <p className="text-[18px] lg:text-[20px] text-slate-600 font-medium max-w-4xl leading-relaxed mx-auto lg:mx-0">
+                  <p className="text-[16px] lg:text-[20px] text-slate-600 font-medium max-w-4xl leading-relaxed mx-auto lg:mx-0">
                     {f.desc}
                   </p>
                 </div>
 
                 {/* Media + bullets */}
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start pt-2">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-center lg:items-start pt-0 lg:pt-2">
 
                   {/* Media */}
-                  <div className="w-full lg:w-[45%] flex justify-center items-start h-[300px] overflow-hidden">
+                  <div className="w-full lg:w-[45%] flex justify-center items-start h-[260px] lg:h-[300px] overflow-hidden">
                     {f.mediaType === 'component' ? f.mediaComponent : <FeatureVideo src={f.mediaSrc!} />}
                   </div>
 
@@ -399,7 +399,7 @@ export default function FeaturesShowcase() {
                     variants={bulletContainerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="w-full lg:w-[55%] flex flex-col gap-8 pt-4"
+                    className="w-full lg:w-[55%] flex flex-col gap-5 lg:gap-8 pt-0 lg:pt-4"
                   >
                     {f.items.map((item, idx) => (
                       <FeatureItem key={idx} icon={item.icon} title={item.title} desc={item.desc} />
