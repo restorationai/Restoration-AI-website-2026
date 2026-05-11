@@ -27,6 +27,7 @@ import {
   BarChart3,
   History,
   ChevronRight,
+  ChevronLeft,
   Star,
   ArrowRight,
 } from 'lucide-react';
@@ -253,18 +254,73 @@ export default function FeaturesShowcase() {
             Capture More Jobs Without{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2563eb]">More Work</span>
           </h2>
-          <div className="lg:hidden mt-4 text-slate-500 text-[13px] font-medium flex items-center justify-center gap-1.5 opacity-80">
-            Swipe to explore features <ArrowRight size={14} className="animate-pulse" />
-          </div>
         </div>
 
         {/* Main layout */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start mt-8">
 
-          {/* Left nav */}
-          <div 
-            className="w-full lg:w-[26%] flex flex-row overflow-x-auto lg:flex-col shrink-0 pb-4 lg:pb-0 gap-3 lg:gap-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-          >
+          {/* Mobile Nav - Single Feature with Arrows */}
+          <div className="flex lg:hidden flex-col w-full mb-6">
+            <div className="text-center text-slate-400 text-[12px] font-bold mb-3 uppercase tracking-wider flex items-center justify-center gap-2">
+              <span className="h-[1px] w-8 bg-slate-200"></span>
+              Tap arrows to explore
+              <span className="h-[1px] w-8 bg-slate-200"></span>
+            </div>
+            <div className="flex items-center justify-between w-full gap-1 sm:gap-2">
+              <button 
+                onClick={() => setActive(prev => prev > 0 ? prev - 1 : featuresData.length - 1)} 
+                className="p-1.5 sm:p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 active:scale-95 transition-all rounded-full flex-shrink-0"
+              >
+                <ChevronLeft size={28} />
+              </button>
+              
+              <div className="flex-1 relative overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-slate-200/80 p-4 sm:p-5 min-h-[90px] flex items-center cursor-pointer"
+                   onClick={() => setActive(prev => prev < featuresData.length - 1 ? prev + 1 : 0)}>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    transition={{ duration: 0.15 }}
+                    className="flex items-center gap-3 w-full"
+                  >
+                    <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${featuresData[active].iconBg}`}>
+                      {React.createElement(featuresData[active].NavIcon, { size: 20, className: featuresData[active].iconColor, strokeWidth: 2 })}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[15px] sm:text-[16px] font-bold text-slate-900 leading-tight">
+                        {featuresData[active].shortLabel}
+                      </p>
+                      <p className="text-[13px] text-slate-500 mt-1 leading-tight">
+                        {featuresData[active].navTagline}
+                      </p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <button 
+                onClick={() => setActive(prev => prev < featuresData.length - 1 ? prev + 1 : 0)} 
+                className="p-1.5 sm:p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 active:scale-95 transition-all rounded-full flex-shrink-0"
+              >
+                <ChevronRight size={28} />
+              </button>
+            </div>
+            
+            {/* Pagination dots */}
+            <div className="flex justify-center gap-1.5 mt-5">
+              {featuresData.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-[5px] rounded-full transition-all duration-300 ${idx === active ? 'w-5 bg-blue-500' : 'w-1.5 bg-slate-200'}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Left Nav */}
+          <div className="hidden lg:flex w-[26%] flex-col shrink-0 pb-0 gap-0">
             {featuresData.map((feat, i) => {
               const isActive = i === active;
               return (
@@ -273,8 +329,8 @@ export default function FeaturesShowcase() {
                   onClick={() => setActive(i)}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`relative w-[75vw] sm:w-[320px] lg:w-full shrink-0 text-left flex items-center gap-3 px-5 py-3 lg:py-[13px] rounded-2xl transition-colors outline-none mb-0 lg:mb-1 origin-left snap-start ${
-                    isActive ? 'bg-white shadow-sm border border-slate-200/80' : 'bg-slate-50/80 lg:bg-transparent hover:bg-white/70 border border-transparent'
+                  className={`relative w-full shrink-0 text-left flex items-center gap-3 px-5 py-[13px] rounded-2xl transition-colors outline-none mb-1 origin-left ${
+                    isActive ? 'bg-white shadow-sm border border-slate-200/80' : 'bg-transparent hover:bg-white/70 border border-transparent'
                   }`}
                 >
                   {/* Sliding active bar */}
