@@ -40,7 +40,7 @@ import VisualIntakeAnimation from './VisualIntakeAnimation';
 const FeatureItem = ({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) => (
   <motion.div
     variants={{ hidden: { opacity: 0, x: 14 }, visible: { opacity: 1, x: 0, transition: { duration: 0.28, ease: 'easeOut' } } }}
-    className="flex items-start gap-4 lg:gap-5 group"
+    className="flex items-start gap-4 lg:gap-5 group h-auto lg:h-[110px]"
   >
     <div className="mt-1 w-11 h-11 lg:w-12 lg:h-12 rounded-2xl bg-white shadow-sm shadow-blue-900/5 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-blue-500/20 transition-all duration-300">
       {icon}
@@ -376,7 +376,7 @@ export default function FeaturesShowcase() {
                 className="flex flex-col w-full"
               >
                 {/* Title + description */}
-                <div className="mb-6 lg:mb-10 text-center lg:text-left">
+                <div className="mb-6 lg:mb-0 text-center lg:text-left h-auto lg:h-[150px]">
                   <h3 className="text-3xl lg:text-[42px] font-extrabold text-[#0f172a] mb-3 lg:mb-5 tracking-tight">
                     {f.title}
                   </h3>
@@ -386,7 +386,7 @@ export default function FeaturesShowcase() {
                 </div>
 
                 {/* Media + bullets */}
-                <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-center lg:items-start pt-0 lg:pt-2">
+                <div className="flex flex-col lg:grid lg:grid-cols-[50%_50%] gap-6 lg:gap-10 items-center lg:items-start pt-0 lg:pt-2 min-h-[480px]">
 
                   {/* Media */}
                   <div className="w-full lg:w-[45%] flex justify-center items-start h-[260px] lg:h-[300px] overflow-hidden">
@@ -399,7 +399,7 @@ export default function FeaturesShowcase() {
                     variants={bulletContainerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="w-full lg:w-[55%] flex flex-col gap-5 lg:gap-8 pt-0 lg:pt-4"
+                    className="w-full lg:w-full flex flex-col pt-0 lg:pt-8 lg:pl-10 h-full lg:h-[480px]"
                   >
                     {f.items.map((item, idx) => (
                       <FeatureItem key={idx} icon={item.icon} title={item.title} desc={item.desc} />
@@ -412,7 +412,7 @@ export default function FeaturesShowcase() {
         </div>
 
         {/* CTAs below */}
-        <div className="mt-10 lg:mt-14 flex justify-center max-w-4xl mx-auto">
+        <div className="mt-6 lg:-mt-4 relative z-10 flex justify-center max-w-4xl mx-auto">
           <ActionButtons />
         </div>
 
