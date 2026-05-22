@@ -1,220 +1,145 @@
-"use client";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { PhoneFrame } from './PhoneFrame';
+import { Mail, Send } from 'lucide-react';
 
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
+type ScenePhase = 'ALERT' | 'INTERACTION' | 'FORM';
 
-export default function WorkAuthAnimation() {
+const WorkAuthAnimation: React.FC = () => {
+  const [scene, setScene] = useState<ScenePhase>('ALERT');
+
   useEffect(() => {
-    // Run the animation
-    const tl = gsap.timeline({ repeat: -1 });
-
-    // SCENE 1: Alert (0s - 4s)
-    tl.set("#scene-lock", { display: 'flex', opacity: 1 })
-      .set("#scene-form", { display: 'none', opacity: 0 })
-      .fromTo("#notif-banner", 
-        { y: -100, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)" }, 
-        0
-      )
-      .to({}, { duration: 3.2 }); // Hold
-
-    // SCENE 2: Interaction (4s - 4.5s)
-    tl.to("#notif-banner", { 
-      scale: 1.05, 
-      filter: "brightness(1.5)", 
-      duration: 0.2, 
-      repeat: 1, 
-      yoyo: true, 
-      ease: "power2.inOut" 
-    });
-
-    // SCENE 3: Form Transition (4.5s - 10.5s)
-    tl.to("#scene-lock", { opacity: 0, duration: 0.4 })
-      .set("#scene-lock", { display: 'none' })
-      .set("#scene-form", { display: 'flex', opacity: 0 })
-      .to("#scene-form", { opacity: 1, duration: 0.4 })
+    let isMounted = true;
+    const runSequence = async () => {
+      // Scene 1: Alert (0s - 3.5s)
+      if (isMounted) setScene('ALERT');
+      await new Promise(resolve => setTimeout(resolve, 3500));
       
-      // Signature Animation
-      .fromTo("#sig-path", 
-        { strokeDasharray: 1000, strokeDashoffset: 1000 }, 
-        { strokeDashoffset: 0, duration: 2.5, ease: "power1.inOut" }, 
-        "+=0.5"
-      )
-      .to({}, { duration: 2.5 }); // Hold final screen
+      // Scene 2: Click (3.5s - 4.0s)
+      if (isMounted) setScene('INTERACTION');
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Scene 3: Form & Signature (4.0s - 10.0s)
+      if (isMounted) setScene('FORM');
+      await new Promise(resolve => setTimeout(resolve, 6000));
+    };
 
+    runSequence();
+    const intervalId = setInterval(runSequence, 10000); // 10s total loop
     return () => {
-      tl.kill(); // Cleanup
+      isMounted = false;
+      clearInterval(intervalId);
     };
   }, []);
 
   return (
-    <div className="phone-animation-wrapper">
-      <style>{`
-        .phone-animation-wrapper {
-          display: flex;
-          justify-content: center;
-          background: transparent;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          width: 100%;
-        }
-
-        .phone-hardware {
-          position: relative;
-          width: 320px;
-          height: 640px;
-          background: #0A192F;
-          border-radius: 50px;
-          padding: 8px;
-          border: 1px solid #1e293b;
-          box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
-        }
-
-        .phone-screen {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          background: #0b1426;
-          border-radius: 42px;
-          overflow: hidden;
-          border: 1px solid #0f172a;
-        }
-
-        .scene {
-          position: absolute;
-          inset: 0;
-          opacity: 0;
-          display: none;
-          flex-direction: column;
-        }
-
-        .scene.active {
-          opacity: 1;
-          display: flex;
-        }
-
-        /* Lock Screen */
-        .lock-content {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding-top: 60px;
-        }
-
-        .lock-clock h1 { color: white; font-size: 64px; font-weight: 200; margin: 0; line-height: 1; }
-        .lock-clock p { color: rgba(255,255,255,0.6); margin: 0; text-align: center; font-size: 20px; margin-top: 10px; }
-
-        .banner {
-          margin-top: 80px;
-          width: 90%;
-          background: rgba(255,255,255,0.1);
-          backdrop-filter: blur(20px);
-          border-radius: 20px;
-          padding: 15px;
-          display: flex;
-          gap: 12px;
-          border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .banner-icon { width: 40px; height: 40px; background: #3b82f6; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .banner-label { color: rgba(255,255,255,0.5); font-size: 10px; font-weight: bold; text-transform: uppercase; }
-        .banner-text p { color: white; font-size: 13px; margin: 4px 0 0 0; line-height: 1.4; }
-        .banner-link { color: #60a5fa; text-decoration: underline; }
-
-        /* Form Screen */
-        #scene-form { background: white; }
-        .form-header { padding: 50px 24px 20px; border-bottom: 1px solid #f1f5f9; }
-        .form-header h2 { font-size: 20px; margin: 0; color: #0f172a; }
-        .authorization-text { padding: 24px; font-size: 18px; color: #334155; line-height: 1.6; font-style: italic; }
-        .sig-box { height: 100px; border: 1px solid #dbeafe; background: #eff6ff; border-radius: 12px; position: relative; }
-        .signature-area { margin-top: auto; padding: 24px; }
-        .signature-area label { display: block; font-size: 11px; font-weight: bold; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
-
-        .submit-button {
-          width: 100%;
-          background: #2563eb;
-          color: white;
-          border: none;
-          padding: 16px;
-          border-radius: 12px;
-          font-weight: bold;
-          margin-top: 16px;
-        }
-
-        .swipe-indicator { margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; }
-        .swipe-bar { width: 140px; height: 5px; background: white; border-radius: 10px; opacity: 0.3; }
-        .swipe-text { color: white; font-size: 11px; margin-top: 12px; opacity: 0.4; letter-spacing: 2px; text-transform: uppercase; }
-
-        .home-bar { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 120px; height: 4px; background: rgba(0,0,0,0.1); border-radius: 10px; }
-
-        .btn { position: absolute; background: #1e293b; border-radius: 2px; }
-        .side-power { right: -3px; top: 120px; width: 3px; height: 60px; }
-        .side-vol-up { left: -3px; top: 100px; width: 3px; height: 40px; }
-        .side-vol-down { left: -3px; top: 150px; width: 3px; height: 40px; }
-        
-        .status-bar { padding: 12px 24px; display: flex; justify-content: space-between; color: white; font-size: 12px; font-weight: 600; }
-        .battery { width: 20px; height: 10px; border: 1px solid white; border-radius: 3px; position: relative; }
-        .battery::after { content: ''; position: absolute; right: -3px; top: 2px; width: 2px; height: 4px; background: white; border-radius: 1px; }
-        .battery::before { content: ''; position: absolute; left: 1px; top: 1px; bottom: 1px; width: 14px; background: white; border-radius: 1px; }
-      `}</style>
-      <div className="phone-hardware">
-        <div className="phone-screen">
-          {/* Scene 1: Notification */}
-          <div id="scene-lock" className="scene active">
-            <div className="status-bar">
-              <span>9:41</span>
-              <div className="notif-icons">
-                 <div className="battery"></div>
-              </div>
-            </div>
-            <div className="lock-content">
-              <div className="lock-clock">
-                <h1>9:41</h1>
-                <p>Friday, May 1</p>
-              </div>
-              <div id="notif-banner" className="banner">
-                <div className="banner-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <div className="w-full h-[400px] flex justify-center items-center relative overflow-visible pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.55] sm:scale-[0.6] lg:scale-[0.6] origin-center shrink-0">
+        <PhoneFrame>
+          <AnimatePresence mode="wait">
+            {(scene === 'ALERT' || scene === 'INTERACTION') && (
+              <motion.div
+                key="notification-screen"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 flex flex-col bg-[#0b1426] h-full"
+              >
+                <div className="mt-24 text-center select-none">
+                  <h2 className="text-[5.5rem] font-light text-white opacity-90 leading-none">9:41</h2>
+                  <p className="text-xl text-white/60 mt-2">Friday, May 1</p>
                 </div>
-                <div className="banner-text">
-                  <span className="banner-label">New Message</span>
-                  <p>Your Work Authorization is ready for signature. <span className="banner-link">Click to review.</span></p>
-                </div>
-              </div>
-            </div>
-            <div className="swipe-indicator">
-              <div className="swipe-bar"></div>
-              <span className="swipe-text">Swipe up to open</span>
-            </div>
-          </div>
 
-          {/* Scene 2: Form */}
-          <div id="scene-form" className="scene">
-            <div className="form-header">
-              <h2>Work Authorization Form</h2>
-            </div>
-            <div className="form-body">
-              <div className="authorization-text">
-                "I hereby authorize <strong>ABC Restoration</strong> to proceed with emergency services..."
-              </div>
-              <div className="signature-area">
-                <label>Sign Here</label>
-                <div className="sig-box">
-                  <svg id="sig-svg" viewBox="0 0 300 120">
-                    <path id="sig-path" d="M40,75 c10,-30 20,-60 35,-60 c15,0 10,80 -10,80 c20,-20 40,-40 60,-40 c10,0 5,30 20,30 c15,0 10,-40 30,-40 c15,0 10,40 25,40 c15,0 20,-30 40,-10 c10,10 5,30 25,30" fill="none" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <div className="flex-1 flex items-center justify-center px-6 mt-8">
+                  <motion.div
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ 
+                      y: 0, 
+                      opacity: 1,
+                      scale: scene === 'INTERACTION' ? 1.05 : 1,
+                      filter: scene === 'INTERACTION' ? 'brightness(1.5) drop-shadow(0 0 15px rgba(59, 130, 246, 0.6))' : 'brightness(1)'
+                    }}
+                    transition={{ 
+                      y: { type: 'spring', damping: 15, stiffness: 100 },
+                      scale: { type: 'spring', damping: 8, stiffness: 300 }
+                    }}
+                    className="w-full bg-[#2A3143] border border-white/5 p-5 rounded-[1.5rem] shadow-2xl flex gap-4 cursor-pointer"
+                  >
+                    <div className="w-12 h-12 bg-[#2D7DF6] rounded-[0.85rem] flex items-center justify-center shrink-0 shadow-lg mt-1">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <span className="text-white text-[11px] font-bold tracking-widest uppercase opacity-70 mb-1">New Message</span>
+                      <p className="text-white text-base leading-snug font-medium">
+                        Your Work Authorization is ready for signature. <span className="text-[#2D7DF6] block mt-0.5">Click to review.</span>
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-              <button className="submit-button">Submit</button>
-            </div>
-          </div>
-          <div className="home-bar"></div>
-        </div>
-        {/* Hardware Buttons */}
-        <div className="btn side-power"></div>
-        <div className="btn side-vol-up"></div>
-        <div className="btn side-vol-down"></div>
+
+                <div className="mb-14 flex flex-col items-center mt-auto">
+                  <motion.div 
+                    animate={{ x: [-2, 2, -2], opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="w-40 h-2 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.3)] mb-4"
+                  />
+                  <span className="text-xs text-white/40 uppercase tracking-[0.2em] font-black">Swipe up to open</span>
+                </div>
+              </motion.div>
+            )}
+
+            {scene === 'FORM' && (
+              <motion.div
+                key="form-screen"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+                className="absolute inset-0 bg-white flex flex-col h-full"
+              >
+                <div className="px-6 pt-16 pb-6 border-b border-gray-100 flex justify-center">
+                  <h1 className="text-[1.35rem] font-black text-slate-900 tracking-tight">Work Authorization Form</h1>
+                </div>
+
+                <div className="flex-1 p-6 flex flex-col pt-8">
+                  <div className="p-6 bg-white border-2 border-gray-100 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] italic text-xl text-gray-800 leading-relaxed">
+                    "I hereby authorize <span className="font-extrabold text-black">ABC Restoration</span> to proceed with emergency services..."
+                  </div>
+
+                  <div className="space-y-4 mt-auto mb-10">
+                    <label className="text-xs font-black text-gray-400 uppercase tracking-widest block pl-2">Sign Here</label>
+                    <div className="w-full h-32 border-2 border-blue-100 rounded-3xl flex items-center justify-center relative overflow-hidden bg-white">
+                      <motion.svg className="absolute inset-0 w-full h-full text-[#1A62FF] scale-[1.35] origin-center translate-y-2 translate-x-[15%]" viewBox="0 0 300 120">
+                        <motion.path 
+                          d="M 50 60 C 60 20, 80 20, 60 80 C 50 120, 30 110, 40 80 C 50 60, 70 70, 80 70 C 80 60, 100 60, 90 80 C 80 90, 100 90, 110 70 C 110 20, 110 20, 110 90 C 110 60, 130 50, 130 90 C 130 60, 150 50, 150 90 C 160 80, 170 80, 180 80" 
+                          stroke="currentColor" 
+                          strokeWidth="3.5" 
+                          fill="none" 
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          initial={{ pathLength: 0, opacity: 0 }}
+                          animate={{ pathLength: 1, opacity: 1 }}
+                          transition={{ 
+                            pathLength: { delay: 0.5, duration: 3, ease: "easeInOut" },
+                            opacity: { delay: 0.5, duration: 0.01 }
+                          }}
+                        />
+                      </motion.svg>
+                    </div>
+                  </div>
+
+                  <div className="w-full bg-[#1A62FF] py-5 rounded-3xl text-white font-black text-lg shadow-md flex items-center justify-center gap-3">
+                    <span>Submit</span>
+                    <Send className="w-5 h-5" />
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </PhoneFrame>
       </div>
     </div>
   );
-}
+};
+
+export default WorkAuthAnimation;

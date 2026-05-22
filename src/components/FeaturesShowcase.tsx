@@ -35,19 +35,39 @@ import {
 import PhoneAnimation from './PhoneAnimation';
 import ReviewRankingAnimation from './ReviewRankingAnimation';
 import WorkAuthAnimation from './WorkAuthAnimation';
-import VisualIntakeAnimation from './VisualIntakeAnimation';
+import { SavingsAnimation } from './SavingsAnimation';
+import { DispatchAnimation } from './DispatchAnimation';
+import { ModernPhotoUploadAnimation } from './ModernPhotoUploadAnimation';
+import { LargeLossAnimation } from './LargeLossAnimation';
+import { CRMDashboardAnimation } from './CRMDashboardAnimation';
+
+type FeatureData = {
+  id: string;
+  NavIcon: React.ElementType;
+  iconColor: string;
+  iconBg: string;
+  shortLabel: string;
+  navTagline: string;
+  label: string;
+  title: string;
+  desc: string;
+  items: { icon: React.ReactNode; title: string; desc: string }[];
+  mediaType: 'component' | 'video';
+  mediaComponent?: React.ReactNode;
+  mediaSrc?: string;
+};
 
 const FeatureItem = ({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) => (
   <motion.div
     variants={{ hidden: { opacity: 0, x: 14 }, visible: { opacity: 1, x: 0, transition: { duration: 0.28, ease: 'easeOut' } } }}
-    className="flex items-start gap-4 lg:gap-5 group h-auto lg:h-[110px]"
+    className="flex items-start gap-4 lg:gap-6 group h-auto lg:h-[110px]"
   >
-    <div className="mt-1 w-11 h-11 lg:w-12 lg:h-12 rounded-2xl bg-white shadow-sm shadow-blue-900/5 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-blue-500/20 transition-all duration-300">
+    <div className="mt-1 w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-white shadow-sm shadow-blue-900/5 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-blue-500/20 transition-all duration-300">
       {icon}
     </div>
     <div className="space-y-1">
-      <h4 className="text-[17px] font-bold text-slate-900 tracking-tight">{title}</h4>
-      <p className="text-[14px] text-slate-500 font-medium leading-relaxed">{desc}</p>
+      <h4 className="text-xl lg:text-[22px] font-black text-slate-900 tracking-tight">{title}</h4>
+      <p className="text-base lg:text-[17px] text-slate-600 font-bold leading-relaxed">{desc}</p>
     </div>
   </motion.div>
 );
@@ -81,7 +101,7 @@ const FeatureVideo = ({ src }: { src: string }) => (
   </div>
 );
 
-const featuresData = [
+const featuresData: FeatureData[] = [
   {
     id: 'ai-phone',
     NavIcon: PhoneCall,
@@ -116,8 +136,8 @@ const featuresData = [
       { icon: <DollarSign size={20} className="text-rose-500" />, title: 'Save Ad Spend', desc: 'Document proof to dispute LSA or broker charges.' },
       { icon: <AlertOctagon size={20} className="text-rose-500" />, title: 'Automatic Tagging', desc: 'Logs disqualified calls with reasons in the dashboard.' },
     ],
-    mediaType: 'video' as const,
-    mediaSrc: '/videos/feature-rapid-disqualification.mp4',
+    mediaType: 'component' as const,
+    mediaComponent: <SavingsAnimation />,
   },
   {
     id: 'smart-route',
@@ -134,8 +154,8 @@ const featuresData = [
       { icon: <Navigation size={20} className="text-emerald-500" />, title: 'Fits Existing Routes', desc: 'Checks current appointments to reduce windshield time.' },
       { icon: <TrendingUp size={20} className="text-emerald-500" />, title: 'More Jobs per Day', desc: 'Tighter routes mean you can squeeze in more work.' },
     ],
-    mediaType: 'video' as const,
-    mediaSrc: '/videos/feature-smart-route-booking.mp4',
+    mediaType: 'component' as const,
+    mediaComponent: <DispatchAnimation />,
   },
   {
     id: 'visual-intake',
@@ -153,7 +173,7 @@ const featuresData = [
       { icon: <ImageIcon size={20} className="text-violet-500" />, title: 'Instant Sync', desc: 'Photos are attached to the job record instantly.' },
     ],
     mediaType: 'component' as const,
-    mediaComponent: <VisualIntakeAnimation />,
+    mediaComponent: <ModernPhotoUploadAnimation />,
   },
   {
     id: 'work-auth',
@@ -188,8 +208,8 @@ const featuresData = [
       { icon: <Settings size={20} className="text-orange-500" />, title: 'Skill-Based Routing', desc: 'Assign jobs based on Water, Fire, or Mold certifications.' },
       { icon: <Zap size={20} className="text-orange-500" />, title: 'Automatic Adjustments', desc: 'AI instantly reroutes if a tech calls in sick.' },
     ],
-    mediaType: 'video' as const,
-    mediaSrc: '/videos/feature-team-management.mp4',
+    mediaType: 'component' as const,
+    mediaComponent: <LargeLossAnimation />,
   },
   {
     id: 'dashboard',
@@ -206,8 +226,8 @@ const featuresData = [
       { icon: <History size={20} className="text-cyan-600" />, title: 'Transcripts & Audio', desc: 'Read or listen to every interaction the AI has.' },
       { icon: <BarChart3 size={20} className="text-cyan-600" />, title: 'Performance Metrics', desc: 'Know exactly how your phones are performing 24/7.' },
     ],
-    mediaType: 'video' as const,
-    mediaSrc: '/videos/feature-dashboard-logs.mp4',
+    mediaType: 'component' as const,
+    mediaComponent: <CRMDashboardAnimation />,
   },
   {
     id: 'review-tool',
@@ -386,10 +406,10 @@ export default function FeaturesShowcase() {
                 </div>
 
                 {/* Media + bullets */}
-                <div className="flex flex-col lg:grid lg:grid-cols-[50%_50%] gap-6 lg:gap-10 items-center lg:items-start pt-0 lg:pt-2 min-h-[480px]">
+                <div className="flex flex-col lg:grid lg:grid-cols-[50%_50%] gap-8 lg:gap-0 items-center lg:items-start pt-0 lg:pt-4 min-h-[480px]">
 
                   {/* Media */}
-                  <div className="w-full lg:w-[45%] flex justify-center items-start h-[260px] lg:h-[300px] overflow-hidden">
+                  <div className="w-full flex justify-center items-center min-h-[240px] lg:min-h-[420px]">
                     {f.mediaType === 'component' ? f.mediaComponent : <FeatureVideo src={f.mediaSrc!} />}
                   </div>
 
@@ -399,7 +419,7 @@ export default function FeaturesShowcase() {
                     variants={bulletContainerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="w-full lg:w-full flex flex-col pt-0 lg:pt-8 lg:pl-10 h-full lg:h-[480px]"
+                    className="w-full flex flex-col pt-0 lg:pt-8 lg:pl-10 h-full lg:h-[480px]"
                   >
                     {f.items.map((item, idx) => (
                       <FeatureItem key={idx} icon={item.icon} title={item.title} desc={item.desc} />

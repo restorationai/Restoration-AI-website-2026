@@ -101,11 +101,21 @@ const ReviewRankingAnimation = () => {
 
     return (
         <div ref={ref} className={`relative flex justify-center w-full transition-all duration-1000 ease-out py-0 ${shouldPlay ? 'opacity-100' : 'opacity-0'}`}>
+            <style>{`
+                .custom-laptop-scale {
+                    transform: scale(0.984);
+                }
+                @media (min-width: 640px) {
+                    .custom-laptop-scale {
+                        transform: scale(1.01);
+                    }
+                }
+            `}</style>
             {/* 
                 This wrapper resets via playKey. 
                 Applying scale classes safely enlarges the fixed internal DOM properties visually.
             */}
-            <div key={playKey} className={`relative w-full max-w-[450px] scale-[1.05] lg:scale-[1.15] origin-center ${shouldPlay ? 'play-ranking' : ''}`}>
+            <div key={playKey} className={`relative w-full max-w-[450px] custom-laptop-scale origin-center ${shouldPlay ? 'play-ranking' : ''}`}>
                 {/* Browser/Laptop Frame */}
                 <div className="bg-slate-950 rounded-t-[1.5rem] border-[12px] border-slate-950 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden h-[380px]">
                     <div className="w-full h-full bg-white flex flex-col overflow-hidden relative">
