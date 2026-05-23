@@ -432,7 +432,7 @@ export default function FeaturesShowcase() {
         </div>
 
         {/* CTAs below */}
-        <div className="mt-6 lg:-mt-16 relative z-10 flex justify-center max-w-4xl mx-auto">
+        <div className="mt-6 lg:-mt-8 relative z-10 flex justify-center max-w-4xl mx-auto">
           <ActionButtons />
         </div>
 
