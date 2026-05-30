@@ -51,10 +51,7 @@ const Footer = () => {
           <p className="text-slate-500 text-xs text-center md:text-left">
             © {new Date().getFullYear()} Restoration AI Inc. All rights reserved.
           </p>
-          <div className="flex gap-6">
-             <a href="#" className="text-slate-500 hover:text-white transition-colors"><span className="sr-only">Twitter</span>𝕏</a>
-             <a href="#" className="text-slate-500 hover:text-white transition-colors"><span className="sr-only">LinkedIn</span>in</a>
-          </div>
+          {/* Removed social links */}
         </div>
       </div>
     </footer>
