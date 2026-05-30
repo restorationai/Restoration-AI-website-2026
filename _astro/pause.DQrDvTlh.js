@@ -1,0 +1,1 @@
+import{c as e}from"./createLucideIcon.C0pTdCJZ.js";globalThis.process??={};globalThis.process.env??={};const o=[["rect",{x:"14",y:"4",width:"4",height:"16",rx:"1",key:"zuxfzm"}],["rect",{x:"6",y:"4",width:"4",height:"16",rx:"1",key:"1okwgv"}]],c=e("Pause",o);export{c as P};
