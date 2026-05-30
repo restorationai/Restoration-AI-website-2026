@@ -1,37 +1,32 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import MainLayout from '../layouts/MainLayout.astro';
+import ThankYouHero from '../components/ThankYouHero';
+import StatsBanner from '../components/StatsBanner';
+import CallRecordings from '../components/CallRecordings';
+import BuiltForRestoration from '../components/BuiltForRestoration';
+import FeaturesShowcase from '../components/FeaturesShowcase';
+import HowItWorks from '../components/HowItWorks';
+import Integrations from '../components/Integrations';
+import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
+import ComparisonTable from '../components/ComparisonTable';
+import TryItYourself from '../components/TryItYourself';
 ---
 
-<MainLayout 
-  title="Thank You! | Restoration AI" 
-  description="Your strategy call has been booked. We look forward to speaking with you!"
->
-  <section className="relative pt-32 pb-32 min-h-screen flex items-center bg-[#fafafa]">
-    <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-    
-    <div className="container mx-auto px-6 lg:px-12 max-w-4xl relative z-10 text-center">
-      <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm border border-green-200">
-        <CheckCircle2 size={48} className="text-green-600" />
-      </div>
-      
-      <h1 className="text-[42px] md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
-        Call Booked Successfully!
-      </h1>
-      
-      <p className="text-[18px] md:text-[22px] text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
-        Thank you for booking a strategy call with us. Please check your email for the calendar invitation and further details. 
-        We look forward to showing you how Restoration AI can transform your business.
-      </p>
-
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg shadow-blue-900/25 text-white rounded-xl text-[16px] font-bold hover:from-blue-500 hover:to-blue-700 hover:scale-[1.02] transition-all">
-          Back to Homepage
-          <ArrowRight size={18} strokeWidth={2.5} />
-        </a>
-      </div>
-    </div>
-  </section>
+<MainLayout title="Thank You! | Restoration AI" description="Your strategy call has been scheduled.">
+  <ThankYouHero client:load />
+  <StatsBanner client:idle />
+  <div class="relative w-full bg-[#fafbfe] overflow-x-clip">
+    <BuiltForRestoration client:visible />
+    <CallRecordings client:visible />
+    <HowItWorks client:visible />
+    <FeaturesShowcase client:visible />
+    <ComparisonTable client:visible />
+    <Testimonials client:visible />
+    <TryItYourself client:visible />
+    <Integrations client:visible />
+    <FAQ client:visible />
+  </div>
 
   {/* Meta Pixel Conversion Event for Booking a Call */}
   <script is:inline>
