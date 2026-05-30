@@ -9,11 +9,20 @@ export default function BookACall() {
         script.async = true;
         document.body.appendChild(script);
 
-        // Cleanup script on component unmount
+        // Listen for GHL booking complete event to redirect locally
+        const handleMessage = (event) => {
+            if (event.data && event.data[0] === "msgsndr-booking-complete") {
+                window.location.href = "/thank-you";
+            }
+        };
+        window.addEventListener("message", handleMessage);
+
+        // Cleanup script and listener on component unmount
         return () => {
             if (document.body.contains(script)) {
                 document.body.removeChild(script);
             }
+            window.removeEventListener("message", handleMessage);
         };
     }, []);
 
