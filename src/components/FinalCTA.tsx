@@ -16,7 +16,7 @@ export default function FinalCTA() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <div className="flex flex-col items-center">
             <a 
-              href="https://app.restorationai.io/#/signup" 
+              href="https://app.restorationai.io/signup" 
               className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-5 rounded-full font-bold text-xl hover:from-blue-700 hover:to-blue-900 transition-all transform hover:scale-105 shadow-[0_20px_40px_-15px_rgba(30,58,138,0.4)]"
             >
               Get Started Free

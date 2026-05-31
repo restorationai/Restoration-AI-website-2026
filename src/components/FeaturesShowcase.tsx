@@ -76,7 +76,7 @@ const ActionButtons = () => (
   <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full">
     <div className="flex flex-col items-center w-full sm:w-[260px]">
       <a
-        href="https://app.restorationai.io/#/signup"
+        href="https://app.restorationai.io/signup"
         className="inline-flex justify-center items-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg shadow-blue-900/25 text-white rounded-xl text-[16px] font-bold hover:from-blue-500 hover:to-blue-700 hover:scale-[1.02] transition-all w-full"
       >
         Get Started For Free

@@ -187,7 +187,7 @@ export default function Hero() {
               </a>
               <div className="flex flex-col items-center w-full sm:w-[280px]">
                 <a
-                  href="https://app.restorationai.io/#/signup"
+                  href="https://app.restorationai.io/signup"
                   className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[16px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-2xl shadow-blue-900/20 flex items-center justify-center gap-2 w-full"
                 >
                   Get Started for Free

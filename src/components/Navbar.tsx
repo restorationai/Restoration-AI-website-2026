@@ -75,7 +75,7 @@ export default function Navbar() {
               Book A Strategy Call
             </a>
             <a
-              href="https://app.restorationai.io/#/signup"
+              href="https://app.restorationai.io/signup"
               className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white px-7 py-3 rounded-full text-[14px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-lg shadow-blue-900/20"
             >
               Start for Free
@@ -114,7 +114,7 @@ export default function Navbar() {
             <hr className="border-slate-100" />
             <div className="flex flex-col gap-3 pt-1">
               <a href="/signin" className="text-slate-600 font-medium text-sm">Login</a>
-              <a href="https://app.restorationai.io/#/signup" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm text-center">
+              <a href="https://app.restorationai.io/signup" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm text-center">
                 Start for Free
               </a>
             </div>
