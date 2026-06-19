@@ -31,3 +31,6 @@ tmp_inspect.html
 
 # jetbrains setting folder
 .idea/
+
+# Local Wrangler state (never commit)
+.wrangler/
