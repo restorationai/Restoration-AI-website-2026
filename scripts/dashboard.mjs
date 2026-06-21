@@ -15,6 +15,7 @@ import { createServer } from 'http';
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import crypto from 'crypto';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = 4600;
@@ -74,9 +75,35 @@ async function getGSC() {
   } catch { return null; }
 }
 
+// --- Live GA4 traffic (page views / sessions / top pages, last 28d) ---
+// Uses the service-account key .ga4-sa.json (property 541541035). Cached 10 min.
+let ga4Cache = { at: 0, data: null };
+async function getGA4() {
+  if (ga4Cache.data && Date.now() - ga4Cache.at < 600000) return ga4Cache.data;
+  try {
+    const keyPath = join(ROOT, '.ga4-sa.json');
+    if (!existsSync(keyPath)) return null;
+    const k = JSON.parse(readFileSync(keyPath, 'utf8'));
+    const now = Math.floor(Date.now() / 1000);
+    const b = (o) => Buffer.from(JSON.stringify(o)).toString('base64url');
+    const jwt = `${b({ alg: 'RS256', typ: 'JWT' })}.${b({ iss: k.client_email, scope: 'https://www.googleapis.com/auth/analytics.readonly', aud: 'https://oauth2.googleapis.com/token', exp: now + 3600, iat: now })}`;
+    const sig = crypto.createSign('RSA-SHA256').update(jwt).sign(k.private_key, 'base64url');
+    const tr = await (await fetch('https://oauth2.googleapis.com/token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: `${jwt}.${sig}` }) })).json();
+    if (!tr.access_token) return null;
+    const PROP = '541541035';
+    const hdr = { Authorization: `Bearer ${tr.access_token}`, 'Content-Type': 'application/json' };
+    const totals = await (await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${PROP}:runReport`, { method: 'POST', headers: hdr, body: JSON.stringify({ dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }], metrics: [{ name: 'screenPageViews' }, { name: 'sessions' }, { name: 'totalUsers' }] }) })).json();
+    const tv = totals.rows?.[0]?.metricValues?.map((m) => m.value) || [];
+    const pg = await (await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${PROP}:runReport`, { method: 'POST', headers: hdr, body: JSON.stringify({ dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }], dimensions: [{ name: 'pagePath' }], metrics: [{ name: 'screenPageViews' }], orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }], limit: 8 }) })).json();
+    const pages = (pg.rows || []).map((r) => ({ path: r.dimensionValues[0].value, views: r.metricValues[0].value }));
+    ga4Cache = { at: Date.now(), data: { pageViews: tv[0], sessions: tv[1], users: tv[2], pages } };
+    return ga4Cache.data;
+  } catch { return null; }
+}
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-function render(gsc) {
+function render(gsc, ga4) {
   const m = manifest();
   const tm = Object.fromEntries(m.topical_map.map((t) => [t.topic_id, t]));
   const order = { Ready: 0, Drafting: 1, Published: 2 };
@@ -142,6 +169,8 @@ function render(gsc) {
     ${card('Ready to write', ready.length, 'in the queue')}
     ${card('Validated demand', totalVol.toLocaleString() + '/mo', 'sum of tracked search volume')}
     ${card('AI visibility', ai ? ai.mentionRate : 'n/a', ai ? `mention rate · ${ai.date}` : 'run baseline')}
+    ${ga4 ? card('Page views', Number(ga4.pageViews).toLocaleString(), `${ga4.sessions} sessions · 28d`) : ''}
+    ${gsc ? card('Search impressions', Number(gsc.totals.impressions).toLocaleString(), `${gsc.totals.clicks} clicks · 28d`) : ''}
   </div>
 
   <div class="panel">
@@ -170,7 +199,13 @@ function render(gsc) {
       <table><thead><tr><th>Date</th><th>Title</th><th>Category</th></tr></thead><tbody>${postRows}</tbody></table>
     </div>
     <div>
-      ${phase2('Traffic / page views', 'Connect the GA4 Data API (property G-HEC194LC1Y) to show sessions, page views, and top pages. Needs a GA4 service account with Analytics read access (the on-site gtag alone is not enough).')}
+      ${ga4
+        ? `<div class="panel"><h2>Traffic <span class="muted" style="font-size:12px;font-weight:400">(GA4 · 28d)</span></h2>
+           <p><b>${Number(ga4.pageViews).toLocaleString()}</b> page views · <b>${ga4.sessions}</b> sessions · <b>${ga4.users}</b> users</p>
+           <table><thead><tr><th>Top pages</th><th>Views</th></tr></thead><tbody>
+           ${ga4.pages.map((p) => `<tr><td>${esc(p.path)}</td><td>${p.views}</td></tr>`).join('') || '<tr><td colspan="2" class="muted">No data yet.</td></tr>'}
+           </tbody></table></div>`
+        : phase2('Traffic / page views', 'GA4 service-account key (.ga4-sa.json) not found.')}
       ${phase2('Indexation detail', 'Per-URL index status via GSC URL Inspection. Sitemap is submitted; coverage detail can be added here next.')}
     </div>
   </div>
@@ -181,9 +216,9 @@ function render(gsc) {
 createServer(async (req, res) => {
   if (req.url === '/favicon.ico') { res.writeHead(204); return res.end(); }
   try {
-    const gsc = await getGSC();
+    const [gsc, ga4] = await Promise.all([getGSC(), getGA4()]);
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end(render(gsc));
+    res.end(render(gsc, ga4));
   } catch (e) {
     res.writeHead(500); res.end('Dashboard error: ' + e.message);
   }

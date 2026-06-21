@@ -39,3 +39,6 @@ drafts/*.spec.json
 
 # Local cron control (not deployed)
 .autoblog-draft
+
+# GA4 service account key (never commit)
+.ga4-sa.json
