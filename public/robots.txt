@@ -2,17 +2,37 @@ User-agent: *
 Allow: /
 Disallow: /studio
 
-# AEO signals
+# AEO / AI search signals
+# GPTBot = OpenAI training; OAI-SearchBot = ChatGPT Search (the one that fetches
+# pages to CITE in answers, e.g. how a customer just found us).
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://restorationai.io/sitemap-index.xml

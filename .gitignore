@@ -34,3 +34,8 @@ tmp_inspect.html
 
 # Local Wrangler state (never commit)
 .wrangler/
+logs/
+drafts/*.spec.json
+
+# Local cron control (not deployed)
+.autoblog-draft

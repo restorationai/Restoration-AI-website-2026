@@ -1,77 +1,73 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { sanityClient, POST_BY_SLUG_QUERY, urlFor, type Post } from '../../sanity/client';
-import { toHTML } from '@portabletext/to-html';
-import manifest from '../../../CONTENT_MANIFEST.json';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { getAuthor } from '../../data/authors';
 
 export async function getStaticPaths() {
-  const posts = await sanityClient.fetch<Post[]>(
-    `*[_type == "post" && defined(slug.current)]{ slug }`
-  );
-  return posts.map((p) => ({ params: { slug: p.slug.current } }));
+  // Drafts render in local dev (for review) but are excluded from the production build.
+  const posts = (await getCollection('blog')).filter((p) => import.meta.env.DEV || !p.data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
-const { slug } = Astro.params;
-const post = await sanityClient.fetch<Post | null>(POST_BY_SLUG_QUERY, { slug });
+type Props = { post: CollectionEntry<'blog'> };
+const { post } = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+const author = getAuthor(data.author);
 
-if (!post) {
-  return Astro.redirect('/blog');
-}
-
-const bodyHtml = post.body
-  ? toHTML(post.body, {
-      components: {
-        types: {
-          image: ({ value }: { value: any }) => {
-            if (!value?.asset) return '';
-            const src = urlFor(value).width(900).auto('format').url();
-            const alt = value.alt ?? '';
-            const caption = value.caption ?? '';
-            return `<figure class="my-10 not-prose">
-              <img
-                src="${src}"
-                alt="${alt}"
-                width="900"
-                loading="lazy"
-                class="w-full rounded-xl border border-slate-100 object-cover"
-              />
-              ${caption ? `<figcaption class="text-sm text-slate-500 text-center mt-3">${caption}</figcaption>` : ''}
-            </figure>`;
-          },
-        },
-      },
-    })
-  : '';
-
-// Internal linking: resolve parent pillar from manifest at build time
-const pipelineEntry = manifest.production_pipeline.find(
-  (p) => p.slug === `/blog/${slug}`
-);
-const topicEntry = pipelineEntry
-  ? manifest.topical_map.find((t) => t.topic_id === pipelineEntry.topic_id)
-  : null;
-const parentPillarEntry = topicEntry?.parent_pillar_id
-  ? manifest.topical_map.find((t) => t.topic_id === topicEntry.parent_pillar_id)
-  : null;
-const parentPillarPipeline = parentPillarEntry
-  ? manifest.production_pipeline.find((p) => p.topic_id === parentPillarEntry.topic_id)
-  : null;
-
-const heroImageUrl = post.mainImage?.asset
-  ? urlFor(post.mainImage).width(1200).height(630).fit('crop').url()
+const url = `https://restorationai.io/blog/${post.id}`;
+const heroUrl = data.hero
+  ? (data.hero.startsWith('http') ? data.hero : `https://restorationai.io${data.hero}`)
   : undefined;
+
+// --- Auto-generate FAQ from answer-capsule H2s (H2 ending in "?" + its first
+// paragraph). Powers a FAQPage rich result and feeds AI answer engines. ---
+function buildFaq(md: string) {
+  const lines = md.split('\n');
+  const faqs: { q: string; a: string }[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(/^##\s+(.*\?)\s*$/);
+    if (!m) continue;
+    let j = i + 1;
+    while (j < lines.length && !lines[j].trim()) j++;
+    const ans: string[] = [];
+    while (j < lines.length && lines[j].trim() && !lines[j].startsWith('#')) {
+      ans.push(lines[j]);
+      j++;
+    }
+    const text = ans
+      .join(' ')
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, '')          // drop images
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')        // links -> anchor text
+      .replace(/[*_>`#]/g, '')                         // strip md emphasis
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (text) faqs.push({ q: m[1].trim(), a: text });
+  }
+  return faqs;
+}
+const faqs = buildFaq(post.body ?? '');
+
+const personSchema = {
+  '@type': 'Person',
+  name: author.name,
+  url: author.url,
+  ...(author.photo && { image: `https://restorationai.io${author.photo}` }),
+  ...(author.sameAs?.length && { sameAs: author.sameAs }),
+};
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: post.seoTitle ?? post.title,
-  description: post.seoDescription,
-  ...(heroImageUrl && { image: heroImageUrl }),
-  datePublished: post.publishedAt,
-  author: {
-    '@type': 'Organization',
-    name: 'Restoration AI',
-  },
+  headline: data.seoTitle ?? data.title,
+  description: data.seoDescription,
+  ...(heroUrl && { image: heroUrl }),
+  datePublished: data.publishedAt.toISOString(),
+  ...(data.updatedAt && { dateModified: data.updatedAt.toISOString() }),
+  author: personSchema,
   publisher: {
     '@type': 'Organization',
     name: 'Restoration AI',
@@ -80,52 +76,83 @@ const articleJsonLd = {
       url: 'https://restorationai.io/favicon.png',
     },
   },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': `https://restorationai.io/blog/${post.slug.current}`,
-  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url },
 };
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://restorationai.io/' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://restorationai.io/blog' },
+    { '@type': 'ListItem', position: 3, name: data.title, item: url },
+  ],
+};
+
+const faqJsonLd = faqs.length >= 2
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+
+const jsonLd = [articleJsonLd, breadcrumbJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 ---
 
 <MainLayout
-  title={`${post.seoTitle ?? post.title} | Restoration AI`}
-  description={post.seoDescription ?? ''}
-  ogImage={heroImageUrl}
-  jsonLd={articleJsonLd}
+  title={`${data.seoTitle ?? data.title} | Restoration AI`}
+  description={data.seoDescription ?? ''}
+  ogImage={heroUrl}
+  jsonLd={jsonLd}
 >
   <article class="py-32 bg-white">
     <div class="container-pill max-w-3xl">
-      {post.publishedAt && (
-        <p class="text-sm text-slate-400 mb-4">
-          {new Date(post.publishedAt).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </p>
-      )}
+
+      <!-- BREADCRUMBS -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <li><a href="/" class="hover:text-[#26bdef]">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/blog" class="hover:text-[#26bdef]">Blog</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-slate-600 font-medium line-clamp-1">{data.title}</li>
+        </ol>
+      </nav>
+
+      <p class="text-sm text-slate-400 mb-4">
+        {data.publishedAt.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </p>
       <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
-        {post.title}
+        {data.title}
       </h1>
-      {post.seoDescription && (
-        <p class="text-xl text-slate-500 mb-10 leading-relaxed">{post.seoDescription}</p>
+      {data.seoDescription && (
+        <p class="text-xl text-slate-500 mb-10 leading-relaxed">{data.seoDescription}</p>
       )}
 
-      {parentPillarPipeline && (
+      {data.pillarSlug && data.pillarLabel && (
         <a
-          href={parentPillarPipeline.slug}
+          href={data.pillarSlug}
           class="inline-flex items-center gap-2 mb-10 px-4 py-2.5 bg-blue-50 border border-blue-100 rounded-xl text-sm font-semibold text-blue-700 hover:bg-blue-100 transition-colors"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-          Part of our guide: {parentPillarEntry!.primary_keyword}
+          Part of our guide: {data.pillarLabel}
         </a>
       )}
 
-      {post.mainImage?.asset && (
+      {data.hero && (
         <div class="w-full mb-12 rounded-2xl overflow-hidden border border-slate-200">
           <img
-            src={urlFor(post.mainImage).width(1200).height(630).fit('crop').url()}
-            alt={post.mainImage.alt ?? post.title}
+            src={data.hero}
+            alt={data.heroAlt ?? data.title}
             width="1200"
             height="630"
             class="w-full object-cover"
@@ -134,10 +161,10 @@ const articleJsonLd = {
         </div>
       )}
 
-      {post.loomVideoUrl && (
+      {data.loomVideoUrl && (
         <div class="aspect-video w-full mb-12 rounded-2xl overflow-hidden border border-slate-200">
           <iframe
-            src={post.loomVideoUrl}
+            src={data.loomVideoUrl}
             class="w-full h-full"
             frameborder="0"
             allowfullscreen
@@ -145,9 +172,41 @@ const articleJsonLd = {
         </div>
       )}
 
-      <div class="prose prose-slate max-w-none" set:html={bodyHtml}></div>
+      <div class="blog-content max-w-none">
+        <Content />
+      </div>
 
-      <div class="mt-16 pt-8 border-t border-slate-200">
+      <!-- AUTHOR BOX (E-E-A-T) -->
+      <aside class="mt-16 pt-10 border-t border-slate-200">
+        <div class="flex flex-col sm:flex-row gap-6 items-start bg-slate-50 border border-slate-100 rounded-2xl p-6">
+          <img
+            src={author.photo}
+            alt={author.photoAlt}
+            width="96"
+            height="96"
+            loading="lazy"
+            class="w-24 h-24 rounded-full object-cover border border-slate-200 shrink-0"
+          />
+          <div>
+            <p class="text-xs font-semibold text-[#3dd0ff] uppercase tracking-widest mb-1">About the author</p>
+            <h2 class="text-lg font-bold text-slate-900">{author.name}</h2>
+            <p class="text-sm font-medium text-slate-500 mb-3">{author.title}</p>
+            <p class="text-sm text-slate-600 leading-relaxed">{author.bio}</p>
+            {author.linkedin && (
+              <a
+                href={author.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-[#10a2d9] hover:text-[#26bdef]"
+              >
+                Connect on LinkedIn →
+              </a>
+            )}
+          </div>
+        </div>
+      </aside>
+
+      <div class="mt-12 pt-8 border-t border-slate-200">
         <a href="/blog" class="text-[#3dd0ff] font-medium hover:underline">← Back to all posts</a>
       </div>
     </div>

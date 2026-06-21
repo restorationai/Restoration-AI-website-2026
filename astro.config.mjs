@@ -3,8 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import sanity from '@sanity/astro';
 import sitemap from '@astrojs/sitemap';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 // Fully static site (no on-demand routes), so no Cloudflare adapter is needed.
@@ -14,16 +14,6 @@ export default defineConfig({
   output: 'static',
   integrations: [
     react(),
-    sanity({
-      projectId: 'sloj5um4',
-      dataset: 'production',
-      useCdn: true,
-      apiVersion: '2024-01-01',
-      studioBasePath: '/studio',
-      // Hash routing keeps the embedded Studio route static (prerender: true),
-      // so the site needs no SSR adapter and deploys cleanly to Cloudflare Pages.
-      studioRouterHistory: 'hash',
-    }),
     sitemap({
       customPages: [
         'https://restorationai.io/integrations/jobnimbus/',
@@ -45,6 +35,24 @@ export default defineConfig({
       }
     }),
   ],
+
+  // Markdown blog posts: external links open in a new tab (keeps readers on the
+  // blog) with rel=noopener noreferrer for security. Internal links (relative,
+  // e.g. /blog/...) are left as same-tab so navigation/crawl flow stays natural.
+  markdown: {
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+          // Only treat http(s) absolute URLs as external; relative internal
+          // links are untouched.
+          protocols: ['http', 'https'],
+        },
+      ],
+    ],
+  },
 
   vite: {
     plugins: [tailwindcss()],

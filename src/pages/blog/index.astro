@@ -1,42 +1,40 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { sanityClient, POSTS_QUERY, urlFor, type Post } from '../../sanity/client';
-import manifest from '../../../CONTENT_MANIFEST.json';
+import { getCollection } from 'astro:content';
 
-const posts = await sanityClient.fetch<Post[]>(POSTS_QUERY);
-
-// Derive category for each post from the manifest
-const TOPIC_CATEGORY: Record<string, string> = {
-  'RAI-001': 'Never Miss a Call',
-  'RAI-002': 'Get Paid More',
-  'RAI-003': 'Dispatch on Autopilot',
-  'RAI-004': 'Never Miss a Call',
-  'RAI-005': 'Connect Your Stack',
-  'RAI-006': 'Dispatch on Autopilot',
-  'RAI-007': 'Never Miss a Call',
-  'RAI-008': 'Get More Calls',
-  'RAI-009': 'Never Miss a Call',
-  'RAI-010': 'Serve Every Customer',
-};
+// Drafts are visible in local dev (for review) but excluded from the production build.
+const all = (await getCollection('blog'))
+  .filter((p) => import.meta.env.DEV || !p.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 
 const CATEGORY_STYLES: Record<string, string> = {
   'Never Miss a Call':     'bg-blue-50 text-blue-700 border-blue-100',
   'Dispatch on Autopilot': 'bg-violet-50 text-violet-700 border-violet-100',
-  'Get Paid More':     'bg-green-50 text-green-700 border-green-100',
+  'Get Paid More':         'bg-green-50 text-green-700 border-green-100',
   'Connect Your Stack':    'bg-orange-50 text-orange-700 border-orange-100',
   'Get More Calls':        'bg-teal-50 text-teal-700 border-teal-100',
   'Serve Every Customer':  'bg-rose-50 text-rose-700 border-rose-100',
 };
 
-type EnrichedPost = Post & { category: string };
+type Card = {
+  slug: string;
+  title: string;
+  description?: string;
+  publishedAt: Date;
+  hero?: string;
+  heroAlt?: string;
+  category: string;
+};
 
-const enriched: EnrichedPost[] = posts.map((post) => {
-  const pipeline = manifest.production_pipeline.find(
-    (p) => p.slug === `/blog/${post.slug.current}`
-  );
-  const category = pipeline ? (TOPIC_CATEGORY[pipeline.topic_id] ?? 'General') : 'General';
-  return { ...post, category };
-});
+const enriched: Card[] = all.map((p) => ({
+  slug: p.id,
+  title: p.data.title,
+  description: p.data.seoDescription,
+  publishedAt: p.data.publishedAt,
+  hero: p.data.hero,
+  heroAlt: p.data.heroAlt ?? p.data.title,
+  category: p.data.category ?? 'General',
+}));
 
 const categories = ['All', ...Array.from(new Set(enriched.map((p) => p.category)))];
 const [featured, ...rest] = enriched;
@@ -47,12 +45,12 @@ const blogJsonLd = {
   name: 'Restoration AI Blog',
   description: 'Guides on AI dispatch, missed calls, IICRC water loss categories, and automated restoration workflows.',
   url: 'https://restorationai.io/blog',
-  blogPost: posts.map((p) => ({
+  blogPost: enriched.map((p) => ({
     '@type': 'BlogPosting',
-    headline: p.seoTitle ?? p.title,
-    description: p.seoDescription,
-    datePublished: p.publishedAt,
-    url: `https://restorationai.io/blog/${p.slug.current}`,
+    headline: p.title,
+    description: p.description,
+    datePublished: p.publishedAt.toISOString(),
+    url: `https://restorationai.io/blog/${p.slug}`,
   })),
 };
 ---
@@ -83,7 +81,7 @@ const blogJsonLd = {
   <section class="py-16 bg-white min-h-[60vh]">
     <div class="container-pill">
 
-      {posts.length === 0 ? (
+      {enriched.length === 0 ? (
         <!-- EMPTY STATE -->
         <div class="py-20 text-center">
           <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
@@ -130,17 +128,17 @@ const blogJsonLd = {
 
           <!-- FEATURED POST -->
           <a
-            href={`/blog/${featured.slug.current}`}
+            href={`/blog/${featured.slug}`}
             data-post-card
             data-category={featured.category}
             class="group grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-200 hover:border-[#3dd0ff] transition-all mb-12 shadow-sm hover:shadow-lg"
           >
             <!-- Image -->
             <div class="aspect-video md:aspect-auto bg-slate-900 relative overflow-hidden">
-              {featured.mainImage?.asset ? (
+              {featured.hero ? (
                 <img
-                  src={urlFor(featured.mainImage).width(900).height(500).fit('crop').url()}
-                  alt={featured.mainImage.alt ?? featured.title}
+                  src={featured.hero}
+                  alt={featured.heroAlt}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="eager"
                 />
@@ -161,15 +159,13 @@ const blogJsonLd = {
               <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-4 group-hover:text-[#26bdef] transition-colors">
                 {featured.title}
               </h2>
-              {featured.seoDescription && (
-                <p class="text-slate-500 leading-relaxed mb-6 line-clamp-3">{featured.seoDescription}</p>
+              {featured.description && (
+                <p class="text-slate-500 leading-relaxed mb-6 line-clamp-3">{featured.description}</p>
               )}
               <div class="flex items-center justify-between">
-                {featured.publishedAt && (
-                  <p class="text-xs text-slate-400">
-                    {new Date(featured.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                  </p>
-                )}
+                <p class="text-xs text-slate-400">
+                  {featured.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
                 <span class="text-sm font-semibold text-[#3dd0ff] group-hover:underline">Read article →</span>
               </div>
             </div>
@@ -180,17 +176,17 @@ const blogJsonLd = {
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="post-grid">
               {rest.map((post) => (
                 <a
-                  href={`/blog/${post.slug.current}`}
+                  href={`/blog/${post.slug}`}
                   data-post-card
                   data-category={post.category}
                   class="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 hover:border-[#3dd0ff] transition-all shadow-sm hover:shadow-md"
                 >
                   <!-- Thumbnail -->
                   <div class="aspect-video bg-slate-900 relative overflow-hidden">
-                    {post.mainImage?.asset ? (
+                    {post.hero ? (
                       <img
-                        src={urlFor(post.mainImage).width(600).height(338).fit('crop').url()}
-                        alt={post.mainImage.alt ?? post.title}
+                        src={post.hero}
+                        alt={post.heroAlt}
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
@@ -208,15 +204,13 @@ const blogJsonLd = {
                     <h2 class="text-lg font-bold text-slate-900 leading-snug mb-3 group-hover:text-[#26bdef] transition-colors flex-1">
                       {post.title}
                     </h2>
-                    {post.seoDescription && (
-                      <p class="text-sm text-slate-500 line-clamp-2 mb-4">{post.seoDescription}</p>
+                    {post.description && (
+                      <p class="text-sm text-slate-500 line-clamp-2 mb-4">{post.description}</p>
                     )}
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
-                      {post.publishedAt ? (
-                        <p class="text-xs text-slate-400">
-                          {new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                        </p>
-                      ) : <span />}
+                      <p class="text-xs text-slate-400">
+                        {post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                      </p>
                       <span class="text-xs font-semibold text-[#3dd0ff]">Read →</span>
                     </div>
                   </div>

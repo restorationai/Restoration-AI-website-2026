@@ -1,15 +1,14 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-05-03",
+    "last_updated": "2026-06-21",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
-      "topic":   "RAI-###  (Topical Map primary key)",
-      "author":  "AUTH-### (Author Vault primary key)",
-      "pipeline":"topic_id + author_id foreign keys link to the other two tables"
+      "topic": "RAI-###  (Topical Map primary key)",
+      "author": "AUTH-### (Author Vault primary key)",
+      "pipeline": "topic_id + author_id foreign keys link to the other two tables"
     }
   },
-
   "topical_map": [
     {
       "topic_id": "RAI-001",
@@ -24,7 +23,7 @@
         "Will an AI receptionist work with my existing CRM (JobNimbus, Albiware, Xcelerate)?",
         "How quickly can I set up an AI receptionist for my restoration company?"
       ],
-      "parent_pillar_id": null
+      "parent_pillar_id": "RAI-011"
     },
     {
       "topic_id": "RAI-002",
@@ -69,7 +68,7 @@
         "Does switching to AI hurt the customer experience for distressed homeowners?",
         "What is the ROI comparison: AI receptionist vs. hiring a full-time receptionist?"
       ],
-      "parent_pillar_id": null
+      "parent_pillar_id": "RAI-011"
     },
     {
       "topic_id": "RAI-005",
@@ -118,20 +117,21 @@
     },
     {
       "topic_id": "RAI-009",
-      "primary_keyword": "after-hours answering service for restoration companies",
-      "unique_take": "Standard answering services just take a message and create a callback queue. Restoration AI triages every after-hours call using IICRC water categories (Cat 1/2/3) in real time, selecting the correct dispatch urgency tier and pushing a fully populated job record to the CRM before the homeowner hangs up — something no human operator or generic answering service can do.",
+      "primary_keyword": "after hours answering service",
+      "unique_take": "Most after-hours answering services just take a message and wait. For emergency trades like restoration, the after-hours call IS the job, so the service has to triage and dispatch immediately, not relay a message at 8am.",
       "target_audience": "Restoration Business Owners",
       "intent": "Commercial Investigation",
       "h2_questions": [
-        "What makes an after-hours restoration call different from any other service call?",
-        "What is IICRC water categorization and why does it determine dispatch urgency?",
-        "Why do traditional after-hours answering services fail restoration contractors?",
-        "How does AI triage an after-hours restoration call using IICRC categories?",
-        "What data does AI capture at 2am that enables immediate crew dispatch?",
-        "How does after-hours AI integrate with restoration CRMs like JobNimbus and Albiware?",
-        "What does an AI after-hours answering service cost vs. a 24/7 human service?"
+        "What is an after hours answering service and how does it work?",
+        "How much does an after hours answering service cost?",
+        "Is an AI after hours answering service better than a live one?",
+        "What should an after hours answering service do with an emergency call?",
+        "How do you set up an after hours answering service for your business?"
       ],
-      "parent_pillar_id": null
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 1300,
+      "cpc": 183.59,
+      "data_source": "dataforseo"
     },
     {
       "topic_id": "RAI-010",
@@ -163,25 +163,195 @@
         "What is the fastest legal way to increase 5-star reviews for a restoration company?"
       ],
       "parent_pillar_id": null
+    },
+    {
+      "topic_id": "RAI-011",
+      "primary_keyword": "ai receptionist for small business",
+      "unique_take": "Generic AI receptionist guides ignore field-service businesses, where the receptionist must triage an emergency and dispatch a crew, not just book an appointment. We write it from the contractor and restoration angle.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an AI receptionist and how does it work for a small business?",
+        "How much does an AI receptionist cost for a small business?",
+        "Can an AI receptionist book jobs and dispatch a crew, not just take messages?",
+        "Is an AI receptionist better than a human answering service for a small contractor?",
+        "How fast can a small business set up an AI receptionist?"
+      ],
+      "parent_pillar_id": null,
+      "search_volume": 1000,
+      "keyword_difficulty": 13,
+      "cpc": 41.56,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-012",
+      "primary_keyword": "ai voice receptionist",
+      "unique_take": "Voice quality is the make-or-break for field-service calls from panicked customers. We break down what actually makes an AI voice receptionist sound human enough to keep a distressed homeowner on the line.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an AI voice receptionist?",
+        "Does an AI voice receptionist actually sound human on the phone?",
+        "Can an AI voice receptionist handle emergency calls?",
+        "How does an AI voice receptionist compare to a virtual receptionist service?",
+        "What should you look for in an AI voice receptionist?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 210,
+      "keyword_difficulty": 11,
+      "cpc": 41.54,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-013",
+      "primary_keyword": "ai receptionist software",
+      "unique_take": "Most AI receptionist software reviews skip the one feature service businesses need most: live dispatch and CRM write-back during the call. Our buyer guide scores tools on that.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is the best AI receptionist software in 2026?",
+        "What features should AI receptionist software have for service businesses?",
+        "How does AI receptionist software integrate with a CRM?",
+        "How much does AI receptionist software cost?",
+        "Is AI receptionist software worth it for a small contractor?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 390,
+      "keyword_difficulty": 23,
+      "cpc": 23.93,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-014",
+      "primary_keyword": "answering service for contractors",
+      "unique_take": "Contractor answering services bill per minute and still miss surge calls. We quantify the real cost-per-booked-job versus an AI answering service that never drops a call.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is the best answering service for contractors?",
+        "How much does a contractor answering service cost?",
+        "Can an answering service actually qualify and dispatch contractor leads?",
+        "Answering service vs AI receptionist for contractors: which wins?",
+        "What happens to a contractor answering service during a storm surge?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 170,
+      "keyword_difficulty": 12,
+      "cpc": 167.63,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-015",
+      "primary_keyword": "restoration marketing",
+      "unique_take": "Most restoration marketing advice stops at \"rank on Google.\" The real bottleneck is converting the calls you already get, which is why marketing and call capture have to be one system.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is the best marketing strategy for a restoration company?",
+        "How do restoration companies get more leads?",
+        "How much should a restoration company spend on marketing?",
+        "Does SEO or Google Ads work better for restoration companies?",
+        "Why do restoration companies lose leads even with good marketing?"
+      ],
+      "parent_pillar_id": null,
+      "search_volume": 210,
+      "keyword_difficulty": 12,
+      "cpc": 59.47,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-016",
+      "primary_keyword": "marketing for restoration companies",
+      "unique_take": "A practical, channel-by-channel marketing playbook built specifically for restoration owners, weighted by what actually drives emergency-job phone calls.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What marketing channels work best for restoration companies?",
+        "How do restoration companies get on the first page of Google?",
+        "How important are Google reviews for restoration marketing?",
+        "Should restoration companies run Google Ads?",
+        "How do you measure ROI on restoration marketing?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 70,
+      "keyword_difficulty": 8,
+      "cpc": 35,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-017",
+      "primary_keyword": "how to get water damage leads",
+      "unique_take": "Buying water damage leads from aggregators is a losing game on price and exclusivity. We show how to generate your own exclusive water damage leads and stop them leaking to voicemail.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "How do you get water damage restoration leads?",
+        "Are paid water damage leads worth it?",
+        "How much do water damage leads cost?",
+        "How do you get exclusive water damage leads instead of shared ones?",
+        "Why do water damage leads go to your competitors?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 170,
+      "keyword_difficulty": 18,
+      "cpc": 29.34,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-018",
+      "primary_keyword": "roofing leads",
+      "unique_take": "Roofing storm surges create the same missed-call leak restoration sees. The biggest roofing jobs go to whoever answers first, not whoever buys the most shared leads.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "How do roofing companies get more leads?",
+        "Are shared roofing leads worth it?",
+        "How much do roofing leads cost?",
+        "How do you get exclusive roofing leads?",
+        "Why do roofers lose leads during storm season?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 1300,
+      "keyword_difficulty": 25,
+      "cpc": 41.52,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-019",
+      "primary_keyword": "construction leads",
+      "unique_take": "Construction and reconstruction leads are high-value and low-frequency, so a single missed call is a five-figure miss. Capture beats volume.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "How do construction companies get more leads?",
+        "Where do contractors find construction leads?",
+        "How much do construction leads cost?",
+        "How do you get exclusive construction leads?",
+        "How do you stop losing construction leads to missed calls?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 880,
+      "keyword_difficulty": 25,
+      "cpc": 43.84,
+      "data_source": "dataforseo"
     }
   ],
-
   "production_pipeline": [
     {
       "topic_id": "RAI-001",
       "author_id": "AUTH-001",
-      "automation_status": "Published",
+      "automation_status": "Ready",
       "slug": "/blog/ai-receptionist-for-restoration-companies",
       "video_prompt": "Talking-head explainer (60s): restoration business owner at their desk, phone ringing, cutting to an animated AI call flow diagram showing triage → dispatch → CRM sync. Tone: authoritative and efficient. End card: 'Set up in 5 minutes — no credit card.'",
-      "sanity_id": "post-rai-001-ai-receptionist"
+      "sanity_id": null
     },
     {
       "topic_id": "RAI-002",
       "author_id": "AUTH-001",
-      "automation_status": "Published",
+      "automation_status": "Drafting",
       "slug": "/blog/water-damage-restoration-lead-response-time",
       "video_prompt": "Data-driven explainer (45s): animated bar chart showing call response time vs. job win rate. Visual: phone ringing with a timer, jobs being awarded vs. going to competitors. Tone: urgent, data-backed. CTA: 'Stop losing jobs to voicemail.'",
-      "sanity_id": "post-rai-002-response-time"
+      "sanity_id": null
     },
     {
       "topic_id": "RAI-003",
@@ -194,15 +364,15 @@
     {
       "topic_id": "RAI-004",
       "author_id": "AUTH-001",
-      "automation_status": "Published",
+      "automation_status": "Ready",
       "slug": "/blog/restoration-answering-service-vs-ai",
       "video_prompt": "Side-by-side comparison animation (60s): two split screens — left: traditional answering service (hold music, missed calls, per-minute billing ticker); right: AI system (instant answer, cost-per-call counter dropping). Tone: confident, ROI-focused.",
-      "sanity_id": "post-rai-004-ai-vs-answering-service"
+      "sanity_id": null
     },
     {
       "topic_id": "RAI-005",
       "author_id": "AUTH-003",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/restoration-crm-integration-ai-phone-system",
       "video_prompt": "Technical walkthrough (75s): screen recording of an AI call completing, then instantly showing the populated job card in JobNimbus with all intake fields pre-filled. Overlaid annotation arrows. Tone: technical but accessible. CTA: 'See all integrations.'",
       "sanity_id": null
@@ -210,7 +380,7 @@
     {
       "topic_id": "RAI-006",
       "author_id": "AUTH-002",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/work-authorization-automation-restoration",
       "video_prompt": "Phone mockup animation (45s): homeowner receives SMS with WA link, signs on phone in 10 seconds, crew dispatch notification fires instantly. Counter shows '3.2 hours saved per job.' Tone: clean, benefit-focused. No talking head.",
       "sanity_id": null
@@ -226,7 +396,7 @@
     {
       "topic_id": "RAI-008",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/restoration-company-google-reviews-automation",
       "video_prompt": "Results-focused montage (50s): Google Business Profile star rating climbing from 3.8 to 4.9, review count ticking up, map pack rank improving. Interspersed with phone showing an automated SMS review request. Tone: aspirational, data-driven.",
       "sanity_id": null
@@ -234,22 +404,93 @@
     {
       "topic_id": "RAI-010",
       "author_id": "AUTH-001",
-      "automation_status": "Drafting",
+      "automation_status": "Published",
       "slug": "/blog/ai-answering-service-restoration-companies-never-miss-lead",
       "video_prompt": "Founder-story format (75s): opens with a ringing phone going to voicemail, dollar amount fading away. Cut to Santino at desk — voiceover of the $80k uncle story. Then split: same phone call, AI answers instantly, job card populates, crew dispatched. Tone: personal, direct, no corporate gloss.",
-      "sanity_id": "rai-010-ai-answering-service-never-miss-lead"
+      "sanity_id": null
     },
     {
       "topic_id": "RAI-009",
       "author_id": "AUTH-001",
-      "automation_status": "Published",
-      "slug": "/blog/after-hours-answering-service-restoration",
+      "automation_status": "Ready",
+      "slug": "/blog/after-hours-answering-service",
       "video_prompt": "Night-time emergency scenario (60s): Phone rings at 2am showing 'Flooded Basement' caller. Split screen — left: human answering service operator writing on paper, cutting to morning callback; right: AI answering service immediately triaging IICRC category, crew SMS firing at 2:04am, job card populating in CRM. Counter: 'Crew on site in 47 minutes.' Tone: urgent, factual.",
-      "sanity_id": "rai-009-after-hours-answering-service",
+      "sanity_id": null,
       "publishedAt": "2026-05-03"
+    },
+    {
+      "topic_id": "RAI-011",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-receptionist-for-small-business",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-012",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-voice-receptionist",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-013",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-receptionist-software",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-014",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/answering-service-for-contractors",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-015",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/restoration-marketing",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-016",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/marketing-for-restoration-companies",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-017",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/how-to-get-water-damage-leads",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-018",
+      "author_id": "AUTH-001",
+      "automation_status": "Drafting",
+      "slug": "/blog/roofing-leads",
+      "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-019",
+      "author_id": "AUTH-001",
+      "automation_status": "Drafting",
+      "slug": "/blog/construction-leads",
+      "video_prompt": "",
+      "sanity_id": null
     }
   ],
-
   "author_vault": [
     {
       "author_id": "AUTH-001",
