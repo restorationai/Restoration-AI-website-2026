@@ -51,9 +51,32 @@ function aiVisibility() {
   return null;
 }
 
+// --- Live Google Search Console data (rankings + search terms, last 28d) ---
+// Uses the agency OAuth token in the sibling rank-ai repo. Cached 10 min.
+let gscCache = { at: 0, data: null };
+async function getGSC() {
+  if (gscCache.data && Date.now() - gscCache.at < 600000) return gscCache.data;
+  try {
+    const tokenPath = join(ROOT, '..', 'rank-ai', '.gsc-agency-token.json');
+    if (!existsSync(tokenPath)) return null;
+    const t = JSON.parse(readFileSync(tokenPath, 'utf8'));
+    const body = new URLSearchParams({ client_id: t.client_id, client_secret: t.client_secret, refresh_token: t.refresh_token, grant_type: 'refresh_token' });
+    const tok = await (await fetch('https://oauth2.googleapis.com/token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })).json();
+    if (!tok.access_token) return null;
+    const site = encodeURIComponent('sc-domain:restorationai.io');
+    const end = new Date().toISOString().slice(0, 10);
+    const start = new Date(Date.now() - 28 * 864e5).toISOString().slice(0, 10);
+    const d = await (await fetch(`https://www.googleapis.com/webmasters/v3/sites/${site}/searchAnalytics/query`, { method: 'POST', headers: { Authorization: `Bearer ${tok.access_token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ startDate: start, endDate: end, dimensions: ['query'], rowLimit: 15 }) })).json();
+    const rows = d.rows || [];
+    const totals = rows.reduce((a, r) => ({ clicks: a.clicks + r.clicks, impressions: a.impressions + r.impressions }), { clicks: 0, impressions: 0 });
+    gscCache = { at: Date.now(), data: { start, end, rows, totals } };
+    return gscCache.data;
+  } catch { return null; }
+}
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-function render() {
+function render(gsc) {
   const m = manifest();
   const tm = Object.fromEntries(m.topical_map.map((t) => [t.topic_id, t]));
   const order = { Ready: 0, Drafting: 1, Published: 2 };
@@ -131,26 +154,36 @@ function render() {
     <table><thead><tr><th>Status</th><th>ID</th><th>Keyword</th><th>Search data</th><th>Intent</th><th>Pillar</th></tr></thead><tbody>${queueRows}</tbody></table>
   </div>
 
+  <div class="panel">
+    <h2>Google rankings &amp; search terms ${gsc ? `<span class="muted" style="font-size:12px;font-weight:400">(GSC · ${esc(gsc.start)} → ${esc(gsc.end)})</span>` : ''}</h2>
+    ${gsc
+      ? `<p><b>${gsc.totals.clicks}</b> clicks · <b>${gsc.totals.impressions}</b> impressions (28d). Top queries you're appearing for:</p>
+         <table><thead><tr><th>Query</th><th>Clicks</th><th>Impressions</th><th>Avg position</th></tr></thead><tbody>
+         ${gsc.rows.map((r) => `<tr><td>${esc(r.keys[0])}</td><td>${r.clicks}</td><td>${r.impressions}</td><td>${r.position.toFixed(1)}</td></tr>`).join('') || '<tr><td colspan="4" class="muted">No query data yet.</td></tr>'}
+         </tbody></table>`
+      : '<p class="muted">GSC not connected (token not found). Showing nothing live.</p>'}
+  </div>
+
   <div class="grid2">
     <div class="panel">
       <h2>Published posts (${posts.length})</h2>
       <table><thead><tr><th>Date</th><th>Title</th><th>Category</th></tr></thead><tbody>${postRows}</tbody></table>
     </div>
     <div>
-      ${phase2('Google rankings &amp; search terms', 'Connect Google Search Console to show ranking keywords, clicks, impressions, and average position per page.')}
-      ${phase2('Traffic / page views', 'Connect the GA4 Data API (property G-HEC194LC1Y) to show sessions, page views, and top pages.')}
-      ${phase2('Indexation', 'Connect GSC URL Inspection to show how many pages are indexed and any coverage issues.')}
+      ${phase2('Traffic / page views', 'Connect the GA4 Data API (property G-HEC194LC1Y) to show sessions, page views, and top pages. Needs a GA4 service account with Analytics read access (the on-site gtag alone is not enough).')}
+      ${phase2('Indexation detail', 'Per-URL index status via GSC URL Inspection. Sitemap is submitted; coverage detail can be added here next.')}
     </div>
   </div>
 </main>
 </body></html>`;
 }
 
-createServer((req, res) => {
+createServer(async (req, res) => {
   if (req.url === '/favicon.ico') { res.writeHead(204); return res.end(); }
   try {
+    const gsc = await getGSC();
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end(render());
+    res.end(render(gsc));
   } catch (e) {
     res.writeHead(500); res.end('Dashboard error: ' + e.message);
   }
