@@ -16,7 +16,7 @@ anything. Do not stop to ask questions or wait for confirmation at any step.
 Make the best editorial decision and proceed. Produce exactly ONE published post,
 then stop.
 
-Project root: `/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main`.
+Project root: `/Users/santino/dev/Restoration-AI-website-2026-main`.
 Run all commands from there.
 
 ## Step 0 — Load context

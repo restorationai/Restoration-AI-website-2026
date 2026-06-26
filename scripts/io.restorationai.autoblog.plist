@@ -9,7 +9,7 @@
   <array>
     <string>/bin/bash</string>
     <string>-lc</string>
-    <string>/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main/scripts/auto-blog.sh</string>
+    <string>/Users/santino/dev/Restoration-AI-website-2026-main/scripts/auto-blog.sh</string>
   </array>
 
   <!-- Mon (Weekday 1) and Thu (Weekday 4) at 09:00 local time -->
@@ -32,8 +32,8 @@
   <false/>
 
   <key>StandardOutPath</key>
-  <string>/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main/logs/launchd.out.log</string>
+  <string>/Users/santino/dev/Restoration-AI-website-2026-main/logs/launchd.out.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main/logs/launchd.err.log</string>
+  <string>/Users/santino/dev/Restoration-AI-website-2026-main/logs/launchd.err.log</string>
 </dict>
 </plist>

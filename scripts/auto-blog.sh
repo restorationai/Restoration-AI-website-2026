@@ -9,7 +9,7 @@
 
 set -uo pipefail
 
-PROJECT_DIR="/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main"
+PROJECT_DIR="/Users/santino/dev/Restoration-AI-website-2026-main"
 CLAUDE_BIN="/Users/santino/.local/bin/claude"
 LOG_DIR="$PROJECT_DIR/logs"
 

@@ -19,7 +19,7 @@ answering receptionist & dispatcher for restoration companies. The audience is
 NOT a local water-damage service business, so there is **no city × service geo
 fan-out** (that is for Rank AI clients, not us).
 
-Project root: `/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main`
+Project root: `/Users/santino/dev/Restoration-AI-website-2026-main`
 (run everything from there).
 
 ## Goal

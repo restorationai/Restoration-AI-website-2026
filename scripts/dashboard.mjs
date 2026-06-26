@@ -58,7 +58,7 @@ let gscCache = { at: 0, data: null };
 async function getGSC() {
   if (gscCache.data && Date.now() - gscCache.at < 600000) return gscCache.data;
   try {
-    const tokenPath = join(ROOT, '..', 'rank-ai', '.gsc-agency-token.json');
+    const tokenPath = '/Users/santino/Desktop/mywebsitecode/rank-ai/.gsc-agency-token.json';
     if (!existsSync(tokenPath)) return null;
     const t = JSON.parse(readFileSync(tokenPath, 'utf8'));
     const body = new URLSearchParams({ client_id: t.client_id, client_secret: t.client_secret, refresh_token: t.refresh_token, grant_type: 'refresh_token' });

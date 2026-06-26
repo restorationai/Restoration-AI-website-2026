@@ -15,7 +15,7 @@ if [ -z "$SLUG" ]; then
   exit 2
 fi
 
-PROJECT_DIR="/Users/santino/Desktop/mywebsitecode/Restoration-AI-website-2026-main"
+PROJECT_DIR="/Users/santino/dev/Restoration-AI-website-2026-main"
 cd "$PROJECT_DIR" || { echo "❌ cannot cd to project" >&2; exit 1; }
 
 POST="src/content/blog/${SLUG}.md"
