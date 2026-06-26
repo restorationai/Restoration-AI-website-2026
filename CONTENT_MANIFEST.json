@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-06-26",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -340,10 +340,11 @@
     {
       "topic_id": "RAI-001",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/ai-receptionist-for-restoration-companies",
       "video_prompt": "Talking-head explainer (60s): restoration business owner at their desk, phone ringing, cutting to an animated AI call flow diagram showing triage → dispatch → CRM sync. Tone: authoritative and efficient. End card: 'Set up in 5 minutes — no credit card.'",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-06-26"
     },
     {
       "topic_id": "RAI-002",
@@ -412,11 +413,11 @@
     {
       "topic_id": "RAI-009",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/after-hours-answering-service",
       "video_prompt": "Night-time emergency scenario (60s): Phone rings at 2am showing 'Flooded Basement' caller. Split screen — left: human answering service operator writing on paper, cutting to morning callback; right: AI answering service immediately triaging IICRC category, crew SMS firing at 2:04am, job card populating in CRM. Counter: 'Crew on site in 47 minutes.' Tone: urgent, factual.",
       "sanity_id": null,
-      "publishedAt": "2026-05-03"
+      "publishedAt": "2026-06-21"
     },
     {
       "topic_id": "RAI-011",
