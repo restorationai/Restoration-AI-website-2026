@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-06-26",
+    "last_updated": "2026-06-29",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -365,10 +365,11 @@
     {
       "topic_id": "RAI-004",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/restoration-answering-service-vs-ai",
       "video_prompt": "Side-by-side comparison animation (60s): two split screens — left: traditional answering service (hold music, missed calls, per-minute billing ticker); right: AI system (instant answer, cost-per-call counter dropping). Tone: confident, ROI-focused.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-06-29"
     },
     {
       "topic_id": "RAI-005",
