@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-07-20",
+    "last_updated": "2026-07-23",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -334,6 +334,101 @@
       "keyword_difficulty": 25,
       "cpc": 43.84,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-020",
+      "primary_keyword": "answering service for small business",
+      "unique_take": "Most 'best answering service' lists are written for law firms and medical offices. For field-service small businesses, whose owner is on a ladder or under a sink when the phone rings, a missed call is not a lost message, it is a lost job, so the buying criteria should start with dispatch, not message-taking.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an answering service for small business?",
+        "How much does a small business answering service cost?",
+        "What should a small business look for in an answering service?",
+        "Is an AI answering service better than a live answering service for a small business?",
+        "Can an answering service book jobs and dispatch, not just take messages?",
+        "What happens to your calls after hours and during surge weeks?",
+        "How do you set this up without betting the business on it?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 880,
+      "keyword_difficulty": 21,
+      "cpc": 180.0,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-021",
+      "primary_keyword": "ai answering service",
+      "unique_take": "Generic AI answering service roundups review chatbots that take messages. For on-site service businesses, the only test that matters is whether the AI can triage an emergency, quote from your real price book, and dispatch a tech while the caller is still on the line.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an AI answering service?",
+        "How does an AI answering service work?",
+        "How much does an AI answering service cost?",
+        "AI answering service vs live answering service: which is better?",
+        "What should you look for in an AI answering service?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 2400,
+      "keyword_difficulty": 27,
+      "cpc": 51.16,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-022",
+      "primary_keyword": "virtual receptionist pricing",
+      "unique_take": "Virtual receptionist pricing pages hide the per-minute math. We publish the real cost-per-call arithmetic across live, virtual, and AI receptionists, including the overage tiers nobody advertises.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "How much does a virtual receptionist cost?",
+        "How does per-minute virtual receptionist pricing actually work?",
+        "What hidden fees show up in virtual receptionist plans?",
+        "Virtual receptionist vs AI receptionist pricing: which is cheaper?",
+        "What does a virtual receptionist cost per booked job?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 320,
+      "keyword_difficulty": 1,
+      "cpc": 43.11,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-023",
+      "primary_keyword": "answering service for plumbers",
+      "unique_take": "Plumbing emergencies convert on the first answered call: an after-hours burst pipe caller does not leave a voicemail, they dial the next plumber. An answering service that only takes messages loses exactly the jobs with the highest tickets.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is the best answering service for plumbers?",
+        "How much does a plumbing answering service cost?",
+        "What should a plumbing answering service do on an emergency call?",
+        "Can an AI answering service book plumbing jobs and dispatch a tech?",
+        "Why do plumbers lose after-hours calls to competitors?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 480,
+      "cpc": 282.89,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-024",
+      "primary_keyword": "hvac answering service",
+      "unique_take": "HVAC call volume spikes with the weather (first heat wave, first freeze), which is exactly when live answering services queue and drop calls. Surge capacity, not price per call, is the real buying criterion.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an HVAC answering service?",
+        "How much does an HVAC answering service cost?",
+        "What happens to HVAC calls during a heat wave or cold snap?",
+        "Can an AI answering service schedule HVAC service calls and dispatch techs?",
+        "Is an AI answering service better than a live service for HVAC companies?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 480,
+      "cpc": 147.88,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -496,6 +591,47 @@
       "automation_status": "Drafting",
       "slug": "/blog/construction-leads",
       "video_prompt": "",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-020",
+      "author_id": "AUTH-001",
+      "automation_status": "Published",
+      "slug": "/blog/answering-service-for-small-business",
+      "video_prompt": "Split-screen (60s): small business owner on a job site missing calls vs AI answering, booking, and dispatching; cost-per-call counter comparison. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-07-23"
+    },
+    {
+      "topic_id": "RAI-021",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-answering-service",
+      "video_prompt": "Explainer (60s): live AI intake call transcribed in real time, emergency triage, price quote, tech dispatched before hangup. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-022",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/virtual-receptionist-pricing",
+      "video_prompt": "Data explainer (45s): animated cost breakdown of live vs virtual vs AI receptionist per call and per booked job; hidden-fee reveal. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-023",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/answering-service-for-plumbers",
+      "video_prompt": "Night emergency scenario (60s): burst pipe call at 1am, AI answers, quotes, dispatches on-call plumber; competitor phone rings unanswered. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-024",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/hvac-answering-service",
+      "video_prompt": "Heat wave surge (60s): call queue exploding on a 100-degree day, AI answering every line at once while a live service shows hold music. CTA: Book a Strategy Call.",
       "sanity_id": null
     }
   ],
