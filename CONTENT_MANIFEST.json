@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-07-27",
+    "last_updated": "2026-07-30",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -614,10 +614,11 @@
     {
       "topic_id": "RAI-022",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/virtual-receptionist-pricing",
       "video_prompt": "Data explainer (45s): animated cost breakdown of live vs virtual vs AI receptionist per call and per booked job; hidden-fee reveal. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-07-30"
     },
     {
       "topic_id": "RAI-023",
