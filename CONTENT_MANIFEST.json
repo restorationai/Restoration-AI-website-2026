@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-08-03",
+    "last_updated": "2026-08-06",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -632,10 +632,11 @@
     {
       "topic_id": "RAI-024",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/hvac-answering-service",
       "video_prompt": "Heat wave surge (60s): call queue exploding on a 100-degree day, AI answering every line at once while a live service shows hold music. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-08-06"
     }
   ],
   "author_vault": [
