@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-08-06",
+    "last_updated": "2026-08-10",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -429,6 +429,97 @@
       "search_volume": 480,
       "cpc": 147.88,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-025",
+      "primary_keyword": "bilingual answering service",
+      "unique_take": "Bilingual answering services staff a handful of Spanish-speaking operators and charge a premium for access to them, which is why this keyword carries a $311 CPC. An AI receptionist answers every caller in their language natively, at no premium and with no queue, which turns bilingual coverage from a paid add-on into the default.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a bilingual answering service?",
+        "How much does a bilingual answering service cost?",
+        "Why do Spanish-speaking callers hang up on English-only businesses?",
+        "Can an AI answering service handle Spanish and English calls natively?",
+        "What should you look for in a bilingual answering service?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 720,
+      "cpc": 311.12,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-026",
+      "primary_keyword": "property management answering service",
+      "unique_take": "Property management calls split into two streams: routine tenant requests that can wait, and 2am emergencies (burst pipe, no heat) that cannot. Most answering services treat both the same, either waking the property manager for everything or batching emergencies to morning. Triage is the actual product, not message-taking.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a property management answering service?",
+        "How much does a property management answering service cost?",
+        "How should an answering service triage tenant maintenance calls?",
+        "Can an AI answering service dispatch maintenance vendors automatically?",
+        "What happens to property management calls after hours?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 1000,
+      "cpc": 97.33,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-027",
+      "primary_keyword": "missed call text back",
+      "unique_take": "Missed call text back is a band-aid: it converts a missed call into a text thread, but emergency callers do not text back, they dial the next company on the list. The fix is not texting faster after the miss, it is never missing the call in the first place.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "What is missed call text back and how does it work?",
+        "Does missed call text back actually recover lost leads?",
+        "Why don't emergency callers respond to a text back?",
+        "Missed call text back vs AI answering service: which recovers more revenue?",
+        "How do you stop missing calls in the first place?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 390,
+      "cpc": 15.56,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-028",
+      "primary_keyword": "24 hour answering service",
+      "unique_take": "Most '24 hour' answering services are really 8 hours of trained daytime staff and 16 hours of skeleton-crew message-taking. True 24/7 coverage means the 2am call gets the same triage and dispatch as the 2pm call, and we price out what that actually costs live vs AI.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "What is a 24 hour answering service?",
+        "How much does a 24 hour answering service cost?",
+        "What actually happens to your 2am calls with a live 24 hour service?",
+        "Is an AI answering service better for 24/7 coverage?",
+        "How do you set up 24 hour call coverage for a service business?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 260,
+      "keyword_difficulty": 3,
+      "cpc": 120.4,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-029",
+      "primary_keyword": "electrician answering service",
+      "unique_take": "Electrical emergencies are safety events: a sparking panel caller phones down the list until a human answers. At a $264 cost per click, an electrician pays more for one Google Ads click on this keyword than an AI answering service costs in a week, which makes the calls you already get the cheapest leads you will ever buy.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an electrician answering service?",
+        "How much does an electrician answering service cost?",
+        "What should an answering service do with an electrical emergency call?",
+        "Can an AI answering service book electrical jobs and dispatch a tech?",
+        "Why do electricians lose after-hours calls to competitors?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 70,
+      "cpc": 264.18,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -637,6 +728,47 @@
       "video_prompt": "Heat wave surge (60s): call queue exploding on a 100-degree day, AI answering every line at once while a live service shows hold music. CTA: Book a Strategy Call.",
       "sanity_id": null,
       "publishedAt": "2026-08-06"
+    },
+    {
+      "topic_id": "RAI-025",
+      "author_id": "AUTH-001",
+      "automation_status": "Published",
+      "slug": "/blog/bilingual-answering-service",
+      "video_prompt": "Split call demo (60s): same emergency intake handled in English and Spanish by the same AI, side by side with captions; live operator queue on hold in the corner. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-08-10"
+    },
+    {
+      "topic_id": "RAI-026",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/property-management-answering-service",
+      "video_prompt": "Triage explainer (60s): tenant calls split into 'can wait' vs '2am burst pipe'; AI routes routine to morning queue and dispatches a vendor for the emergency instantly. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-027",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/missed-call-text-back",
+      "video_prompt": "Contrast animation (45s): missed call fires a text that goes unread while the homeowner dials a competitor; second timeline shows AI answering the same call live. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-028",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/24-hour-answering-service",
+      "video_prompt": "Clock-face montage (60s): calls landing at 2pm, 9pm, and 2am all getting identical AI triage and dispatch; live-service timeline shows overnight message-taking gap. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-029",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/electrician-answering-service",
+      "video_prompt": "Night emergency (60s): sparking panel call at 11pm, AI triages safety risk, dispatches on-call electrician; competitor's phone rings out. CTA: Book a Strategy Call.",
+      "sanity_id": null
     }
   ],
   "author_vault": [
