@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-08-10",
+    "last_updated": "2026-08-14",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -741,10 +741,11 @@
     {
       "topic_id": "RAI-026",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/property-management-answering-service",
       "video_prompt": "Triage explainer (60s): tenant calls split into 'can wait' vs '2am burst pipe'; AI routes routine to morning queue and dispatches a vendor for the emergency instantly. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-08-14"
     },
     {
       "topic_id": "RAI-027",
