@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-08-14",
+    "last_updated": "2026-08-21",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -750,10 +750,11 @@
     {
       "topic_id": "RAI-027",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/missed-call-text-back",
       "video_prompt": "Contrast animation (45s): missed call fires a text that goes unread while the homeowner dials a competitor; second timeline shows AI answering the same call live. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-08-21"
     },
     {
       "topic_id": "RAI-028",
