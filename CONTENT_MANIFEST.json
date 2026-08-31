@@ -520,6 +520,100 @@
       "search_volume": 70,
       "cpc": 264.18,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-030",
+      "primary_keyword": "virtual receptionist",
+      "unique_take": "Most virtual receptionist services are human message-takers billed by the minute; for an on-site service business the receptionist has to triage an emergency and dispatch a tech, not just relay a message, which is why a virtual receptionist and an AI receptionist are not the same purchase.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a virtual receptionist and how does it work?",
+        "How much does a virtual receptionist cost?",
+        "Can a virtual receptionist book jobs and dispatch a technician?",
+        "Virtual receptionist vs AI receptionist: which is better for a service business?",
+        "What should you look for in a virtual receptionist?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 3600,
+      "keyword_difficulty": 13,
+      "cpc": 113.63,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-031",
+      "primary_keyword": "ai phone answering service",
+      "unique_take": "Generic AI phone answering roundups grade bots on how naturally they take a message; for emergency trades the only test that matters is whether the AI can triage the call, quote from a real price book, and dispatch a tech before the caller hangs up.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an AI phone answering service?",
+        "How does an AI phone answering service work?",
+        "How much does an AI phone answering service cost?",
+        "Is an AI phone answering service better than a live one?",
+        "Can an AI phone answering service handle emergency calls?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 1300,
+      "keyword_difficulty": 18,
+      "cpc": 52.13,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-032",
+      "primary_keyword": "answering service pricing",
+      "unique_take": "Answering service pricing pages bury the per-minute math and the overage tiers; we publish the real cost-per-call and cost-per-booked-job arithmetic across live, virtual, and AI answering services so owners can compare apples to apples.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "How much does an answering service cost?",
+        "How does per-minute answering service pricing actually work?",
+        "What hidden fees show up in answering service plans?",
+        "Answering service vs AI receptionist pricing: which is cheaper?",
+        "What does an answering service cost per booked job?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 260,
+      "keyword_difficulty": 0,
+      "cpc": 76.03,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-033",
+      "primary_keyword": "roofing answering service",
+      "unique_take": "Roofing calls surge with the storm that creates them, which is exactly when a live answering service queues and drops the highest-value calls; at a $380 cost per Google Ads click, the storm-day calls a roofer already gets are the most expensive leads to let ring out.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a roofing answering service?",
+        "How much does a roofing answering service cost?",
+        "What should an answering service do with a storm-damage roofing call?",
+        "Can an AI answering service book roofing jobs and dispatch a crew?",
+        "Why do roofers lose leads during storm season?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 50,
+      "cpc": 380.32,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-034",
+      "primary_keyword": "pest control answering service",
+      "unique_take": "Pest control callers with a live infestation book on the first answered call and hang up on voicemail; an answering service that only takes messages loses the same-day jobs that carry the best margins, while an AI can scope the pest, quote, and schedule the tech on the spot.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a pest control answering service?",
+        "How much does a pest control answering service cost?",
+        "What should an answering service do with a pest control call?",
+        "Can an AI answering service book pest control jobs and schedule a tech?",
+        "Why do pest control companies lose after-hours calls?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 30,
+      "keyword_difficulty": 0,
+      "cpc": 99.79,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -774,6 +868,46 @@
       "video_prompt": "Night emergency (60s): sparking panel call at 11pm, AI triages safety risk, dispatches on-call electrician; competitor's phone rings out. CTA: Book a Strategy Call.",
       "sanity_id": null,
       "publishedAt": "2026-08-30"
+    },
+    {
+      "topic_id": "RAI-030",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/virtual-receptionist",
+      "video_prompt": "Explainer (60s): a virtual receptionist takes a message and promises a callback while the caller dials a competitor; split to an AI receptionist that triages, quotes, and dispatches a tech live. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-031",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-phone-answering-service",
+      "video_prompt": "Live demo (60s): AI phone answering service transcribes an emergency call in real time, triages the loss, quotes from the price book, and dispatches a tech before hangup. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-032",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/answering-service-pricing",
+      "video_prompt": "Data explainer (45s): animated per-minute meter and hidden overage tiers add up on a live service while an AI cost-per-booked-job counter stays flat. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-033",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/roofing-answering-service",
+      "video_prompt": "Storm surge (60s): a hail storm floods the phone lines, a live service queues with hold music while an AI answers every roofing call at once, books inspections, and dispatches crews. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-034",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/pest-control-answering-service",
+      "video_prompt": "Same-day scenario (60s): a live-infestation caller reaches an AI that scopes the pest, quotes, and schedules a tech on the spot; competitor's line goes to voicemail. CTA: Book a Strategy Call.",
+      "sanity_id": null
     }
   ],
   "author_vault": [
