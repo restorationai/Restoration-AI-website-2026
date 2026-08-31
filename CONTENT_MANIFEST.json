@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-08-30",
+    "last_updated": "2026-08-31",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -645,10 +645,11 @@
     {
       "topic_id": "RAI-015",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/restoration-marketing",
-      "video_prompt": "",
-      "sanity_id": null
+      "video_prompt": "Stacked-channel explainer (60s): animated marketing stack building bottom-up (Google Business Profile, LSAs, Google Ads, referrals) while a phone rings; cut to a call being answered instantly and a job card populating. Counter: cost-per-booked-job by channel. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-08-31"
     },
     {
       "topic_id": "RAI-016",
