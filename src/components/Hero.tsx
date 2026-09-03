@@ -41,7 +41,7 @@ const badges = [
   {
     id: 4,
     type: 'custom_pill' as const,
-    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Seen in<br/>ChatGPT</span>,
+    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Seen in<br/><span className="font-black text-slate-900">ChatGPT</span></span>,
     icon: <Bot className="text-blue-700" size={18} />,
     pos: "top-[180px] left-[50%] ml-[220px] lg:ml-[280px] xl:ml-[340px]",
     rotate: "-12deg",
@@ -160,11 +160,8 @@ export default function Hero() {
           <h1 className="text-[38px] sm:text-[44px] md:text-[68px] lg:text-[76px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
             AI Changed SEO.
             <br />
-            <span className="relative inline-block">
-              <span className="invisible">Rank Higher in Google & AI</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent" aria-hidden="true">
-                Rank Higher in Google & AI
-              </span>
+            <span className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent pb-[0.12em] -mb-[0.12em]">
+              Rank Higher in Google &amp; AI
             </span>
           </h1>
 

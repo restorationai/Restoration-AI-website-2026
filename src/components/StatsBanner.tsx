@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { number: "1,600", suffix: "+", label: "Calls Answered Daily" },
-  { number: "$26M", suffix: "+", label: "In Secured Jobs" },
-  { number: "0", suffix: "", label: "Missed Calls" }
+  { number: "75%", suffix: "", label: "Of Clicks Go to the Top 3" },
+  { number: "250", suffix: "+", label: "Page Website Built For You" },
+  { number: "100%", suffix: "", label: "Client Retention" }
 ];
 
 export default function StatsBanner() {
