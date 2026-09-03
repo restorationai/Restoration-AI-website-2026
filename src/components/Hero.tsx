@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Star, CheckCircle2, TrendingUp, Search, MapPin, Sparkles, ShieldCheck } from 'lucide-react';
+import { Star, CheckCircle2, Globe, Search, MapPin, Bot, ShieldCheck } from 'lucide-react';
 import RankHeroVisual from './RankHeroVisual';
 import LogoMarquee from './LogoMarquee';
 
@@ -18,13 +18,8 @@ const badges = [
   {
     id: 2,
     type: 'custom_pill' as const,
-    label: (
-      <div className="flex flex-col items-start justify-center">
-        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">75%</span>
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">of Clicks Go to Top 3</span>
-      </div>
-    ),
-    icon: <TrendingUp className="text-blue-700" size={18} />,
+    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Website Optimized<br/>for Ranking</span>,
+    icon: <Globe className="text-blue-700" size={18} />,
     pos: "top-[360px] right-[50%] mr-[300px] lg:mr-[380px] xl:mr-[440px]",
     rotate: "12deg",
     width: "w-[240px]"
@@ -35,7 +30,7 @@ const badges = [
     label: (
       <div className="flex flex-col items-center gap-0.5">
         <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">#1</span>
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Google Maps</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Google</span>
       </div>
     ),
     icon: <MapPin className="text-blue-700" size={20} />,
@@ -46,8 +41,8 @@ const badges = [
   {
     id: 4,
     type: 'custom_pill' as const,
-    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Seen in<br/>AI Search</span>,
-    icon: <Sparkles className="text-blue-700" size={18} />,
+    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Seen in<br/>ChatGPT</span>,
+    icon: <Bot className="text-blue-700" size={18} />,
     pos: "top-[180px] left-[50%] ml-[220px] lg:ml-[280px] xl:ml-[340px]",
     rotate: "-12deg",
     width: "w-[200px]"
