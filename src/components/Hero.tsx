@@ -9,7 +9,12 @@ const badges = [
   {
     id: 1,
     type: 'custom' as const,
-    label: "Ranked Where Homeowners Search",
+    label: (
+      <div className="flex flex-col items-center gap-0.5">
+        <span className="text-[17px] font-black text-slate-800 leading-none tracking-tight">Ranked</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Where Homeowners Search</span>
+      </div>
+    ),
     icon: <Search className="text-blue-700" size={20} />,
     pos: "top-[160px] right-[50%] mr-[220px] lg:mr-[280px] xl:mr-[340px]",
     rotate: "-12deg",
@@ -18,7 +23,12 @@ const badges = [
   {
     id: 2,
     type: 'custom_pill' as const,
-    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Website Optimized<br/>for Ranking</span>,
+    label: (
+      <div className="flex flex-col items-start justify-center">
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">Website</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Optimized for Ranking</span>
+      </div>
+    ),
     icon: <Globe className="text-blue-700" size={18} />,
     pos: "top-[360px] right-[50%] mr-[300px] lg:mr-[380px] xl:mr-[440px]",
     rotate: "12deg",
@@ -41,7 +51,12 @@ const badges = [
   {
     id: 4,
     type: 'custom_pill' as const,
-    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Seen in<br/><span className="font-black text-slate-900">ChatGPT</span></span>,
+    label: (
+      <div className="flex flex-col items-start justify-center">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Seen in</span>
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">ChatGPT</span>
+      </div>
+    ),
     icon: <Bot className="text-blue-700" size={18} />,
     pos: "top-[180px] left-[50%] ml-[220px] lg:ml-[280px] xl:ml-[340px]",
     rotate: "-12deg",
@@ -50,7 +65,12 @@ const badges = [
   {
     id: 5,
     type: 'custom' as const,
-    label: "Used by Top Restoration Teams",
+    label: (
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Used by</span>
+        <span className="text-[14px] font-black text-slate-800 leading-tight tracking-tight">Top Restoration Teams</span>
+      </div>
+    ),
     icon: <CheckCircle2 className="text-blue-700" size={20} />,
     pos: "top-[360px] left-[50%] ml-[300px] lg:ml-[380px] xl:ml-[440px]",
     rotate: "12deg",

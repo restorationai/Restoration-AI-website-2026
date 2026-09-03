@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero';
 import StatsBanner from '../components/StatsBanner';
 import CallRecordings from '../components/CallRecordings';
-import BuiltForRestoration from '../components/BuiltForRestoration';
+import RankEcosystem from '../components/RankEcosystem';
 import Pricing from '../components/Pricing';
 import FeaturesShowcase from '../components/FeaturesShowcase';
 // import PremiumFeatures from '../components/PremiumFeatures';
@@ -65,7 +65,7 @@ const faqJsonLd = {
   <Hero client:load />
   <StatsBanner client:idle />
   <div class="relative w-full bg-[#fafbfe] overflow-x-clip">
-    <BuiltForRestoration client:visible />
+    <RankEcosystem client:visible />
     <CallRecordings client:visible />
     <HowItWorks client:visible />
     <FeaturesShowcase client:visible />
