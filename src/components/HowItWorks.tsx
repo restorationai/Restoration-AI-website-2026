@@ -82,9 +82,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                 <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">1</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">See Where You<br/>Rank, Free</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Book a<br/>Strategy Call</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Book a strategy call and we pull up your business live, showing exactly where you rank on Google and in AI search.
+                  On the call, we pull up your business live and show you exactly where you rank today on Google and in AI search.
                 </p>
               </div>
             </div>
@@ -116,9 +116,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">2</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">We Build Your<br/>Entire Presence</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Get Your<br/>Game Plan</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Your custom 250 page website, Google Business Profile, reviews, blogs, and YouTube videos. Every page is submitted to Google for indexing.
+                  We research the exact terms homeowners in your area search, then map your custom 250 page website and content plan around them.
                 </p>
               </div>
             </div>
@@ -152,9 +152,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">3</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Watch Your<br/>Rank Climb</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Get Seen<br/>Everywhere</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Two new blogs every week, a monthly AI audit that fixes anything Google skipped, and street by street tracking as your city turns green.
+                  We launch your website, Google Business Profile, reviews, blogs, and YouTube, and you watch your rank climb street by street.
                 </p>
               </div>
             </div>
