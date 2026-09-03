@@ -22,15 +22,15 @@ export default function HowItWorks() {
               HOW TO GET STARTED
             </span>
             <h2 className="text-[32px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-              From Setup to Booked Jobs{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">in 5 Minutes</span>
+              From Buried on Google{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">to the Top 3</span>
             </h2>
           </div>
 
           {/* Right Column */}
           <div className="flex-1 w-full lg:max-w-md xl:max-w-lg lg:pb-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-medium mb-5">
-              Forward your calls. Your AI goes live. That's it.
+              See where you rank. We build the rest. That's it.
             </p>
             <div className="hidden lg:flex flex-col sm:flex-row gap-3 items-start justify-center lg:justify-start w-full">
               <a 
@@ -47,7 +47,7 @@ export default function HowItWorks() {
                   Start for Free
                   <ArrowRight size={16} strokeWidth={2.5} />
                 </a>
-                <p className="text-[11px] text-slate-500 mt-2 text-center">Set up in 5 minutes, no credit card required</p>
+                <p className="text-[11px] text-slate-500 mt-2 text-center">No long term contracts, cancel anytime</p>
               </div>
             </div>
           </div>
@@ -82,9 +82,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                 <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">1</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Book a Call or<br/>Sign Up Free Today</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">See Where You<br/>Rank, Free</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Book a quick demo or sign up and go live in minutes.
+                  Book a strategy call and we pull up your business live, showing exactly where you rank on Google and in AI search.
                 </p>
               </div>
             </div>
@@ -116,9 +116,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">2</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">We Set Everything Up<br/>for You in Minutes</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">We Build Your<br/>Entire Presence</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Your dedicated rep connects your phone line and configures your AI in one short onboarding call.
+                  Your custom 250 page website, Google Business Profile, reviews, blogs, and YouTube videos. Every page is submitted to Google for indexing.
                 </p>
               </div>
             </div>
@@ -152,9 +152,9 @@ export default function HowItWorks() {
               {/* Text Content */}
               <div className="mt-auto relative z-10 flex flex-col items-start">
                <div className="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center text-[11px] font-bold mb-3">3</div>
-                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Start Capturing<br/>Every Call</h3>
+                <h3 className="text-[17px] font-extrabold text-slate-900 mb-2 leading-tight">Watch Your<br/>Rank Climb</h3>
                 <p className="text-slate-500 leading-[1.6] font-medium text-[13px]">
-                  Your AI answers, qualifies, books, and dispatches — 24/7 from day one.
+                  Two new blogs every week, a monthly AI audit that fixes anything Google skipped, and street by street tracking as your city turns green.
                 </p>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function HowItWorks() {
           >
             Book a Strategy Call
           </a>
-          <p className="text-[12px] text-slate-500 mt-1 text-center font-medium">Set up in 5 minutes, no credit card required</p>
+          <p className="text-[12px] text-slate-500 mt-1 text-center font-medium">No long term contracts, cancel anytime</p>
         </div>
 
       </div>
