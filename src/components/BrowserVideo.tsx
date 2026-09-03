@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 
-export default function BrowserVideo() {
+export default function BrowserVideo({ src = '/homepage-demo.mp4' }: { src?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInteracted, setIsInteracted] = useState(false);
 
@@ -29,7 +29,7 @@ export default function BrowserVideo() {
         <video
           ref={videoRef}
           className="w-full h-auto object-contain block"
-          src="/homepage-demo.mp4"
+          src={src}
           autoPlay
           muted
           loop
