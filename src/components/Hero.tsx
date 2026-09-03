@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Bot, PhoneCall, Star, CheckCircle2, TrendingUp, ShieldAlert } from 'lucide-react';
-import BrowserVideo from './BrowserVideo';
+import RankHeroVisual from './RankHeroVisual';
 import LogoMarquee from './LogoMarquee';
 
 const badges = [
@@ -162,19 +162,19 @@ export default function Hero() {
 
       <div className="container-pill w-full relative">
         <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
-          <h1 className="text-[42px] sm:text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
-            Never Miss a Call
+          <h1 className="text-[38px] sm:text-[44px] md:text-[68px] lg:text-[76px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
+            AI Changed SEO.
             <br />
             <span className="relative inline-block">
-              <span className="invisible">Never Lose a Job</span>
+              <span className="invisible">Rank Higher in Google & AI</span>
               <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent" aria-hidden="true">
-                Never Lose a Job
+                Rank Higher in Google & AI
               </span>
             </span>
           </h1>
 
-          <p className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[600px] mx-auto px-4">
-            24/7 AI receptionist built for restoration. Answers every call, qualifies every lead, dispatches crews in minutes.
+          <p className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[640px] mx-auto px-4">
+            Show up first on Google and AI search when customers need you most. Built for restoration business owners to get more calls and secure more jobs.
           </p>
 
           <div className="flex flex-col items-center gap-6 pt-4">
@@ -209,10 +209,10 @@ export default function Hero() {
           <LogoMarquee />
         </div>
 
-        {/* BROWSER VIDEO */}
+        {/* RANK PROOF VISUAL */}
         <div className="relative max-w-5xl mx-auto w-full z-10 mt-4">
           <div className="hidden md:block absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
-          <BrowserVideo />
+          <RankHeroVisual />
         </div>
       </div>
     </section>
