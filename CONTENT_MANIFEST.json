@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-08-31",
+    "last_updated": "2026-09-03",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -872,10 +872,11 @@
     {
       "topic_id": "RAI-030",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/virtual-receptionist",
       "video_prompt": "Explainer (60s): a virtual receptionist takes a message and promises a callback while the caller dials a competitor; split to an AI receptionist that triages, quotes, and dispatches a tech live. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-09-03"
     },
     {
       "topic_id": "RAI-031",
