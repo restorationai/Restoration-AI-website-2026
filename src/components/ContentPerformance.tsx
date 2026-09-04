@@ -91,13 +91,13 @@ export default function ContentPerformance() {
   const shown = channels.filter(c => active[c.key]);
 
   return (
-    <section id="content-strategy" className="py-20 md:py-28 relative font-sans">
+    <section id="content-strategy" className="py-16 md:py-20 relative font-sans">
       <div className="absolute inset-0 bg-gradient-to-b from-[#fafbfe] to-white pointer-events-none -z-10"></div>
 
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10">
 
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12 flex flex-col items-center">
+        <div className="text-center max-w-4xl mx-auto mb-9 flex flex-col items-center">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
             <BarChart3 size={12} />
             Content Strategy
@@ -111,9 +111,11 @@ export default function ContentPerformance() {
           </p>
         </div>
 
+        <div className="lg:flex lg:gap-5 lg:items-stretch">
+
         {/* Chart card */}
-        <div className="bg-white border border-slate-200/70 rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-8">
-          <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-4 mb-4">
+        <div className="flex-1 min-w-0 bg-white border border-slate-200/70 rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-7">
+          <div className="flex flex-col gap-3 mb-3">
             <div>
               <h3 className="text-[18px] md:text-[20px] font-extrabold text-slate-900">Multi Channel Content Performance</h3>
               <p className="text-[30px] md:text-[36px] font-black text-slate-900 leading-tight">
@@ -215,17 +217,21 @@ export default function ContentPerformance() {
           </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
+        {/* Cards: stacked beside the chart on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 mt-6 lg:mt-0 lg:w-[380px] lg:shrink-0">
           {cards.map(card => (
-            <div key={card.title} className="bg-white border border-slate-200/70 rounded-2xl shadow-sm p-6 flex flex-col gap-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <div className={`w-11 h-11 rounded-full border flex items-center justify-center shrink-0 ${card.bubble}`}>
+            <div key={card.title} className="bg-white border border-slate-200/70 rounded-2xl shadow-sm p-4.5 lg:p-4 flex items-start gap-3.5 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+              <div className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 ${card.bubble}`}>
                 {card.icon}
               </div>
-              <h3 className="text-[16.5px] font-extrabold text-slate-900 leading-snug">{card.title}</h3>
-              <p className="text-[13.5px] text-slate-500 font-medium leading-relaxed">{card.text}</p>
+              <div className="min-w-0">
+                <h3 className="text-[15px] font-extrabold text-slate-900 leading-snug mb-1">{card.title}</h3>
+                <p className="text-[12.5px] text-slate-500 font-medium leading-snug">{card.text}</p>
+              </div>
             </div>
           ))}
+        </div>
+
         </div>
 
       </div>
