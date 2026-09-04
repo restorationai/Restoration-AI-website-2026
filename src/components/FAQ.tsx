@@ -6,52 +6,52 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: "How does an AI receptionist handle emergency water damage calls after hours?",
-    answer: "Our restoration specific AI is active 24/7 to ensure every emergency call is answered on the first ring. It identifies the urgency of the situation, gathers essential job details, and can immediately dispatch your crews so you never lose a high ticket lead to a competitor."
+    question: "How is Rank AI different from every other SEO agency I have been burned by?",
+    answer: "Rank AI is built exclusively for restoration business owners, not a general agency juggling dentists and roofers. Everything is transparent: you watch your rankings move street by street, you see every page, blog, and citation we build, and there are no long term contracts holding you in place. We stay accountable through results, not paperwork."
   },
   {
-    question: "Does this AI receptionist integrate with Albiware and other restoration CRMs?",
-    answer: "Yes, our system features deep integration with Albiware and almost every other restoration specific CRM on the market. It automatically syncs lead details, job descriptions, and contact info directly into your project management software to eliminate manual data entry for your office staff."
+    question: "What exactly do I get with Rank AI?",
+    answer: "A complete Google presence built and run for you: a custom website with up to 250 pages, full Google Business Profile management, review generation, two keyword researched blog posts every week, YouTube videos, Google Ads and Local Services Ads management, and a 24/7 AI receptionist included at no extra cost. One system, one team, all done for you."
   },
   {
-    question: "Can the AI actually dispatch my mitigation crews to a job site?",
-    answer: "Absolutely. The AI is programmed with your specific dispatching rules. When a high priority water damage or fire emergency comes in, the AI can trigger an immediate notification or call to your on call technician to ensure your response time is faster than anyone else in your market."
+    question: "How long until I see results?",
+    answer: "Rankings are earned, so they build over time rather than overnight. Your website, Google Business Profile, and content engine go live quickly, and from there you watch your rankings move block by block in your tracking dashboard. Because there are no long term contracts, we have to keep earning your business every single month."
   },
   {
-    question: "How is an AI receptionist better than a traditional restoration answering service?",
-    answer: "Traditional answering services often just take a name and number which leads to delayed response times. Our AI does the heavy lifting by qualifying the lead, checking your team availability, and booking appointments directly while offering zero hold times for the caller."
+    question: "Do you guarantee a number one ranking?",
+    answer: "No one can honestly guarantee a specific spot on Google or in AI results, and you should be careful with anyone who does. What we control is the work: dedicated pages for every service in every city, content built from real keyword research, every page submitted to Google for indexing, and a monthly audit that finds and fixes anything Google skipped. That is the machine that moves rankings."
   },
   {
-    question: "Does the AI sound natural enough for stressed homeowners dealing with a flood?",
-    answer: "We use advanced neural voice synthesis designed to sound professional and empathetic. In a high stress water damage situation, homeowners want quick answers and a calm experience, and our AI provides exactly that without ever sounding robotic or cold."
+    question: "Why does AI search matter for a restoration company?",
+    answer: "More homeowners every day ask ChatGPT, Gemini, and Perplexity who they should call. Those engines read websites with their own crawlers and recommend businesses they can verify. We structure your site, schema, and citations so you are positioned to be the answer when someone asks for the best restoration company near them."
   },
   {
-    question: "What happens if a caller has a complex technical question about the drying process?",
-    answer: "Our AI is pre loaded with industry specific knowledge for the restoration world. If a homeowner asks a question it cannot answer, it is programmed to recognize the complexity and instantly route the call to you or a designated project manager so the customer always receives accurate information."
+    question: "I already have a website. Why do I need a 250 page one?",
+    answer: "Here is what most owners never hear: if your Google Business Profile lists a service but your website has no dedicated page for that exact service, Google assumes you do not actually offer it. That is why we build an individual page for every service in every city you serve, each one unique and written around the search terms homeowners actually use."
   },
   {
-    question: "Can this AI help with lead intake for mold remediation and fire damage?",
-    answer: "Yes, the AI is fully customizable for all restoration service lines including water mitigation, mold remediation, fire damage, and biohazard cleanup. It follows specific intake scripts for each service to ensure you get the right data every single time."
+    question: "How much work do I have to do?",
+    answer: "Almost none, on purpose. We build the website, manage your Google Business Profile, write the blogs, post the videos, request the reviews, and run the ads. You run your restoration business and take the calls. When we need something from you, it is usually photos of your work and a quick approval."
   },
   {
-    question: "Will using an AI receptionist help me win more insurance or TPA work?",
-    answer: "Speed to lead is the most important metric for winning restoration jobs. By answering instantly and professionalizing your intake process, you show insurance adjusters and TPAs that your company is the most reliable option for their policyholders."
+    question: "Am I locked into a contract?",
+    answer: "No. There are no long term contracts and no hidden fees, and you can cancel anytime. We would rather be easy to work with and easy to leave. To date, every client who has started with Rank AI is still with us, and that is by results, not by contract."
   },
   {
-    question: "How long does it take to set up the AI for my restoration business?",
-    answer: "The setup is designed to be hands off for the business owner. Once you provide your service areas and basic business info, we handle the technical integration and Albiware syncing so you can be up and running with your automated receptionist in less than 48 hours."
+    question: "How does the review generation work?",
+    answer: "Finished jobs turn into review requests automatically, so you build a steady, consistent flow of five star reviews instead of a burst once a year. Reviews are one of the heaviest local ranking signals Google looks at, and consistency matters more than volume."
   },
   {
-    question: "Is the AI capable of handling multiple calls at the same time during a storm?",
-    answer: "One of the biggest benefits for restoration owners is scalability. During a massive storm or flood event, the AI can handle an unlimited number of simultaneous calls, meaning you never have a busy signal and never miss a single lead during peak volume."
+    question: "What is the AI receptionist, and does it cost extra?",
+    answer: "It is included at no additional cost. Once your rankings and ads start producing calls, the AI receptionist answers every one of them 24/7, collects the job details, and books the appointment, so the visibility we build never gets wasted on a missed call."
   },
   {
-    question: "Can the AI book appointments directly on my Google Calendar or Albiware schedule?",
-    answer: "Yes, the AI has the ability to see your real time availability and book appointments directly into your calendar. This allows you to wake up to a full schedule of confirmed mitigation jobs without ever picking up the phone."
+    question: "Can I see where I rank before I sign up?",
+    answer: "Yes, and you should. On your strategy call we pull up your business live and show you exactly where you rank today on Google and in AI search. You will see your starting point, and exactly what needs to change, before you ever spend a dollar."
   },
   {
-    question: "Does this AI receptionist replace my existing office manager?",
-    answer: "No, it empowers them to do more. By handling the repetitive initial intake and after hours emergencies, your office manager can focus on high value tasks like managing insurance claims and billing while the AI ensures no new revenue falls through the cracks."
+    question: "Does this work for fire, mold, and reconstruction, or just water damage?",
+    answer: "All of it. We build dedicated pages and content for every service line you offer: water, fire, smoke, mold, biohazard, reconstruction, and anything else on your list, in every city you serve. If you offer it, we make sure Google and AI search know it."
   }
 ];
 

@@ -2,7 +2,6 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import MouseGlow from "../components/MouseGlow";
 
 interface Props {
   title?: string;
@@ -13,8 +12,8 @@ interface Props {
 }
 
 const {
-  title = "Restoration AI | AI Receptionist & Automated Dispatch for Restoration Contractors",
-  description = "AI receptionist, automated dispatch, and marketing CRM tailored specifically for the restoration industry. Never miss a call. Never lose a job.",
+  title = "Restoration AI | Rank Higher in Google & AI Search for Restoration",
+  description = "Done for you Google ranking and AI search system built exclusively for restoration business owners. Always found first, always booked solid.",
   canonical,
   ogImage,
   jsonLd,
@@ -207,7 +206,6 @@ const pageJsonLdArray = jsonLd
 
     <Navbar client:load />
     <main class="min-h-screen">
-      <MouseGlow client:idle />
       <slot />
     </main>
     <Footer />
