@@ -27,8 +27,9 @@ export default function BookACall() {
     }, []);
 
     return (
-        <section className="relative pt-12 pb-32" id="calendar-section">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#d3e5f9] to-transparent pointer-events-none -z-10"></div>
+        <section className="relative isolate pt-12 pb-32" id="calendar-section">
+      <div className="absolute inset-0 pointer-events-none -z-10" style={{ background: 'linear-gradient(180deg, rgba(191,217,247,0) 0%, #c3dbf8 12%, #c3dbf8 88%, rgba(191,217,247,0) 100%)' }}></div>
+      <div className="absolute inset-0 pointer-events-none -z-10 opacity-50" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)', backgroundSize: '80px 80px', maskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)' }}></div>
           {/* Background radial glow matching the site aesthetic */}
           <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
           
