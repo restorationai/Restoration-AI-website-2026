@@ -2,6 +2,7 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MouseGlow from "../components/MouseGlow";
 
 interface Props {
   title?: string;
@@ -206,6 +207,7 @@ const pageJsonLdArray = jsonLd
 
     <Navbar client:load />
     <main class="min-h-screen">
+      <MouseGlow client:idle />
       <slot />
     </main>
     <Footer />
