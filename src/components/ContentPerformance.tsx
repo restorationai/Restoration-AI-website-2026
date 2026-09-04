@@ -91,8 +91,8 @@ export default function ContentPerformance() {
   const shown = channels.filter(c => active[c.key]);
 
   return (
-    <section id="content-strategy" className="py-16 md:py-20 relative font-sans">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fafbfe] to-white pointer-events-none -z-10"></div>
+    <section id="content-strategy" className="py-14 md:py-16 relative font-sans">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#d3e5f9] to-transparent pointer-events-none -z-10"></div>
 
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10">
 

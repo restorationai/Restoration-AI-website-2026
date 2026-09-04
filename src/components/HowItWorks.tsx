@@ -7,6 +7,7 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="relative py-12 lg:py-16 font-sans min-h-[auto] xl:min-h-0 flex items-center">
       
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#d3e5f9] to-transparent pointer-events-none -z-10"></div>
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 

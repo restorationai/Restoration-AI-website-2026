@@ -69,50 +69,50 @@ const cards = [
 
 export default function RankEcosystem() {
   return (
-    <section className="py-20 md:py-32 relative font-sans">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fafbfe] to-white pointer-events-none -z-10"></div>
+    <section className="py-14 md:py-16 relative font-sans">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#d3e5f9] to-transparent pointer-events-none -z-10"></div>
 
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10 w-full flex flex-col justify-center">
 
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20 flex flex-col items-center shrink-0">
+        <div className="text-center max-w-4xl mx-auto mb-10 flex flex-col items-center shrink-0">
           <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-6">
             <Network size={15} className="text-blue-700" />
             <span className="text-[13px] font-bold text-blue-700 uppercase tracking-widest">The Rank AI Ecosystem</span>
           </div>
-          <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
             Everything That Drives Your Rank,<br/>
             <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 drop-shadow-sm pb-[0.12em] -mb-[0.12em]">Unified in One System.</span>
           </h2>
-          <div className="text-[18px] md:text-[22px] text-slate-600 leading-snug font-medium max-w-3xl">
+          <div className="text-[16px] md:text-[19px] text-slate-600 leading-snug font-medium max-w-3xl">
             A complete growth engine built specifically for restoration business owners.
           </div>
         </div>
 
         {/* Grid with center core */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto w-full">
           {cards.map((card, i) =>
             card.core ? (
               <div key={i} className="hidden lg:flex items-center justify-center">
                 <div className="relative flex items-center justify-center">
-                  <div className="absolute w-28 h-28 rounded-full border-2 border-blue-200/60 animate-ping [animation-duration:2.6s]" />
-                  <div className="absolute w-36 h-36 rounded-full border border-blue-200/40" />
-                  <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 shadow-2xl shadow-blue-900/30 flex items-center justify-center">
-                    <span className="text-white text-4xl font-black tracking-tight">R</span>
+                  <div className="absolute w-24 h-24 rounded-full border-2 border-blue-200/60 animate-ping [animation-duration:2.6s]" />
+                  <div className="absolute w-32 h-32 rounded-full border border-blue-200/40" />
+                  <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 shadow-2xl shadow-blue-900/30 flex items-center justify-center">
+                    <span className="text-white text-3xl font-black tracking-tight">R</span>
                   </div>
                 </div>
               </div>
             ) : (
               <div
                 key={i}
-                className="bg-white border border-slate-200/60 rounded-2xl shadow-lg shadow-slate-200/40 p-6 flex flex-col gap-3 relative overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+                className="bg-white border border-slate-200/60 rounded-2xl shadow-lg shadow-slate-200/40 p-5 flex flex-col gap-2 relative overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
               >
                 <div className="absolute -top-8 -right-8 w-28 h-28 bg-blue-50/60 blur-2xl pointer-events-none rounded-full" />
-                <div className={`relative z-10 w-11 h-11 rounded-full ${card.iconBg} border flex items-center justify-center shadow-sm shrink-0 ${card.iconColor}`}>
+                <div className={`relative z-10 w-10 h-10 rounded-full ${card.iconBg} border flex items-center justify-center shadow-sm shrink-0 ${card.iconColor}`}>
                   {card.icon}
                 </div>
-                <h3 className="relative z-10 text-[18px] font-bold text-slate-900 leading-snug">{card.title}</h3>
-                <p className="relative z-10 text-[15px] text-slate-600 leading-relaxed font-medium">{card.text}</p>
+                <h3 className="relative z-10 text-[16px] font-bold text-slate-900 leading-snug">{card.title}</h3>
+                <p className="relative z-10 text-[13.5px] text-slate-600 leading-snug font-medium">{card.text}</p>
               </div>
             )
           )}

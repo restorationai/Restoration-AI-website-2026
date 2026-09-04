@@ -400,8 +400,8 @@ export default function VisibilityPillars() {
   const pal = palettes[active];
 
   return (
-    <section id="visibility-pillars" className="py-20 md:py-28 relative font-sans">
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-[#fafbfe] pointer-events-none -z-10"></div>
+    <section id="visibility-pillars" className="py-14 md:py-20 relative font-sans">
+      
 
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10">
 

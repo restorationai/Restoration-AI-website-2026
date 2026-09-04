@@ -9,6 +9,7 @@ const EXTERNAL_ID = 'hero_demo_session';
 export default function TryItYourself() {
   return (
     <section className="relative bg-transparent font-sans pb-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#d3e5f9] to-transparent pointer-events-none -z-10"></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 

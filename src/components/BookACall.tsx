@@ -28,6 +28,7 @@ export default function BookACall() {
 
     return (
         <section className="relative pt-12 pb-32" id="calendar-section">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#d3e5f9] to-transparent pointer-events-none -z-10"></div>
           {/* Background radial glow matching the site aesthetic */}
           <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
           
