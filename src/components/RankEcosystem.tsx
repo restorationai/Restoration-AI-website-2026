@@ -70,9 +70,7 @@ const cards = [
 export default function RankEcosystem() {
   return (
     <section className="py-14 md:py-16 relative isolate font-sans">
-      <div className="absolute inset-0 pointer-events-none -z-10" style={{ background: 'linear-gradient(180deg, rgba(191,217,247,0) 0%, #c3dbf8 12%, #c3dbf8 88%, rgba(191,217,247,0) 100%)' }}></div>
-      <div className="absolute inset-0 pointer-events-none -z-10 opacity-50" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)', backgroundSize: '80px 80px', maskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)' }}></div>
-
+      
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10 w-full flex flex-col justify-center">
 
         {/* Header */}

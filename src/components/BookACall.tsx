@@ -28,9 +28,7 @@ export default function BookACall() {
 
     return (
         <section className="relative isolate pt-12 pb-32" id="calendar-section">
-      <div className="absolute inset-0 pointer-events-none -z-10" style={{ background: 'linear-gradient(180deg, rgba(191,217,247,0) 0%, #c3dbf8 12%, #c3dbf8 88%, rgba(191,217,247,0) 100%)' }}></div>
-      <div className="absolute inset-0 pointer-events-none -z-10 opacity-50" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)', backgroundSize: '80px 80px', maskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)' }}></div>
-          {/* Background radial glow matching the site aesthetic */}
+                {/* Background radial glow matching the site aesthetic */}
           <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
           
           <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10 w-full">

@@ -9,9 +9,7 @@ const EXTERNAL_ID = 'hero_demo_session';
 export default function TryItYourself() {
   return (
     <section className="relative isolate bg-transparent font-sans pb-20">
-      <div className="absolute inset-0 pointer-events-none -z-10" style={{ background: 'linear-gradient(180deg, rgba(191,217,247,0) 0%, #c3dbf8 12%, #c3dbf8 88%, rgba(191,217,247,0) 100%)' }}></div>
-      <div className="absolute inset-0 pointer-events-none -z-10 opacity-50" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.55) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.55) 1px, transparent 1px)', backgroundSize: '80px 80px', maskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%)' }}></div>
-
+      
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* Card — same frosted style as CallRecordings outer container */}
