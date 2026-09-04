@@ -6,13 +6,14 @@ import { MapPin, Sparkles, Megaphone, ChevronDown, MessageSquare, Star, FileText
 /* ---------- pillar color systems (rank.ai style: green / indigo / red) ---------- */
 
 type Palette = {
-  tabActive: string; icon: string; iconOpen: string; chip: string; chipVal: string;
+  tabActive: string; tabIdle: string; icon: string; iconOpen: string; chip: string; chipVal: string;
   borderOpen: string; hover: string; dot: string; bar: string;
 };
 
 const palettes: Record<string, Palette> = {
   local: {
     tabActive: 'bg-gradient-to-r from-emerald-500 to-emerald-700 shadow-emerald-500/25',
+    tabIdle: 'bg-white text-emerald-700 border-emerald-300 shadow-lg shadow-emerald-400/40 hover:shadow-emerald-400/60 hover:border-emerald-400',
     icon: 'bg-emerald-50 border-emerald-100/70 text-emerald-600',
     iconOpen: 'bg-emerald-600 text-white',
     chip: 'bg-emerald-50 border-emerald-100', chipVal: 'text-emerald-700',
@@ -21,6 +22,7 @@ const palettes: Record<string, Palette> = {
   },
   ai: {
     tabActive: 'bg-gradient-to-r from-indigo-600 to-indigo-800 shadow-indigo-500/25',
+    tabIdle: 'bg-white text-indigo-700 border-indigo-300 shadow-lg shadow-indigo-400/40 hover:shadow-indigo-400/60 hover:border-indigo-400',
     icon: 'bg-indigo-50 border-indigo-100/70 text-indigo-700',
     iconOpen: 'bg-indigo-600 text-white',
     chip: 'bg-indigo-50 border-indigo-100', chipVal: 'text-indigo-700',
@@ -29,6 +31,7 @@ const palettes: Record<string, Palette> = {
   },
   ads: {
     tabActive: 'bg-gradient-to-r from-red-500 to-rose-700 shadow-red-500/25',
+    tabIdle: 'bg-white text-red-600 border-red-300 shadow-lg shadow-red-400/40 hover:shadow-red-400/60 hover:border-red-400',
     icon: 'bg-red-50 border-red-100/70 text-red-600',
     iconOpen: 'bg-red-600 text-white',
     chip: 'bg-red-50 border-red-100', chipVal: 'text-red-700',
@@ -426,7 +429,7 @@ export default function VisibilityPillars() {
               className={`inline-flex items-center gap-2 px-5 sm:px-7 py-3 rounded-full text-[14px] sm:text-[15px] font-bold transition-all border ${
                 active === p.key
                   ? `${palettes[p.key].tabActive} text-white border-transparent shadow-lg`
-                  : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 shadow-sm'
+                  : palettes[p.key].tabIdle
               }`}
             >
               {p.icon}
@@ -436,7 +439,7 @@ export default function VisibilityPillars() {
         </div>
 
         {/* Desktop: expanding tile row */}
-        <div className="hidden lg:flex gap-3 items-stretch h-[420px]">
+        <div className="hidden lg:flex gap-3 items-stretch h-[460px]">
           {pillar.cards.map((card, i) => {
             const isOpen = open === i;
             const collapsed = open !== null && !isOpen;
@@ -448,18 +451,20 @@ export default function VisibilityPillars() {
                 aria-expanded={isOpen}
                 tabIndex={0}
                 onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(isOpen ? null : i); } }}
-                style={{ flexGrow: isOpen ? 6 : collapsed ? 0.001 : 1, flexBasis: collapsed ? '84px' : '0px' }}
+                style={{ flexGrow: isOpen ? 6 : collapsed ? 0.001 : 1, flexBasis: collapsed ? '124px' : '0px' }}
                 className={`cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-2xl border bg-white relative min-w-0 ${
                   isOpen ? `${pal.borderOpen} shadow-2xl` : `border-slate-200/70 shadow-sm ${pal.hover} hover:shadow-md`
                 }`}
               >
-                {/* Collapsed strip */}
-                <div className={`absolute inset-0 flex flex-col items-center justify-between py-5 transition-opacity duration-300 ${collapsed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                {/* Collapsed mini card */}
+                <div className={`absolute inset-0 flex flex-col items-center pt-5 pb-4 px-2 transition-opacity duration-300 ${collapsed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                   <div className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 ${pal.icon}`}>
                     {card.icon}
                   </div>
-                  <span className="[writing-mode:vertical-rl] rotate-180 text-[13px] font-bold text-slate-500 whitespace-nowrap">{card.title}</span>
-                  <ChevronDown size={16} className="text-slate-300 -rotate-90" />
+                  <span className="text-[12.5px] font-bold text-slate-700 text-center leading-snug mt-3">{card.title}</span>
+                  <span className={`mt-auto inline-flex items-center gap-1 text-[11px] font-bold ${pal.chipVal}`}>
+                    <MousePointerClick size={12} /> Open
+                  </span>
                 </div>
 
                 {/* Closed (default) tile */}
@@ -509,7 +514,7 @@ export default function VisibilityPillars() {
                       ))}
                     </div>
                   </div>
-                  <div className="w-[340px] shrink-0 bg-gradient-to-br from-slate-50 to-slate-100/70 border border-slate-100 rounded-2xl flex items-center justify-center p-4">
+                  <div className="w-[310px] shrink-0 bg-gradient-to-br from-slate-50 to-slate-100/70 border border-slate-100 rounded-2xl flex items-center justify-center p-4">
                     {card.visual}
                   </div>
                   <button
