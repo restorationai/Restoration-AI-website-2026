@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { number: "1,600", suffix: "+", label: "Calls Answered Daily" },
-  { number: "$26M", suffix: "+", label: "In Secured Jobs" },
-  { number: "0", suffix: "", label: "Missed Calls" }
+  { number: "7x", suffix: "", label: "Your Google Reviews", sub: "" },
+  { number: "250", suffix: "+", label: "Page Website Built for Ranking", sub: "" },
+  { number: "100%", suffix: "", label: "Client Retention", sub: "" },
+  { number: "0", suffix: "", label: "Long Term Contracts", sub: "" }
 ];
 
 export default function StatsBanner() {
@@ -26,7 +27,7 @@ export default function StatsBanner() {
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto py-20 px-6">
-        <div className="flex flex-col md:flex-row items-center justify-center md:gap-8 lg:gap-16 xl:gap-24">
+        <div className="flex flex-col md:flex-row items-center justify-center md:gap-6 lg:gap-10">
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center">
               <motion.div
@@ -34,18 +35,23 @@ export default function StatsBanner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center text-center w-[280px] py-6 md:py-0"
+                className="flex flex-col items-center text-center w-[240px] py-6 md:py-0"
               >
-                <div className="text-6xl md:text-7xl font-bold text-white tracking-tight whitespace-nowrap">
+                <div className="text-5xl md:text-6xl font-bold text-white tracking-tight whitespace-nowrap">
                   {stat.number}
                   {stat.suffix && <span className="text-white">{stat.suffix}</span>}
                 </div>
-                <p className="text-lg font-medium text-white/80 mt-3 whitespace-nowrap">
+                <p className="text-lg font-medium text-white/80 mt-3 leading-snug">
                   {stat.label}
                 </p>
+                {stat.sub && (
+                  <p className="text-sm font-medium text-white/60 mt-1 leading-snug">
+                    {stat.sub}
+                  </p>
+                )}
               </motion.div>
               {index < stats.length - 1 && (
-                <div className="hidden md:block w-px h-20 bg-white/20 md:ml-8 lg:ml-16 xl:ml-24" />
+                <div className="hidden md:block w-px h-20 bg-white/20 md:ml-6 lg:ml-10" />
               )}
             </div>
           ))}

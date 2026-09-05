@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Bot, PhoneCall, Star, CheckCircle2, TrendingUp, ShieldAlert } from 'lucide-react';
+import { Star, CheckCircle2, Globe, Search, MapPin, Bot, ShieldCheck } from 'lucide-react';
 import BrowserVideo from './BrowserVideo';
 import LogoMarquee from './LogoMarquee';
 
@@ -9,8 +9,13 @@ const badges = [
   {
     id: 1,
     type: 'custom' as const,
-    label: "Restoration Calls Handled Right",
-    icon: <PhoneCall className="text-blue-700" size={20} />,
+    label: (
+      <div className="flex flex-col items-center gap-0.5">
+        <span className="text-[17px] font-black text-slate-800 leading-none tracking-tight">Ranked</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Where Homeowners Search</span>
+      </div>
+    ),
+    icon: <Search className="text-blue-700" size={20} />,
     pos: "top-[160px] right-[50%] mr-[220px] lg:mr-[280px] xl:mr-[340px]",
     rotate: "-12deg",
     width: "w-[140px]"
@@ -20,25 +25,25 @@ const badges = [
     type: 'custom_pill' as const,
     label: (
       <div className="flex flex-col items-start justify-center">
-        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">$26M+</span>
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">in Secured Jobs</span>
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">Website</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Optimized for Ranking</span>
       </div>
     ),
-    icon: <TrendingUp className="text-blue-700" size={18} />,
+    icon: <Globe className="text-blue-700" size={18} />,
     pos: "top-[360px] right-[50%] mr-[300px] lg:mr-[380px] xl:mr-[440px]",
     rotate: "12deg",
-    width: "w-[190px]"
+    width: "w-[240px]"
   },
   {
     id: 3,
     type: 'custom' as const,
     label: (
       <div className="flex flex-col items-center gap-0.5">
-        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">24/7</span>
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Dispatch</span>
+        <span className="text-[26px] font-black text-slate-800 leading-none tracking-tight">#1</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Google</span>
       </div>
     ),
-    icon: <Bot className="text-blue-700" size={20} />,
+    icon: <MapPin className="text-blue-700" size={20} />,
     pos: "top-[560px] right-[50%] mr-[240px] lg:mr-[300px] xl:mr-[360px]",
     rotate: "-12deg",
     width: "w-[140px]"
@@ -46,8 +51,13 @@ const badges = [
   {
     id: 4,
     type: 'custom_pill' as const,
-    label: <span className="text-[11px] font-bold text-slate-700 tracking-widest uppercase whitespace-normal text-left leading-snug">Proven in<br/>Real Emergencies</span>,
-    icon: <ShieldAlert className="text-blue-700" size={18} />,
+    label: (
+      <div className="flex flex-col items-start justify-center">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Seen in</span>
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">ChatGPT</span>
+      </div>
+    ),
+    icon: <Bot className="text-blue-700" size={18} />,
     pos: "top-[180px] left-[50%] ml-[220px] lg:ml-[280px] xl:ml-[340px]",
     rotate: "-12deg",
     width: "w-[200px]"
@@ -55,7 +65,12 @@ const badges = [
   {
     id: 5,
     type: 'custom' as const,
-    label: "Used by Top Restoration Teams",
+    label: (
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Used by</span>
+        <span className="text-[14px] font-black text-slate-800 leading-tight tracking-tight">Top Restoration Teams</span>
+      </div>
+    ),
     icon: <CheckCircle2 className="text-blue-700" size={20} />,
     pos: "top-[360px] left-[50%] ml-[300px] lg:ml-[380px] xl:ml-[440px]",
     rotate: "12deg",
@@ -66,14 +81,14 @@ const badges = [
     type: 'custom_pill' as const,
     label: (
       <div className="flex flex-col items-start justify-center">
-        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">0</span>
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Missed Calls</span>
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">100%</span>
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Client Retention</span>
       </div>
     ),
-    icon: <PhoneCall className="text-[#3dd0ff]" size={18} />,
+    icon: <ShieldCheck className="text-blue-700" size={18} />,
     pos: "top-[560px] left-[50%] ml-[240px] lg:ml-[300px] xl:ml-[360px]",
     rotate: "12deg",
-    width: "w-[170px]"
+    width: "w-[210px]"
   },
 ];
 
@@ -163,25 +178,22 @@ export default function Hero() {
       <div className="container-pill w-full relative">
         <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
           <h1 className="text-[42px] sm:text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
-            Never Miss a Call
+            Never Lose Another Job
             <br />
-            <span className="relative inline-block">
-              <span className="invisible">Never Lose a Job</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent" aria-hidden="true">
-                Never Lose a Job
-              </span>
+            <span className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent pb-[0.12em] -mb-[0.12em]">
+              To Being Invisible
             </span>
           </h1>
 
-          <p className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[600px] mx-auto px-4">
-            24/7 AI receptionist built for restoration. Answers every call, qualifies every lead, dispatches crews in minutes.
+          <p className="text-[18px] md:text-[20px] text-slate-700 font-medium leading-[1.6] max-w-[640px] mx-auto px-4">
+            Show up first on Google and AI search when customers need you most. Built for restoration business owners to get more calls and secure more jobs.
           </p>
 
           <div className="flex flex-col items-center gap-6 pt-4">
             <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
               <a
                 href="/#calendar-section"
-                className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-2.5 w-full sm:w-[280px]"
+                className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2.5 w-full sm:w-[280px]"
               >
                 Book A Strategy Call
               </a>
@@ -193,7 +205,7 @@ export default function Hero() {
                   Get Started for Free
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
-                <p className="text-xs text-slate-500 mt-2 text-center">Set up in 5 minutes, no credit card required</p>
+                <p className="text-xs text-slate-500 mt-2 text-center">No contracts required</p>
               </div>
             </div>
           </div>
@@ -203,16 +215,16 @@ export default function Hero() {
         <div className="mt-12 mb-2">
           <div className="flex flex-col items-center">
             <p className="text-center text-[16px] md:text-[20px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-[-10px] z-10 relative">
-              Trusted by Restoration Contractors Nationwide
+              Trusted by Restoration Business Owners Nationwide
             </p>
           </div>
           <LogoMarquee />
         </div>
 
-        {/* BROWSER VIDEO */}
+        {/* RANK DEMO VIDEO */}
         <div className="relative max-w-5xl mx-auto w-full z-10 mt-4">
           <div className="hidden md:block absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
-          <BrowserVideo />
+          <BrowserVideo src="/rank-demo.mp4" />
         </div>
       </div>
     </section>

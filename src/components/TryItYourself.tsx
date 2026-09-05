@@ -8,8 +8,8 @@ const EXTERNAL_ID = 'hero_demo_session';
 
 export default function TryItYourself() {
   return (
-    <section className="relative bg-transparent font-sans pb-20">
-
+    <section className="relative isolate bg-transparent font-sans pb-20">
+      
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* Card — same frosted style as CallRecordings outer container */}

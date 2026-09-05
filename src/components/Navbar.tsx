@@ -70,7 +70,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="/#calendar-section"
-              className="hidden lg:inline-flex items-center justify-center text-[14px] font-bold text-slate-700 bg-white border-2 border-slate-100 px-6 py-2.5 rounded-full hover:bg-slate-50 hover:border-slate-200 transition-all shadow-sm"
+              className="hidden lg:inline-flex items-center justify-center text-[14px] font-bold text-slate-700 bg-white border-2 border-slate-100 px-6 py-2.5 rounded-full hover:bg-slate-50 hover:border-slate-200 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
             >
               Book A Strategy Call
             </a>

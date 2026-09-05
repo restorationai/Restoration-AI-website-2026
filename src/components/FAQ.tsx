@@ -2,56 +2,68 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MessageCircleQuestion, ArrowRight } from 'lucide-react';
 
 const faqs = [
   {
-    question: "How does an AI receptionist handle emergency water damage calls after hours?",
-    answer: "Our restoration specific AI is active 24/7 to ensure every emergency call is answered on the first ring. It identifies the urgency of the situation, gathers essential job details, and can immediately dispatch your crews so you never lose a high ticket lead to a competitor."
+    question: "How is Rank AI different from every other SEO agency I have been burned by?",
+    brief: "Restoration only, fully transparent, no contracts.",
+    answer: "Rank AI is built exclusively for restoration business owners, not a general agency juggling dentists and roofers. Everything is transparent: you watch your rankings move street by street, you see every page, blog, and citation we build, and there are no long term contracts holding you in place. We stay accountable through results, not paperwork."
   },
   {
-    question: "Does this AI receptionist integrate with Albiware and other restoration CRMs?",
-    answer: "Yes, our system features deep integration with Albiware and almost every other restoration specific CRM on the market. It automatically syncs lead details, job descriptions, and contact info directly into your project management software to eliminate manual data entry for your office staff."
+    question: "What exactly do I get with Rank AI?",
+    brief: "Your entire Google presence, built and run for you.",
+    answer: "A complete Google presence built and run for you: a custom website with up to 250 pages, full Google Business Profile management, review generation, two keyword researched blog posts every week, YouTube videos, Google Ads and Local Services Ads management, and a 24/7 AI receptionist included at no extra cost. One system, one team, all done for you."
   },
   {
-    question: "Can the AI actually dispatch my mitigation crews to a job site?",
-    answer: "Absolutely. The AI is programmed with your specific dispatching rules. When a high priority water damage or fire emergency comes in, the AI can trigger an immediate notification or call to your on call technician to ensure your response time is faster than anyone else in your market."
+    question: "How long until I see results?",
+    brief: "Fast to launch, and rankings build from there.",
+    answer: "Rankings are earned, so they build over time rather than overnight. Your website, Google Business Profile, and content engine go live quickly, and from there you watch your rankings move block by block in your tracking dashboard. Because there are no long term contracts, we have to keep earning your business every single month."
   },
   {
-    question: "How is an AI receptionist better than a traditional restoration answering service?",
-    answer: "Traditional answering services often just take a name and number which leads to delayed response times. Our AI does the heavy lifting by qualifying the lead, checking your team availability, and booking appointments directly while offering zero hold times for the caller."
+    question: "Do you guarantee a number one ranking?",
+    brief: "No, and no honest company can.",
+    answer: "No one can honestly guarantee a specific spot on Google or in AI results, and you should be careful with anyone who does. What we control is the work: dedicated pages for every service in every city, content built from real keyword research, every page submitted to Google for indexing, and a monthly audit that finds and fixes anything Google skipped. That is the machine that moves rankings."
   },
   {
-    question: "Does the AI sound natural enough for stressed homeowners dealing with a flood?",
-    answer: "We use advanced neural voice synthesis designed to sound professional and empathetic. In a high stress water damage situation, homeowners want quick answers and a calm experience, and our AI provides exactly that without ever sounding robotic or cold."
+    question: "Why does AI search matter for a restoration company?",
+    brief: "Homeowners are already asking ChatGPT who to call.",
+    answer: "More homeowners every day ask ChatGPT, Gemini, and Perplexity who they should call. Those engines read websites with their own crawlers and recommend businesses they can verify. We structure your site, schema, and citations so you are positioned to be the answer when someone asks for the best restoration company near them."
   },
   {
-    question: "What happens if a caller has a complex technical question about the drying process?",
-    answer: "Our AI is pre loaded with industry specific knowledge for the restoration world. If a homeowner asks a question it cannot answer, it is programmed to recognize the complexity and instantly route the call to you or a designated project manager so the customer always receives accurate information."
+    question: "I already have a website. Why do I need a 250 page one?",
+    brief: "No dedicated page means Google thinks you do not offer it.",
+    answer: "Here is what most owners never hear: if your Google Business Profile lists a service but your website has no dedicated page for that exact service, Google assumes you do not actually offer it. That is why we build an individual page for every service in every city you serve, each one unique and written around the search terms homeowners actually use."
   },
   {
-    question: "Can this AI help with lead intake for mold remediation and fire damage?",
-    answer: "Yes, the AI is fully customizable for all restoration service lines including water mitigation, mold remediation, fire damage, and biohazard cleanup. It follows specific intake scripts for each service to ensure you get the right data every single time."
+    question: "How much work do I have to do?",
+    brief: "Almost none. We build and run everything.",
+    answer: "Almost none, on purpose. We build the website, manage your Google Business Profile, write the blogs, post the videos, request the reviews, and run the ads. You run your restoration business and take the calls. When we need something from you, it is usually photos of your work and a quick approval."
   },
   {
-    question: "Will using an AI receptionist help me win more insurance or TPA work?",
-    answer: "Speed to lead is the most important metric for winning restoration jobs. By answering instantly and professionalizing your intake process, you show insurance adjusters and TPAs that your company is the most reliable option for their policyholders."
+    question: "Am I locked into a contract?",
+    brief: "No. Cancel anytime.",
+    answer: "No. There are no long term contracts and no hidden fees, and you can cancel anytime. We would rather be easy to work with and easy to leave. To date, every client who has started with Rank AI is still with us, and that is by results, not by contract."
   },
   {
-    question: "How long does it take to set up the AI for my restoration business?",
-    answer: "The setup is designed to be hands off for the business owner. Once you provide your service areas and basic business info, we handle the technical integration and Albiware syncing so you can be up and running with your automated receptionist in less than 48 hours."
+    question: "How does the review generation work?",
+    brief: "Finished jobs become five star reviews automatically.",
+    answer: "Finished jobs turn into review requests automatically, so you build a steady, consistent flow of five star reviews instead of a burst once a year. Reviews are one of the heaviest local ranking signals Google looks at, and consistency matters more than volume."
   },
   {
-    question: "Is the AI capable of handling multiple calls at the same time during a storm?",
-    answer: "One of the biggest benefits for restoration owners is scalability. During a massive storm or flood event, the AI can handle an unlimited number of simultaneous calls, meaning you never have a busy signal and never miss a single lead during peak volume."
+    question: "What is the AI receptionist, and does it cost extra?",
+    brief: "Included free. It answers every call 24/7.",
+    answer: "It is included at no additional cost. Once your rankings and ads start producing calls, the AI receptionist answers every one of them 24/7, collects the job details, and books the appointment, so the visibility we build never gets wasted on a missed call."
   },
   {
-    question: "Can the AI book appointments directly on my Google Calendar or Albiware schedule?",
-    answer: "Yes, the AI has the ability to see your real time availability and book appointments directly into your calendar. This allows you to wake up to a full schedule of confirmed mitigation jobs without ever picking up the phone."
+    question: "Can I see where I rank before I sign up?",
+    brief: "Yes, live on your strategy call, free.",
+    answer: "Yes, and you should. On your strategy call we pull up your business live and show you exactly where you rank today on Google and in AI search. You will see your starting point, and exactly what needs to change, before you ever spend a dollar."
   },
   {
-    question: "Does this AI receptionist replace my existing office manager?",
-    answer: "No, it empowers them to do more. By handling the repetitive initial intake and after hours emergencies, your office manager can focus on high value tasks like managing insurance claims and billing while the AI ensures no new revenue falls through the cracks."
+    question: "Does this work for fire, mold, and reconstruction, or just water damage?",
+    brief: "Every service line, in every city you serve.",
+    answer: "All of it. We build dedicated pages and content for every service line you offer: water, fire, smoke, mold, biohazard, reconstruction, and anything else on your list, in every city you serve. If you offer it, we make sure Google and AI search know it."
   }
 ];
 
@@ -59,32 +71,40 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 relative">
-      {/* Background radial glow */}
+    <section className="pt-8 md:pt-10 pb-8 relative isolate">
+            {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl w-full">
         
-        <div className="text-center max-w-4xl mx-auto mb-16 flex flex-col items-center">
+        <div className="text-center max-w-4xl mx-auto mb-10 flex flex-col items-center">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
+            <MessageCircleQuestion size={12} />
+            Straight Answers
+          </span>
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
-            Frequently Asked Questions
+            Frequently Asked{' '}
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 pb-[0.12em] -mb-[0.12em]">Questions</span>
           </h2>
+          <p className="text-[16px] md:text-[18px] text-slate-600 font-medium">
+            Everything restoration business owners ask before they get started.
+          </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
           {faqs.map((faq, idx) => {
              const isOpen = openIndex === idx;
              return (
               <div
                 key={idx}
-                className={`border rounded-3xl overflow-hidden transition-all duration-300 shadow-sm ${isOpen ? 'bg-slate-50 border-slate-300 shadow-md transform scale-[1.01]' : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-md'}`}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 shadow-sm ${isOpen ? 'bg-blue-50/50 border-blue-300 shadow-md shadow-blue-500/10' : 'bg-white border-slate-200 hover:border-blue-200 hover:shadow-md'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full flex items-center justify-between px-6 md:px-7 h-[90px] md:h-[100px] text-left focus:outline-none"
+                  className="w-full flex items-center justify-between px-5 py-4 min-h-[64px] text-left focus:outline-none"
                 >
-                  <span className="text-[18px] md:text-[20px] font-bold text-slate-900 tracking-tight leading-snug pr-8 line-clamp-2">{faq.question}</span>
+                  <span className="text-[15.5px] font-bold text-slate-900 tracking-tight leading-snug pr-5">{faq.question}</span>
                   <ChevronDown
-                    size={24}
+                    size={18}
                     className={`text-slate-500 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-600' : 'rotate-0'}`}
                   />
                 </button>
@@ -96,8 +116,9 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 md:px-7 pb-6 md:pb-7 pt-0 text-slate-600 text-[16px] md:text-[18px] leading-relaxed font-medium">
-                        {faq.answer}
+                      <div className="px-5 pb-5 pt-0">
+                        <p className="text-slate-900 text-[14px] font-extrabold mb-1.5">{faq.brief}</p>
+                        <p className="text-slate-600 text-[13.5px] leading-relaxed font-medium">{faq.answer}</p>
                       </div>
                     </motion.div>
                   )}
@@ -105,6 +126,13 @@ export default function FAQ() {
               </div>
              )
           })}
+        </div>
+
+        <div className="flex justify-center mt-8">
+          <a href="/#calendar-section" className="inline-flex items-center gap-2 text-[15px] font-bold text-blue-700 hover:text-blue-800 transition-colors">
+            Still have questions? Ask them live on your strategy call
+            <ArrowRight size={16} strokeWidth={2.5} />
+          </a>
         </div>
       </div>
     </section>

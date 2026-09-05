@@ -3,29 +3,29 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero';
 import StatsBanner from '../components/StatsBanner';
 import CallRecordings from '../components/CallRecordings';
-import BuiltForRestoration from '../components/BuiltForRestoration';
+import RankEcosystem from '../components/RankEcosystem';
 import Pricing from '../components/Pricing';
-import FeaturesShowcase from '../components/FeaturesShowcase';
+import VisibilityPillars from '../components/VisibilityPillars';
 // import PremiumFeatures from '../components/PremiumFeatures';
 import HowItWorks from '../components/HowItWorks';
 import Integrations from '../components/Integrations';
-import Testimonials from '../components/Testimonials';
+// import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import BookACall from '../components/BookACall';
-import ComparisonTable from '../components/ComparisonTable';
-import TryItYourself from '../components/TryItYourself';
+import ContentPerformance from '../components/ContentPerformance';
+// import TryItYourself from '../components/TryItYourself';
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Restoration AI - Automated Receptionist & Dispatch',
-  serviceType: 'AI Receptionist & Automation',
+  name: 'Restoration AI - Rank AI Google & AI Search Ranking',
+  serviceType: 'Local SEO & AI Search Optimization',
   provider: {
     '@type': 'SoftwareApplication',
     name: 'Restoration AI',
   },
   description:
-    'AI receptionist and automated dispatch software tailored specifically for the restoration industry. Never miss a call. Never lose a job.',
+    'Done for you Google ranking and AI search system built exclusively for restoration business owners. Custom 250 page website, Google Business Profile management, reviews, blogs, YouTube, and ads, with an AI receptionist included.',
   areaServed: 'Worldwide',
 };
 
@@ -35,26 +35,26 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Can I keep my current phone number?',
+      name: 'What exactly do I get with Rank AI?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, you have two simple options. You can instantly generate a new local or toll-free number within our dashboard, or you can simply forward your existing business number directly to our AI routing system. There is no downtime.',
+        text: 'A complete Google presence built and run for you: a custom website with up to 250 pages, full Google Business Profile management, review generation, two keyword researched blog posts every week, YouTube videos, Google Ads and Local Services Ads management, and a 24/7 AI receptionist included at no extra cost.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does it integrate with Xactimate / JobNimbus?',
+      name: 'Do you guarantee a number one ranking?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolutely. Restoration AI features native integrations via standard webhooks that sync seamlessly with Xactimate, JobNimbus, Albiware, and Workiz. New Estimates trigger direct entry into your CRM as soon as the call finishes.',
+        text: 'No one can honestly guarantee a specific spot on Google or in AI results. What we control is the work: dedicated pages for every service in every city, content built from real keyword research, every page submitted to Google for indexing, and a monthly audit that fixes anything Google skipped.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How does it handle Spanish-speaking callers?',
+      name: 'Am I locked into a contract?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The AI receptionist speaks in over 42 different languages with native fluency. It instantly detects the caller\'s spoken language and autonomously pivots to converse natively, without any prompt needed from the caller.',
+        text: 'No. There are no long term contracts and no hidden fees, and you can cancel anytime. To date, every client who has started with Rank AI is still with us, and that is by results, not by contract.',
       },
     },
   ],
@@ -65,17 +65,24 @@ const faqJsonLd = {
   <Hero client:load />
   <StatsBanner client:idle />
   <div class="relative w-full bg-[#fafbfe] overflow-x-clip">
-    <BuiltForRestoration client:visible />
+    <!-- Hero-style page background: grid + soft blue edge glow -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px); background-size: 100px 100px; background-position: center top; opacity: 0.5; mask-image: linear-gradient(90deg, black 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.35) 70%, black 100%); -webkit-mask-image: linear-gradient(90deg, black 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.35) 70%, black 100%);"
+    ></div>
+    <div class="hidden md:block absolute inset-y-0 left-0 w-[500px] bg-blue-500/15 blur-[160px] pointer-events-none -translate-x-1/2"></div>
+    <div class="hidden md:block absolute inset-y-0 right-0 w-[500px] bg-blue-500/15 blur-[160px] pointer-events-none translate-x-1/2"></div>
+    <RankEcosystem client:visible />
     <CallRecordings client:visible />
     <HowItWorks client:visible />
-    <FeaturesShowcase client:visible />
+    <VisibilityPillars client:visible />
     {/* <PremiumFeatures client:visible /> */}
-    <ComparisonTable client:visible />
-    <Testimonials client:visible />
-    <TryItYourself client:visible />
-    <Integrations client:visible />
+    <ContentPerformance client:visible />
+    {/* <Testimonials client:visible /> */}
+    {/* <TryItYourself client:visible /> */}
     <FAQ client:visible />
     <Pricing client:visible />
     <BookACall client:visible />
+    <Integrations client:visible />
   </div>
 </MainLayout>
