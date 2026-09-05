@@ -71,7 +71,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="pt-8 md:pt-10 pb-16 relative isolate">
+    <section className="pt-8 md:pt-10 pb-8 relative isolate">
             {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl w-full">

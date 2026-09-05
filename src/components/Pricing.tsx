@@ -16,7 +16,7 @@ const features = [
 
 export default function Pricing() {
   return (
-    <section className="pt-20 pb-4 relative" id="pricing">
+    <section className="pt-6 pb-4 relative scroll-mt-24" id="pricing">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">

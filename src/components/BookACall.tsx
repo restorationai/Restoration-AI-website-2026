@@ -27,16 +27,16 @@ export default function BookACall() {
     }, []);
 
     return (
-        <section className="relative isolate pt-12 pb-32" id="calendar-section">
+        <section className="relative isolate pt-6 pb-16 scroll-mt-24" id="calendar-section">
                 {/* Background radial glow matching the site aesthetic */}
           <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
           
           <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10 w-full">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-[38px] md:text-[50px] lg:text-[60px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+            <div className="text-center max-w-3xl mx-auto mb-5">
+              <h2 className="text-[34px] md:text-[42px] lg:text-[48px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-3">
                 Want To Book A Time To Talk?
               </h2>
-              <p className="text-[18px] md:text-[20px] text-slate-600 font-medium leading-relaxed">
+              <p className="text-[16px] md:text-[18px] text-slate-600 font-medium leading-relaxed">
                 Pick a time that works best for you, quick and simple.
               </p>
             </div>
