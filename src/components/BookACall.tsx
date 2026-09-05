@@ -42,10 +42,10 @@ export default function BookACall() {
             </div>
 
             {/* Calendar Container */}
-            <div className="w-full max-w-6xl mx-auto relative z-10 bg-white rounded-2xl border border-slate-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] overflow-hidden" id="calendar-container">
+            <div className="w-full max-w-6xl mx-auto relative z-10 bg-white rounded-2xl border border-slate-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] overflow-hidden h-[640px]" id="calendar-container">
               <iframe 
                 src="https://link.restorationai.io/widget/bookings/restorationai-specialiststrategy-callga8f5l59ir3zc44uai" 
-                style={{ width: '100%', minHeight: '700px', border: 'none', overflow: 'hidden' }} 
+                style={{ width: '100%', height: '780px', border: 'none', overflow: 'hidden', marginTop: '-70px' }} 
                 scrolling="no" 
                 id="BOuvQbEVWGytVmoDxqrJ_1765575687034"
               ></iframe>
