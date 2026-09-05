@@ -178,10 +178,10 @@ export default function Hero() {
       <div className="container-pill w-full relative">
         <div className="text-center space-y-8 relative z-20 max-w-5xl mx-auto">
           <h1 className="text-[42px] sm:text-[48px] md:text-[84px] font-medium tracking-tight text-slate-900 leading-[1.05] relative">
-            Always Found First
+            Never Lose Another Job
             <br />
             <span className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent pb-[0.12em] -mb-[0.12em]">
-              Always Booked Solid
+              To Being Invisible
             </span>
           </h1>
 
