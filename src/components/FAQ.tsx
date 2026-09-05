@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MessageCircleQuestion, ArrowRight } from 'lucide-react';
 
 const faqs = [
   {
@@ -71,15 +71,23 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 relative isolate">
+    <section className="pt-8 md:pt-10 pb-16 relative isolate">
             {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl w-full">
         
         <div className="text-center max-w-4xl mx-auto mb-10 flex flex-col items-center">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-[0.15em] text-[10px] rounded-full mb-4 uppercase shadow-sm">
+            <MessageCircleQuestion size={12} />
+            Straight Answers
+          </span>
           <h2 className="text-[36px] md:text-[46px] lg:text-[52px] font-extrabold text-slate-900 mb-4 tracking-tight leading-[1.1]">
-            Frequently Asked Questions
+            Frequently Asked{' '}
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 pb-[0.12em] -mb-[0.12em]">Questions</span>
           </h2>
+          <p className="text-[16px] md:text-[18px] text-slate-600 font-medium">
+            Everything restoration business owners ask before they get started.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
@@ -88,13 +96,13 @@ export default function FAQ() {
              return (
               <div
                 key={idx}
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 shadow-sm ${isOpen ? 'bg-slate-50 border-slate-300 shadow-md transform scale-[1.01]' : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-md'}`}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 shadow-sm ${isOpen ? 'bg-blue-50/50 border-blue-300 shadow-md shadow-blue-500/10' : 'bg-white border-slate-200 hover:border-blue-200 hover:shadow-md'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full flex items-center justify-between px-5 py-4 min-h-[58px] text-left focus:outline-none"
+                  className="w-full flex items-center justify-between px-5 py-4 min-h-[64px] text-left focus:outline-none"
                 >
-                  <span className="text-[14.5px] font-bold text-slate-900 tracking-tight leading-snug pr-5">{faq.question}</span>
+                  <span className="text-[15.5px] font-bold text-slate-900 tracking-tight leading-snug pr-5">{faq.question}</span>
                   <ChevronDown
                     size={18}
                     className={`text-slate-500 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-600' : 'rotate-0'}`}
@@ -118,6 +126,13 @@ export default function FAQ() {
               </div>
              )
           })}
+        </div>
+
+        <div className="flex justify-center mt-8">
+          <a href="/#calendar-section" className="inline-flex items-center gap-2 text-[15px] font-bold text-blue-700 hover:text-blue-800 transition-colors">
+            Still have questions? Ask them live on your strategy call
+            <ArrowRight size={16} strokeWidth={2.5} />
+          </a>
         </div>
       </div>
     </section>
