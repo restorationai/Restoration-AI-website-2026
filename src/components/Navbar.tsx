@@ -41,28 +41,6 @@ export default function Navbar() {
             <a href="/#features" className="hover:text-slate-900 transition-colors">Features</a>
             <a href="/#pricing" className="hover:text-slate-900 transition-colors">Pricing</a>
 
-            {/* INTEGRATIONS DROPDOWN */}
-            <div className="relative group py-2">
-              <button className="flex items-center gap-1 text-slate-600 hover:text-slate-900 transition-colors bg-transparent font-semibold text-[15px]">
-                Integrations
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:rotate-180 transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
-              </button>
-
-              {/* Dropdown */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0 z-50">
-                <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-200/70 py-2 min-w-[220px] flex flex-col">
-                  <a href="/integrations/albiware" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">Albiware</a>
-                  <a href="/integrations/jobber" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">Jobber</a>
-                  <a href="/integrations/xcelerate" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">Xcelerate</a>
-                  <a href="/integrations/dash" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">DASH</a>
-                  <a href="/integrations/housecall-pro" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">Housecall Pro</a>
-                  <a href="/integrations/jobnimbus" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">JobNimbus</a>
-                  <a href="/integrations/encircle" className="px-5 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors block font-medium">Encircle</a>
-                </div>
-              </div>
-            </div>
-
-            <a href="/#testimonials" className="hover:text-slate-900 transition-colors">Success Stories</a>
             <a href="/blog" className="hover:text-slate-900 transition-colors">Blog</a>
           </div>
 
@@ -97,19 +75,6 @@ export default function Navbar() {
           <div className="absolute top-full left-0 right-0 mt-2 mx-4 bg-white border border-slate-200 py-4 px-6 rounded-2xl flex flex-col gap-4 shadow-xl md:hidden">
             <a href="/#features" className="text-slate-700 font-medium text-sm">Features</a>
             <a href="/#pricing" className="text-slate-700 font-medium text-sm">Pricing</a>
-            <div className="flex flex-col gap-2">
-              <span className="text-slate-500 font-semibold text-xs tracking-wider uppercase">Integrations</span>
-              <div className="pl-3 border-l-2 border-slate-100 flex flex-col gap-2.5 mt-2">
-                <a href="/integrations/albiware" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">Albiware</a>
-                <a href="/integrations/jobber" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">Jobber</a>
-                <a href="/integrations/xcelerate" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">Xcelerate</a>
-                <a href="/integrations/dash" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">DASH</a>
-                <a href="/integrations/housecall-pro" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">Housecall Pro</a>
-                <a href="/integrations/jobnimbus" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">JobNimbus</a>
-                <a href="/integrations/encircle" className="text-slate-700 font-medium text-sm hover:text-blue-700 transition-colors">Encircle</a>
-              </div>
-            </div>
-            <a href="/#testimonials" className="text-slate-700 font-medium text-sm">Success Stories</a>
             <a href="/blog" className="text-slate-700 font-medium text-sm">Blog</a>
             <hr className="border-slate-100" />
             <div className="flex flex-col gap-3 pt-1">
