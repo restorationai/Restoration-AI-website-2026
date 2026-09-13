@@ -40,7 +40,7 @@ export default function Pricing() {
               <h3 className="text-3xl font-bold text-slate-900 font-outfit mb-1">Rank AI</h3>
               <p className="text-blue-600 font-semibold mb-5 leading-snug">Your entire Google presence, done for you.</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl xl:text-6xl font-bold text-slate-900 tracking-tight">$1,297</span>
+                <span className="text-5xl xl:text-6xl font-bold text-slate-900 tracking-tight">$2,497</span>
                 <span className="text-slate-500 font-medium">/month</span>
               </div>
               <p className="text-[12px] text-slate-500 font-medium mb-6">No long term contracts. Cancel anytime.</p>

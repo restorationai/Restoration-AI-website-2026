@@ -7,7 +7,7 @@ import { MapPin, Sparkles, Megaphone, ChevronDown, MessageSquare, Star, FileText
 
 type Palette = {
   tabActive: string; tabIdle: string; icon: string; iconOpen: string; chip: string; chipVal: string;
-  borderOpen: string; hover: string; dot: string; bar: string;
+  borderOpen: string; hover: string; dot: string; bar: string; openBtn: string;
 };
 
 const palettes: Record<string, Palette> = {
@@ -18,7 +18,8 @@ const palettes: Record<string, Palette> = {
     iconOpen: 'bg-emerald-600 text-white',
     chip: 'bg-emerald-50 border-emerald-100', chipVal: 'text-emerald-700',
     borderOpen: 'border-emerald-300 shadow-emerald-500/10', hover: 'hover:border-emerald-300',
-    dot: 'bg-emerald-500', bar: 'from-emerald-600 to-emerald-400'
+    dot: 'bg-emerald-500', bar: 'from-emerald-600 to-emerald-400',
+    openBtn: 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-500/30'
   },
   ai: {
     tabActive: 'bg-gradient-to-r from-indigo-600 to-indigo-800 shadow-indigo-500/25',
@@ -27,7 +28,8 @@ const palettes: Record<string, Palette> = {
     iconOpen: 'bg-indigo-600 text-white',
     chip: 'bg-indigo-50 border-indigo-100', chipVal: 'text-indigo-700',
     borderOpen: 'border-indigo-300 shadow-indigo-500/10', hover: 'hover:border-indigo-300',
-    dot: 'bg-indigo-500', bar: 'from-indigo-600 to-indigo-400'
+    dot: 'bg-indigo-500', bar: 'from-indigo-600 to-indigo-400',
+    openBtn: 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-500/30'
   },
   ads: {
     tabActive: 'bg-gradient-to-r from-red-500 to-rose-700 shadow-red-500/25',
@@ -36,7 +38,8 @@ const palettes: Record<string, Palette> = {
     iconOpen: 'bg-red-600 text-white',
     chip: 'bg-red-50 border-red-100', chipVal: 'text-red-700',
     borderOpen: 'border-red-300 shadow-red-500/10', hover: 'hover:border-red-300',
-    dot: 'bg-red-500', bar: 'from-red-600 to-rose-400'
+    dot: 'bg-red-500', bar: 'from-red-600 to-rose-400',
+    openBtn: 'bg-red-600 hover:bg-red-700 shadow-red-500/30'
   }
 };
 
@@ -400,7 +403,7 @@ export default function VisibilityPillars() {
   const pal = palettes[active];
 
   return (
-    <section id="visibility-pillars" className="py-14 md:py-20 relative font-sans">
+    <section id="visibility-pillars" className="py-14 md:py-20 relative font-sans scroll-mt-24">
       
 
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10">
@@ -462,7 +465,7 @@ export default function VisibilityPillars() {
                     {card.icon}
                   </div>
                   <span className="text-[12.5px] font-bold text-slate-700 text-center leading-snug mt-3">{card.title}</span>
-                  <span className={`mt-auto inline-flex items-center gap-1 text-[11px] font-bold ${pal.chipVal}`}>
+                  <span className={`mt-auto inline-flex items-center gap-1 text-[11px] font-bold text-white rounded-full px-2.5 py-1 ${pal.openBtn}`}>
                     <MousePointerClick size={12} /> Open
                   </span>
                 </div>
@@ -482,8 +485,8 @@ export default function VisibilityPillars() {
                       </li>
                     ))}
                   </ul>
-                  <span className={`mt-auto inline-flex items-center gap-1.5 text-[12px] font-bold ${pal.chipVal}`}>
-                    <MousePointerClick size={14} /> Open
+                  <span className={`mt-auto inline-flex items-center justify-center gap-1.5 text-[12.5px] font-bold text-white rounded-full px-4 py-2 shadow-lg transition-colors self-start ${pal.openBtn}`}>
+                    <MousePointerClick size={14} /> Open for More
                   </span>
                 </div>
 

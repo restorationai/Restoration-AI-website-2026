@@ -13,17 +13,17 @@ const Footer = () => {
               <span className="text-white font-semibold text-xl tracking-tight">Restoration<span className="text-[#00e1ff]">AI</span></span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              The world's first AI-native reception and dispatch platform for restoration contractors.
+              Done for you Google ranking and AI search, built exclusively for restoration business owners.
             </p>
           </div>
           
           <div>
             <h4 className="text-white font-semibold mb-6">Product</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><a href="/#features" className="hover:text-white transition-colors">AI Receptionist</a></li>
-              <li><a href="/#features" className="hover:text-white transition-colors">Emergency Dispatch</a></li>
-              <li><a href="/#features" className="hover:text-white transition-colors">Work Authorizations</a></li>
-              <li><a href="/#features" className="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="/#visibility-pillars" className="hover:text-white transition-colors">Local SEO</a></li>
+              <li><a href="/#visibility-pillars" className="hover:text-white transition-colors">AI Search</a></li>
+              <li><a href="/#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="/#calendar-section" className="hover:text-white transition-colors">Book a Strategy Call</a></li>
             </ul>
           </div>
 
@@ -31,7 +31,6 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
               <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>

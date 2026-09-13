@@ -38,10 +38,9 @@ export default function Navbar() {
 
           {/* DESKTOP LINKS */}
           <div className="hidden md:flex items-center gap-10 text-[15px] font-semibold text-slate-600">
-            <a href="/#features" className="hover:text-slate-900 transition-colors">Features</a>
+            <a href="/#visibility-pillars" className="hover:text-slate-900 transition-colors">Features</a>
             <a href="/#pricing" className="hover:text-slate-900 transition-colors">Pricing</a>
 
-            <a href="/blog" className="hover:text-slate-900 transition-colors">Blog</a>
           </div>
 
           {/* RIGHT SIDE: Two CTAs like Outrank */}
@@ -73,9 +72,8 @@ export default function Navbar() {
         {/* MOBILE MENU */}
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 mt-2 mx-4 bg-white border border-slate-200 py-4 px-6 rounded-2xl flex flex-col gap-4 shadow-xl md:hidden">
-            <a href="/#features" className="text-slate-700 font-medium text-sm">Features</a>
+            <a href="/#visibility-pillars" className="text-slate-700 font-medium text-sm">Features</a>
             <a href="/#pricing" className="text-slate-700 font-medium text-sm">Pricing</a>
-            <a href="/blog" className="text-slate-700 font-medium text-sm">Blog</a>
             <hr className="border-slate-100" />
             <div className="flex flex-col gap-3 pt-1">
               <a href="/signin" className="text-slate-600 font-medium text-sm">Login</a>
