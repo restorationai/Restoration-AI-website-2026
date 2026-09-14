@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-09-10",
+    "last_updated": "2026-09-14",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -899,10 +899,11 @@
     {
       "topic_id": "RAI-033",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/roofing-answering-service",
       "video_prompt": "Storm surge (60s): a hail storm floods the phone lines, a live service queues with hold music while an AI answers every roofing call at once, books inspections, and dispatches crews. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-09-14"
     },
     {
       "topic_id": "RAI-034",
