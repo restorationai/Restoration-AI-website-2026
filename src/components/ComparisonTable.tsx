@@ -101,10 +101,10 @@ export default function ComparisonTable() {
         <div className="max-w-4xl mx-auto mt-10 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-2">
             <a
-              href="https://app.restorationai.io/signup"
+              href="/#calendar-section"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[15px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-lg shadow-blue-900/20 whitespace-nowrap"
             >
-              Get Started for Free
+              Book a Strategy Call
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <p className="text-xs text-slate-400">Set up in 5 minutes · No credit card required</p>

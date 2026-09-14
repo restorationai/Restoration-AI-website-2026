@@ -191,18 +191,12 @@ export default function Hero() {
 
           <div className="flex flex-col items-center gap-6 pt-4">
             <div className="flex flex-col sm:flex-row gap-5 items-center sm:items-start">
-              <a
-                href="/#calendar-section"
-                className="px-10 py-4 bg-white text-slate-700 border-2 border-slate-200/80 rounded-full text-[16px] font-bold hover:bg-slate-50 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2.5 w-full sm:w-[280px]"
-              >
-                Book A Strategy Call
-              </a>
-              <div className="flex flex-col items-center w-full sm:w-[280px]">
+              <div className="flex flex-col items-center w-full sm:w-[300px]">
                 <a
-                  href="https://app.restorationai.io/signup"
+                  href="/#calendar-section"
                   className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-[16px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-2xl shadow-blue-900/20 flex items-center justify-center gap-2 w-full"
                 >
-                  Get Started for Free
+                  Book a Strategy Call
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
                 <p className="text-xs text-slate-500 mt-2 text-center">No contracts required</p>

@@ -47,15 +47,9 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="/#calendar-section"
-              className="hidden lg:inline-flex items-center justify-center text-[14px] font-bold text-slate-700 bg-white border-2 border-slate-100 px-6 py-2.5 rounded-full hover:bg-slate-50 hover:border-slate-200 transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
-            >
-              Book A Strategy Call
-            </a>
-            <a
-              href="https://app.restorationai.io/signup"
               className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white px-7 py-3 rounded-full text-[14px] font-bold hover:from-blue-700 hover:to-blue-900 transition-all shadow-lg shadow-blue-900/20"
             >
-              Start for Free
+              Book a Strategy Call
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
 
@@ -77,8 +71,8 @@ export default function Navbar() {
             <hr className="border-slate-100" />
             <div className="flex flex-col gap-3 pt-1">
               <a href="/signin" className="text-slate-600 font-medium text-sm">Login</a>
-              <a href="https://app.restorationai.io/signup" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm text-center">
-                Start for Free
+              <a href="/#calendar-section" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm text-center">
+                Book a Strategy Call
               </a>
             </div>
           </div>
