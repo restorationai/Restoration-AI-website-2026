@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-09-14",
+    "last_updated": "2026-09-17",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -614,6 +614,101 @@
       "keyword_difficulty": 0,
       "cpc": 99.79,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-035",
+      "primary_keyword": "hvac leads",
+      "unique_take": "HVAC lead demand spikes with the first heat wave and first freeze, which is exactly when shared-lead platforms resell the same homeowner to five contractors; the cheapest exclusive HVAC lead is the surge-week call you already paid to generate but never answered.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Transactional",
+      "h2_questions": [
+        "How do HVAC companies get more leads?",
+        "How much do HVAC leads cost?",
+        "Are shared HVAC leads from Angi or Thumbtack worth it?",
+        "How do you get exclusive HVAC leads?",
+        "Why do HVAC companies lose leads during a heat wave?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 880,
+      "keyword_difficulty": 0,
+      "cpc": 61.59,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-036",
+      "primary_keyword": "plumbing leads",
+      "unique_take": "Plumbing leads convert on the first answered call: the burst-pipe homeowner books whoever picks up, so cost per lead matters less than answer rate, and most plumbers optimize the wrong number.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Transactional",
+      "h2_questions": [
+        "How do plumbers get more leads?",
+        "How much do plumbing leads cost?",
+        "Are shared plumbing leads worth it?",
+        "How do you get exclusive plumbing leads?",
+        "Why do plumbers lose the leads they already paid for?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 320,
+      "keyword_difficulty": 0,
+      "cpc": 82.89,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-037",
+      "primary_keyword": "telephone answering service",
+      "unique_take": "Telephone answering service is the oldest phrasing in the category, and the people still searching it are usually comparing decades-old live-operator bureaus; we compare what a 2026 buyer actually chooses between: live operators, virtual receptionists, and AI, priced per call and per booked job.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a telephone answering service?",
+        "How much does a telephone answering service cost?",
+        "What does a telephone answering service actually do with your calls?",
+        "Telephone answering service vs AI answering service: which is better?",
+        "How do you choose a telephone answering service for a service business?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 2900,
+      "keyword_difficulty": 20,
+      "cpc": 164.94,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-038",
+      "primary_keyword": "ai dispatcher",
+      "unique_take": "Most 'AI dispatcher' coverage is about trucking freight; for field-service trades the AI dispatcher's job is to turn a live emergency call into an accepted job on a tech's phone in under five minutes, and that loop (triage, quote, cascade dispatch, work auth) is the product, not a CRM add-on.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "What is an AI dispatcher?",
+        "How does an AI dispatcher work for a service business?",
+        "Can an AI dispatcher triage emergency calls?",
+        "How does an AI dispatcher assign jobs to technicians?",
+        "How much does an AI dispatcher cost?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 320,
+      "keyword_difficulty": 4,
+      "cpc": 18.73,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-039",
+      "primary_keyword": "automated answering service",
+      "unique_take": "'Automated answering service' used to mean a phone tree that made callers hang up; modern AI automation answers like a person and triages like a dispatcher, so the buying question is no longer human vs machine, it is message-taking vs job-booking.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an automated answering service?",
+        "How is an AI automated answering service different from a phone tree or IVR?",
+        "How much does an automated answering service cost?",
+        "Can an automated answering service book jobs and dispatch technicians?",
+        "What should a small business look for in an automated answering service?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 260,
+      "keyword_difficulty": 13,
+      "cpc": 66.07,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -908,9 +1003,50 @@
     {
       "topic_id": "RAI-034",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/pest-control-answering-service",
       "video_prompt": "Same-day scenario (60s): a live-infestation caller reaches an AI that scopes the pest, quotes, and schedules a tech on the spot; competitor's line goes to voicemail. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-09-17"
+    },
+    {
+      "topic_id": "RAI-035",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/hvac-leads",
+      "video_prompt": "Heat-wave surge (60s): shared-lead platform resells one homeowner to five contractors while an AI answers the company's own surge calls and books every job. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-036",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/plumbing-leads",
+      "video_prompt": "Burst-pipe scenario (60s): homeowner books the first plumber who answers; cost-per-lead vs answer-rate counters show where the money actually leaks. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-037",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/telephone-answering-service",
+      "video_prompt": "Three-way comparison (60s): live operator bureau, virtual receptionist, and AI answering the same emergency call, priced per call and per booked job. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-038",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-dispatcher",
+      "video_prompt": "Live loop demo (60s): emergency call triaged, quoted, cascade-dispatched to a tech's phone, and work auth signed in under five minutes. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-039",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/automated-answering-service",
+      "video_prompt": "Then-vs-now (45s): a 2005 phone tree makes callers hang up; a modern AI answers like a person, books the job, and dispatches a tech. CTA: Book a Strategy Call.",
       "sanity_id": null
     }
   ],
