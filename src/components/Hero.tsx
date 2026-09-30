@@ -218,7 +218,7 @@ export default function Hero() {
         {/* RANK DEMO VIDEO */}
         <div className="relative max-w-5xl mx-auto w-full z-10 mt-4">
           <div className="hidden md:block absolute inset-x-0 inset-y-10 bg-blue-600/25 blur-[140px] rounded-[50px] pointer-events-none -z-10" />
-          <BrowserVideo src="/rank-demo.mp4" />
+          <BrowserVideo src="/rank-demo.mp4" poster="/rank-demo-poster.webp" />
         </div>
       </div>
     </section>

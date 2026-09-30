@@ -1,17 +1,17 @@
 "use client";
 
 const partners = [
-  { name: 'Albiware', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b3594cde4bbc2adc0763.png', medium: true },
-  { name: '', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e507ee2c135a8c835819e7.png', large: true },
-  { name: '', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e507ed38381eafa8930119.png', large: true },
-  { name: '', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e507ee2c135a8c835819e8.png', large: true },
-  { name: '', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e507ee50b9a3263a176bf9.png', large: true },
-  { name: '', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e507f238381eafa8930222.webp', large: true },
-  { name: '', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e507f28696a78b8d2337a3.png', large: true },
-  { name: 'Workiz', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b1c39837053a7ee389e8.png' },
-  { name: 'GoHighLevel', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69e508e72c135a8c83584e85.png', large: true },
-  { name: 'Slack', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b359c9e9d61b86511415.png' },
-  { name: 'Monday', url: 'https://assets.cdn.filesafe.space/Tx5eKisj3Xluq1SeZKe3/media/69d2b35984c045c2746ce83a.png' }
+  { name: 'Albiware', url: '/logos/integrations/69d2b3594cde4bbc2adc0763.webp', medium: true },
+  { name: '', url: '/logos/integrations/69e507ee2c135a8c835819e7.webp', large: true },
+  { name: '', url: '/logos/integrations/69e507ed38381eafa8930119.webp', large: true },
+  { name: '', url: '/logos/integrations/69e507ee2c135a8c835819e8.webp', large: true },
+  { name: '', url: '/logos/integrations/69e507ee50b9a3263a176bf9.webp', large: true },
+  { name: '', url: '/logos/integrations/69e507f238381eafa8930222.webp', large: true },
+  { name: '', url: '/logos/integrations/69e507f28696a78b8d2337a3.webp', large: true },
+  { name: 'Workiz', url: '/logos/integrations/69d2b1c39837053a7ee389e8.webp' },
+  { name: 'GoHighLevel', url: '/logos/integrations/69e508e72c135a8c83584e85.webp', large: true },
+  { name: 'Slack', url: '/logos/integrations/69d2b359c9e9d61b86511415.webp' },
+  { name: 'Monday', url: '/logos/integrations/69d2b35984c045c2746ce83a.webp' }
 ];
 
 export default function Integrations() {
@@ -36,6 +36,8 @@ export default function Integrations() {
               <div key={`row1-${i}`} className="flex flex-col items-center gap-2 group">
                 <img 
                   src={p.url} 
+                  loading="lazy"
+                  decoding="async"
                   alt={p.name || 'Integration Partner'} 
                   className={`${p.large ? 'h-14 sm:h-16 md:h-16 lg:h-20' : p.medium ? 'h-12 sm:h-14 md:h-14 lg:h-16' : 'h-10 sm:h-10 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
                 />
@@ -54,6 +56,8 @@ export default function Integrations() {
               <div key={`row2-${i}`} className="flex flex-col items-center gap-2 group">
                 <img 
                   src={p.url} 
+                  loading="lazy"
+                  decoding="async"
                   alt={p.name || 'Integration Partner'} 
                   className={`${p.large ? 'h-14 sm:h-16 md:h-16 lg:h-20' : p.medium ? 'h-12 sm:h-14 md:h-14 lg:h-16' : 'h-10 sm:h-10 md:h-10 lg:h-12'} w-auto transition-all duration-300 hover:scale-110 object-contain`} 
                 />

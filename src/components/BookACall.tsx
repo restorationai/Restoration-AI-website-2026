@@ -47,6 +47,8 @@ export default function BookACall() {
                 src="https://link.restorationai.io/widget/bookings/restorationai-specialiststrategy-callga8f5l59ir3zc44uai" 
                 style={{ width: '100%', height: '780px', border: 'none', overflow: 'hidden', marginTop: '-70px' }} 
                 scrolling="no" 
+                loading="lazy"
+                title="Book a Rank AI strategy call"
                 id="BOuvQbEVWGytVmoDxqrJ_1765575687034"
               ></iframe>
             </div>

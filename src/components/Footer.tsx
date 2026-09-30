@@ -30,18 +30,16 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/#calendar-section" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms" className="hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="/compliance" className="hover:text-white transition-colors">SMS Compliance</a></li>
+              <li><a href="/privacy/" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms/" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="/sms-consent/" className="hover:text-white transition-colors">SMS Compliance</a></li>
             </ul>
           </div>
         </div>

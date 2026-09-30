@@ -1,18 +1,36 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 
-export default function BrowserVideo({ src = '/homepage-demo.mp4' }: { src?: string }) {
+export default function BrowserVideo({ src = '/homepage-demo.mp4', poster }: { src?: string; poster?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInteracted, setIsInteracted] = useState(false);
+  const interactedRef = useRef(false);
+
+  // Only download and play the video while it is on screen, so it never
+  // competes with the rest of the page for bandwidth on first load.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        v.play().catch(() => {});
+      } else if (!interactedRef.current) {
+        v.pause();
+      }
+    }, { threshold: 0.25 });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
 
   const handleInteraction = () => {
     if (videoRef.current) {
       videoRef.current.muted = false;
       videoRef.current.currentTime = 0;
       videoRef.current.play();
+      interactedRef.current = true;
       setIsInteracted(true);
     }
   };
@@ -28,20 +46,20 @@ export default function BrowserVideo({ src = '/homepage-demo.mp4' }: { src?: str
         
         <video
           ref={videoRef}
-          className="w-full h-auto object-contain block"
+          className="w-full aspect-video object-cover block"
           src={src}
-          autoPlay
+          poster={poster}
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           controls={isInteracted}
         />
 
         <AnimatePresence>
           {!isInteracted && (
             <motion.div 
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="absolute inset-0 bg-black/40 flex items-center justify-center backdrop-blur-[2px] transition-all duration-300"

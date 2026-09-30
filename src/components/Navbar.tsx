@@ -17,8 +17,6 @@ export default function Navbar() {
   return (
     <div className="fixed top-0 w-full z-50 flex justify-center py-5 transition-all duration-300">
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`w-[98%] max-w-[1400px] rounded-full border transition-all duration-300 ${
           scrolled
@@ -30,8 +28,11 @@ export default function Navbar() {
           {/* LOGO */}
           <a href="/" className="flex items-center group -ml-2 lg:-ml-4 -mt-2.5">
             <img 
-              src="/website-photos/new-logo.png" 
+              src="/website-photos/new-logo.webp" 
               alt="Restoration AI Logo" 
+              width={640}
+              height={109}
+              fetchPriority="high"
               className="h-8 md:h-9 w-auto object-contain group-hover:scale-105 transition-transform"
             />
           </a>
@@ -70,7 +71,6 @@ export default function Navbar() {
             <a href="/#pricing" className="text-slate-700 font-medium text-sm">Pricing</a>
             <hr className="border-slate-100" />
             <div className="flex flex-col gap-3 pt-1">
-              <a href="/signin" className="text-slate-600 font-medium text-sm">Login</a>
               <a href="/#calendar-section" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm text-center">
                 Book a Strategy Call
               </a>
