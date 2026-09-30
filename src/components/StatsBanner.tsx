@@ -31,10 +31,6 @@ export default function StatsBanner() {
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center">
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center text-center w-[240px] py-6 md:py-0"
               >
                 <div className="text-5xl md:text-6xl font-bold text-white tracking-tight whitespace-nowrap">
