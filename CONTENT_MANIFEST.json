@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-09-28",
+    "last_updated": "2026-10-01",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -353,7 +353,7 @@
       "parent_pillar_id": "RAI-011",
       "search_volume": 880,
       "keyword_difficulty": 21,
-      "cpc": 180.0,
+      "cpc": 180,
       "data_source": "dataforseo"
     },
     {
@@ -1039,10 +1039,11 @@
     {
       "topic_id": "RAI-038",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/ai-dispatcher",
       "video_prompt": "Live loop demo (60s): emergency call triaged, quoted, cascade-dispatched to a tech's phone, and work auth signed in under five minutes. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-10-01"
     },
     {
       "topic_id": "RAI-039",
