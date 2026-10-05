@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-10-01",
+    "last_updated": "2026-10-05",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -709,6 +709,101 @@
       "keyword_difficulty": 13,
       "cpc": 66.07,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-040",
+      "primary_keyword": "ai receptionist pricing",
+      "unique_take": "Most AI receptionist pricing pages bury per-minute and per-SMS fees under a low monthly sticker price; the honest comparison is cost per booked job, where a $597 plan at $0.20/min (about $2.32 per call at mid-volume) beats an $8-$14-per-call answering service even before you count the 70%+ vs ~40% conversion gap.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "How much does an AI receptionist cost per month?",
+        "What is the difference between flat-rate, per-minute, and per-call AI receptionist pricing?",
+        "What hidden fees should you watch for in AI receptionist pricing?",
+        "How does AI receptionist pricing compare to a live answering service or in-house receptionist?",
+        "How do you calculate the ROI of an AI receptionist in cost per booked job?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 90,
+      "keyword_difficulty": 10,
+      "cpc": 43.0,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-041",
+      "primary_keyword": "restoration software",
+      "unique_take": "Restoration software roundups compare job-management CRMs like Xcelerate, Albiware, JobNimbus, DASH, and Encircle, but every one of them assumes the job already exists; the most expensive gap in a restoration tech stack is the first phone call, which is where an AI intake layer that pushes the job into the CRM before the homeowner hangs up belongs.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What software do restoration companies actually use?",
+        "What is the best restoration management software for water mitigation companies?",
+        "How do Xcelerate, Albiware, JobNimbus, DASH, and Encircle compare?",
+        "What does restoration software miss at the first phone call?",
+        "How do you connect an AI receptionist to your restoration software stack?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 140,
+      "keyword_difficulty": 9,
+      "cpc": 35.29,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-042",
+      "primary_keyword": "field service dispatch software",
+      "unique_take": "Field service dispatch software optimizes routes and schedules for jobs someone already booked, but the dispatch decision really starts on the inbound call; AI that scopes the job, checks who is closest and certified, and cascades the dispatch until a tech taps accept removes the dispatcher bottleneck that ServiceTitan, Jobber, and Housecall Pro still leave to a human.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is field service dispatch software?",
+        "What features should field service dispatch software have?",
+        "How does AI dispatch differ from drag-and-drop dispatch boards?",
+        "Can dispatch software assign jobs automatically by location and certification?",
+        "How do you connect phone intake to your field service dispatch software?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 260,
+      "keyword_difficulty": 3,
+      "cpc": 98.55,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-043",
+      "primary_keyword": "handyman leads",
+      "unique_take": "Handyman leads from Angi, Thumbtack, and pay-per-lead vendors are shared, small-ticket, and gone in minutes, so the handyman who wins is the one who answers first and quotes on the call; an AI that knows your per-task pricing and books the visit turns cheap shared leads into scheduled jobs instead of voicemails.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Transactional",
+      "h2_questions": [
+        "Where do handyman businesses get the best leads?",
+        "Are paid handyman lead services like Angi and Thumbtack worth it?",
+        "How much should a handyman pay per lead?",
+        "How do you get free handyman leads from Google Business Profile and referrals?",
+        "Why do handyman leads go cold and how do you convert more of them?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 260,
+      "keyword_difficulty": 0,
+      "cpc": 30.91,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-044",
+      "primary_keyword": "professional answering service",
+      "unique_take": "A 'professional answering service' used to mean polite operators reading a script and emailing you a message; for an on-site service business, professional now means the call ends with the job qualified, the tech dispatched, and the work authorization sent, which is a bar most human answering services cannot clear at $8-$14 per call.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a professional answering service?",
+        "What does a professional answering service do on an emergency call?",
+        "How much does a professional answering service cost?",
+        "Is a professional answering service better than an AI receptionist?",
+        "How do you choose a professional answering service for a contractor or restoration company?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 480,
+      "keyword_difficulty": 18,
+      "cpc": 86.21,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -1048,9 +1143,49 @@
     {
       "topic_id": "RAI-039",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/automated-answering-service",
       "video_prompt": "Then-vs-now (45s): a 2005 phone tree makes callers hang up; a modern AI answers like a person, books the job, and dispatches a tech. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-040",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/ai-receptionist-pricing",
+      "video_prompt": "Price breakdown (45s): monthly fee plus per-minute and per-SMS math for 300 calls a month, then flip it to cost per booked job vs an answering service. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-041",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/restoration-software",
+      "video_prompt": "Tech stack map (60s): intake call, CRM, moisture mapping, estimating, and invoicing, with the empty first-call box filled by AI that pushes the job into the CRM live. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-042",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/field-service-dispatch-software",
+      "video_prompt": "Dispatch board vs AI (45s): a human dragging jobs on a board at 2 a.m. vs AI booking the call, picking the closest certified tech, and cascading until someone accepts. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-043",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/handyman-leads",
+      "video_prompt": "Lead race (45s): one shared handyman lead hits three businesses; two go to voicemail, the AI-answered one quotes and books the visit in under two minutes. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-044",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/professional-answering-service",
+      "video_prompt": "Message vs booked job (45s): a professional operator takes a message on an emergency call; AI on the same call qualifies, dispatches, and sends the work authorization. CTA: Book a Strategy Call.",
       "sanity_id": null
     }
   ],
