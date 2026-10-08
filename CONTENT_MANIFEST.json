@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-10-05",
+    "last_updated": "2026-10-08",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -1151,7 +1151,7 @@
     {
       "topic_id": "RAI-040",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/ai-receptionist-pricing",
       "video_prompt": "Price breakdown (45s): monthly fee plus per-minute and per-SMS math for 300 calls a month, then flip it to cost per booked job vs an answering service. CTA: Book a Strategy Call.",
       "sanity_id": null
