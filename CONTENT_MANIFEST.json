@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-10-08",
+    "last_updated": "2026-10-12",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -1159,7 +1159,7 @@
     {
       "topic_id": "RAI-041",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/restoration-software",
       "video_prompt": "Tech stack map (60s): intake call, CRM, moisture mapping, estimating, and invoicing, with the empty first-call box filled by AI that pushes the job into the CRM live. CTA: Book a Strategy Call.",
       "sanity_id": null
