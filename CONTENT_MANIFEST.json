@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-10-12",
+    "last_updated": "2026-10-15",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -1167,7 +1167,7 @@
     {
       "topic_id": "RAI-042",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Drafting",
       "slug": "/blog/field-service-dispatch-software",
       "video_prompt": "Dispatch board vs AI (45s): a human dragging jobs on a board at 2 a.m. vs AI booking the call, picking the closest certified tech, and cascading until someone accepts. CTA: Book a Strategy Call.",
       "sanity_id": null
