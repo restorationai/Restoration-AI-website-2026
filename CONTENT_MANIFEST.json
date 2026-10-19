@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-10-15",
+    "last_updated": "2026-10-19",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -1175,10 +1175,11 @@
     {
       "topic_id": "RAI-043",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/handyman-leads",
       "video_prompt": "Lead race (45s): one shared handyman lead hits three businesses; two go to voicemail, the AI-answered one quotes and books the visit in under two minutes. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-10-19"
     },
     {
       "topic_id": "RAI-044",
