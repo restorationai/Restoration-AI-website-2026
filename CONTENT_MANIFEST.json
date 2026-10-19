@@ -1143,34 +1143,38 @@
     {
       "topic_id": "RAI-039",
       "author_id": "AUTH-001",
-      "automation_status": "Drafting",
+      "automation_status": "Published",
       "slug": "/blog/automated-answering-service",
       "video_prompt": "Then-vs-now (45s): a 2005 phone tree makes callers hang up; a modern AI answers like a person, books the job, and dispatches a tech. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-10-05"
     },
     {
       "topic_id": "RAI-040",
       "author_id": "AUTH-001",
-      "automation_status": "Drafting",
+      "automation_status": "Published",
       "slug": "/blog/ai-receptionist-pricing",
       "video_prompt": "Price breakdown (45s): monthly fee plus per-minute and per-SMS math for 300 calls a month, then flip it to cost per booked job vs an answering service. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-10-08"
     },
     {
       "topic_id": "RAI-041",
       "author_id": "AUTH-001",
-      "automation_status": "Drafting",
+      "automation_status": "Published",
       "slug": "/blog/restoration-software",
       "video_prompt": "Tech stack map (60s): intake call, CRM, moisture mapping, estimating, and invoicing, with the empty first-call box filled by AI that pushes the job into the CRM live. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-10-12"
     },
     {
       "topic_id": "RAI-042",
       "author_id": "AUTH-001",
-      "automation_status": "Drafting",
+      "automation_status": "Published",
       "slug": "/blog/field-service-dispatch-software",
       "video_prompt": "Dispatch board vs AI (45s): a human dragging jobs on a board at 2 a.m. vs AI booking the call, picking the closest certified tech, and cascading until someone accepts. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-10-15"
     },
     {
       "topic_id": "RAI-043",
