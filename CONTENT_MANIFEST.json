@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-10-19",
+    "last_updated": "2026-10-22",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -804,6 +804,101 @@
       "keyword_difficulty": 18,
       "cpc": 86.21,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-045",
+      "primary_keyword": "speed to lead",
+      "unique_take": "Most speed-to-lead advice is written for SaaS sales teams chasing web forms; in restoration the lead is a phone call from a homeowner standing in water, so speed to lead is measured in rings, not minutes, and the first company to answer usually gets the job.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "What is speed to lead?",
+        "Why does speed to lead matter more in restoration than other industries?",
+        "What is a good speed-to-lead benchmark for contractors?",
+        "How do you measure speed to lead on phone calls?",
+        "How can a restoration company get to instant speed to lead?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 880,
+      "keyword_difficulty": 33,
+      "cpc": 18.53,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-046",
+      "primary_keyword": "live answering service",
+      "unique_take": "A live answering service puts a human on the line, but on a 2am water loss the caller still gets a message taker; the real comparison is not human vs robot, it is message taken vs job booked and dispatched.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a live answering service?",
+        "How much does a live answering service cost?",
+        "What do live answering services do on emergency calls?",
+        "Is a live answering service better than an AI receptionist?",
+        "How do you choose a live answering service for a contracting business?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 590,
+      "keyword_difficulty": 38,
+      "cpc": 153.21,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-047",
+      "primary_keyword": "emergency answering service",
+      "unique_take": "For restoration, an emergency answering service has one job: turn a 2am panic call into a dispatched tech with a signed work authorization before a competitor calls back, and most services stop at the message.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an emergency answering service?",
+        "Which businesses need an emergency answering service?",
+        "How should an emergency answering service triage calls?",
+        "How much does an emergency answering service cost?",
+        "Can AI handle emergency calls for a contractor?"
+      ],
+      "parent_pillar_id": "RAI-011",
+      "search_volume": 40,
+      "keyword_difficulty": 0,
+      "cpc": 133.95,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-048",
+      "primary_keyword": "how to get more google reviews",
+      "unique_take": "Contractors lose most reviews in the 48 hours after the job because nobody asks at the right moment; an automated SMS timed to job completion beats every review card and front-desk script.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Informational",
+      "h2_questions": [
+        "How do you get more Google reviews as a contractor?",
+        "When is the best time to ask a customer for a review?",
+        "Is it allowed to filter or incentivize Google reviews?",
+        "What should a review request text message say?",
+        "How many Google reviews does a contractor need to rank in the map pack?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 480,
+      "keyword_difficulty": 13,
+      "cpc": 18.95,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-049",
+      "primary_keyword": "contractor crm",
+      "unique_take": "A contractor CRM is only as good as the data that hits it, and most leads die before they ever become a record; the front door (who answers the phone and what gets captured) matters more than which CRM you pick.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a contractor CRM?",
+        "What features should a contractor CRM have?",
+        "What is the best CRM for contractors?",
+        "How much does a contractor CRM cost?",
+        "How do you get phone leads into your CRM automatically?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 390,
+      "keyword_difficulty": 31,
+      "cpc": 92.59,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -1188,9 +1283,50 @@
     {
       "topic_id": "RAI-044",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/professional-answering-service",
       "video_prompt": "Message vs booked job (45s): a professional operator takes a message on an emergency call; AI on the same call qualifies, dispatches, and sends the work authorization. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-10-22"
+    },
+    {
+      "topic_id": "RAI-045",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/speed-to-lead",
+      "video_prompt": "Stopwatch race (45s): a homeowner calls three restoration companies; two ring out, the AI answers on ring one, triages Cat 2 water and dispatches a tech. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-046",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/live-answering-service",
+      "video_prompt": "Split screen (45s): live operator reads a script and takes a message vs AI on the same call qualifying, dispatching, and sending a work authorization. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-047",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/emergency-answering-service",
+      "video_prompt": "Night storm (45s): phones light up at 2am, AI answers every concurrent call, sorts Cat 1 vs Cat 3 water, and cascades dispatch until a tech accepts. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-048",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/how-to-get-more-google-reviews",
+      "video_prompt": "Job done (45s): tech closes out a mitigation job, customer gets a personalized SMS with a photo of the company van and a one-tap review link, 5-star review lands. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-049",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/contractor-crm",
+      "video_prompt": "Data flow (45s): homeowner call answered by AI, job details auto-populate a JobNimbus record before the caller hangs up, tech notified. CTA: Book a Strategy Call.",
       "sanity_id": null
     }
   ],
