@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageCircleQuestion, ArrowRight } from 'lucide-react';
 
 const faqs = [
@@ -108,21 +107,14 @@ export default function FAQ() {
                     className={`text-slate-500 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-600' : 'rotate-0'}`}
                   />
                 </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-5 pb-5 pt-0">
-                        <p className="text-slate-900 text-[14px] font-extrabold mb-1.5">{faq.brief}</p>
-                        <p className="text-slate-600 text-[13.5px] leading-relaxed font-medium">{faq.answer}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-0">
+                      <p className="text-slate-900 text-[14px] font-extrabold mb-1.5">{faq.brief}</p>
+                      <p className="text-slate-600 text-[13.5px] leading-relaxed font-medium">{faq.answer}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
              )
           })}
