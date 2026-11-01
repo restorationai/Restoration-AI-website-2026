@@ -15,6 +15,9 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      // Past versions of the legal pages stay reachable by URL for billing
+      // disputes but are kept out of search (Santino 11-01).
+      filter: (page) => !page.includes('/legal/'),
       customPages: [
         'https://restorationai.io/integrations/jobnimbus/',
         'https://restorationai.io/integrations/housecall-pro/',

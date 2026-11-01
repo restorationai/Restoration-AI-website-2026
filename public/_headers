@@ -1,0 +1,3 @@
+# Past versions of the legal pages: reachable by URL for billing disputes, kept out of search.
+/legal/*
+  X-Robots-Tag: noindex
