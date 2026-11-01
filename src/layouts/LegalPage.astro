@@ -1,0 +1,32 @@
+---
+// Legal pages (Santino 11-01): the words live in src/legal/*.html, the same
+// Terms text as ignitesystems.io with only the party changed; past versions
+// stay published under /legal/<page>-<date>/ for billing disputes.
+import MainLayout from './MainLayout.astro';
+
+interface Props { title: string; description: string; body: string }
+const { title, description, body } = Astro.props;
+---
+
+<MainLayout title={`${title} | Restoration AI`} description={description}>
+  <div class="container mx-auto px-6 lg:px-12 pt-32 md:pt-36 pb-24 max-w-4xl">
+    <div class="bg-[#020617] border border-white/5 rounded-2xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+      <article class="legal relative" set:html={body} />
+    </div>
+  </div>
+</MainLayout>
+
+<style is:global>
+  .legal { color: #cbd5e1; font-size: 15.5px; line-height: 1.75; }
+  .legal h1 { color: #fff; font-size: clamp(28px, 4vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; text-wrap: balance; }
+  .legal .meta { color: #94a3b8; font-weight: 500; margin-bottom: 2rem; }
+  .legal h2 { color: #fff; font-size: 20px; font-weight: 600; margin: 2.25rem 0 0.75rem; }
+  .legal p { margin-bottom: 1rem; }
+  .legal ul, .legal ol { padding-left: 1.4rem; margin-bottom: 1.25rem; display: grid; gap: 0.4rem; }
+  .legal ul { list-style: disc; }
+  .legal ul ul { list-style: circle; margin: 0.4rem 0 0.4rem; }
+  .legal strong { color: #f1f5f9; }
+  .legal a { color: #60a5fa; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .legal a:hover { color: #93c5fd; }
+</style>
