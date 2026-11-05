@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-11-02",
+    "last_updated": "2026-11-05",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -1319,10 +1319,11 @@
     {
       "topic_id": "RAI-048",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/how-to-get-more-google-reviews",
       "video_prompt": "Job done (45s): tech closes out a mitigation job, customer gets a personalized SMS with a photo of the company van and a one-tap review link, 5-star review lands. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-11-05"
     },
     {
       "topic_id": "RAI-049",
