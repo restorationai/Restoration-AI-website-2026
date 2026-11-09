@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-11-05",
+    "last_updated": "2026-11-09",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -899,6 +899,82 @@
       "keyword_difficulty": 31,
       "cpc": 92.59,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-050",
+      "primary_keyword": "hvac dispatch software",
+      "unique_take": "HVAC dispatch software only schedules the calls somebody answered; in a heat wave the bottleneck is the intake call, so the board should fill the moment the phone rings, not when a CSR finally types the job in.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is HVAC dispatch software?",
+        "What features should HVAC dispatch software have?",
+        "How much does HVAC dispatch software cost?",
+        "Can AI dispatch HVAC technicians automatically?",
+        "How do you dispatch HVAC calls after hours?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 260,
+      "keyword_difficulty": 7,
+      "cpc": 106.08,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-051",
+      "primary_keyword": "plumbing dispatch software",
+      "unique_take": "A plumbing dispatch board is blind to the burst-pipe call that rang out at 11pm; pairing dispatch software with AI intake that separates emergency from scheduled work is what actually fills the trucks.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is plumbing dispatch software?",
+        "What should plumbing dispatch software do?",
+        "How much does plumbing dispatch software cost?",
+        "How do you dispatch emergency plumbing calls faster?",
+        "Can an AI receptionist feed your dispatch board?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 140,
+      "keyword_difficulty": 19,
+      "cpc": 190.62,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-052",
+      "primary_keyword": "roofing crm",
+      "unique_take": "Roofing CRMs are built for the sales pipeline after an inspection is booked; storm-season leads die at the phone, so the CRM that wins is the one fed automatically by whoever answers during a hail surge.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is a roofing CRM?",
+        "What features matter most in a roofing CRM?",
+        "What is the best CRM for roofing companies?",
+        "How much does a roofing CRM cost?",
+        "How do you capture storm leads into a roofing CRM automatically?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 720,
+      "keyword_difficulty": 10,
+      "cpc": 112.59,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-053",
+      "primary_keyword": "google local services ads",
+      "unique_take": "Local Services Ads charge per lead, so every unanswered or junk call burns money twice; answering every LSA call in seconds and documenting bad leads for disputes moves ROI more than any bid tweak.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What are Google Local Services Ads?",
+        "How much do Google Local Services Ads cost per lead?",
+        "How do you rank higher in Google Local Services Ads?",
+        "Can you dispute bad leads in Google Local Services Ads?",
+        "Why does answering speed matter for Local Services Ads?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 33100,
+      "keyword_difficulty": 22,
+      "cpc": 12.97,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -1328,9 +1404,42 @@
     {
       "topic_id": "RAI-049",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/contractor-crm",
       "video_prompt": "Data flow (45s): homeowner call answered by AI, job details auto-populate a JobNimbus record before the caller hangs up, tech notified. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-11-09"
+    },
+    {
+      "topic_id": "RAI-050",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/hvac-dispatch-software",
+      "video_prompt": "Data flow (45s): no-heat call at 10pm answered by AI, job triaged as emergency, nearest on-call HVAC tech accepts with one tap. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-051",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/plumbing-dispatch-software",
+      "video_prompt": "Data flow (45s): burst pipe call answered by AI, emergency flagged, cascade dispatch pings plumbers in priority order until one accepts. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-052",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/roofing-crm",
+      "video_prompt": "Data flow (45s): hail storm call spike, AI answers every line at once, inspection requests land in the roofing CRM with address and photos. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-053",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/google-local-services-ads",
+      "video_prompt": "Data flow (45s): LSA call rings, AI answers in seconds, out-of-area caller auto-tagged and logged for a dispute, real lead booked. CTA: Book a Strategy Call.",
       "sanity_id": null
     }
   ],
