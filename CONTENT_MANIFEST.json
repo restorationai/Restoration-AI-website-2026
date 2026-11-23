@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-11-19",
+    "last_updated": "2026-11-23",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -975,6 +975,101 @@
       "keyword_difficulty": 22,
       "cpc": 12.97,
       "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-054",
+      "primary_keyword": "hvac crm",
+      "unique_take": "An HVAC CRM only manages the customers who got through; in peak heat and cold-snap weeks the leak is the phone, so the CRM that pays off is the one fed every call automatically, 24/7.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is an HVAC CRM?",
+        "What features matter most in an HVAC CRM?",
+        "What is the best CRM for HVAC companies?",
+        "How much does an HVAC CRM cost?",
+        "How do you get every HVAC call into your CRM automatically?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 260,
+      "keyword_difficulty": 0,
+      "cpc": 145.49,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-055",
+      "primary_keyword": "plumbing software",
+      "unique_take": "Plumbing software comparisons focus on invoicing and scheduling, but the job that never gets booked because a burst-pipe call went to voicemail is the most expensive gap, and no field app fixes that alone.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is plumbing software?",
+        "What features should plumbing software have?",
+        "What is the best plumbing software for small companies?",
+        "How much does plumbing software cost?",
+        "How do you stop losing emergency plumbing calls before they reach your software?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 390,
+      "keyword_difficulty": 10,
+      "cpc": 90.82,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-056",
+      "primary_keyword": "lead generation for contractors",
+      "unique_take": "Most contractor lead gen advice is about buying more leads; the cheaper win is fixing response, because a lead that waits even a few minutes is worth a fraction of one answered on the first ring.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is lead generation for contractors?",
+        "What are the best lead sources for contractors?",
+        "How much should a contractor pay per lead?",
+        "Why do contractor leads go cold?",
+        "How do contractors turn more leads into booked jobs?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 320,
+      "keyword_difficulty": 9,
+      "cpc": 48.44,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-057",
+      "primary_keyword": "seo for contractors",
+      "unique_take": "Contractor SEO gets sold as rankings, but a ranking that rings an unanswered phone is wasted spend; the SEO plan has to include who answers the calls it creates.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is SEO for contractors?",
+        "How long does contractor SEO take to work?",
+        "What does contractor SEO cost?",
+        "What matters most for local contractor SEO?",
+        "How do you measure if contractor SEO is working?"
+      ],
+      "parent_pillar_id": "RAI-015",
+      "search_volume": 390,
+      "keyword_difficulty": 0,
+      "cpc": 109.03,
+      "data_source": "dataforseo"
+    },
+    {
+      "topic_id": "RAI-058",
+      "primary_keyword": "hvac software",
+      "unique_take": "HVAC software stacks cover dispatch, invoicing and maintenance plans, but the front door (the phone during a no-heat night) is usually left to voicemail; the stack is only as good as its intake.",
+      "target_audience": "Restoration Business Owners",
+      "intent": "Commercial Investigation",
+      "h2_questions": [
+        "What is HVAC software?",
+        "What features should HVAC software have?",
+        "What is the best HVAC software for small businesses?",
+        "How much does HVAC software cost?",
+        "How does an AI receptionist work with HVAC software?"
+      ],
+      "parent_pillar_id": "RAI-001",
+      "search_volume": 590,
+      "keyword_difficulty": 25,
+      "cpc": 123.52,
+      "data_source": "dataforseo"
     }
   ],
   "production_pipeline": [
@@ -1440,9 +1535,50 @@
     {
       "topic_id": "RAI-053",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/google-local-services-ads",
       "video_prompt": "Data flow (45s): LSA call rings, AI answers in seconds, out-of-area caller auto-tagged and logged for a dispute, real lead booked. CTA: Book a Strategy Call.",
+      "sanity_id": null,
+      "publishedAt": "2026-11-23"
+    },
+    {
+      "topic_id": "RAI-054",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/hvac-crm",
+      "video_prompt": "Data flow (45s): heat wave call spike, AI answers every line, no-cool tickets land in the HVAC CRM with address and equipment notes. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-055",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/plumbing-software",
+      "video_prompt": "Data flow (45s): 2 a.m. burst pipe call, AI answers, books the job into plumbing software, tech gets a text. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-056",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/lead-generation-for-contractors",
+      "video_prompt": "Data flow (45s): leads arrive from Google, LSA and referrals; AI answers and books each in seconds; booked-job count climbs. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-057",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/seo-for-contractors",
+      "video_prompt": "Data flow (45s): homeowner searches, finds contractor in map pack, calls, AI answers and books. CTA: Book a Strategy Call.",
+      "sanity_id": null
+    },
+    {
+      "topic_id": "RAI-058",
+      "author_id": "AUTH-001",
+      "automation_status": "Ready",
+      "slug": "/blog/hvac-software",
+      "video_prompt": "Data flow (45s): no-heat call at night, AI triages, creates job in HVAC software, on-call tech notified. CTA: Book a Strategy Call.",
       "sanity_id": null
     }
   ],
