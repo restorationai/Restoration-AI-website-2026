@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0",
-    "last_updated": "2026-11-23",
+    "last_updated": "2026-11-26",
     "description": "Content strategy manifest for restorationai.io — three linked tables: topical map (SEO strategy), production pipeline (workflow), and author vault (EEAT).",
     "id_prefixes": {
       "topic": "RAI-###  (Topical Map primary key)",
@@ -1544,10 +1544,11 @@
     {
       "topic_id": "RAI-054",
       "author_id": "AUTH-001",
-      "automation_status": "Ready",
+      "automation_status": "Published",
       "slug": "/blog/hvac-crm",
       "video_prompt": "Data flow (45s): heat wave call spike, AI answers every line, no-cool tickets land in the HVAC CRM with address and equipment notes. CTA: Book a Strategy Call.",
-      "sanity_id": null
+      "sanity_id": null,
+      "publishedAt": "2026-11-26"
     },
     {
       "topic_id": "RAI-055",
