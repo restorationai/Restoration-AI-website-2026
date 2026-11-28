@@ -81,7 +81,7 @@ const badges = [
     type: 'custom_pill' as const,
     label: (
       <div className="flex flex-col items-start justify-center">
-        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">100%</span>
+        <span className="text-[16px] font-black text-slate-800 leading-none tracking-tight">94%</span>
         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Client Retention</span>
       </div>
     ),

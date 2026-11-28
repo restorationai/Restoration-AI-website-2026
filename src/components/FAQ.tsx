@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Am I locked into a contract?",
     brief: "No. Cancel anytime.",
-    answer: "No. There are no long term contracts and no hidden fees, and you can cancel anytime. We would rather be easy to work with and easy to leave. To date, every client who has started with Rank AI is still with us, and that is by results, not by contract."
+    answer: "No. There are no long term contracts and no hidden fees, and you can cancel anytime. We would rather be easy to work with and easy to leave. To date, 94% of the clients who have started with Rank AI are still with us, and that is by results, not by contract."
   },
   {
     question: "How does the review generation work?",
