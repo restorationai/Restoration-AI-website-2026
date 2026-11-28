@@ -41,6 +41,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-10 text-[15px] font-semibold text-slate-600">
             <a href="/#visibility-pillars" className="hover:text-slate-900 transition-colors">Features</a>
             <a href="/#pricing" className="hover:text-slate-900 transition-colors">Pricing</a>
+            <a href="/#testimonials" className="hover:text-slate-900 transition-colors">Testimonials</a>
 
           </div>
 
@@ -69,6 +70,7 @@ export default function Navbar() {
           <div className="absolute top-full left-0 right-0 mt-2 mx-4 bg-white border border-slate-200 py-4 px-6 rounded-2xl flex flex-col gap-4 shadow-xl md:hidden">
             <a href="/#visibility-pillars" className="text-slate-700 font-medium text-sm">Features</a>
             <a href="/#pricing" className="text-slate-700 font-medium text-sm">Pricing</a>
+            <a href="/#testimonials" className="text-slate-700 font-medium text-sm">Testimonials</a>
             <hr className="border-slate-100" />
             <div className="flex flex-col gap-3 pt-1">
               <a href="/#calendar-section" className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-md shadow-blue-900/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm text-center">

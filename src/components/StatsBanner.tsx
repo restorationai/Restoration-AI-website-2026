@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const stats = [
   { number: "7x", suffix: "", label: "Your Google Reviews", sub: "" },
   { number: "250", suffix: "+", label: "Page Website Built for Ranking", sub: "" },
-  { number: "100%", suffix: "", label: "Client Retention", sub: "" },
+  { number: "94%", suffix: "", label: "Client Retention", sub: "" },
   { number: "0", suffix: "", label: "Long Term Contracts", sub: "" }
 ];
 

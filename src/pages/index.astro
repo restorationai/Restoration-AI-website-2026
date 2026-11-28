@@ -5,6 +5,7 @@ import StatsBanner from '../components/StatsBanner';
 // import CallRecordings from '../components/CallRecordings';
 import RankEcosystem from '../components/RankEcosystem';
 import Pricing from '../components/Pricing';
+import ClientResults from '../components/ClientResults';
 import VisibilityPillars from '../components/VisibilityPillars';
 // import PremiumFeatures from '../components/PremiumFeatures';
 import HowItWorks from '../components/HowItWorks';
@@ -54,7 +55,7 @@ const faqJsonLd = {
       name: 'Am I locked into a contract?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. There are no long term contracts and no hidden fees, and you can cancel anytime. To date, every client who has started with Rank AI is still with us, and that is by results, not by contract.',
+        text: 'No. There are no long term contracts and no hidden fees, and you can cancel anytime. To date, 94% of the clients who have started with Rank AI are still with us, and that is by results, not by contract.',
       },
     },
   ],
@@ -81,6 +82,7 @@ const faqJsonLd = {
     {/* <Testimonials client:visible /> */}
     {/* <TryItYourself client:visible /> */}
     <FAQ client:visible />
+    <ClientResults client:visible />
     <Pricing client:visible />
     <BookACall client:visible />
     <Integrations client:visible />
